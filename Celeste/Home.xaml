@@ -8,7 +8,7 @@
         Title="Celeste" 
         Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
         Width="{x:Static SystemParameters.PrimaryScreenWidth}"
-        Icon="/logo(minimal).png" Background="#FF160A26"
+        Icon="/logo(minimal).png" Background="#FF1E1730"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         ResizeMode="CanResizeWithGrip">
@@ -39,30 +39,35 @@
                     <Setter Property="FontSize" Value="20"></Setter>
                     <Setter Property="Height" Value="70"></Setter>
                     <Setter Property="Width" Value="70"></Setter>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
 
             </DockPanel.Resources>
 
 
-            <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,100,10,9">
+            <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9" IsHitTestVisible="False">
                 <Image Source="Resources/star_btn.png"></Image>
             </Button>
-            <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,100">
-                <Image Source="Resources/star_btn.png"></Image>
-
-            </Button>
-            <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="90,70,70,70">
+            <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,120">
                 <Image Source="Resources/star_btn.png"></Image>
 
             </Button>
-            <Button x:Name="btn_lightmode" DockPanel.Dock="Right" Margin="70,70,90,70">
+            <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="130,70,70,70">
+                <Image Source="Resources/star_btn.png"></Image>
+
+            </Button>
+            <Button x:Name="btn_lightmode" DockPanel.Dock="Right" Margin="70,70,130,70">
                 <Image Source="Resources/star_btn.png"></Image>
 
             </Button>
             <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0">
                 <Image Source="Resources/insights_btn.png"></Image>
             </Button>
-
 
         </DockPanel>
     </Grid>
