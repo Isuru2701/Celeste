@@ -120,5 +120,10 @@
   <ItemGroup>
     <Resource Include="logo%28minimal%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\settings_on.png" />
+    <Resource Include="Resources\setttings_off.png" />
+    <Resource Include="Resources\star_btn.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

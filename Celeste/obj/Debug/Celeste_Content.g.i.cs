@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("logo(minimal).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/settings_on.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/setttings_off.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/star_btn.png")]
 
 

@@ -16,21 +16,53 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="800"/>
-            <ColumnDefinition Width="0"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <TextBox Grid.Column="0"
-                 Background="Transparent"
-                 Foreground="#d8c6a0"
-                 Margin="0,30,0,30"
-                 BorderBrush="#d8c6a0"
-                 BorderThickness="10">
+        <Grid.Resources>
             
-
+        </Grid.Resources>
+        <TextBox 
+                Background="Transparent"
+                Foreground="#d8c6a0"
+                Margin="0,30,0,30"
+                BorderBrush="#d8c6a0"
+                BorderThickness="10">
         </TextBox>
 
+        <DockPanel Grid.Column="1" >
 
+            <DockPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="Foreground" Value="#d8c6a0"></Setter>
+                    <Setter Property="FontSize" Value="20"></Setter>
+                    <Setter Property="Margin" Value="70,70,70,70"></Setter>
+                    <Setter Property="Height" Value="70"></Setter>
+                    <Setter Property="Width" Value="70"></Setter>
+                </Style>
+
+            </DockPanel.Resources>
+
+            <Button x:Name="btn_resources" DockPanel.Dock="Top">
+                <Image Source="Resources/star_btn.png"></Image>
+            </Button>
+            <Button x:Name="btn_settings" DockPanel.Dock="Bottom">
+                <Image Source="Resources/star_btn.png"></Image>
+
+            </Button>
+            <Button x:Name="btn_entries" DockPanel.Dock="Left">
+                <Image Source="Resources/star_btn.png"></Image>
+
+            </Button>
+            <Button x:Name="btn_lightmode" DockPanel.Dock="Right">
+                <Image Source="Resources/star_btn.png"></Image>
+
+            </Button>
+            <Button x:Name="btn_insights"></Button>
+        </DockPanel>
     </Grid>
+
 
 
 </Window>
