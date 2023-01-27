@@ -123,7 +123,12 @@
   <ItemGroup>
     <Resource Include="Resources\settings_on.png" />
     <Resource Include="Resources\setttings_off.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\star_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\insights_btn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

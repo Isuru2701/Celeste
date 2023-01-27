@@ -15,7 +15,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800"/>
+            <ColumnDefinition Width="700"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
@@ -37,29 +37,33 @@
                     <Setter Property="Background" Value="Transparent"></Setter>
                     <Setter Property="Foreground" Value="#d8c6a0"></Setter>
                     <Setter Property="FontSize" Value="20"></Setter>
-                    <Setter Property="Margin" Value="70,70,70,70"></Setter>
                     <Setter Property="Height" Value="70"></Setter>
                     <Setter Property="Width" Value="70"></Setter>
                 </Style>
 
             </DockPanel.Resources>
 
-            <Button x:Name="btn_resources" DockPanel.Dock="Top">
+
+            <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,100,10,9">
                 <Image Source="Resources/star_btn.png"></Image>
             </Button>
-            <Button x:Name="btn_settings" DockPanel.Dock="Bottom">
+            <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,100">
                 <Image Source="Resources/star_btn.png"></Image>
 
             </Button>
-            <Button x:Name="btn_entries" DockPanel.Dock="Left">
+            <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="90,70,70,70">
                 <Image Source="Resources/star_btn.png"></Image>
 
             </Button>
-            <Button x:Name="btn_lightmode" DockPanel.Dock="Right">
+            <Button x:Name="btn_lightmode" DockPanel.Dock="Right" Margin="70,70,90,70">
                 <Image Source="Resources/star_btn.png"></Image>
 
             </Button>
-            <Button x:Name="btn_insights"></Button>
+            <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0">
+                <Image Source="Resources/insights_btn.png"></Image>
+            </Button>
+
+
         </DockPanel>
     </Grid>
 
