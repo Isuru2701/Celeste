@@ -73,24 +73,23 @@
 
             <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9"
                     Click="btn_resources_Click">
-                <Image Source="Resources/star_btn.png"/>
+                <Image Source="Resources/resources_btn.png"/>
             </Button>
             
             <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,120"
                     Click="btn_settings_Click">
-                <Image Source="Resources/star_btn.png"></Image>
+                <Image Source="Resources/settings_btn.png"></Image>
 
             </Button>
             
             <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="130,70,70,70"
                     Click="btn_entries_Click">
-                <Image Source="Resources/star_btn.png"></Image>
-
+                <Image Source="Resources/entries_btn.png"/>
             </Button>
             
-            <Button x:Name="btn_lightmode" DockPanel.Dock="Right" Margin="70,70,130,70"
+            <Button x:Name="btn_faq" DockPanel.Dock="Right" Margin="70,70,130,70"
                     Click="btn_lightmode_Click">
-                <Image Source="Resources/star_btn.png"></Image>
+                <Image Source="Resources/question_btn.png"></Image>
 
             </Button>
             
