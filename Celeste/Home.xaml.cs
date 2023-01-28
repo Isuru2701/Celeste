@@ -29,5 +29,29 @@ namespace Celeste
         {
             new Resource().Show();
         }
+
+        private void btn_insights_Click(object sender, RoutedEventArgs e)
+        {
+            new Insights().Show(); 
+        }
+
+        private void btn_settings_Click(object sender, RoutedEventArgs e)
+        {
+            new Insights().Show();
+        }
+
+        private void btn_lightmode_Click(object sender, RoutedEventArgs e)
+        {
+            //turns the light-mode script on. Not very important,
+            //can replace with Credits or something
+
+
+        }
+
+        private void btn_entries_Click(object sender, RoutedEventArgs e)
+        {
+            new Entries().Show();
+        }
+
     }
 }
