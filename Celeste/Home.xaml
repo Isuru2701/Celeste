@@ -13,14 +13,12 @@
         WindowState="Maximized"
         ResizeMode="CanResizeWithGrip">
 
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="700"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid.Resources>
-            
-        </Grid.Resources>
 
         <Border Margin="0,30,0,30"
                 BorderBrush="#d8c6a0"
@@ -29,70 +27,71 @@
 
         </Border>
 
-        <DockPanel Grid.Column="1" >
+        <Button
+            x:Name="btn_user"
+            Grid.Column="1"
+            Width="70"
+            Height="70"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="20,20,0,0"
+            Background="Transparent"
+            RenderTransformOrigin="0.5, 0.5"
+            Click="btn_user_Click">
+            <Button.LayoutTransform>
+                <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+            </Button.LayoutTransform>
 
-            <DockPanel.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
-                    <Setter Property="Background" Value="Transparent"></Setter>
-                    <Setter Property="Foreground" Value="#d8c6a0"></Setter>
-                    <Setter Property="FontSize" Value="20"></Setter>
-                    <Setter Property="Height" Value="70"></Setter>
-                    <Setter Property="Width" Value="70"></Setter>
-                    
+            <Button.Style>
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
                     <Setter Property="Template">
-                        <!--this sets the MouseOver color to the specified color -->
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
+                                <Border BorderBrush="#d8c6a0" BorderThickness="10" Background="{TemplateBinding Background}">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF161122"/>
-                        </Trigger>
-                    </Style.Triggers>
-
                 </Style>
+            </Button.Style>
 
-                <Style TargetType="{x:Type Border}">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Transparent"/>
-                        </Trigger>
-                    </Style.Triggers>
+            <Image Source="Resources/logo(minimal).png"/>
+        </Button>
 
-                </Style>
 
-            </DockPanel.Resources>
+
+        <DockPanel Grid.Column="1" >
 
 
             <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9"
-                    Click="btn_resources_Click">
+                    Click="btn_resources_Click"
+                    Style="{StaticResource DiamondButtonTheme}">
                 <Image Source="Resources/resources_btn.png"/>
             </Button>
             
             <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,120"
-                    Click="btn_settings_Click">
+                    Click="btn_settings_Click"
+                    Style="{StaticResource DiamondButtonTheme}">
                 <Image Source="Resources/settings_btn.png"></Image>
 
             </Button>
             
             <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="130,70,70,70"
-                    Click="btn_entries_Click">
+                    Click="btn_entries_Click"
+                    Style="{StaticResource DiamondButtonTheme}">
                 <Image Source="Resources/entries_btn.png"/>
             </Button>
             
             <Button x:Name="btn_faq" DockPanel.Dock="Right" Margin="70,70,130,70"
-                    Click="btn_lightmode_Click">
-                <Image Source="Resources/question_btn.png"></Image>
+                    Click="btn_faq_Click"
+                    Style="{StaticResource DiamondButtonTheme}">
+                <Image Source="Resources/faq_btn.png"></Image>
             </Button>
             
             <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0"
-                    Click="btn_insights_Click">
+                    Click="btn_insights_Click"
+                    Style="{StaticResource DiamondButtonTheme}">
                 <Image Source="Resources/insights_btn.png"></Image>
             </Button>
 

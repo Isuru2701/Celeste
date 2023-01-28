@@ -25,11 +25,11 @@
 
         <StackPanel Margin="0,20,0,0">
             <StackPanel.Resources>
-                <Style TargetType="{x:Type Button}">
+                <Style TargetType="{x:Type Button}"
+                       x:Key="menubuttons">
                     <Setter Property="Height" Value="100"/>
                     <Setter Property="Width" Value="300"/>
-                    <Setter Property="Margin" Value="10,20,0,20"/>
-                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="Margin" Value="0,20,0,20"/>
                     <Setter Property="BorderBrush" Value="#d8c6a0"/>
                     <Setter Property="BorderThickness" Value="10,0,0,10"/>
                     <Setter Property="Foreground" Value="#d8c6a0"/>
@@ -42,8 +42,10 @@
                         <!--this sets the MouseOver color to the specified color -->
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="#d8c6a0" BorderThickness="10,0,0,0">
+                                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                      Margin="10,0,0,0"/>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
@@ -77,17 +79,33 @@
                 BorderBrush="Transparent"
                 Click="btn_back_Click">
                 <Image Source="Resources/back_btn.png"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource menubuttons}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
             </Button>
 
-            <Button x:Name="btn_score" >
+            <Button x:Name="btn_score" 
+                    Style="{StaticResource menubuttons}">
                 Score
             </Button>
 
-            <Button x:Name="btn_triggers">
+            <Button x:Name="btn_triggers"
+                    Style="{StaticResource menubuttons}">
                 Triggers
             </Button>
 
-            <Button x:Name="btn_comforts" >
+            <Button x:Name="btn_comforts"
+                    Style="{StaticResource menubuttons}">
                 Comforts
             </Button>
 

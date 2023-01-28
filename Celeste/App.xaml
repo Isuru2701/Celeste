@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Celeste"
              StartupUri="Home.xaml">
     <Application.Resources>
+        <ResourceDictionary Source="Themes/DiamondButtons.xaml"
+                            x:Key="DiamondButton"></ResourceDictionary>
          
     </Application.Resources>
 </Application>

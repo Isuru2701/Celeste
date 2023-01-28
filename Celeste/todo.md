@@ -2,10 +2,11 @@
 - Views:
     - Home
     - Resources
+    - Insights
+
     - Entries
     - Settings
     - FAQ
-    - Insights
     - Writer
     - Account
     - Login

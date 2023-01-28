@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hammer.MDIContainer;
+using Hammer.MDIContainer.Control;
 
 namespace Celeste
 {
@@ -32,7 +35,9 @@ namespace Celeste
 
         private void btn_insights_Click(object sender, RoutedEventArgs e)
         {
-            new Insights().Show(); 
+            Insights insights = new Insights();
+            this.Close();
+            insights.Show();
         }
 
         private void btn_settings_Click(object sender, RoutedEventArgs e)
@@ -53,5 +58,14 @@ namespace Celeste
             new Entries().Show();
         }
 
+        private void btn_faq_Click(object sender, RoutedEventArgs e)
+        {
+            new Faq().Show();
+        }
+
+        private void btn_user_Click(object sender, RoutedEventArgs e)
+        {
+            new User().Show();
+        }
     }
 }
