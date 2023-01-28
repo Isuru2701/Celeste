@@ -26,7 +26,8 @@
                 Foreground="#d8c6a0"
                 Margin="0,30,0,30"
                 BorderBrush="#d8c6a0"
-                BorderThickness="10">
+                BorderThickness="10"
+                IsHitTestVisible="False">
         </TextBox>
 
         <DockPanel Grid.Column="1" >
@@ -39,18 +40,14 @@
                     <Setter Property="FontSize" Value="20"></Setter>
                     <Setter Property="Height" Value="70"></Setter>
                     <Setter Property="Width" Value="70"></Setter>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Transparent"></Setter>
-                        </Trigger>
-                    </Style.Triggers>
+                    <!--<Setter Property="IsHitTestVisible" Value="False"/>
+                    -->
                 </Style>
 
             </DockPanel.Resources>
 
 
-            <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9" IsHitTestVisible="False">
+            <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9" Click="btn_resources_Click">
                 <Image Source="Resources/star_btn.png"></Image>
             </Button>
             <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,120">

@@ -25,5 +25,9 @@ namespace Celeste
             InitializeComponent();
         }
 
+        private void btn_resources_Click(object sender, RoutedEventArgs e)
+        {
+            new Resource().Show();
+        }
     }
 }

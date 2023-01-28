@@ -130,5 +130,11 @@
   <ItemGroup>
     <Resource Include="Resources\insights_btn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back_btn_small.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

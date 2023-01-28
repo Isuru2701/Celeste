@@ -6,8 +6,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Celeste"
         mc:Ignorable="d"
-        Height="450" Width="800">
+        Height="450" Width="800"
+        Background="#1e1730"
+        Icon="/logo(minimal).png"
+        Title="Celeste"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        ResizeMode="CanResizeWithGrip"
+        >
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Background="#141414"/>
+
+        <Border Grid.Row="1"
+                Background="#1A1A1A"/>
+      
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal">
+
+            <Button x:Name="btn_back"
+                    Height="50"
+                    Width="50"
+                    Background="Transparent"
+                    Margin="10,0,0,20"
+                    BorderBrush="Transparent"
+                    Click="btn_back_Click"
+                    >
+                <Image Source="Resources/back_btn_small.png"></Image>
+
+            </Button>
+            
+
+            <Button x:Name="btn_videos"
+                    Content="Videos"
+                    Height="50"
+                    Width="150"
+                    Background="Transparent"
+                    Foreground="#d8c6a0"
+                    BorderBrush="#d8c6a0"
+                    FontSize="20"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,0"
+                    BorderThickness="0,0,0,5"></Button>
+
+            <Button x:Name="btn_books"
+                    Content="Books"
+                    Height="50"
+                    Width="150"
+                    Background="Transparent"
+                    Foreground="#d8c6a0"
+                    BorderBrush="#d8c6a0"
+                    FontSize="20"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,0"
+                    BorderThickness="0,0,0,5"></Button>
+
+            <Button x:Name="btn_locations"
+                    Content="Locations"
+                    Height="50"
+                    Width="150"
+                    Background="Transparent"
+                    Foreground="#d8c6a0"
+                    BorderBrush="#d8c6a0"
+                    FontSize="20"
+                    VerticalAlignment="Bottom"
+                    Margin="30,0,0,0"
+                    BorderThickness="0,0,0,5"></Button>
+
+        </StackPanel>
     </Grid>
 </Window>
