@@ -21,108 +21,95 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0"
-                Background="#141414"/>
+                Background="#141414"
+                x:Name="border_menu"/>
 
         <Border Grid.Row="1"
                 Background="#1A1A1A"/>
-      
-        <StackPanel Grid.Row="0"
-                    Orientation="Horizontal">
 
-            <StackPanel.Resources>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Height" Value="100"/>
-                    <Setter Property="Width" Value="300"/>
-                    <Setter Property="Margin" Value="10,20,0,20"/>
-                    <Setter Property="HorizontalAlignment" Value="Left"/>
-                    <Setter Property="BorderBrush" Value="#d8c6a0"/>
-                    <Setter Property="BorderThickness" Value="10,0,0,10"/>
-                    <Setter Property="Foreground" Value="#d8c6a0"/>
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="FontSize" Value="50"/>
-                    <Setter Property="FontWeight" Value="bold"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
 
-
-                    <Setter Property="Template">
-                        <!--this sets the MouseOver color to the specified color -->
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#d8c6a0"/>
-                        </Trigger>
-                    </Style.Triggers>
-
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#FF161122"/>
+                    </Trigger>
+                </Style.Triggers>
                 </Style>
-
-                <Style TargetType="{x:Type Border}">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Transparent"/>
-                        </Trigger>
-                    </Style.Triggers>
-
-                </Style>
-
-
-            </StackPanel.Resources>
-
+            </Grid.Resources>
 
             <Button x:Name="btn_back"
                     Height="50"
                     Width="50"
+                    Grid.Column="0"
                     Background="Transparent"
-                    Margin="10,0,0,20"
                     BorderBrush="Transparent"
-                    Click="btn_back_Click"
-                    >
-                <Image Source="Resources/back_btn_small.png"></Image>
-
+                    Click="btn_back_Click">
+                <Image Source="Resources/back_btn.png"/>
             </Button>
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal">
+
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Width" Value="200"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#d8c6a0"/>
+                        <Setter Property="FontSize" Value="30"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="VerticalAlignment" Value="Bottom"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="10,0,0,0"/>
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="#d8c6a0"
+                                            BorderThickness="0,0,0,10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#d8c6a0"/>
+                                <Setter Property="Foreground" Value="{Binding ElementName=border_menu}"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </StackPanel.Resources>
+
+                <Button x:Name="btn_videos" Content="Videos"/>
+
+                <Button x:Name="btn_books" Content="Books"/>
+
+                <Button x:Name="btn_locations" Content="Locations"/>
+
+
+            </StackPanel>
             
 
-            <Button x:Name="btn_videos"
-                    Content="Videos"
-                    Height="50"
-                    Width="150"
-                    Background="Transparent"
-                    Foreground="#d8c6a0"
-                    BorderBrush="#d8c6a0"
-                    FontSize="20"
-                    VerticalAlignment="Bottom"
-                    Margin="30,0,0,0"
-                    BorderThickness="0,0,0,5"></Button>
-
-            <Button x:Name="btn_books"
-                    Content="Books"
-                    Height="50"
-                    Width="150"
-                    Background="Transparent"
-                    Foreground="#d8c6a0"
-                    BorderBrush="#d8c6a0"
-                    FontSize="20"
-                    VerticalAlignment="Bottom"
-                    Margin="30,0,0,0"
-                    BorderThickness="0,0,0,5"></Button>
-
-            <Button x:Name="btn_locations"
-                    Content="Locations"
-                    Height="50"
-                    Width="150"
-                    Background="Transparent"
-                    Foreground="#d8c6a0"
-                    BorderBrush="#d8c6a0"
-                    FontSize="20"
-                    VerticalAlignment="Bottom"
-                    Margin="30,0,0,0"
-                    BorderThickness="0,0,0,5"></Button>
-
-        </StackPanel>
+        </Grid>
     </Grid>
 </Window>

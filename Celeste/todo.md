@@ -1,0 +1,11 @@
+﻿# TODO
+- Views:
+    - Home
+    - Resources
+    - Entries
+    - Settings
+    - FAQ
+    - Insights
+    - Writer
+    - Account
+    - Login
