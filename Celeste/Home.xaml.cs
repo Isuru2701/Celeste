@@ -35,9 +35,7 @@ namespace Celeste
 
         private void btn_insights_Click(object sender, RoutedEventArgs e)
         {
-            Insights insights = new Insights();
-            this.Close();
-            insights.Show();
+            new Insights().Show();
         }
 
         private void btn_settings_Click(object sender, RoutedEventArgs e)

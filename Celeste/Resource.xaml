@@ -100,11 +100,14 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <Button x:Name="btn_videos" Content="Videos"/>
+                <Button x:Name="btn_videos" Content="Videos"
+                        Click="btn_videos_Click"/>
 
-                <Button x:Name="btn_books" Content="Books"/>
+                <Button x:Name="btn_books" Content="Books"
+                        Click="btn_books_Click"/>
 
-                <Button x:Name="btn_locations" Content="Locations"/>
+                <Button x:Name="btn_locations" Content="Locations"
+                        Click="btn_locations_Click"/>
 
 
             </StackPanel>
