@@ -37,7 +37,7 @@ namespace Celeste
 
         private void btn_settings_Click(object sender, RoutedEventArgs e)
         {
-            new Insights().Show();
+            new Settings().Show();
         }
 
         private void btn_lightmode_Click(object sender, RoutedEventArgs e)
