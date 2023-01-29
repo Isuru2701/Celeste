@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Celeste"
         mc:Ignorable="d"
-        Title="User" Height="450" Width="800">
+        Icon="Resources/logo(minimal).png"
+        Background="#FF1E1730"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Height="600" Width="500"
+        WindowStyle="None"
+        AllowsTransparency="True">
     <Grid>
         
+        
+        <Border BorderBrush="#d8c6a0" BorderThickness="1"
+                CornerRadius="10"/>
+
+
+        <Border BorderThickness="10"
+        BorderBrush="#d8c6a0"
+        VerticalAlignment="Top"
+                Height="200"
+                Width="200"
+                Margin="20">
+            <Image Source="Resources/logo(minimal).png"
+                   Height="200" Width="200"
+                   VerticalAlignment="Center"/>
+        </Border>
+
+        <Button x:Name="btn_back"
+                Style="{StaticResource DiamondButtonTheme}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Margin="10,10"
+                Click="btn_back_Click"
+                Height="50"
+                Width="50">
+            <Image Source="Resources/back_btn.png"/>
+        </Button>
     </Grid>
 </Window>
