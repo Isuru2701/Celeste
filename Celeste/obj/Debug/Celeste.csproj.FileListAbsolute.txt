@@ -31,3 +31,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\User.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Debug\Hammer.MDIContainer.Control.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Debug\Hammer.MDIContainer.Control.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Celeste.csproj.CopyComplete
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Labels.baml

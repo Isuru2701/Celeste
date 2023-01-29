@@ -4,8 +4,14 @@
              xmlns:local="clr-namespace:Celeste"
              StartupUri="Home.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="Themes/DiamondButtons.xaml"
-                            x:Key="DiamondButton"></ResourceDictionary>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Themes/DiamondButtons.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Labels.xaml"></ResourceDictionary>
+
+            </ResourceDictionary.MergedDictionaries>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

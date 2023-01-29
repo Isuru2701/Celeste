@@ -109,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Labels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +182,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\faq_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\resetpfp_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\changepfp_btn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

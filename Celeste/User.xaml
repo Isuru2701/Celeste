@@ -13,8 +13,8 @@
         WindowStyle="None"
         AllowsTransparency="True">
     <Grid>
-        
-        
+
+
         <Border BorderBrush="#d8c6a0" BorderThickness="1"
                 CornerRadius="10"/>
 
@@ -29,6 +29,48 @@
                    Height="200" Width="200"
                    VerticalAlignment="Center"/>
         </Border>
+        <Button x:Name="changepfp_btn" Background="Transparent"
+                Height="50" Width="50"
+                Margin="150,225,0,325"
+                HorizontalAlignment="Left"
+                Style="{StaticResource DiamondButtonTheme}">
+            <Image Source="Resources/changepfp_btn.png"/>
+        </Button>
+
+        <Button x:Name="resetpfp_btn" Background="Transparent"
+                Height="50" Width="50"
+                Margin="205,225,0,325"
+                HorizontalAlignment="Left"
+                Style="{StaticResource DiamondButtonTheme}">
+            <Image Source="Resources/resetpfp_btn.png"/>
+        </Button>
+
+
+        <!--one half of the grid for the tags
+            and the other half for the content tag -->
+
+        <Grid  Height="250"
+                    Margin="10,200,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <Label Grid.Column="0" Content="Username" Style="{StaticResource LabelTheme}"/>
+                <Label Grid.Column="0" Content="Email" Style="{StaticResource LabelTheme}"/>
+                <Label Grid.Column="0" Content="Gender" Style="{StaticResource LabelTheme}"/>
+
+                <!-- Add Password boxes on the opposite side here-->
+                <Label Grid.Column="0"
+                           Margin="0,10" Content="Reset Password" Style="{StaticResource LabelTheme}"/>
+                <Label Grid.Column="0"
+                           Margin="0" Content="Confirm Password" Style="{StaticResource LabelTheme}"/>
+                
+                <!-- Remember to add a confirm change password btn in the right grid-->
+            </StackPanel>
+        </Grid>
+
 
         <Button x:Name="btn_back"
                 Style="{StaticResource DiamondButtonTheme}"
