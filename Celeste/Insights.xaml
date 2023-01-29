@@ -96,7 +96,7 @@
 
             <Button x:Name="btn_score" 
                     Style="{StaticResource menubuttons}">
-                Score
+                Chart
             </Button>
 
             <Button x:Name="btn_triggers"

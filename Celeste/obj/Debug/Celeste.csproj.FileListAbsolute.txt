@@ -32,3 +32,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Debug\Hammer.MDICon
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Debug\Hammer.MDIContainer.Control.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Celeste.csproj.CopyComplete
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Labels.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\ToolTip.baml
