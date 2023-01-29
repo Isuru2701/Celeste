@@ -173,9 +173,6 @@
     <Resource Include="Resources\insights_btn.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back_btn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\back_btn_small.png" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\changepfp_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back_btn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

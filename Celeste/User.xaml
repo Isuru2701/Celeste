@@ -25,15 +25,19 @@
                 Height="200"
                 Width="200"
                 Margin="20">
-            <Image Source="Resources/logo(minimal).png"
+            <Image
+                   x:Name="pic_pfp" 
+                   Source="Resources/logo(minimal).png"
                    Height="200" Width="200"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
         </Border>
         <Button x:Name="changepfp_btn" Background="Transparent"
                 Height="50" Width="50"
                 Margin="150,225,0,325"
                 HorizontalAlignment="Left"
-                Style="{StaticResource DiamondButtonTheme}">
+                Style="{StaticResource DiamondButtonTheme}"
+                Click="changepfp_btn_Click">
             <Image Source="Resources/changepfp_btn.png" ToolTip="Change Profile Picture"/>
         </Button>
 
@@ -42,7 +46,8 @@
                 Margin="205,225,0,325"
                 HorizontalAlignment="Left"
                 ToolTip="Reset Profile Picture"
-                Style="{StaticResource DiamondButtonTheme}">
+                Style="{StaticResource DiamondButtonTheme}"
+                Click="resetpfp_btn_Click">
             
             <Image Source="Resources/resetpfp_btn.png"/>
         </Button>
