@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace Celeste
 {
@@ -36,37 +37,14 @@ namespace Celeste
 
         private void changepfp_btn_Click(object sender, RoutedEventArgs e)
         {
-
-            OpenFileDialog fileDialog = new OpenFileDialog();
-
-            //make a copy of the file into the resources folder first, and then set the pfp
-            if (fileDialog.ShowDialog() == true)
-            {
-                //copying
-                string profilePicPath = System.IO.Path.Combine(slnAt, "Resources\\PROFILE_PIC.png");
-                File.Copy(fileDialog.FileName, profilePicPath, true);
-
-                pic_pfp.Source = new BitmapImage(new Uri(profilePicPath));
-            }
         }
 
         private void resetpfp_btn_Click(object sender, RoutedEventArgs e)
         {
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            slnAt = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\"));
-            resourcesPath = System.IO.Path.Combine(slnAt, "Resources\\");
-            try
-            {
-                pic_pfp.Source = new BitmapImage(new Uri(System.IO.Path.Combine(resourcesPath, "PROFILE_PIC.png")));
-            }
-            catch(FileNotFoundException)
-            {
-                pic_pfp.Source = new BitmapImage(new Uri(System.IO.Path.Combine(resourcesPath, "logo(minimal).png")));
-            }
         }
     }
 }

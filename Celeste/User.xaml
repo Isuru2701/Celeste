@@ -28,9 +28,11 @@
                 Margin="20">
             <Image
                    x:Name="pic_pfp" 
+                    Source="Resources/logo(minimal).png"
                    Height="200" Width="200"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                Stretch="Fill"/>
         </Border>
         <Button x:Name="changepfp_btn" Background="Transparent"
                 Height="50" Width="50"
