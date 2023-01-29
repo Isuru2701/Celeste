@@ -118,15 +118,7 @@
                     Click="btn_insights_Click"
                     ToolTip="Insights"
                     Style="{StaticResource DiamondButtonTheme}">
-
-                <Button.Background>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#262646" Offset="0"/>
-                        <GradientStop Color="#1e1730" Offset="1"/>
-
-                    </RadialGradientBrush>
-                </Button.Background>
-
+                
                 <Image Source="Resources/insights_btn.png"></Image>
             </Button>
 

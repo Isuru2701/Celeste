@@ -11,7 +11,8 @@
         ResizeMode="NoResize"
         Height="600" Width="500"
         WindowStyle="None"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        Loaded="Window_Loaded">
     <Grid>
 
 
@@ -27,7 +28,6 @@
                 Margin="20">
             <Image
                    x:Name="pic_pfp" 
-                   Source="Resources/logo(minimal).png"
                    Height="200" Width="200"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>

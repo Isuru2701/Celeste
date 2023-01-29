@@ -64,7 +64,6 @@ namespace Celeste
         private void btn_user_Click(object sender, RoutedEventArgs e)
         {
             new User().Show();
-            this.Opacity= 30;
         }
     }
 }

@@ -21,6 +21,9 @@ namespace Celeste
     /// </summary>
     public partial class User : Window
     {
+
+        string slnAt, resourcesPath;
+
         public User()
         {
             InitializeComponent();
@@ -40,22 +43,30 @@ namespace Celeste
             if (fileDialog.ShowDialog() == true)
             {
                 //copying
-                try
-                {
-                    File.Copy(fileDialog.FileName, @"Resources/PROFILE_PIC.png");
-                }
-                catch(IOException)
-                {
+                string profilePicPath = System.IO.Path.Combine(slnAt, "Resources\\PROFILE_PIC.png");
+                File.Copy(fileDialog.FileName, profilePicPath, true);
 
-                }
-
-                //pic_pfp.Source = new BitmapImage(new Uri());
+                pic_pfp.Source = new BitmapImage(new Uri(profilePicPath));
             }
         }
 
         private void resetpfp_btn_Click(object sender, RoutedEventArgs e)
         {
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            slnAt = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\"));
+            resourcesPath = System.IO.Path.Combine(slnAt, "Resources\\");
+            try
+            {
+                pic_pfp.Source = new BitmapImage(new Uri(System.IO.Path.Combine(resourcesPath, "PROFILE_PIC.png")));
+            }
+            catch(FileNotFoundException)
+            {
+                pic_pfp.Source = new BitmapImage(new Uri(System.IO.Path.Combine(resourcesPath, "logo(minimal).png")));
+            }
         }
     }
 }
