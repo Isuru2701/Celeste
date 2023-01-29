@@ -43,6 +43,10 @@
                 <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
             </Button.LayoutTransform>
 
+            <Button.RenderTransform>
+                <RotateTransform Angle="0"/>
+            </Button.RenderTransform>
+
             <Button.Style>
                 <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
                     <Setter Property="Template">
@@ -54,6 +58,22 @@
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
+
+                    <!-- event triggers examples
+
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Click">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation To="56"
+                                                     Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                                     Duration="0:0:10">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+            -->
                 </Style>
             </Button.Style>
 
@@ -93,11 +113,20 @@
                     Style="{StaticResource DiamondButtonTheme}">
                 <Image Source="Resources/faq_btn.png"></Image>
             </Button>
-            
+
             <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0"
                     Click="btn_insights_Click"
                     ToolTip="Insights"
                     Style="{StaticResource DiamondButtonTheme}">
+
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#262646" Offset="0"/>
+                        <GradientStop Color="#1e1730" Offset="1"/>
+
+                    </RadialGradientBrush>
+                </Button.Background>
+
                 <Image Source="Resources/insights_btn.png"></Image>
             </Button>
 
