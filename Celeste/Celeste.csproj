@@ -61,9 +61,6 @@
     <Compile Include="Entries.xaml.cs">
       <DependentUpon>Entries.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Faq.xaml.cs">
-      <DependentUpon>Faq.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Resource.xaml.cs">
       <DependentUpon>Resource.xaml</DependentUpon>
     </Compile>
@@ -78,10 +75,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Entries.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Faq.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\back_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit_btn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

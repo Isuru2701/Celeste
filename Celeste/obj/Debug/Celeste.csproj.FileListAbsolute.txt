@@ -22,8 +22,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Entries.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Entries.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Settings.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Settings.baml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Faq.g.cs
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Faq.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\App.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\DiamondButtons.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\User.g.cs

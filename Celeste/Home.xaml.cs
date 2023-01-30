@@ -56,14 +56,14 @@ namespace Celeste
             new Entries().Show();
         }
 
-        private void btn_faq_Click(object sender, RoutedEventArgs e)
-        {
-            new Faq().Show();
-        }
-
         private void btn_user_Click(object sender, RoutedEventArgs e)
         {
             new User().Show();
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

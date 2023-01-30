@@ -5,8 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Celeste"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800">
+        Title="Celeste" 
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+        Icon="Resources/logo(minimal).png" Background="#FF1E1730"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        ResizeMode="CanResizeWithGrip">
+
     <Grid>
-        
+
+        <Button x:Name="btn_back"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Height="70"
+                Width="70"
+                Click="btn_back_Click"
+                Style="{StaticResource DiamondButtonTheme}">
+            <Image Source="Resources/back_btn.png"/>
+        </Button>
+
+        <Button x:Name="btn_set_reminder"
+                HorizontalAlignment="Left"
+                Margin="1108,138,0,0"
+                VerticalAlignment="Top"
+                Style="{StaticResource DiamondButtonTheme}">
+
+            <Image Source="Resources/settings_on.png"/>
+
+        </Button>
+
+        <Button x:Name="btn_autosave"
+                HorizontalAlignment="Left"
+                Margin="956,424,0,0"
+                VerticalAlignment="Top"
+                Style="{StaticResource DiamondButtonTheme}">
+
+            <Image Source="Resources/settings_on.png"/>
+
+        </Button>
+
+        <Button x:Name="btn_spellcheck"
+                HorizontalAlignment="Left"
+                Margin="698,603,0,0"
+                VerticalAlignment="Top"
+                Style="{StaticResource DiamondButtonTheme}">
+
+            <Image Source="Resources/settings_on.png"/>
+
+        </Button>
+
+        <Button x:Name="btn_suggest_templates"
+                HorizontalAlignment="Left"
+                Margin="360,680,0,0"
+                VerticalAlignment="Top"
+                Style="{StaticResource DiamondButtonTheme}">
+
+            <Image Source="Resources/settings_on.png"/>
+
+        </Button>
+
+
+
+
+
+
+
+
     </Grid>
+
 </Window>
