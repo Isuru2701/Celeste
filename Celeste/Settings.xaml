@@ -18,16 +18,17 @@
         <Button x:Name="btn_back"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Height="70"
-                Width="70"
+                Height="50"
+                Width="50"
                 Click="btn_back_Click"
+                Margin="10,10"
                 Style="{StaticResource DiamondButtonTheme}">
             <Image Source="Resources/back_btn.png"/>
         </Button>
 
         <Button x:Name="btn_set_reminder"
                 HorizontalAlignment="Left"
-                Margin="1108,138,0,0"
+                Margin="1105,180,0,0"
                 VerticalAlignment="Top"
                 Style="{StaticResource DiamondButtonTheme}">
 
