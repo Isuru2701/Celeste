@@ -3,10 +3,10 @@
     - Home
     - Resources
     - Insights
-
-    - Entries
     - Settings
+   
+   - Entries
     - FAQ
-    - Writer
+    - Writer (User control)
     - Account
     - Login
