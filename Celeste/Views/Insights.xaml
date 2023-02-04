@@ -49,17 +49,20 @@
 
             <Button x:Name="btn_score" 
                     Style="{StaticResource MenubuttonTheme}"
-                    BorderThickness="10,0,0,0">
+                    BorderThickness="10,0,0,0"
+                    Click="btn_score_Click">
                 Chart
             </Button>
 
             <Button x:Name="btn_triggers"
-                    Style="{StaticResource MenubuttonTheme}">
+                    Style="{StaticResource MenubuttonTheme}"
+                    Click="btn_triggers_Click">
                 Triggers
             </Button>
 
             <Button x:Name="btn_comforts"
-                    Style="{StaticResource MenubuttonTheme}">
+                    Style="{StaticResource MenubuttonTheme}"
+                    Click="btn_comforts_Click">
                 Comforts
             </Button>
 

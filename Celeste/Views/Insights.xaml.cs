@@ -28,6 +28,20 @@ namespace Celeste.Views
         {
             NavigationService.GoBack();
         }
-        
+
+        private void btn_score_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btn_triggers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_comforts_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
