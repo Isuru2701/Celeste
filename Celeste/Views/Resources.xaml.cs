@@ -10,44 +10,40 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Drawing;
 
-namespace Celeste
+namespace Celeste.Views
 {
     /// <summary>
-    /// Interaction logic for Resource.xaml
+    /// Interaction logic for Resources.xaml
     /// </summary>
-    public partial class Resource : Window
+    public partial class Resources : Page
     {
-        public Resource()
+        public Resources()
         {
             InitializeComponent();
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
+            NavigationService.GoBack();
         }
 
         private void btn_videos_Click(object sender, RoutedEventArgs e)
         {
-            //this was used to change the color of the button when clicked. it worked but
-            //it stays like that forever
-            //in the future, check if the user control is open, if so, do this, else reset it
-            //apply to other events as well
-
-            //btn_videos.Background = (Brush)(new BrushConverter().ConvertFrom("#d8c6a0"));
-            //btn_videos.Foreground = border_menu.Background;
 
         }
 
         private void btn_books_Click(object sender, RoutedEventArgs e)
         {
+
         }
 
         private void btn_locations_Click(object sender, RoutedEventArgs e)
         {
+
         }
     }
 }

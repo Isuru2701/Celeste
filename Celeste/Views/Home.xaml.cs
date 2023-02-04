@@ -1,5 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Hammer.MDIContainer;
-using Hammer.MDIContainer.Control;
 
-namespace Celeste
+namespace Celeste.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class Home : Page
     {
         public Home()
         {
@@ -30,30 +27,22 @@ namespace Celeste
 
         private void btn_resources_Click(object sender, RoutedEventArgs e)
         {
-            new Resource().Show();
+            NavigationService.Navigate(new Resources());
         }
 
         private void btn_insights_Click(object sender, RoutedEventArgs e)
         {
-            new Insights().Show();
+            NavigationService.Navigate(new Insights());
         }
 
         private void btn_settings_Click(object sender, RoutedEventArgs e)
         {
-            new Settings().Show();
-        }
-
-        private void btn_lightmode_Click(object sender, RoutedEventArgs e)
-        {
-            //turns the light-mode script on. Not very important,
-            //can replace with Credits or something
-
-
+            NavigationService.Navigate(new Settings());
         }
 
         private void btn_entries_Click(object sender, RoutedEventArgs e)
         {
-            new Entries().Show();
+            NavigationService.Navigate(new Entries());
         }
 
         private void btn_user_Click(object sender, RoutedEventArgs e)
@@ -63,7 +52,8 @@ namespace Celeste
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();   
         }
     }
+
 }

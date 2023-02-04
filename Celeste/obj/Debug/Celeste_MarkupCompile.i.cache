@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\App.xaml
-9-494474859
+11-790576652
 
-11-760598058
+12690977351
 14-504666305
-Themes\DiamondButtons.xaml;Entries.xaml;Home.xaml;Insights.xaml;Resource.xaml;Settings.xaml;Themes\Labels.xaml;Themes\ToolTip.xaml;User.xaml;
+MAINFRAME.xaml;Themes\DiamondButtons.xaml;Themes\Labels.xaml;Themes\MenuButtons.xaml;Themes\ToolTip.xaml;User.xaml;Views\Entries.xaml;Views\Home.xaml;Views\Insights.xaml;Views\Resources.xaml;Views\Settings.xaml;
 
 True
 

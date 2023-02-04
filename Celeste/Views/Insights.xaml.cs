@@ -10,23 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Celeste
+namespace Celeste.Views
 {
     /// <summary>
     /// Interaction logic for Insights.xaml
     /// </summary>
-    public partial class Insights : Window
+    public partial class Insights : Page
     {
         public Insights()
         {
             InitializeComponent();
         }
-
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            NavigationService.GoBack();
         }
+        
     }
 }
