@@ -60,11 +60,10 @@
                          VerticalAlignment="Top"
                          Width="267" Height="32" />
 
-                <TextBox HorizontalAlignment="Left"
-                    Margin="199,311,0,0"
-                    TextWrapping="Wrap"
-                    VerticalAlignment="Top"
-                    Width="267" Height="32"/>
+                <PasswordBox HorizontalAlignment="Left"
+                             Margin="199,319,0,0"
+                             VerticalAlignment="Top"
+                             Width="267" Height="32"/>
 
                 <TextBlock HorizontalAlignment="Left"
                            Margin="192,41,0,0" 
