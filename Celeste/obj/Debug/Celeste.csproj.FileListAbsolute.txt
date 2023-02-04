@@ -34,3 +34,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Setting
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Entries.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Resources.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Settings.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Login.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Celeste_Content.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Login.baml

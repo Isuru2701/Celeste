@@ -1,0 +1,60 @@
+﻿<Page x:Class="Celeste.Views.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Celeste.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="#FF1E1730"
+      Title="Login">
+
+    <Grid>
+        <Border 
+            Height="500"
+            Width="500"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Background="#1F1F1F"
+            CornerRadius="30"
+            BorderThickness="2"
+            BorderBrush="#d8c6a0">
+
+            <Grid>
+                <Image Source="../Resources/quill.png"
+                   Width="100" Height="100"
+                   VerticalAlignment="Top"
+                   Margin="100,29,146,0"/>
+
+                <Button x:Name="btn_login"
+                        Style="{StaticResource MenubuttonTheme}"
+                        Width="160"
+                        Height="60"
+                        Content="Login"
+                        FontSize="20" 
+                        Margin="65,426,271,10" Click="btn_login_Click"/>
+
+                <Button x:Name="btn_signup"
+                        Style="{StaticResource MenubuttonTheme}"
+                        Width="160"
+                        Height="60"
+                        Content="Sign up"
+                        FontSize="20" 
+                        Margin="283,426,53,10"/>
+                <Label Content="email"
+                       HorizontalAlignment="Left"
+                       Margin="65,198,0,0"
+                       VerticalAlignment="Top"/>
+
+                <Label Content="password"
+                       HorizontalAlignment="Left"
+                       Margin="65,288,0,0"
+                       VerticalAlignment="Top"/>
+
+
+
+            </Grid>
+            
+        </Border>
+    </Grid>
+</Page>

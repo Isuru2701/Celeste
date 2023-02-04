@@ -14,5 +14,6 @@
         ResizeMode="CanResizeWithGrip"
         Loaded="Window_Loaded">
 
-    <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    <Frame x:Name="MainFrame"
+           NavigationUIVisibility="Hidden"/>
 </Window>

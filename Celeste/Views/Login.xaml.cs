@@ -10,25 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Navigation;
-using Celeste.Views;
+using System.Windows.Shapes;
 
-namespace Celeste
+namespace Celeste.Views
 {
     /// <summary>
-    /// Interaction logic for MAINFRAME.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class MAINFRAME : Window
+    public partial class Login : Page
     {
-        public MAINFRAME()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void btn_login_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Login());
+            NavigationService.Navigate(new Home());
         }
     }
 }

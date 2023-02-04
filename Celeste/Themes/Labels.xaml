@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type Label}"
-           x:Key="LabelTheme">
+           x:Key="{x:Type Label}">
         <Setter Property="Foreground" Value="#d8c6a0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="FontSize" Value="20"/>
