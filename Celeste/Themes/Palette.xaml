@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="LunarYellow">#d8c6a0</Color>
+    <Color x:Key="TwilightBlue">#1e1730</Color>
+    <Color x:Key="HighlightBlue">#28284a</Color>
+    <Color x:Key="ShadowBlue">#262646</Color>
+    <Color x:Key="LunarGray">#161616</Color>
+    <Color x:Key="DakLunarGray">#141414</Color>
+    
+</ResourceDictionary>

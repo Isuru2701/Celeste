@@ -7,17 +7,20 @@
         <Setter Property="Foreground" Value="#d8c6a0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="FontSize" Value="15"/>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="FontStretch" Value="Expanded"/>
+        <Setter Property="Padding" Value="5,5,5,5"/>
+        <Setter Property="IsReadOnly" Value="False"/>
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
-                    <Border Background="Transparent" BorderBrush="#d8c6a0" BorderThickness="2" CornerRadius="15"/>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="#d8c6a0" BorderThickness="2">
+                        <ScrollViewer Margin="0"
+                    x:Name="PART_ContentHost" />
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
+        
     </Style>
 
 
