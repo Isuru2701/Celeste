@@ -48,7 +48,8 @@
             </Button>
 
             <Button x:Name="btn_score" 
-                    Style="{StaticResource MenubuttonTheme}">
+                    Style="{StaticResource MenubuttonTheme}"
+                    BorderThickness="10,0,0,0">
                 Chart
             </Button>
 

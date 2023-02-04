@@ -66,15 +66,15 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel>
-                <Label Grid.Column="0" Content="Username" Style="{StaticResource LabelTheme}"/>
-                <Label Grid.Column="0" Content="Email" Style="{StaticResource LabelTheme}"/>
-                <Label Grid.Column="0" Content="Gender" Style="{StaticResource LabelTheme}"/>
+                <Label Grid.Column="0" Content="Username"/>
+                <Label Grid.Column="0" Content="Email" />
+                <Label Grid.Column="0" Content="Gender" />
 
                 <!-- Add Password boxes on the opposite side here-->
                 <Label Grid.Column="0"
-                           Margin="0,10" Content="Reset Password" Style="{StaticResource LabelTheme}"/>
+                           Margin="0,10" Content="Reset Password" />
                 <Label Grid.Column="0"
-                           Margin="0" Content="Confirm Password" Style="{StaticResource LabelTheme}"/>
+                           Margin="0" Content="Confirm Password"/>
                 
                 <!-- Remember to add a confirm change password btn in the right grid-->
             </StackPanel>
