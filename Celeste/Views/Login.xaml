@@ -46,24 +46,24 @@
                         Margin="283,426,53,10"/>
                 <Label Content="E-mail"
                        HorizontalAlignment="Left"
-                       Margin="65,206,0,0"
+                       Margin="65,221,0,0"
                        VerticalAlignment="Top"/>
 
                 <Label Content="Password"
                        HorizontalAlignment="Left"
-                       Margin="65,296,0,0"
+                       Margin="65,327,0,0"
                        VerticalAlignment="Top"/>
 
                 <TextBox HorizontalAlignment="Left"
-                         Margin="199,221,0,0"
-                         TextWrapping="Wrap"
-                         VerticalAlignment="Top"
-                         Width="267" Height="32" />
+                         Margin="192,0,0,0"
+                         TextWrapping="NoWrap"
+                         VerticalAlignment="Center"
+                         Width="267" Height="40" />
 
                 <PasswordBox HorizontalAlignment="Left"
-                             Margin="199,319,0,0"
+                             Margin="192,333,0,0"
                              VerticalAlignment="Top"
-                             Width="267" Height="32"/>
+                             Width="267" Height="40"/>
 
                 <TextBlock HorizontalAlignment="Left"
                            Margin="192,41,0,0" 
