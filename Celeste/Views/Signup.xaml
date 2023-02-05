@@ -101,21 +101,19 @@
                           Margin="0,505,0,0"
                           VerticalAlignment="Top" 
                           Width="60" Height="40"
-                          x:Name="cmb_days" SelectionChanged="cmb_days_SelectionChanged"/>
+                          x:Name="cmb_days" />
 
                 <ComboBox HorizontalAlignment="Left"
                           Margin="384,505,0,0"
                           VerticalAlignment="Top" 
                           Width="111" Height="40"
-                          x:Name="cmb_months"
-                          IsEnabled="False"/>
+                          x:Name="cmb_months"/>
 
                 <ComboBox HorizontalAlignment="Left"
                           Margin="500,507,0,0"
                           VerticalAlignment="Top" 
                           Width="96" Height="40"
-                          x:Name="cmb_years"
-                          IsEnabled="False"/>
+                          x:Name="cmb_years"/>
 
 
 
