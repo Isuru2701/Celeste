@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="Themes/MenuButtons.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Themes/TextBoxes.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Themes/Palette.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Pickers.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>

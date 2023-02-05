@@ -41,3 +41,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\TextBo
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Palette.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Signup.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Signup.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Pickers.baml

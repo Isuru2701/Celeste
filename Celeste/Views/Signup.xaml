@@ -57,17 +57,24 @@
 
                 <Label Content="Password"
                        HorizontalAlignment="Left"
-                       Margin="62,348,0,0"
+                       Margin="71,353,0,0"
                        VerticalAlignment="Top"/>
 
                 <Label Content="Confirm Password"
                        HorizontalAlignment="Left"
-                       Margin="62,422,0,0"
+                       Margin="372,348,0,0"
                        VerticalAlignment="Top"/>
+
+                <Label Content="Date of birth"
+                       HorizontalAlignment="Left"
+                       Margin="65,472,0,0"
+                       VerticalAlignment="Top"/>
+
+
                 <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
                 <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
-                <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="286,371,0,0" VerticalAlignment="Top" Width="317"/>
-                <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="286,445,0,0" VerticalAlignment="Top" Width="317"/>
+                <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="64,416,0,0" VerticalAlignment="Top" Width="265" Height="37"/>
+                <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="355,416,0,0" VerticalAlignment="Top" Width="266" Height="37"/>
 
                 <Button x:Name="btn_signup"
                         Style="{StaticResource MenubuttonTheme}"
@@ -84,10 +91,14 @@
                     Background="Transparent"
                     BorderBrush="Transparent"
                      Margin="56,609,590,37"
-                        Click="btn_back_Click">
+                        Click="btn_back_Click"
+                        Style="{StaticResource DiamondButtonTheme}">
                     <Image Source="../Resources/back_btn.png"/>
                 </Button>
 
+                <ComboBox Width="50" Height="50" Margin="279,488,367,158"/>
+                <ComboBox Width="100" Height="50" Margin="344,488,252,158"/>
+                <ComboBox Width="100" Height="50" Margin="457,488,139,158"/>
             </Grid>
 
 
