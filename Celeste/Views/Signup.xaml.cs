@@ -24,5 +24,15 @@ namespace Celeste.Views
         {
             InitializeComponent();
         }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void btn_signup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -69,7 +69,24 @@
                 <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="286,371,0,0" VerticalAlignment="Top" Width="317"/>
                 <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="286,445,0,0" VerticalAlignment="Top" Width="317"/>
 
+                <Button x:Name="btn_signup"
+                        Style="{StaticResource MenubuttonTheme}"
+                        Width="160"
+                        Height="60"
+                        Content="Sign up"
+                        FontSize="20" 
+                        Margin="268,609,268,27" Click="btn_signup_Click"/>
 
+                <Button x:Name="btn_back"
+                    Height="50"
+                    Width="50"
+                    Grid.Column="0"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                     Margin="56,609,590,37"
+                        Click="btn_back_Click">
+                    <Image Source="../Resources/back_btn.png"/>
+                </Button>
 
             </Grid>
 
