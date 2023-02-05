@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:Celeste.Views"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1000"
-      Title="Signup"
-      Loaded="Page_Loaded">
+      Title="Signup">
 
     <Grid>
         <Image Source="../Resources/background.png"
@@ -97,9 +96,6 @@
                     <Image Source="../Resources/back_btn.png"/>
                 </Button>
 
-                <ComboBox x:Name="cmb_days" Width="50" Height="50" Margin="279,488,367,158" SelectionChanged="cmb_days_SelectionChanged"/>
-                <ComboBox  x:Name="cmb_months" Width="100" Height="50" Margin="344,488,252,158"/>
-                <ComboBox x:Name="cmb_years" Width="100" Height="50" Margin="457,488,139,158"/>
             </Grid>
 
 
