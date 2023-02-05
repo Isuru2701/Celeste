@@ -7,7 +7,8 @@
     x:Class="Celeste.Views.Signup"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1000"
-      Title="Signup">
+      Title="Signup"
+    Loaded="Page_Loaded">
 
     <Grid>
         <Image Source="../Resources/background.png"
@@ -68,7 +69,7 @@
 
                 <Label Content="Date of Birth"
                        HorizontalAlignment="Left"
-                       Margin="190,494,0,0"
+                       Margin="130,500,0,0"
                        VerticalAlignment="Top"/>
 
 
@@ -96,6 +97,25 @@
                         Style="{StaticResource DiamondButtonTheme}">
                     <Image Source="../Resources/back_btn.png"/>
                 </Button>
+                <ComboBox HorizontalAlignment="Center"
+                          Margin="0,505,0,0"
+                          VerticalAlignment="Top" 
+                          Width="60" Height="40"
+                          x:Name="cmb_days"/>
+
+                <ComboBox HorizontalAlignment="Left"
+                          Margin="384,505,0,0"
+                          VerticalAlignment="Top" 
+                          Width="85" Height="40"
+                          x:Name="cmb_months"/>
+
+                <ComboBox HorizontalAlignment="Left"
+                          Margin="482,507,0,0"
+                          VerticalAlignment="Top" 
+                          Width="114" Height="40"
+                          x:Name="cmb_years"/>
+
+
 
 
 

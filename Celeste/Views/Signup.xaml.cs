@@ -34,5 +34,13 @@ namespace Celeste.Views
         {
             NavigationService.Navigate(new Home());
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            for(int i = 1; i<=31; ++i)
+            {
+                cmb_days.Items.Add(i);
+            }
+        }
     }
 }
