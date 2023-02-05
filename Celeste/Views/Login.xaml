@@ -43,7 +43,7 @@
                         Height="60"
                         Content="Sign up"
                         FontSize="20" 
-                        Margin="283,426,53,10"/>
+                        Margin="283,426,53,10" Click="btn_signup_Click"/>
                 <Label Content="E-mail"
                        HorizontalAlignment="Left"
                        Margin="65,221,0,0"

@@ -29,5 +29,10 @@ namespace Celeste.Views
         {
             NavigationService.Navigate(new Home());
         }
+
+        private void btn_signup_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Signup());
+        }
     }
 }

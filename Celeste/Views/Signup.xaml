@@ -24,7 +24,7 @@
             <Grid>
                 <Image Source="../Resources/quill.png" Height="120"
                    VerticalAlignment="Top"
-                   Margin="65,35,321,0"/>
+                   Margin="37,16,349,0"/>
 
                 <TextBlock HorizontalAlignment="Left"
                            Margin="286,46,0,0" 
@@ -39,35 +39,42 @@
                 <TextBlock HorizontalAlignment="Left"
                            Margin="286,106,0,0" 
                            TextWrapping="Wrap"
-                           Text="Sign up"
+                           Text="Sign Up"
                            VerticalAlignment="Top" 
                            Height="59" Width="171"
                            FontSize="30"
                            Foreground="#d8c6a0"/>
-                <Label Content="E-mail" HorizontalAlignment="Left" Margin="64,217,0,0" VerticalAlignment="Top"/>
-                <Label Content="Username" HorizontalAlignment="Left" Margin="64,275,0,0" VerticalAlignment="Top"/>
-                <Label Content="Password" HorizontalAlignment="Left" Margin="67,327,0,0" VerticalAlignment="Top"/>
-                <Label Content="Confirm Password" HorizontalAlignment="Left" Margin="64,379,0,0" VerticalAlignment="Top"/>
-                <Label Content="Gender" HorizontalAlignment="Left" Margin="64,426,0,0" VerticalAlignment="Top"/>
-                <Label Content="Date of birth" HorizontalAlignment="Left" Margin="64,478,0,0" VerticalAlignment="Top"/>
 
+                <Label Content="E-mail"
+                       HorizontalAlignment="Left"
+                       Margin="65,203,0,0"
+                       VerticalAlignment="Top"/>
 
-                <Button x:Name="btn_signup"
-                        Style="{StaticResource MenubuttonTheme}"
-                        Width="160"
-                        Height="60"
-                        Content="Sign up"
-                        FontSize="20" 
-                        Margin="220,606,316,30"/>
+                <Label Content="Username"
+                       HorizontalAlignment="Left"
+                       Margin="65,274,0,0"
+                       VerticalAlignment="Top"/>
 
+                <Label Content="Password"
+                       HorizontalAlignment="Left"
+                       Margin="62,348,0,0"
+                       VerticalAlignment="Top"/>
+
+                <Label Content="Confirm Password"
+                       HorizontalAlignment="Left"
+                       Margin="62,422,0,0"
+                       VerticalAlignment="Top"/>
+                <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
+                <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
+                <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="286,371,0,0" VerticalAlignment="Top" Width="317"/>
+                <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="286,445,0,0" VerticalAlignment="Top" Width="317"/>
 
 
 
             </Grid>
 
+
         </Border>
-
-
 
     </Grid>
 </Page>
