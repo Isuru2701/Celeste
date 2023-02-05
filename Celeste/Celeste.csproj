@@ -85,6 +85,9 @@
     <Compile Include="Views\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Writer.xaml.cs">
+      <DependentUpon>Writer.xaml</DependentUpon>
+    </Compile>
     <Page Include="MAINFRAME.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Signup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Writer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

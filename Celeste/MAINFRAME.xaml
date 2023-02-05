@@ -11,7 +11,7 @@
         Icon="Resources/logo(minimal).png" Background="#FF1E1730"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         Loaded="Window_Loaded">
 
     <Frame x:Name="MainFrame"

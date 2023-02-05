@@ -43,3 +43,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Signup.
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Signup.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Pickers.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Scrollbars.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Writer.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Writer.baml

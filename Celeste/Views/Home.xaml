@@ -19,7 +19,14 @@
         <Border Margin="0,30,0,30"
                 BorderBrush="#d8c6a0"
                 BorderThickness="0,5,5,5"
-                CornerRadius="0,30,30,0">
+                CornerRadius="0,30,30,0" x:Name="writer">
+            <Button x:Name="btn_writer"
+                    Width="{Binding ElementName=writer, Path=ActualWidth}"
+                    Height="{Binding ElementName=writer, Path=ActualHeight}"
+                    Background="Transparent"
+                    Click="btn_writer_Click"
+                    Style="{StaticResource DiamondButtonTheme}">
+            </Button>
 
         </Border>
 
