@@ -42,5 +42,82 @@ namespace Celeste.Views
                 cmb_days.Items.Add(i);
             }
         }
+
+        private void cmb_days_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Convert.ToInt32(cmb_days.SelectedValue) == 31)
+            {
+                List<string> months = new List<string>
+                {
+                    "January",
+                    "March",
+                    "May",
+                    "July",
+                    "August",
+                    "October",
+                    "December"
+                };
+
+                foreach (string month in months)
+                {
+                    cmb_months.Items.Add(month);
+                }
+            }
+
+            else if (Convert.ToInt32(cmb_days.SelectedValue) == 30)
+            {
+                List<string> months = new List<string>
+                {
+                    "January",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                };
+
+                foreach (string month in months)
+                {
+                    cmb_months.Items.Add(month);
+                }
+            }
+
+            else
+            {
+                List<string> months = new List<string>
+                {
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                };
+
+                foreach (string month in months)
+                {
+                    cmb_months.Items.Add(month);
+
+                }
+            
+            }
+
+                if (cmb_days.SelectedValue != null)
+                cmb_months.IsEnabled = true;
+
+            else
+                cmb_months.IsEnabled = false;
+        }
     }
 }
