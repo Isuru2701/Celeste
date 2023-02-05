@@ -68,7 +68,7 @@
 
                 <Label Content="Date of Birth"
                        HorizontalAlignment="Left"
-                       Margin="130,488,0,0"
+                       Margin="190,494,0,0"
                        VerticalAlignment="Top"/>
 
 
