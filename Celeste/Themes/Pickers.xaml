@@ -6,17 +6,14 @@
 
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#d8c6a0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ComboBox}">
-                    <Border Background="Transparent" CornerRadius="10" BorderThickness="2" BorderBrush="#d8c6a0">
-                        <ContentPresenter>
-                            
-                        </ContentPresenter>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="BorderBrush" Value="#d8c6a0"/>
+        <Setter Property="BorderThickness" Value="2"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsDropDownOpen" Value="True">
+                <Setter Property="Popup.Placement" Value="Bottom"/>
+            </Trigger>
+        </Style.Triggers>
 
     </Style>
 </ResourceDictionary>
