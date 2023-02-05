@@ -5,57 +5,29 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Celeste.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1000"
       Title="Signup">
 
     <Grid>
         <Image Source="../Resources/background.png"
-               Stretch="Fill"></Image>
-        <Border 
-            Height="500"
-            Width="700"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Background="#1F1F1F"
-            CornerRadius="30"
-            BorderThickness="2"
-            BorderBrush="#d8c6a0">
+               Stretch="Fill"/>
+
+        <Border Background="#161616"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="700"
+                Height="700"
+                CornerRadius="30"
+                BorderThickness="2"
+                BorderBrush="#d8c6a0">
 
             <Grid>
                 <Image Source="../Resources/quill.png" Height="120"
                    VerticalAlignment="Top"
                    Margin="65,35,321,0"/>
 
-                <Button x:Name="btn_signup"
-                        Style="{StaticResource MenubuttonTheme}"
-                        Width="160"
-                        Height="60"
-                        Content="Sign up"
-                        FontSize="20" 
-                        Margin="65,408,471,28"/>
-                <Label Content="E-mail"
-                       HorizontalAlignment="Left"
-                       Margin="65,221,0,0"
-                       VerticalAlignment="Top"/>
-
-                <Label Content="Password"
-                       HorizontalAlignment="Left"
-                       Margin="65,327,0,0"
-                       VerticalAlignment="Top"/>
-
-                <TextBox HorizontalAlignment="Left"
-                         Margin="192,0,0,0"
-                         TextWrapping="NoWrap"
-                         VerticalAlignment="Center"
-                         Width="267" Height="40" />
-
-                <PasswordBox HorizontalAlignment="Left"
-                             Margin="192,333,0,0"
-                             VerticalAlignment="Top"
-                             Width="267" Height="40"/>
-
                 <TextBlock HorizontalAlignment="Left"
-                           Margin="288,46,0,0" 
+                           Margin="286,46,0,0" 
                            TextWrapping="Wrap"
                            Text="Celeste"
                            VerticalAlignment="Top" 
@@ -65,13 +37,28 @@
                            Foreground="#d8c6a0"/>
 
                 <TextBlock HorizontalAlignment="Left"
-                           Margin="288,111,0,0" 
+                           Margin="286,106,0,0" 
                            TextWrapping="Wrap"
                            Text="Sign up"
                            VerticalAlignment="Top" 
                            Height="59" Width="171"
                            FontSize="30"
                            Foreground="#d8c6a0"/>
+                <Label Content="E-mail" HorizontalAlignment="Left" Margin="64,217,0,0" VerticalAlignment="Top"/>
+                <Label Content="Username" HorizontalAlignment="Left" Margin="64,275,0,0" VerticalAlignment="Top"/>
+                <Label Content="Password" HorizontalAlignment="Left" Margin="67,327,0,0" VerticalAlignment="Top"/>
+                <Label Content="Confirm Password" HorizontalAlignment="Left" Margin="64,379,0,0" VerticalAlignment="Top"/>
+                <Label Content="Gender" HorizontalAlignment="Left" Margin="64,426,0,0" VerticalAlignment="Top"/>
+                <Label Content="Date of birth" HorizontalAlignment="Left" Margin="64,478,0,0" VerticalAlignment="Top"/>
+
+
+                <Button x:Name="btn_signup"
+                        Style="{StaticResource MenubuttonTheme}"
+                        Width="160"
+                        Height="60"
+                        Content="Sign up"
+                        FontSize="20" 
+                        Margin="220,606,316,30"/>
 
 
 
@@ -79,5 +66,8 @@
             </Grid>
 
         </Border>
+
+
+
     </Grid>
 </Page>

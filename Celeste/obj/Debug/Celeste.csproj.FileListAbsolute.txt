@@ -39,3 +39,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Celeste_Conte
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Login.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\TextBoxes.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Themes\Palette.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Signup.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Debug\Views\Signup.baml
