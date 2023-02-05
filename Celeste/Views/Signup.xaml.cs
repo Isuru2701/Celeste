@@ -54,7 +54,7 @@ namespace Celeste.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i <= 31; ++i)
+            for (int i = 1; i <= 31; ++i)
             {
                 cmb_days.Items.Add(i);
             }

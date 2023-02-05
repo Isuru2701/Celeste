@@ -17,7 +17,7 @@
             Width="500"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Background="#1F1F1F"
+            Background="#161616"
             CornerRadius="30"
             BorderThickness="2"
             BorderBrush="#d8c6a0">
