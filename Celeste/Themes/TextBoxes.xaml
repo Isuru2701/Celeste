@@ -9,6 +9,7 @@
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="Padding" Value="5,5,5,5"/>
         <Setter Property="IsReadOnly" Value="False"/>
+        <Setter Property="CaretBrush" Value="#d8c6a0"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -30,6 +31,8 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="Padding" Value="5,5,5,0"/>
+        <Setter Property="CaretBrush" Value="#d8c6a0"/>
+
 
         <Setter Property="Template">
             <Setter.Value>

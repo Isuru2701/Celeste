@@ -70,7 +70,12 @@
         <Setter Property="Foreground" Value="#d8c6a0"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Padding" Value="2,2,2,2"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+
         <Setter Property="Template">
+            
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
                     <Grid>
@@ -120,9 +125,8 @@
                             Content="{TemplateBinding SelectionBoxItem}"
                             ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                             ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            Margin="3,3,23,3"
-                            VerticalAlignment="Stretch"
-                            HorizontalAlignment="Left">
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
                         </ContentPresenter>
                         <TextBox x:Name="PART_EditableTextBox"
                    Style="{x:Null}"

@@ -110,7 +110,7 @@
                           x:Name="cmb_months"/>
 
                 <ComboBox HorizontalAlignment="Left"
-                          Margin="500,507,0,0"
+                          Margin="500,505,0,0"
                           VerticalAlignment="Top" 
                           Width="96" Height="40"
                           x:Name="cmb_years"/>
