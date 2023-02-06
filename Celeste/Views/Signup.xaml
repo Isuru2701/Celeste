@@ -73,8 +73,8 @@
                        VerticalAlignment="Top"/>
 
 
-                <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
-                <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
+                <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="txt_email_TextChanged"/>
+                <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="txt_username_TextChanged"/>
                 <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="64,416,0,0" VerticalAlignment="Top" Width="253" Height="37"/>
                 <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="342,416,0,0" VerticalAlignment="Top" Width="254" Height="37"/>
 
@@ -114,6 +114,40 @@
                           VerticalAlignment="Top" 
                           Width="96" Height="40"
                           x:Name="cmb_years"/>
+
+                <Label x:Name="lbl_email_error"
+                       
+                      FontSize="15"
+                       FontWeight="Regular"
+                       FontStyle="Italic"
+                       Content="invalid e-mail format"
+                       HorizontalAlignment="Left"
+                       Margin="457,226,0,0"
+                       VerticalAlignment="Top"
+                       Width="312"
+                       Visibility="Hidden"/>
+
+                <Label x:Name="lbl_username_error"
+                       FontSize="15"
+                       FontWeight="Regular"
+                       FontStyle="Italic"
+                       Content="username must be 4 - 12 characters long, &#x0a; and contain only letters"
+                       HorizontalAlignment="Left"
+                       Margin="318,297,0,0"
+                       VerticalAlignment="Top"
+                       Width="349"
+                       Visibility="Hidden"/>
+
+                <Label x:Name="lbl_date_error"
+                       FontSize="15"
+                       FontWeight="Regular"
+                       FontStyle="Italic"
+                       Content="invalid date"
+                       HorizontalAlignment="Left"
+                       Margin="510,525,0,0"
+                       VerticalAlignment="Top"
+                       Width="96"
+                       Visibility="Hidden"/>
 
 
 

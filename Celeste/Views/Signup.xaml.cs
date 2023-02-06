@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -71,6 +72,29 @@ namespace Celeste.Views
             }
         }
 
+        private void txt_email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(!Regex.IsMatch(txt_email.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            {
+                lbl_email_error.Visibility = Visibility.Visible;
 
+            }
+            else
+            {
+                lbl_email_error.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txt_username_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(!Regex.IsMatch(txt_username.Text, @"^[a-zA-Z]{4,12}$"))
+            {
+                lbl_username_error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lbl_username_error.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }
