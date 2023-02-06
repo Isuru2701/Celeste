@@ -96,5 +96,24 @@ namespace Celeste.Views
                 lbl_username_error.Visibility = Visibility.Hidden;
             }
         }
+
+
+        private void pwb_password_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (pwb_password.Password.Length < 8)
+            {
+                lbl_password_error.Content = "min 8 characters";
+                lbl_password_error.Visibility = Visibility.Visible;
+            }
+            else if (!Regex.IsMatch(pwb_password.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"))
+            {
+                lbl_password_error.Content = "must contain an uppercase, lower case,\n number, and special character";
+                lbl_password_error.Visibility= Visibility.Visible;
+            }
+            else
+            {
+                lbl_password_error.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }

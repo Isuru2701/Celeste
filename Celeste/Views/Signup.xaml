@@ -75,7 +75,7 @@
 
                 <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="txt_email_TextChanged"/>
                 <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="txt_username_TextChanged"/>
-                <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="64,416,0,0" VerticalAlignment="Top" Width="253" Height="37"/>
+                <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="64,416,0,0" VerticalAlignment="Top" Width="253" Height="37" PasswordChanged="pwb_password_PasswordChanged"/>
                 <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="342,416,0,0" VerticalAlignment="Top" Width="254" Height="37"/>
 
                 <Button x:Name="btn_signup"
@@ -148,6 +148,31 @@
                        VerticalAlignment="Top"
                        Width="96"
                        Visibility="Hidden"/>
+
+                <Label x:Name="lbl_password_error"
+                       FontSize="15"
+                       FontWeight="Regular"
+                       FontStyle="Italic"
+                       Content=""
+                       HorizontalAlignment="Left"
+                       Margin="65,453,0,0"
+                       VerticalAlignment="Top"
+                       Width="252"
+                       Visibility="Hidden"/>
+
+
+                <Label x:Name="lbl_validation_error"
+                       FontSize="15"
+                       FontWeight="Regular"
+                       FontStyle="Italic"
+                       Content="validation error"
+                       HorizontalAlignment="Left"
+                       Margin="281,564,0,0"
+                       VerticalAlignment="Top"
+                       Width="159"
+                       Visibility="Hidden"/>
+
+
 
 
 
