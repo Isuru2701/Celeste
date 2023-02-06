@@ -21,6 +21,7 @@ namespace Celeste.Views
     /// </summary>
     public partial class Signup : Page
     {
+        DateTime date;
         public Signup()
         {
             InitializeComponent();
@@ -33,7 +34,29 @@ namespace Celeste.Views
 
         private void btn_signup_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Home());
+            if(ValidateEmail() && ValidateUsername() && ValidatePassword())
+            {
+                if (pwb_password.Password == pwb_confirm.Password)
+                {
+
+                    if (IsValidDate(cmb_days.SelectedValue, (cmb_months.SelectedIndex + 1), cmb_years.SelectedValue))
+                    {
+                        NavigationService.Navigate(new Home());
+                    }
+                    else
+                    {
+                        lbl_validation_error.Visibility = Visibility.Visible;
+                        lbl_validation_error.Content = "Invalid Date";
+                    }
+
+                }
+                else
+                {
+                    lbl_validation_error.Visibility = Visibility.Visible;
+                    lbl_validation_error.Content = "Passwords don't match";
+                }
+            }
+
         }
 
 
@@ -74,46 +97,121 @@ namespace Celeste.Views
 
         private void txt_email_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(!Regex.IsMatch(txt_email.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            ValidateEmail();
+        }
+
+        private void txt_username_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ValidateUsername();
+        }
+
+
+
+        private void pwb_password_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            ValidatePassword();
+        }
+
+        private bool IsValidDate(object day, object month, object year)
+        {
+
+            return DateTime.TryParse((day + "/" + month + "/" + year), out date);
+
+        }
+
+        private bool ValidateEmail()
+        {
+            if (!Regex.IsMatch(txt_email.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
                 lbl_email_error.Visibility = Visibility.Visible;
+                return false;
 
             }
             else
             {
                 lbl_email_error.Visibility = Visibility.Hidden;
+                return true;
             }
+
         }
 
-        private void txt_username_TextChanged(object sender, TextChangedEventArgs e)
+        private bool ValidateUsername()
         {
-            if(!Regex.IsMatch(txt_username.Text, @"^[a-zA-Z]{4,12}$"))
+            if (!Regex.IsMatch(txt_username.Text, @"^[a-zA-Z]{4,12}$"))
             {
                 lbl_username_error.Visibility = Visibility.Visible;
+                return false;
             }
             else
             {
                 lbl_username_error.Visibility = Visibility.Hidden;
+                return true;
             }
+
         }
 
 
-        private void pwb_password_PasswordChanged(object sender, RoutedEventArgs e)
+        private bool ValidatePassword()
         {
-            if (pwb_password.Password.Length < 8)
+            List<string> common = new List<string>
             {
-                lbl_password_error.Content = "min 8 characters";
+                "123456",
+                "123456789",
+                "qwerty",
+                "password",
+                "12345",
+                "qwerty123",
+                "1q2w3e",
+                "12345678",
+                "111111",
+                "1234567890"
+            };
+
+
+            if (pwb_password.Password.Length == 0)
+            {
                 lbl_password_error.Visibility = Visibility.Visible;
+                lbl_password_error.Content = "empty password field";
+                bar_strength.Value = 0;
+                return false;
             }
-            else if (!Regex.IsMatch(pwb_password.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"))
+
+            else if (common.Any(x => x == pwb_password.Password))
             {
-                lbl_password_error.Content = "must contain an uppercase, lower case,\n number, and special character";
-                lbl_password_error.Visibility= Visibility.Visible;
+                //common password
+                lbl_password_error.Content = "weak password: common";
+                lbl_password_error.Visibility = Visibility.Visible;
+                bar_strength.Value = 25;
+                return false;
+
+            }
+
+            else if (Regex.IsMatch(pwb_password.Password, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"))
+            {
+                //password atleast 8 in length, contains uppercase, lowercase, one number
+                lbl_password_error.Content = "strong password";
+                lbl_password_error.Visibility = Visibility.Visible;
+                bar_strength.Value = 100;
+                return true ;
+
+            }
+            else if (Regex.IsMatch(pwb_password.Password, @"^[^\s]{8,}$"))
+            {
+                //password atleast 8 in length, contains any character except spaces
+                lbl_password_error.Content = "medium password";
+                lbl_password_error.Visibility = Visibility.Visible;
+                bar_strength.Value = 50;
+                return true ;
             }
             else
             {
-                lbl_password_error.Visibility = Visibility.Hidden;
+                //password fails -- disallow 
+                lbl_password_error.Content = "weak password";
+                lbl_password_error.Visibility = Visibility.Visible;
+                bar_strength.Value = 25;
+                return false;
             }
+
         }
     }
 }

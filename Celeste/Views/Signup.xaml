@@ -153,12 +153,11 @@
                        FontSize="15"
                        FontWeight="Regular"
                        FontStyle="Italic"
-                       Content=""
                        HorizontalAlignment="Left"
                        Margin="65,453,0,0"
                        VerticalAlignment="Top"
-                       Width="252"
-                       Visibility="Hidden"/>
+                       Width="234"
+                       Visibility="Visible" Height="47"/>
 
 
                 <Label x:Name="lbl_validation_error"
@@ -172,11 +171,12 @@
                        Width="159"
                        Visibility="Hidden"/>
 
-
-
-
-
-
+                <ProgressBar
+            x:Name="bar_strength"
+            Background="Transparent"
+            BorderBrush="#d8c6a0"
+            Foreground="#d8c6a0"
+            HorizontalAlignment="Left" Height="10" Margin="71,463,0,0" VerticalAlignment="Top" Width="228" />
 
             </Grid>
 
