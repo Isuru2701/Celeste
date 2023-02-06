@@ -22,8 +22,10 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 Width="650" Height="700">
-            <TextBox>
-                
+            
+            <TextBox AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     SpellCheck.IsEnabled="True">
             </TextBox>
         </Border>
     </Grid>
