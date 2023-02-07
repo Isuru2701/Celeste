@@ -69,7 +69,7 @@
 
                 <Label Content="Date of Birth"
                        HorizontalAlignment="Left"
-                       Margin="130,500,0,0"
+                       Margin="401,483,0,0"
                        VerticalAlignment="Top"/>
 
 
@@ -97,20 +97,20 @@
                         Style="{StaticResource DiamondButtonTheme}">
                     <Image Source="../Resources/back_btn.png"/>
                 </Button>
-                <ComboBox HorizontalAlignment="Center"
-                          Margin="0,505,0,0"
+                <ComboBox HorizontalAlignment="Left"
+                          Margin="336,545,0,0"
                           VerticalAlignment="Top" 
                           Width="60" Height="40"
                           x:Name="cmb_days" />
 
                 <ComboBox HorizontalAlignment="Left"
-                          Margin="384,505,0,0"
+                          Margin="401,545,0,0"
                           VerticalAlignment="Top" 
                           Width="111" Height="40"
                           x:Name="cmb_months"/>
 
                 <ComboBox HorizontalAlignment="Left"
-                          Margin="500,505,0,0"
+                          Margin="517,545,0,0"
                           VerticalAlignment="Top" 
                           Width="96" Height="40"
                           x:Name="cmb_years"/>
@@ -177,6 +177,14 @@
             BorderBrush="#d8c6a0"
             Foreground="#d8c6a0"
             HorizontalAlignment="Left" Height="10" Margin="71,463,0,0" VerticalAlignment="Top" Width="228" />
+
+            <ComboBox HorizontalAlignment="Left"
+                        Margin="137,544,0,0"
+                        VerticalAlignment="Top" 
+                        Width="96" Height="40"
+                        x:Name="cmb_gender"/>
+
+
 
             </Grid>
 

@@ -93,6 +93,13 @@ namespace Celeste.Views
             {
                 cmb_years.Items.Add(i);
             }
+
+            List<string> genders = new List<string>{ "male", "female", "other" };
+
+            foreach (string gender in)
+            {
+
+            }
         }
 
         private void txt_email_TextChanged(object sender, TextChangedEventArgs e)
