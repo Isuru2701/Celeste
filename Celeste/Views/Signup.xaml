@@ -69,7 +69,7 @@
 
                 <Label Content="Date of Birth"
                        HorizontalAlignment="Left"
-                       Margin="70,494,0,0"
+                       Margin="108,491,0,0"
                        VerticalAlignment="Top"/>
 
 
@@ -84,7 +84,7 @@
                         Height="60"
                         Content="Sign up"
                         FontSize="20" 
-                        Margin="268,609,268,27" Click="btn_signup_Click"/>
+                        Margin="268,614,268,22" Click="btn_signup_Click"/>
 
                 <Button x:Name="btn_back"
                     Height="50"
@@ -98,19 +98,19 @@
                     <Image Source="../Resources/back_btn.png"/>
                 </Button>
                 <ComboBox HorizontalAlignment="Left"
-                          Margin="70,551,0,0"
+                          Margin="82,544,0,0"
                           VerticalAlignment="Top" 
                           Width="60" Height="40"
                           x:Name="cmb_days" />
 
                 <ComboBox HorizontalAlignment="Left"
-                          Margin="136,551,0,0"
+                          Margin="148,544,0,0"
                           VerticalAlignment="Top" 
                           Width="110" Height="40"
                           x:Name="cmb_months"/>
 
                 <ComboBox HorizontalAlignment="Left"
-                          Margin="252,551,0,0"
+                          Margin="264,544,0,0"
                           VerticalAlignment="Top" 
                           Width="96" Height="40"
                           x:Name="cmb_years"/>
@@ -165,8 +165,8 @@
                        FontWeight="Regular"
                        FontStyle="Italic"
                        Content="validation error"
-                       HorizontalAlignment="Left"
-                       Margin="281,564,0,0"
+                       HorizontalAlignment="Center"
+                       Margin="0,574,0,0"
                        VerticalAlignment="Top"
                        Width="159"
                        Visibility="Hidden"/>
@@ -181,12 +181,12 @@
 
                 <Label Content="Gender"
                        HorizontalAlignment="Left"
-                       Margin="428,494,0,0"
+                       Margin="440,487,0,0"
                        VerticalAlignment="Top"/>
 
 
                 <ComboBox HorizontalAlignment="Left"
-                        Margin="414,551,0,0"
+                        Margin="414,544,0,0"
                         VerticalAlignment="Top" 
                         Width="182" Height="40"
                         x:Name="cmb_gender"/>
