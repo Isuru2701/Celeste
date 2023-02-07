@@ -38,15 +38,25 @@ namespace Celeste.Views
             {
                 if (pwb_password.Password == pwb_confirm.Password)
                 {
+                    if(IsValidGender())
+                    { 
 
-                    if (IsValidDate(cmb_days.SelectedValue, (cmb_months.SelectedIndex + 1), cmb_years.SelectedValue))
-                    {
-                        NavigationService.Navigate(new Home());
+                        if (IsValidDate(cmb_days.SelectedValue, (cmb_months.SelectedIndex + 1), cmb_years.SelectedValue))
+                        {
+                            NavigationService.Navigate(new Home());
+                        }
+                        else
+                        {
+                            lbl_validation_error.Visibility = Visibility.Visible;
+                            lbl_validation_error.Content = "Invalid Date";
+                        }
+
                     }
                     else
                     {
                         lbl_validation_error.Visibility = Visibility.Visible;
-                        lbl_validation_error.Content = "Invalid Date";
+                        lbl_validation_error.Content = "Please select a gender";
+
                     }
 
                 }
@@ -96,9 +106,9 @@ namespace Celeste.Views
 
             List<string> genders = new List<string>{ "male", "female", "other" };
 
-            foreach (string gender in)
+            foreach (string gender in genders)
             {
-
+                cmb_gender.Items.Add(gender);
             }
         }
 
@@ -124,6 +134,12 @@ namespace Celeste.Views
 
             return DateTime.TryParse((day + "/" + month + "/" + year), out date);
 
+        }
+
+        private bool IsValidGender()
+        {
+            if (cmb_gender.SelectedValue != null) return true;
+            else return false;
         }
 
         private bool ValidateEmail()
