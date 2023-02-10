@@ -1,4 +1,5 @@
 ﻿using OxyPlot;
+using OxyPlot.Axes;
 using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,45 @@ namespace Celeste.Controls
         {
             InitializeComponent();
 
-            plot = new PlotModel { Title = "Stub" };
+            plot = new PlotModel();
+            plot.TextColor = OxyColor.Parse("#d8c6a0");
+            plot.PlotAreaBorderColor = OxyColors.Transparent;
+
+            LinearAxis xAxis = new DateTimeAxis {
+                Position = AxisPosition.Bottom,
+                AxislineColor = OxyColor.Parse("#d8c6a0"),
+                TextColor = OxyColor.Parse("#d8c6a0"),
+                TicklineColor = OxyColor.Parse("#d8c6a0"),
+                AxislineStyle = LineStyle.Solid,
+                StringFormat = "M/d",
+                Minimum = DateTimeAxis.ToDouble(DateTime.Now.AddDays(-7)),
+                Maximum = DateTimeAxis.ToDouble(DateTime.Now),
+                AxislineThickness = 3,
+                PositionAtZeroCrossing = true,
+                FontSize = 10,
+                FontWeight = FontWeights.Bold
+            };
+
+            plot.Axes.Add(xAxis);
+
+            LinearAxis yAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                AxislineColor = OxyColor.Parse("#d8c6a0"),
+                TextColor = OxyColor.Parse("#d8c6a0"),
+                TicklineColor = OxyColor.Parse("#d8c6a0"),
+                AxislineStyle = LineStyle.Solid
+            };
+            plot.Axes.Add(yAxis);
+
+
+
             plot.Series.Add(new LineSeries
             {
+                Color = OxyColor.Parse("#d8c6a0"),
+                
+                
+
                 Points =
                 {
                     new DataPoint(0, 4),

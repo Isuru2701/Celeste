@@ -24,7 +24,8 @@
                 <!--graph goes here -->
 
 
-                <oxy:PlotView Model="{Binding plot}"/>
+                <oxy:PlotView Model="{Binding plot}"
+                              Background="{x:Null}" Foreground="{x:Null}"/>
 
 
             </Border>
