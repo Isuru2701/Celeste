@@ -67,5 +67,7 @@
             </Button>
 
         </StackPanel>
+
+        <Frame x:Name="InfoFrame" Grid.Column="1"></Frame>
     </Grid>
 </Page>

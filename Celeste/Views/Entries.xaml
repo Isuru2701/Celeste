@@ -10,6 +10,10 @@
       Background="#1e1730">
 
     <Grid>
+
+        <StackPanel Orientation="Horizontal">
+            
+        </StackPanel>
         
     </Grid>
 </Page>
