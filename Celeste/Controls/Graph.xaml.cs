@@ -46,9 +46,11 @@ namespace Celeste.Controls
                 IntervalLength = 100,
                 AxislineThickness = 3,
                 PositionAtZeroCrossing = true,
-                FontSize = 10,
                 FontWeight = OxyPlot.FontWeights.Bold,
+                IsZoomEnabled = false,
+                IsPanEnabled = true
             };
+
 
             plot.Axes.Add(xAxis);
 
@@ -60,13 +62,12 @@ namespace Celeste.Controls
                 TicklineColor = OxyColor.Parse("#d8c6a0"),
                 AxislineStyle = LineStyle.Solid,
                 AxislineThickness = 3,
-                FontSize = 10,
                 FontWeight = OxyPlot.FontWeights.Bold,
-
                 Maximum = 5,
                 Minimum = -5,
                 IntervalLength = 100,
-                
+                IsZoomEnabled = false
+
 
 
             };
@@ -82,7 +83,7 @@ namespace Celeste.Controls
             plot.Series.Add(new LineSeries
             {
                 Color = OxyColor.Parse("#d8c6a0"),
-
+                LineStyle = LineStyle.LongDashDotDot,
 
 
                 Points =
@@ -92,6 +93,10 @@ namespace Celeste.Controls
                     new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-2)), 3),
                     new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-3)), -5),
                     new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-4)), -2),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-5)), -5),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-6)), 2),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-7)), 2)
+
 
                 }
             });
