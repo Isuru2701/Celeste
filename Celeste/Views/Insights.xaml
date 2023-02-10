@@ -70,6 +70,8 @@
 
         <Frame x:Name="InfoFrame" Grid.Column="1"
                VerticalContentAlignment="Center"
-               HorizontalContentAlignment="Center"></Frame>
+               HorizontalContentAlignment="Center"
+               Width="1200"
+               Height="750"></Frame>
     </Grid>
 </Page>

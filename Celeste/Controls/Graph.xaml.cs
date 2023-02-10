@@ -22,20 +22,20 @@ namespace Celeste.Controls
     /// </summary>
     public partial class Graph : UserControl
     {
-        public PlotModel PlotModel { get;  set; }
+        public PlotModel plot { get;  set; }
 
         public Graph()
         {
             InitializeComponent();
 
-            PlotModel = new PlotModel { Title = "Line Graph Example" };
-            PlotModel.Series.Add(new LineSeries
+            plot = new PlotModel { Title = "Stub" };
+            plot.Series.Add(new LineSeries
             {
                 Points =
                 {
                     new DataPoint(0, 4),
                     new DataPoint(10, 13),
-                    new DataPoint(20, 15),
+                    new DataPoint(20, -15),
                     new DataPoint(30, 16),
                     new DataPoint(40, 12),
                     new DataPoint(50, 12)
