@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Celeste.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,7 @@ namespace Celeste.Views
 
         private void btn_score_Click(object sender, RoutedEventArgs e)
         {
-            
+            InfoFrame.Content = new Graph();
         }
 
         private void btn_triggers_Click(object sender, RoutedEventArgs e)

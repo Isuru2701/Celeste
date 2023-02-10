@@ -1,31 +1,35 @@
-﻿<UserControl x:Class="Celeste.Controls.Graph"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Celeste.Controls"
+             xmlns:oxy="http://oxyplot.org/wpf" x:Class="Celeste.Controls.Graph"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="750">
 
     <Border BorderBrush="#d8c6a0"
             CornerRadius="20"
             BorderThickness="3">
-            <Grid>
-                
+        <Grid>
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="225"/>
+                <RowDefinition Height="350"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Border BorderBrush="#d8c6a0"
-                    BorderThickness="1">
-            
+                    BorderThickness="0,0,0,1">
+
                 <!--graph goes here -->
-            
-            
+
+
+                <oxy:PlotView Model="{Binding Graphing}"/>
+
+
             </Border>
-        
-        
+
+
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="400"/>
@@ -34,18 +38,18 @@
 
                 <Border Grid.Column="0" 
                     BorderBrush="#d8c6a0"
-                    BorderThickness="1">
+                    BorderThickness="0,0,1,0">
 
                     <!--streak goes here -->
 
 
                 </Border>
 
-            
-            
+
+
                 <Border Grid.Column="1"
                     BorderBrush="#d8c6a0"
-                    BorderThickness="1">
+                    BorderThickness="1,0,0,0">
 
 
                     <!--calendar goes here -->
@@ -59,6 +63,6 @@
         </Grid>
 
     </Border>
-    
-    
+
+
 </UserControl>
