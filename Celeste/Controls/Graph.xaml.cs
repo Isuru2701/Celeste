@@ -3,6 +3,7 @@ using OxyPlot.Axes;
 using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,13 +40,14 @@ namespace Celeste.Controls
                 TextColor = OxyColor.Parse("#d8c6a0"),
                 TicklineColor = OxyColor.Parse("#d8c6a0"),
                 AxislineStyle = LineStyle.Solid,
-                StringFormat = "M/d",
                 Minimum = DateTimeAxis.ToDouble(DateTime.Now.AddDays(-7)),
                 Maximum = DateTimeAxis.ToDouble(DateTime.Now),
+                StringFormat = "M/d",
+                IntervalLength = 100,
                 AxislineThickness = 3,
                 PositionAtZeroCrossing = true,
                 FontSize = 10,
-                FontWeight = FontWeights.Bold
+                FontWeight = OxyPlot.FontWeights.Bold,
             };
 
             plot.Axes.Add(xAxis);
@@ -56,26 +58,41 @@ namespace Celeste.Controls
                 AxislineColor = OxyColor.Parse("#d8c6a0"),
                 TextColor = OxyColor.Parse("#d8c6a0"),
                 TicklineColor = OxyColor.Parse("#d8c6a0"),
-                AxislineStyle = LineStyle.Solid
+                AxislineStyle = LineStyle.Solid,
+                AxislineThickness = 3,
+                FontSize = 10,
+                FontWeight = OxyPlot.FontWeights.Bold,
+
+                Maximum = 5,
+                Minimum = -5,
+                IntervalLength = 100,
+                
+
+
             };
             plot.Axes.Add(yAxis);
 
 
 
+            for (int i = 0; i < 7; ++i)
+            {
+
+            }
+
             plot.Series.Add(new LineSeries
             {
                 Color = OxyColor.Parse("#d8c6a0"),
-                
-                
+
+
 
                 Points =
                 {
-                    new DataPoint(0, 4),
-                    new DataPoint(10, 13),
-                    new DataPoint(20, -15),
-                    new DataPoint(30, 16),
-                    new DataPoint(40, 12),
-                    new DataPoint(50, 12)
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(0)), 4),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-1)), 1),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-2)), 3),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-3)), -5),
+                    new DataPoint(DateTimeAxis.ToDouble(DateTime.Now.AddDays(-4)), -2),
+
                 }
             });
 
