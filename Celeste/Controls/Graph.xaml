@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Celeste.Controls"
-             xmlns:oxy="http://oxyplot.org/wpf" x:Class="Celeste.Controls.Graph"
+             x:Class="Celeste.Controls.Graph"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="750">
 
@@ -22,10 +22,6 @@
                     BorderThickness="0,0,0,1">
 
                 <!--graph goes here -->
-
-
-                <oxy:PlotView Model="{Binding plot}"
-                              Background="{x:Null}" Foreground="{x:Null}"/>
 
 
             </Border>

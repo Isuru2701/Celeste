@@ -49,9 +49,11 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Templates\L
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Templates\Loading.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Graph.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Graph.baml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\OxyPlot.dll
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\OxyPlot.Wpf.dll
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\OxyPlot.Wpf.Shared.dll
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\OxyPlot.xml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\OxyPlot.Wpf.xml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\OxyPlot.Wpf.Shared.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ScottPlot.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ScottPlot.WPF.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Drawing.Common.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Numerics.Vectors.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.ValueTuple.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ScottPlot.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Numerics.Vectors.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.ValueTuple.xml

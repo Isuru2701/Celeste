@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using Celeste.Views;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
