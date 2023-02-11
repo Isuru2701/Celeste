@@ -33,10 +33,33 @@ namespace Celeste.Controls
         }
 
         public void DrawPlot()
-        {
+        { 
+            double[] y_ax = { -5, -2, 0, 3, 2, 1, 5 };
+
+            double[] x_ax = { 1, 2, 3, 4, 5, 6, 7 };
+
+            SentimentGraph.Plot.Palette = Palette.FromHtmlColors(new string[] { "#d8c6a0" });
+
+            
+
+            SentimentGraph.Plot.Style
+                (
+                figureBackground:System.Drawing.Color.Transparent,
+                dataBackground: System.Drawing.Color.Transparent,
+                grid: System.Drawing.Color.Transparent
+                
+                );
 
             SentimentGraph.Plot.YAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
-            SentimentGraph.Plot.XAxis.TickLabelFormat("M/d", dateTimeFormat: true);
+            SentimentGraph.Plot.YAxis.SetSizeLimit(-5, 5);
+
+            SentimentGraph.Plot.XAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
+            SentimentGraph.Plot.Frameless();
+
+
+            SentimentGraph.Plot.AddScatter(x_ax,y_ax, lineWidth:2);
+            
+
         }
 
 

@@ -23,7 +23,8 @@
                     BorderThickness="0,0,0,1">
 
                 <!--graph goes here -->
-                <WpfPlot x:Name="SentimentGraph"/>
+                <WpfPlot x:Name="SentimentGraph" Foreground="{x:Null}"
+                         />
 
                 
 
