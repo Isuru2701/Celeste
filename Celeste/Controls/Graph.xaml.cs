@@ -42,13 +42,14 @@ namespace Celeste.Controls
                 (
                 figureBackground:System.Drawing.Color.Transparent,
                 dataBackground: System.Drawing.Color.Transparent,
-                grid: System.Drawing.Color.Transparent
+                grid: System.Drawing.Color.Transparent                
                 
                 );
 
             SentimentGraph.Plot.YAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
             SentimentGraph.Plot.YAxis.SetSizeLimit(-5, 5);
             SentimentGraph.Plot.YAxis.TickDensity(ratio: 0.5);
+            
 
             SentimentGraph.Plot.XAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
             SentimentGraph.Plot.XAxis.TickDensity(ratio: 0);
