@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using ScottPlot;
+using ScottPlot.Renderable;
+
 namespace Celeste.Controls
 {
     /// <summary>
@@ -24,6 +28,18 @@ namespace Celeste.Controls
 
         public Graph()
         {
+            InitializeComponent();
+            DrawPlot();
         }
+
+        public void DrawPlot()
+        {
+
+            SentimentGraph.Plot.YAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
+            SentimentGraph.Plot.XAxis.TickLabelFormat("M/d", dateTimeFormat: true);
+        }
+
+
     }
+
 }

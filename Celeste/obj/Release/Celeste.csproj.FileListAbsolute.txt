@@ -45,8 +45,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csp
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csproj.CopyComplete
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.exe
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.pdb
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Templates\Loading.g.cs
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Templates\Loading.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Graph.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Graph.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ScottPlot.dll
@@ -57,3 +55,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Valu
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ScottPlot.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Numerics.Vectors.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.ValueTuple.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Loading.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Loading.baml
