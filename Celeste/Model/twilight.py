@@ -1,11 +1,13 @@
 ﻿
 # AI LIBRARIES
-from distutils.log import debug
-from typing_extensions import dataclass_transform
 import spacy
+import nltk
 
 # API LIBRARIES
 from flask import *
+from distutils.log import debug
+from typing_extensions import dataclass_transform
+
 
 import json, time
 

@@ -73,8 +73,8 @@
                        VerticalAlignment="Top"/>
 
 
-                <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="txt_email_TextChanged"/>
-                <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" TextChanged="txt_username_TextChanged"/>
+                <TextBox x:Name="txt_email" HorizontalAlignment="Left" Margin="286,209,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="317" TextChanged="txt_email_TextChanged"/>
+                <TextBox x:Name="txt_username" HorizontalAlignment="Left" Margin="286,287,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="317" TextChanged="txt_username_TextChanged"/>
                 <PasswordBox x:Name="pwb_password" HorizontalAlignment="Left" Margin="64,416,0,0" VerticalAlignment="Top" Width="253" Height="37" PasswordChanged="pwb_password_PasswordChanged"/>
                 <PasswordBox x:Name="pwb_confirm" HorizontalAlignment="Left" Margin="342,416,0,0" VerticalAlignment="Top" Width="254" Height="37"/>
 
