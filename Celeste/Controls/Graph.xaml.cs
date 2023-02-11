@@ -37,11 +37,7 @@ namespace Celeste.Controls
             double[] y_ax = { -5, -2, 0, 3, 2, 1, 5 };
 
             double[] x_ax = { 1, 2, 3, 4, 5, 6, 7 };
-
-            SentimentGraph.Plot.Palette = Palette.FromHtmlColors(new string[] { "#d8c6a0" });
-
             
-
             SentimentGraph.Plot.Style
                 (
                 figureBackground:System.Drawing.Color.Transparent,
@@ -52,12 +48,15 @@ namespace Celeste.Controls
 
             SentimentGraph.Plot.YAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
             SentimentGraph.Plot.YAxis.SetSizeLimit(-5, 5);
+            SentimentGraph.Plot.YAxis.TickDensity(ratio: 0.5);
 
             SentimentGraph.Plot.XAxis.Color(ColorTranslator.FromHtml("#d8c6a0"));
-            SentimentGraph.Plot.Frameless();
+            SentimentGraph.Plot.XAxis.TickDensity(ratio: 0);
+
+            SentimentGraph.Plot.Layout(padding: 5);
 
 
-            SentimentGraph.Plot.AddScatter(x_ax,y_ax, lineWidth:2);
+            SentimentGraph.Plot.AddScatter(x_ax,y_ax, lineWidth:2, color:ColorTranslator.FromHtml("#d8c6a0"));
             
 
         }
