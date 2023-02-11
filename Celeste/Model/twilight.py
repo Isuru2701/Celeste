@@ -1,24 +1,42 @@
-﻿import spacy, nltk
+﻿
+# AI LIBRARIES
+from distutils.log import debug
+from typing_extensions import dataclass_transform
+import spacy
 
-import fastapi, uvicorn
+# API LIBRARIES
+from flask import *
 
-from transformers import AutoTokenizer
-from transformers import AutoModelForSequenceClassification
-from scipy.special import softmax
+import json, time
 
-base = f"cardiffnlp/twitter-roberta-base-sentiment"
-tokenizer = AutoTokenizer.from_pretrained(base)
-model = AutoModelForSequenceClassification.from_pretrained(base)
+app = Flask(__name__)
 
-import nltk
-from nltk.sentiment import SentimentIntensityAnalyzer
+@app.route('/', methods=['GET'])
+def home():
+    data_set = {
+                'Page': 'Home',
+                'Message' : 'Home Loaded',
+                'Timestamp' : time.time()
+                }
 
-#nltk.download('vader_lexicon')
+    
+    return json.dumps(data_set)
 
-text = "Today was a weird day, it felt kinda ok cuz my friend Linda spoke to me after so long, but there is also that feeling of something that was normal being broken. I think everyone has a chance to improve, but does she really? after what she did to me? I find it annoying how close she is to me, it feel like she's copying everything I do, and it's frustrating. But I guess I can give her a chance, everything works out when I have chocolate."
-sentiment_analyzer = SentimentIntensityAnalyzer()
+@app.route('/user/', methods=['GET'])
+def user():
+    
+    user_query = str(request.args.get('user')) # user/?user=<text>
 
-score = sentiment_analyzer.polarity_scores(text)
+    data_set = {
+                'Page': 'Request',
+                'Message' : f'Successful query request = {user_query}',
 
-print(score)
+                'Timestamp' : time.time()
+                }
 
+    
+    return json.dumps(data_set)
+
+
+if __name__ == '__main__':
+    app.run(port=777, debug=True)
