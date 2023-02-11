@@ -9,7 +9,15 @@ from distutils.log import debug
 from typing_extensions import dataclass_transform
 
 
+import pyodbc
 import json, time
+
+
+# database conn
+cn = pyodbc.connect('DRIVER={Devart ODBC Driver for SQL Server};Server=ISURU;Database=isuru.Lunar.dbo;User Trusted_Connection=yes')
+cursor = cn.cursor()
+
+
 
 app = Flask(__name__)
 
@@ -24,10 +32,10 @@ def home():
     
     return json.dumps(data_set)
 
-@app.route('/user/', methods=['GET'])
+@app.route('/analyze/', methods=['GET'])
 def user():
     
-    user_query = str(request.args.get('user')) # user/?user=<text>
+    user_query = str(request.args.get('user_id')) # analyze/?user_id=<text>
 
     data_set = {
                 'Page': 'Request',
