@@ -43,7 +43,7 @@ namespace Celeste.Model
                 
             }catch(Exception)
             {
-                throw new Exception("CONN_FAIURE");
+                throw new Exception("CONN_FALIURE");
             }
 
         }

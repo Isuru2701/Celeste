@@ -20,27 +20,52 @@ namespace Celeste.Model
 
         int user_id;
 
+
         Conn connection = new Conn();
         public Person()
         {
             
         }
 
+
+
         public void FetchEntries()
         {
-            entries = connection.Fetch("Select content from user_entries where enduser_id= '" + user_id + "'");
+            try
+            {
+                entries = connection.Fetch("Select content from user_entries where enduser_id= '" + user_id + "'");
+            }
+            catch (Exception)
+            {
+                throw new Exception("USE_ERROR_USER_CONTROL");
+            }
         }
 
         //TODO
         public void FetchTriggers()
         {
-            triggers = connection.Fetch("Select content from user_entries where enduser_id= '" + user_id + "'");
+            try
+            {
+                triggers = connection.Fetch("Select <> from <> where enduser_id= '" + user_id + "'");
+            }
+            catch (Exception)
+            {
+                throw new Exception("USE_ERROR_USER_CONTROL");
+            }
         }
 
 
         public void FetchComforts()
         {
-            entries = connection.Fetch("Select content from user_entries where enduser_id= '" + user_id + "'");
+            try
+            {
+                entries = connection.Fetch("Select <> from <> where enduser_id= '" + user_id + "'");
+            }
+            catch (Exception)
+            {
+                throw new Exception("USE_ERROR_USER_CONTROL");
+            }
+
         }
     }
 }
