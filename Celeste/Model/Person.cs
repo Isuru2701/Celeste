@@ -17,6 +17,7 @@ namespace Celeste.Model
         List<string> entries = new List<string> { };
         List<string> triggers = new List<string> { };
         List<string> comforts = new List<string> { };
+        List<Score> scores = new List<Score> { }; 
 
         int user_id;
 
@@ -33,7 +34,7 @@ namespace Celeste.Model
         {
             try
             {
-                entries = connection.Fetch("Select content from user_entries where enduser_id= '" + user_id + "'");
+                entries = connection.FetchCol("Select content from user_entries where enduser_id= '" + user_id + "'");
             }
             catch (Exception)
             {
@@ -46,7 +47,7 @@ namespace Celeste.Model
         {
             try
             {
-                triggers = connection.Fetch("Select <> from <> where enduser_id= '" + user_id + "'");
+                triggers = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'");
             }
             catch (Exception)
             {
@@ -59,7 +60,7 @@ namespace Celeste.Model
         {
             try
             {
-                entries = connection.Fetch("Select <> from <> where enduser_id= '" + user_id + "'");
+                entries = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'");
             }
             catch (Exception)
             {
