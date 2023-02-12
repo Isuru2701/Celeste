@@ -33,6 +33,7 @@ namespace Celeste.Model
         public Person(int user_id)
         {
             this.user_id = user_id;
+            FetchInfo();
         }
 
         public void FetchInfo()

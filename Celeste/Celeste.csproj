@@ -113,7 +113,10 @@
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Conn.cs" />
+    <Compile Include="Model\Entry.cs" />
+    <Compile Include="Model\Flow.cs" />
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Score.cs" />
     <Compile Include="User.xaml.cs">
       <DependentUpon>User.xaml</DependentUpon>
     </Compile>

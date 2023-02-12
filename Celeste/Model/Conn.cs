@@ -14,14 +14,14 @@ namespace Celeste.Model
      * 
      * Methods:
      * 
-        - FETCHCOL METHOD DEALS WITH FETCHING ONLY ONE COLUMN, USEFUL FOR DATA WHERE DATA-CLEANING DOESNT NEED TO BE DONE.
-          DATAYPE CONVERSION MUST BE DONE THO.
+        - FETCHCOL  :  METHOD DEALS WITH FETCHING ONLY ONE COLUMN, USEFUL FOR DATA WHERE DATA-CLEANING DOESNT NEED TO BE DONE.
+                       DATAYPE CONVERSION MUST BE DONE THO.
 
-        - FETCH METHOD DEALS WITH FETCHING ALL COLUMNS, DATA-CLEANING MUST BE DONE BY REQUESTER
+        - FETCH     :  METHOD DEALS WITH FETCHING ALL COLUMNS, DATA-CLEANING MUST BE DONE BY REQUESTER.
+
+
 
     */
-
-
     public class Conn
     {
         SqlConnection pipeline;
@@ -32,6 +32,7 @@ namespace Celeste.Model
         {
             pipeline = new SqlConnection("Data Source=ISURU;Initial Catalog=Lunar;Integrated Security=True");
             cmd = new SqlCommand();
+            
         }
 
         public List<object> FetchCol(string cmdstring)
