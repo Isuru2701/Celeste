@@ -58,7 +58,7 @@ namespace Celeste.Controls
 
 
             SentimentGraph.Plot.AddScatter(x_ax,y_ax, lineWidth:2, color:ColorTranslator.FromHtml("#d8c6a0"));
-            
+            SentimentGraph.Refresh();
 
         }
 

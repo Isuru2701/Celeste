@@ -13,10 +13,7 @@ namespace Celeste.Model
 {
     public  class Person
     {
-        static SqlConnection con;
-        static SqlCommand com;
-
-        int id;
+        List<string> entries = new List<string> { };
         public Person()
         {
             
