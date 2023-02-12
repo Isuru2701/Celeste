@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,34 +10,66 @@ using System.Threading.Tasks;
 // CONTAINS THE DATA FOR THE CURRENT USER
 // CONNECTS WITH DATABASE TO FETCH DATA
 // INITIALIZED WHEN USER SUCCESSFULLY LOGS IN
+
 namespace Celeste.Model
 {
-    public  class Person
+    public class Person
     {
         //dynamic data stored on database
-        List<string> entries = new List<string> { };
-        List<string> triggers = new List<string> { };
-        List<string> comforts = new List<string> { };
+        private List<Entry> entries = new List<Entry> { };
+        private List<string> triggers = new List<string> { };
+        private List<string> comforts = new List<string> { };
 
-        List<Score> scores = new List<Score> { }; 
+        private List<Score> scores = new List<Score> { };
 
-        int user_id;
+        private int user_id;
+        private string email;
+        private DateTime dob;
+        private char gender;
 
+        private Image profilepic;
 
-        Conn connection = new Conn();
-        public Person()
+        private Conn connection = new Conn();
+        public Person(int user_id)
         {
-            
+            this.user_id = user_id;
+        }
+
+        public void FetchInfo()
+        {
+            try
+            {
+                //there'll only be one row
+                List<List<object>> temp = connection.Fetch("Select email, dob, gender from EndUser where enduser_id= '" + user_id + "'");
+                email = temp[0].ToString();
+                dob = Convert.ToDateTime(temp[1]);
+                gender = Convert.ToChar(temp[2]);
+                
+
+            }
+            catch (Exception)
+            {
+                
+                throw new Exception("USE_ERROR_USER_CONTROL");
+            }
+
         }
 
 
 
         public void FetchEntries()
         {
+
             try
             {
-                entries = connection.FetchCol("Select content from user_entries where enduser_id= '" + user_id + "'")
-                    .Select(x => x.ToString()).ToList();
+                List<List<object>> temp = connection.Fetch("Select entry_date, content from user_entries where enduser_id= '" + user_id + "'order by entry_date asc");
+
+                foreach(List<object> row in temp)
+                {
+                    entries.Add(new Entry(Convert.ToDateTime(row[0]), Convert.ToString(row[1])));
+                }
+
+
             }
             catch (Exception)
             {
@@ -49,6 +82,9 @@ namespace Celeste.Model
         {
             try
             {
+                //purges past data, if any
+                triggers.Clear();
+
                 triggers = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'")
                     .Select(x => x.ToString()).ToList();
             }
@@ -63,6 +99,9 @@ namespace Celeste.Model
         {
             try
             {
+                //purges past data, if any
+                comforts.Clear();
+
                 comforts = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'")
                     .Select(x => x.ToString()).ToList();
             }
@@ -77,15 +116,18 @@ namespace Celeste.Model
         {
             try
             {
-                List<List<object>> temp = connection.Fetch("Select entry_date, score from user_score where enduser_id= '" + user_id + "' order by entry_date asc" );
+                //purges past data, if any
+                scores.Clear();
 
-                foreach(List<object> row in temp)
+                List<List<object>> temp = connection.Fetch("Select entry_date, score from user_score where enduser_id= '" + user_id + "' order by entry_date asc");
+
+                foreach (List<object> row in temp)
                 {
                     scores.Add(new Score(Convert.ToDateTime(row[0]), Convert.ToDouble(row[1])));
                 }
 
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 throw new Exception("INVALID_DATA_TYPE_CONVERSION_ERROR");
             }
@@ -95,7 +137,7 @@ namespace Celeste.Model
                 throw new Exception("USE_ERROR_USER_CONTROL");
             }
 
-
         }
+
     }
 }

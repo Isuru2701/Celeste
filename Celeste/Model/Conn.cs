@@ -47,7 +47,7 @@ namespace Celeste.Model
 
                 while(entries.Read()) 
                 {
-                    temp.Add(entries.GetString(0));
+                    temp.Add(entries.GetValue(0));
                 }
                 pipeline.Close();
 
@@ -71,7 +71,7 @@ namespace Celeste.Model
                 //temporary holding bay for reader output
                 List<List<object>> temp = new List<List<object>> { };
 
-                //slice off a row
+                //slice off a row n-times
                 while (entries.Read())
                 {
                     List<object> row = new List<object> { };
