@@ -14,7 +14,9 @@ namespace Celeste.Model
      * 
      * Methods:
      * 
-        - FETCHCOL METHOD DEALS WITH FETCHING ONLY ONE COLUMN, USEFUL FOR DATA WHERE DATA-CLEANING DOESNT NEED TO BE DONE
+        - FETCHCOL METHOD DEALS WITH FETCHING ONLY ONE COLUMN, USEFUL FOR DATA WHERE DATA-CLEANING DOESNT NEED TO BE DONE.
+          DATAYPE CONVERSION MUST BE DONE THO.
+
         - FETCH METHOD DEALS WITH FETCHING ALL COLUMNS, DATA-CLEANING MUST BE DONE BY REQUESTER
 
     */
@@ -32,7 +34,7 @@ namespace Celeste.Model
             cmd = new SqlCommand();
         }
 
-        public List<string> FetchCol(string cmdstring)
+        public List<object> FetchCol(string cmdstring)
         {
             try
             {
@@ -41,7 +43,7 @@ namespace Celeste.Model
                 SqlDataReader entries = cmd.ExecuteReader();
 
                 //temporary holding bay for reader output
-                List<string> temp = new List<string> { };
+                List<object> temp = new List<object> { };
 
                 while(entries.Read()) 
                 {
@@ -69,6 +71,7 @@ namespace Celeste.Model
                 //temporary holding bay for reader output
                 List<List<object>> temp = new List<List<object>> { };
 
+                //slice off a row
                 while (entries.Read())
                 {
                     List<object> row = new List<object> { };

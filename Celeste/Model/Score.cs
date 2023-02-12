@@ -8,9 +8,10 @@ namespace Celeste.Model
 {
     internal class Score
     {
-        int value;
+       
         DateTime date;
-        public Score(DateTime date, int value) 
+        double value;
+        public Score(DateTime date, double value) 
         {
             this.date = date;
             this.value = value;
