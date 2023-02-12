@@ -22,15 +22,24 @@ namespace Celeste.Model
             cmd = new SqlCommand();
         }
 
-        public void GetEntries(string user_id)
+        public List<string> Fetch(string cmdstring)
         {
             try
             {
                 pipeline.Open();
-                cmd.CommandText ="Select content from user_entries where enduser_id= '" + user_id + "'";
-                cmd.ExecuteReader();
+                cmd.CommandText = cmdstring;
+                SqlDataReader entries = cmd.ExecuteReader();
 
+                //temporary holding bay for reader output
+                List<string> temp = new List<string> { };
+
+                while(entries.Read()) 
+                {
+                    temp.Add(entries.GetString(0));
+                }
                 pipeline.Close();
+
+                return temp;
                 
             }catch(Exception)
             {
