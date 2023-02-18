@@ -25,7 +25,11 @@ namespace Celeste.Views
         {
             InitializeComponent();
 
-            List<string> buttonTexts = new List<string> { "Button 1", "Button 2", "Button 3" };
+            List<string> buttonTexts = new List<string>();
+            for(int i = 1; i < 30; ++i)
+            {
+                buttonTexts.Add("Button " + i);
+            }
             Container.ItemsSource = buttonTexts;
 
         }

@@ -10,8 +10,7 @@
     <Style TargetType="{x:Type ListBoxItem}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#d8c6a0"/>
-        <Setter Property="Height" Value="200"/>
-        <Setter Property="Padding" Value="0" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
 
         <Setter Property="Template">

@@ -23,7 +23,7 @@
 
                         <Button.Style>
                             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MenubuttonTheme}">
-                                <Setter Property="Height" Value="200"/>
+                                <Setter Property="Height" Value="100"/>
                                 <Setter Property="FontSize" Value="20"/>
                             </Style>
                         </Button.Style>
