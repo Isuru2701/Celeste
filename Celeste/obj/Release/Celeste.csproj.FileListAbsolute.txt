@@ -73,3 +73,13 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Google.Apis
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Google.Apis.YouTube.v3.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Google.Apis.YouTube.v3.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Newtonsoft.Json.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\HandyControl.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LiveCharts.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LiveCharts.Wpf.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Notifications.Wpf.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\HandyControl.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LiveCharts.pdb
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LiveCharts.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LiveCharts.Wpf.pdb
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LiveCharts.Wpf.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Drawing.Common.xml

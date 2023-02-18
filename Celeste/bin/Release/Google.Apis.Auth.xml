@@ -747,6 +747,20 @@
         <member name="F:Google.Apis.Auth.OAuth2.ComputeCredential.GoogleMetadataHeader">
             <summary>The Metadata header response indicating Google.</summary>
         </member>
+        <member name="F:Google.Apis.Auth.OAuth2.ComputeCredential._defaultServiceAccountEmailCache">
+            <summary>
+            Caches the task that fetches the default service account email from the metadata server.
+            The default service account email can be cached because changing the service
+            account associated to a Compute instance requires a machine shutdown.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Auth.OAuth2.ComputeCredential._authenticatedHttpClient">
+            <summary>
+            HttpClient used to call APIs internally authenticated as this ComputeCredential.
+            For instance, to perform IAM API calls for signing blobs of data.
+            </summary>
+            <remarks>Lazy to build one HtppClient only if it is needed.</remarks>
+        </member>
         <member name="P:Google.Apis.Auth.OAuth2.ComputeCredential.OidcTokenUrl">
             <summary>
             Gets the OIDC Token URL.
@@ -799,11 +813,48 @@
         <member name="M:Google.Apis.Auth.OAuth2.ComputeCredential.Google#Apis#Auth#OAuth2#IGoogleCredential#WithHttpClientFactory(Google.Apis.Http.IHttpClientFactory)">
             <inheritdoc/>
         </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ComputeCredential.GetDefaultServiceAccountEmailAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a task whose result, when completed, is the default service account email associated to
+            this Compute credential.
+            </summary>
+            <remarks>
+            <para>
+            This value is cached, because for changing the default service account associated to a
+            Compute VM, the machine needs to be turned off. This means that the operation is only
+            asynchronous when calling for the first time.
+            </para>
+            <para>
+            Note that if, when fetching this value, an exception is thrown, the exception is cached and
+            will be rethrown by the task returned by any future call to this method.
+            You can create a new <see cref="T:Google.Apis.Auth.OAuth2.ComputeCredential"/> instance if that happens so fetching
+            the service account default email is re-attempted.
+            </para>
+            </remarks>
+        </member>
         <member name="M:Google.Apis.Auth.OAuth2.ComputeCredential.RequestAccessTokenAsync(System.Threading.CancellationToken)">
             <inheritdoc/>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ComputeCredential.GetOidcTokenAsync(Google.Apis.Auth.OAuth2.OidcTokenOptions,System.Threading.CancellationToken)">
             <inheritdoc/>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ComputeCredential.SignBlobAsync(System.Byte[],System.Threading.CancellationToken)">
+            <summary>
+            Signs the provided blob using the private key associated with the service account
+            this ComputeCredential represents.
+            </summary>
+            <param name="blob">The blob to sign.</param>
+            <param name="cancellationToken">Cancellation token to cancel the operation.</param>
+            <returns>The base64 encoded signature.</returns>
+            <exception cref="T:System.Net.Http.HttpRequestException">When the signing request fails.</exception>
+            <exception cref="T:Newtonsoft.Json.JsonException">When the signing response is not valid JSON.</exception>
+            <remarks>
+            The private key associated with the Compute service account is not known locally
+            by a ComputeCredential. Signing happens by executing a request to the IAM Credentials API
+            which increases latency and counts towards IAM Credentials API quotas. Aditionally, the first
+            time a ComputeCredential is used to sign data, a request to the metadata server is made to
+            to obtain the email of the default Compute service account.
+            </remarks>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ComputeCredential.IsRunningOnComputeEngine">
             <summary>
@@ -1540,6 +1591,12 @@
         <member name="P:Google.Apis.Auth.OAuth2.GoogleAuthConsts.EffectiveComputeOidcTokenUrl">
             <summary>
             The effective Compute Engine authorization token server URL for OIDC. This requires an audience parameter to be added.
+            This takes account of the GCE_METADATA_HOST environment variable.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.GoogleAuthConsts.EffectiveComputeDefaultServiceAccountEmailUrl">
+            <summary>
+            The effective Compute Engine default service account email URL.
             This takes account of the GCE_METADATA_HOST environment variable.
             </summary>
         </member>
@@ -2828,6 +2885,16 @@
         <member name="M:Google.Apis.Auth.OAuth2.Requests.GoogleRevokeTokenRequest.Build">
             <summary>Creates a <see cref="T:System.Uri"/> which is used to request the authorization code.</summary>
         </member>
+        <member name="P:Google.Apis.Auth.OAuth2.Requests.IamSignBlobRequest.DelegateAccounts">
+            <summary>
+            Gets or sets the chained list of delegate service accounts.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Auth.OAuth2.Requests.IamSignBlobRequest.Payload">
+            <summary>
+            Gets or sets the payload to be signed.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Auth.OAuth2.Requests.ImpersonationAccessTokenRequest">
             <summary>
             Access token request for impersonated credential as specified in https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#sa-credentials-oauth.
@@ -2864,11 +2931,6 @@
             Gets or sets the chained list of delegate service accounts.
             </summary>
         </member>
-        <member name="P:Google.Apis.Auth.OAuth2.Requests.ImpersonationSignBlobRequest.Payload">
-            <summary>
-            Gets or sets the payload to be signed.
-            </summary>
-        </member>
         <member name="T:Google.Apis.Auth.OAuth2.Requests.RefreshTokenRequest">
             <summary>
             OAuth 2.0 request to refresh an access token using a refresh token as specified in 
@@ -2881,6 +2943,35 @@
         <member name="M:Google.Apis.Auth.OAuth2.Requests.RefreshTokenRequest.#ctor">
             <summary>
             Constructs a new refresh code token request and sets grant_type to <c>refresh_token</c>.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.Requests.RequestExtensions.PostJsonAsync(System.Object,System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Serializes <paramref name="request"/> to JSON and posts it to <paramref name="url"/>.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.Requests.RequestExtensions.PostJsonAsync``1(System.Object,System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Serializes <paramref name="request"/> to JSON and posts it to <paramref name="url"/>.
+            Deserializes the JSON response into <typeparamref name="TResponse"/>.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.Requests.RequestExtensions.PostJsonAsync(System.Object,System.Net.Http.HttpClient,System.String,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger,System.Threading.CancellationToken)">
+            <summary>
+            Serializes <paramref name="request"/> to JSON and posts it to <paramref name="url"/>.
+            Builds a <see cref="T:Google.Apis.Auth.OAuth2.Responses.TokenResponse"/> instance from the HTTP response.
+            <see cref="M:Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(System.Net.Http.HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)"/>
+            for more information.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.Requests.RequestExtensions.PostFormAsync(System.Object,System.Net.Http.HttpClient,System.String,System.Net.Http.Headers.AuthenticationHeaderValue,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger,System.Threading.CancellationToken)">
+            <summary>
+            Creates and HTTP form from <paramref name="request"/> and posts it to <paramref name="url"/>.
+            If <paramref name="authenticationHeaderValue"/> is not null, its value is included as the
+            Authorization header of the request.
+            Builds a <see cref="T:Google.Apis.Auth.OAuth2.Responses.TokenResponse"/> instance from the HTTP response.
+            <see cref="M:Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(System.Net.Http.HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)"/>
+            for more information.
             </summary>
         </member>
         <member name="T:Google.Apis.Auth.OAuth2.Requests.StsTokenRequestBuilder">
@@ -3029,10 +3120,7 @@
             <param name="httpClient">The HTTP client used to create an HTTP request.</param>
             <param name="tokenServerUrl">The token server URL.</param>
             <param name="taskCancellationToken">Cancellation token to cancel operation.</param>
-            <param name="clock">
-            The clock which is used to set the
-            <see cref="P:Google.Apis.Auth.OAuth2.Responses.TokenResponse.Issued"/> property.
-            </param>
+            <param name="clock">The clock which is used to set the <see cref="P:Google.Apis.Auth.OAuth2.Responses.TokenResponse.Issued"/> property.</param>
             <returns>Token response with the new access token.</returns>
         </member>
         <member name="T:Google.Apis.Auth.OAuth2.Responses.AuthorizationCodeResponseUrl">
@@ -3087,7 +3175,7 @@
         <member name="M:Google.Apis.Auth.OAuth2.Responses.AuthorizationCodeResponseUrl.#ctor">
             <summary>Constructs a new empty authorization code response URL.</summary>
         </member>
-        <member name="P:Google.Apis.Auth.OAuth2.Responses.ImpersonationSignBlobResponse.SignedBlob">
+        <member name="P:Google.Apis.Auth.OAuth2.Responses.IamSignBlobResponse.SignedBlob">
             <summary>Gets or sets the signed blob.</summary>
         </member>
         <member name="T:Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse">
@@ -3570,6 +3658,11 @@
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ServiceCredential.#ctor(Google.Apis.Auth.OAuth2.ServiceCredential.Initializer)">
             <summary>Constructs a new service account credential using the given initializer.</summary>
+        </member>
+        <member name="M:Google.Apis.Auth.OAuth2.ServiceCredential.BuildCreateHttpClientArgs">
+            <summary>
+            Builds HTTP client creation args from this credential settings.
+            </summary>
         </member>
         <member name="M:Google.Apis.Auth.OAuth2.ServiceCredential.Initialize(Google.Apis.Http.ConfigurableHttpClient)">
             <inheritdoc/>

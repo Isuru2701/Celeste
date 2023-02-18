@@ -673,6 +673,17 @@
             Appends the .NET environment information to the list.
             </summary>
         </member>
+        <member name="M:Google.Apis.Requests.VersionHeaderBuilder.IsHeaderNameValueValid(System.String)">
+            <summary>
+            Whether the name or value that are supposed to be included in a header are valid
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.VersionHeaderBuilder.FormatInformationalVersion(System.String)">
+            <summary>
+            Formats an AssemblyInformationalVersionAttribute value to avoid losing useful information,
+            but also avoid including unnecessary hex that is appended automatically.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Requests.VersionHeaderBuilder.ToString">
             <inheritdoc />
         </member>
