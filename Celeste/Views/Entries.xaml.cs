@@ -28,7 +28,7 @@ namespace Celeste.Views
             List<string> buttonTexts = new List<string>();
             for(int i = 1; i < 30; ++i)
             {
-                buttonTexts.Add("Button " + i);
+                buttonTexts.Add($"{DateTime.Now.Date.AddDays(-i).ToLongDateString()}");
             }
             Container.ItemsSource = buttonTexts;
 
@@ -42,5 +42,9 @@ namespace Celeste.Views
             System.Windows.MessageBox.Show("You clicked the button with text: " + buttonText);
         }
 
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

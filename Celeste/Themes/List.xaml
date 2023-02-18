@@ -3,7 +3,8 @@
 
     <Style TargetType="{x:Type ListBox}"
            x:Key="{x:Type ListBox}">
-        <Setter Property="Background" Value="#141414"/>
+        <Setter Property="Background" Value="#171717"/>
+        <Setter Property="BorderBrush" Value="#171717"/>
     </Style>
 
 

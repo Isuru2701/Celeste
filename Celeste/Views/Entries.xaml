@@ -11,26 +11,55 @@
       Background="#1e1730">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <StackPanel>
+        <Border Grid.Row="0" Background="#141414">
+            <Button x:Name="btn_back"
+                Width="50"
+                Height="50"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Click="btn_back_Click"
+                    Margin="20,20,20,20">
+                <Image Source="../Resources/back_btn.png"/>
+                <Button.Style>
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+            </Button>
 
-        </StackPanel>
-        <ListBox x:Name="Container">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Button Content="{Binding}" 
+        </Border>
+
+        <ListBox x:Name="Container" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding}" 
                             Click="Button_Click">
 
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ListbuttonTheme}">
-                                    <Setter Property="FontSize" Value="20"/>
-                                </Style>
-                            </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ListbuttonTheme}">
+                                <Setter Property="FontSize" Value="20"/>
+                            </Style>
+                        </Button.Style>
 
-                        </Button>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                    </Button>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Page>
