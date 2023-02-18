@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="Themes/Pickers.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Themes/Scrollbars.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Themes/List.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/ListButtons.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>

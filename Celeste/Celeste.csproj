@@ -153,9 +153,6 @@
     <Compile Include="Controls\Chart.xaml.cs">
       <DependentUpon>Chart.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ListSelector.xaml.cs">
-      <DependentUpon>ListSelector.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MAINFRAME.xaml.cs">
       <DependentUpon>MAINFRAME.xaml</DependentUpon>
     </Compile>
@@ -199,10 +196,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\ListSelector.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MAINFRAME.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ListButtons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -361,6 +358,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\twilight.py" />
+    <Resource Include="Resources\entry_image.png" />
     <Resource Include="Resources\background.png" />
     <Resource Include="Resources\quill.png" />
   </ItemGroup>

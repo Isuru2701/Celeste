@@ -118,6 +118,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\SkiaSharp.V
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Buffers.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Memory.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\ListSelector.g.cs
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\ListSelector.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Themes\List.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Themes\ListButtons.baml
