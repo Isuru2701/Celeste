@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Celeste.Controls"
              xmlns:Templates="clr-namespace:Celeste.Templates"
-             x:Class="Celeste.Controls.Graph"
+            xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+            x:Class="Celeste.Controls.Chart"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="750">
 
@@ -23,9 +24,8 @@
                     BorderThickness="0,0,0,1">
 
                 <!--graph goes here -->
-                <WpfPlot x:Name="SentimentGraph" Foreground="{x:Null}"
-                         />
-
+                <lvc:CartesianChart x:Name="SentimentGraph" 
+                                    Series="{Binding SeriesCollection}" />
                 
 
 

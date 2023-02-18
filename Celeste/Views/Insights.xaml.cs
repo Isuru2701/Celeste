@@ -32,7 +32,7 @@ namespace Celeste.Views
 
         private void btn_score_Click(object sender, RoutedEventArgs e)
         {
-            InfoFrame.Content = new Graph();
+            InfoFrame.Content = new Chart();
         }
 
         private void btn_triggers_Click(object sender, RoutedEventArgs e)

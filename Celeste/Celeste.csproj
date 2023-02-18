@@ -115,8 +115,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\Graph.xaml.cs">
-      <DependentUpon>Graph.xaml</DependentUpon>
+    <Compile Include="Controls\Chart.xaml.cs">
+      <DependentUpon>Chart.xaml</DependentUpon>
     </Compile>
     <Compile Include="MAINFRAME.xaml.cs">
       <DependentUpon>MAINFRAME.xaml</DependentUpon>
@@ -127,6 +127,7 @@
     <Compile Include="Model\Conn.cs" />
     <Compile Include="Model\Entry.cs" />
     <Compile Include="Model\Flow.cs" />
+    <Compile Include="Model\Graph.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Score.cs" />
     <Compile Include="User.xaml.cs">
@@ -156,7 +157,7 @@
     <Compile Include="Views\Writer.xaml.cs">
       <DependentUpon>Writer.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\Graph.xaml">
+    <Page Include="Controls\Chart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

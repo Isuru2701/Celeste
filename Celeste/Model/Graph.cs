@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Celeste.Model
 {
+    //Fetch and load plottable data into this class
+    //
     internal class Graph
     {
     }
