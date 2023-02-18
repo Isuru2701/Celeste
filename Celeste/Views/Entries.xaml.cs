@@ -25,8 +25,18 @@ namespace Celeste.Views
         {
             InitializeComponent();
 
-            Container.AddRange(new[] { Enumerable.Range(0,7).Select(i => DateTime.Today.AddDays(i)) });
+            List<string> buttonTexts = new List<string> { "Button 1", "Button 2", "Button 3" };
+            Container.ItemsSource = buttonTexts;
+
         }
-        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;  // cast the sender parameter to a Button
+            string buttonText = (string)clickedButton.Content;  // get the text content of the button
+                                                                // Do something with the clicked button, such as displaying a message with the button text
+            System.Windows.MessageBox.Show("You clicked the button with text: " + buttonText);
+        }
+
     }
 }

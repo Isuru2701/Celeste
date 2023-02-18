@@ -15,6 +15,23 @@
         <StackPanel>
 
         </StackPanel>
+        <ListBox x:Name="Container">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding}" 
+                            Click="Button_Click">
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MenubuttonTheme}">
+                                <Setter Property="Height" Value="200"/>
+                                <Setter Property="FontSize" Value="20"/>
+                            </Style>
+                        </Button.Style>
+
+                    </Button>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Page>
