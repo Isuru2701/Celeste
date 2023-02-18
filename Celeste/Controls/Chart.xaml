@@ -25,7 +25,7 @@
 
                 <!--graph goes here -->
                 <lvc:CartesianChart x:Name="SentimentGraph" 
-                                    Series="{Binding SeriesCollection}" />
+                                    Series="{Binding Series}"/>
                 
 
 

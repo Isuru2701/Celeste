@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace Celeste.Views
         public Entries()
         {
             InitializeComponent();
+
+            Container.AddRange(new[] { Enumerable.Range(0,7).Select(i => DateTime.Today.AddDays(i)) });
         }
+        
     }
 }
