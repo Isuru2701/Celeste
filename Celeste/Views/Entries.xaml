@@ -14,8 +14,8 @@
 
         <StackPanel>
 
-
-            <ListBox x:Name="Container">
+        </StackPanel>
+        <ListBox x:Name="Container">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Button Content="{Binding}" 
@@ -32,7 +32,5 @@
                 </ListBox.ItemTemplate>
             </ListBox>
 
-
-        </StackPanel>
     </Grid>
 </Page>
