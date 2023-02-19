@@ -10,14 +10,21 @@
 
     <Grid Background="#28284a">
 
+        <Grid.Resources>
+            <Style TargetType="{x:Type hc:LoadingLine}">
+                <Setter Property="Foreground" Value="#d8c6a0"/>
+                <Setter Property="DotDelayTime" Value="100"/>
+                <Setter Property="DotSpeed" Value="1.15"/>
+                <Setter Property="DotDiameter" Value="25"/>
+                <Setter Property="DotInterval" Value="0.5"/>
+            </Style>
+        </Grid.Resources>
+
         <hc:LoadingLine HorizontalAlignment="Left"
                         Margin="85,332,0,0"
                         VerticalAlignment="Top"
                         Width="300"
-                        FlowDirection="RightToLeft"
-                        Foreground="#d8c6a0"
-                        DotDiameter="15"
-                        DotSpeed="1.5"/>
+                        FlowDirection="RightToLeft"/>
 
 
         <Image Source="../Resources/insights_btn.png"
@@ -27,10 +34,7 @@
         <hc:LoadingLine HorizontalAlignment="Left"
                         Margin="895,0,0,40"
                         VerticalAlignment="Center"
-                        Width="300"
-                        Foreground="#d8c6a0"
-                        DotDiameter="15"
-                        DotSpeed="1.5"/>
+                        Width="300"/>
 
         <Label Content="Loading"
                VerticalAlignment="Top"
