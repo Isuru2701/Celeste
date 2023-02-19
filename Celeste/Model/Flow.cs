@@ -9,6 +9,9 @@ namespace Celeste.Model
     //MAIN CONTROLLER
     public class Flow
     {
+        public Flow()
+        {
 
+        }
     }
 }
