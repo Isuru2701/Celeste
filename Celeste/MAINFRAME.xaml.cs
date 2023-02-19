@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using Celeste.Views;
+using Celeste.Model;
 
 namespace Celeste
 {
@@ -21,6 +22,8 @@ namespace Celeste
     /// </summary>
     public partial class MAINFRAME : Window
     {
+
+        public Flow flow;
         public MAINFRAME()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             MainFrame.Navigate(new Login());
         }
     }
