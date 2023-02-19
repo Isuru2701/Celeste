@@ -26,7 +26,7 @@ namespace Celeste.Views
             InitializeComponent();
 
             List<string> buttonTexts = new List<string>();
-            for(int i = 1; i < 30; ++i)
+            for(int i = 0; i < 30; ++i)
             {
                 buttonTexts.Add($"{DateTime.Now.Date.AddDays(-i).ToLongDateString()}");
             }
