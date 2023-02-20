@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Celeste.Controls.NoConnection"
+﻿<UserControl xmlns:Templates="clr-namespace:Celeste.Templates"  x:Class="Celeste.Controls.NoConnection"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,9 +11,15 @@
 
         <Image Source="../Resources/bug.png"
                Width="100" Margin="143,0,557,0"/>
-        <Label Content="Sorry, we couldn't setup a connection &#xa; are you connected to the internet?"
-               
+        <Label Content="Sorry, we couldn't setup a connection"
                HorizontalAlignment="Left"
                VerticalAlignment="Top" Margin="266,180,0,0"/>
+
+        <Label Content="are you connected to the internet?"
+               HorizontalAlignment="Left"
+               FontSize="15"
+               VerticalAlignment="Center" Margin="266,0,0,0"/>
+
+
     </Grid>
 </UserControl>

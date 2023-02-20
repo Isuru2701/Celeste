@@ -130,7 +130,7 @@ namespace Celeste.Model
             }
             catch (FormatException)
             {
-                throw new Exception("INVALID_DATA_TYPE_CONVERSION_ERROR");
+                throw new FormatException("INVALID_DATA_TYPE_CONVERSION_ERROR");
             }
 
             catch (Exception)

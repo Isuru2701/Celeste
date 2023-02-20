@@ -153,6 +153,9 @@
     <Compile Include="Controls\Chart.xaml.cs">
       <DependentUpon>Chart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NoConnection.xaml.cs">
+      <DependentUpon>NoConnection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MAINFRAME.xaml.cs">
       <DependentUpon>MAINFRAME.xaml</DependentUpon>
     </Compile>
@@ -193,6 +196,10 @@
       <DependentUpon>Writer.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NoConnection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -358,6 +365,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\twilight.py" />
+    <Resource Include="Resources\bug.png" />
     <Resource Include="Resources\entry_image.png" />
     <Resource Include="Resources\background.png" />
     <Resource Include="Resources\quill.png" />
