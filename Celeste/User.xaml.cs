@@ -55,6 +55,7 @@ namespace Celeste
             {
                 OpenFileDialog selector = new OpenFileDialog();
                 selector.CheckFileExists = true;
+                selector.Filter 
 
                 if (selector.ShowDialog() == true)
                 {
@@ -69,9 +70,9 @@ namespace Celeste
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Debug.WriteLine(ex.Message);
             }
         }
 

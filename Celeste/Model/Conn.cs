@@ -51,13 +51,15 @@ namespace Celeste.Model
                 {
                     temp.Add(entries.GetValue(0));
                 }
-                pipeline.Close();
-
                 return temp;
                 
             }catch(Exception)
             {
                 throw new Exception("CONN_FALIURE");
+            }
+            finally
+            {
+                pipeline.Close();
             }
 
         }
@@ -83,7 +85,6 @@ namespace Celeste.Model
                     }
                     temp.Add(row);
                 }
-                pipeline.Close();
 
                 return temp;
 
@@ -92,6 +93,12 @@ namespace Celeste.Model
             {
                 throw new Exception("CONN_FALIURE");
             }
+
+            finally
+            {
+                pipeline.Close();
+            }
+
 
         }
 
@@ -110,6 +117,12 @@ namespace Celeste.Model
             {
                 throw new Exception("CONN_FAILURE");
             }
+
+            finally
+            {
+                pipeline.Close();
+            }
+
         }
 
 
