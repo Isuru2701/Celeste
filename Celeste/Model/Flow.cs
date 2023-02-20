@@ -12,15 +12,13 @@ namespace Celeste.Model
     {
         public static DateTime StartTime { get; set; }
 
-        public static Person sessionUser;
+        public static string BaseAddress { get; set; }
 
         //Create when program is run the first time
-        static Flow()
+        public static void Initiate()
         {
-
+            BaseAddress = AppDomain.CurrentDomain.BaseDirectory;
             StartTime = DateTime.Now;
-
-            sessionUser.FetchInfo();
         }
     }
 }

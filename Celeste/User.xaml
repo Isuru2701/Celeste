@@ -28,7 +28,7 @@
                 Margin="20">
             <Image
                    x:Name="pic_pfp" 
-                    Source="Resources/logo(minimal).png"
+                    Source="Resources/logo(large).png"
                    Height="200" Width="200"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"

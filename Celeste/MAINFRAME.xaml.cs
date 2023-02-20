@@ -22,8 +22,6 @@ namespace Celeste
     /// </summary>
     public partial class MAINFRAME : Window
     {
-
-        public Flow flow;
         public MAINFRAME()
         {
             InitializeComponent();
@@ -31,7 +29,7 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            Flow.Initiate();
             MainFrame.Navigate(new Login());
         }
     }

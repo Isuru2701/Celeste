@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
+using Celeste.Model;
 
 namespace Celeste
 {
@@ -32,6 +33,22 @@ namespace Celeste
             this.Close();
         }
 
+
+        private byte[] _rawImageData;
+        public byte[] RawImageData
+        {
+            get { return _rawImageData; }
+            set
+            {
+
+                //check if the new image is different.
+                if (value != _rawImageData)
+                {
+                    _rawImageData = value;
+                }
+            }
+        }
+
         private void changepfp_btn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -40,9 +57,13 @@ namespace Celeste
                 selector.CheckFileExists = true;
 
                 if (selector.ShowDialog() == true)
-                { 
+                {
+
+                    //store a local copy AND upload to database
                     if (File.Exists(selector.FileName) && selector.FileName != string.Empty)
+
                     {
+                        pic_pfp.Source = new BitmapImage(new Uri(selector.FileName));
 
                     }
                 }
@@ -58,11 +79,11 @@ namespace Celeste
         {
             try
             {
-                pic_pfp.Source = new BitmapImage(new Uri("Resources /logo(minimal).png"));
+                pic_pfp.Source = new BitmapImage(new Uri("Resources/logo(large).png", UriKind.Relative));
             }
             catch (Exception)
             {
-                throw new Exception("FATAL: SOME RESOURCES APPEAR TO BE MISSING");
+                throw new Exception("FATAL: SOME RESOURCES APPEAR TO BE MISSING: " + Flow.BaseAddress);
             }
 
 
