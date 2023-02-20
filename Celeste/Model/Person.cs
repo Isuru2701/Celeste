@@ -22,18 +22,35 @@ namespace Celeste.Model
 
         private List<Score> scores = new List<Score> { };
 
-        private int user_id;
-        private string email;
-        private DateTime dob;
-        private char gender;
+        public int user_id { get; set; }
+        public string email { get; set; }
+        public DateTime dob { get; set; }
+        public char gender { get; set; }
 
         private Image profilepic;
 
         private Conn connection = new Conn();
-        public Person(int user_id)
+
+
+        //Uses Singleton design to ensure only one user is acting at a time.
+        //To acccess properties/methods, remember to use sessionUser.GetInstance(<user id>).<property>/<method>()
+
+        private static Person instance;
+
+        private Person(int user_id)
         {
             this.user_id = user_id;
             FetchInfo();
+        }
+
+        public static Person GetInstance(int id)
+        {
+            if (instance == null)
+            {
+                instance = new Person(id);
+            }
+
+            return instance;
         }
 
         public void FetchInfo()
@@ -42,9 +59,9 @@ namespace Celeste.Model
             {
                 //there'll only be one row
                 List<List<object>> temp = connection.Fetch("Select email, dob, gender from EndUser where enduser_id= '" + user_id + "'");
-                email = temp[0].ToString();
-                dob = Convert.ToDateTime(temp[1]);
-                gender = Convert.ToChar(temp[2]);
+                email = temp[0][0].ToString();
+                dob = Convert.ToDateTime(temp[0][1]);
+                gender = Convert.ToChar(temp[0][2]);
                 
 
             }
@@ -137,6 +154,11 @@ namespace Celeste.Model
             {
                 throw new Exception("USE_ERROR_USER_CONTROL");
             }
+
+        }
+
+        public void SetImage(string uri)
+        {
 
         }
 

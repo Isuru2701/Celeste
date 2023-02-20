@@ -19,7 +19,7 @@ namespace Celeste.Model
 
         - FETCH     :  METHOD DEALS WITH FETCHING ALL COLUMNS, DATA-CLEANING MUST BE DONE BY REQUESTER.
 
-        - WRITE     : EXECUTE NON QUERIES ONTO THE DB.
+        - WRITE     : EXECUTE NON QUERIES ONTO THE DB. RETURNS NUMBER OF ROWS AFFECTED.
 
 
     */
@@ -95,14 +95,16 @@ namespace Celeste.Model
 
         }
 
-        public void Write(string cmdstring)
+        public int Write(string cmdstring)
         {
             try
             {
                 pipeline.Open();
                 cmd.CommandText = cmdstring;
-                cmd.ExecuteNonQuery();
+                int i = cmd.ExecuteNonQuery();
                 pipeline.Close();
+
+                return i;
             }
             catch
             {

@@ -22,9 +22,6 @@ namespace Celeste
     /// </summary>
     public partial class User : Window
     {
-
-        string slnAt, resourcesPath;
-
         public User()
         {
             InitializeComponent();
@@ -37,10 +34,38 @@ namespace Celeste
 
         private void changepfp_btn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                OpenFileDialog selector = new OpenFileDialog();
+                selector.CheckFileExists = true;
+
+                if (selector.ShowDialog() == true)
+                { 
+                    if (File.Exists(selector.FileName) && selector.FileName != string.Empty)
+                    {
+
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void resetpfp_btn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                pic_pfp.Source = new BitmapImage(new Uri("Resources /logo(minimal).png"));
+            }
+            catch (Exception)
+            {
+                throw new Exception("FATAL: SOME RESOURCES APPEAR TO BE MISSING");
+            }
+
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

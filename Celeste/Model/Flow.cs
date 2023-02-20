@@ -7,16 +7,20 @@ using System.Threading.Tasks;
 namespace Celeste.Model
 {
     //MAIN CONTROLLER
-    public class Flow
+    //The highest-level of abstraction
+    public static class Flow
     {
+        public static DateTime StartTime { get; set; }
 
-        
-        DateTime StartTime { get; set; }
+        public static Person sessionUser;
 
-        //Create when program is run
-        public Flow()
+        //Create when program is run the first time
+        static Flow()
         {
+
             StartTime = DateTime.Now;
+
+            sessionUser.FetchInfo();
         }
     }
 }
