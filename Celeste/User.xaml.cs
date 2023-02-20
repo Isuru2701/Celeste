@@ -15,13 +15,16 @@ using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
 using Celeste.Model;
+using HandyControl.Controls;
+using HandyControl.Data;
+using HandyControl.Tools.Extension;
 
 namespace Celeste
 {
     /// <summary>
     /// Interaction logic for User.xaml
     /// </summary>
-    public partial class User : Window
+    public partial class User : System.Windows.Window
     {
         public User()
         {
@@ -55,7 +58,7 @@ namespace Celeste
             {
                 OpenFileDialog selector = new OpenFileDialog();
                 selector.CheckFileExists = true;
-                selector.Filter 
+                selector.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg;*.jpeg)|*.jpg;*.jpeg|All files (*.*)|*.*"; ;
 
                 if (selector.ShowDialog() == true)
                 {
@@ -70,6 +73,12 @@ namespace Celeste
                 }
 
             }
+            catch (NotSupportedException)
+            {
+                HandyControl.Controls.MessageBox.Show("Hello, world!", "My Message Box", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
