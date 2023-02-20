@@ -19,6 +19,9 @@ using HandyControl.Controls;
 using HandyControl.Data;
 using HandyControl.Tools.Extension;
 
+using WPFCustomMessageBox;
+using System.Drawing;
+
 namespace Celeste
 {
     /// <summary>
@@ -75,7 +78,6 @@ namespace Celeste
             }
             catch (NotSupportedException)
             {
-                HandyControl.Controls.MessageBox.Show("Hello, world!", "My Message Box", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
 
