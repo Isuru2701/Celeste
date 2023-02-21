@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Celeste.Views;
+using HandyControl.Controls;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,12 +16,14 @@ namespace Celeste.Model
      * 
      * Methods:
      * 
-        - FETCHCOL  :  METHOD DEALS WITH FETCHING ONLY ONE COLUMN, USEFUL FOR DATA WHERE DATA-CLEANING DOESNT NEED TO BE DONE.
-                       DATAYPE CONVERSION MUST BE DONE THO.
+        - FETCHROW  :   METHOD DEALS WITH FETCHING ONLY ONE ROW, USEFUL FOR DATA WHERE DATA-CLEANING DOESNT NEED TO BE DONE.
+                        DATAYPE CONVERSION MUST BE DONE THO.
 
-        - FETCH     :  METHOD DEALS WITH FETCHING ALL COLUMNS, DATA-CLEANING MUST BE DONE BY REQUESTER.
+        - FETCHCOL  :   FETCHES THE SPECIFIED COL DATA. 
 
-        - WRITE     : EXECUTE NON QUERIES ONTO THE DB. RETURNS NUMBER OF ROWS AFFECTED.
+        - FETCH     :   METHOD DEALS WITH FETCHING ALL COLUMNS, DATA-CLEANING MUST BE DONE BY REQUESTER.
+
+        - WRITE     :   EXECUTE NON QUERIES ONTO THE DB. RETURNS NUMBER OF ROWS AFFECTED.
 
 
     */
@@ -36,7 +40,7 @@ namespace Celeste.Model
             
         }
 
-        public List<object> FetchCol(string cmdstring)
+        public List<object> FetchRow(string cmdstring)
         {
             try
             {
@@ -48,16 +52,23 @@ namespace Celeste.Model
                 //temporary holding bay for reader output
                 List<object> temp = new List<object> { };
 
-                while(entries.Read()) 
-                {
-                    temp.Add(entries.GetValue(0));
-                }
+                    for(int i = 0; i < entries.FieldCount; ++i)
+                    { 
+                    temp.Add(entries.GetValue(i));
+                    }
+
                 return temp;
                 
-            }catch(Exception)
-            {
-                throw new Exception("CONN_FALIURE");
             }
+            catch (SqlException ex)
+            {
+                throw new Exception("CONN_FAILURE: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("INTERNAL_ERROR: " + ex.Message);
+            }
+
             finally
             {
                 pipeline.Close();
@@ -65,8 +76,41 @@ namespace Celeste.Model
 
         }
 
-        public List<List<object>> Fetch(string cmdstring)
+        public List<object> FetchCol(string cmdstring)
         {
+            try
+            {
+                pipeline.Open();
+                cmd.Connection = pipeline;
+                cmd.CommandText = cmdstring;
+                SqlDataReader entries = cmd.ExecuteReader();
+                List<object> temp = new List<object>();
+                while (entries.Read())
+                {
+                    temp.Add(entries.GetValue(0));
+                }
+                entries.Close();
+
+                return temp;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("CONN_FAILURE: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("INTERNAL_ERROR: " + ex.Message);
+            }
+            finally
+            {
+                
+                pipeline.Close();
+            }
+
+        }
+
+        public List<List<object>> Fetch(string cmdstring)
+         {
             try
             {
                 pipeline.Open();
@@ -93,7 +137,7 @@ namespace Celeste.Model
             }
             catch (SqlException ex)
             {
-                throw new Exception("CONN_FAILURE" + ex.Message);
+                throw new Exception("CONN_FAILURE: " + ex.Message);
             }
             catch (Exception ex)
             {
@@ -120,10 +164,15 @@ namespace Celeste.Model
 
                 return i;
             }
-            catch
+            catch (SqlException ex)
             {
-                throw new Exception("CONN_FAILURE");
+                throw new Exception("CONN_FAILURE: " + ex.Message);
             }
+            catch (Exception ex)
+            {
+                throw new Exception("INTERNAL_ERROR: " + ex.Message);
+            }
+
 
             finally
             {

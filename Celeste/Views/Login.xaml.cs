@@ -40,7 +40,7 @@ namespace Celeste.Views
             }
             else
             {
-
+                Warning.Content = "";
                 try
                 {
                     SHA1 sha = SHA1.Create();
@@ -48,28 +48,26 @@ namespace Celeste.Views
                     Conn conn = new Conn();
                     string hash = Convert.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
 
-                    List<List<object>> reply = conn.Fetch($"Select endUser_id, email, password_hash from EndUser where email='{email}' AND password_hash='{hash}'");
+                    List<object> reply = conn.FetchRow($"Select enduser_id, email, password_hash from EndUser where email={email} AND password_hash={hash}");
 
                     string str = "";
-
-                    for (int i = 0; i < reply.Count; i++)
+                    for(int i = 0; i < reply.Count; ++i)
                     {
-                        str = reply[i].ToString() + " | ";
-
+                        str += reply[i] + " | ";
                     }
-
-                    NavigationService.Navigate(new Home());
+                    MessageBox.Show("DB REPLY: " + str);
 
                 }
 
-                catch (SqlException)
+                catch (SqlException ex)
                 {
+                    MessageBox.Show("FATAL: INTERNAL_ERROR" + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("FATAL: INTERNAL_ERROR" + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("FATAL: INTERNAL_ERROR " + ex.Message, " ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
 
