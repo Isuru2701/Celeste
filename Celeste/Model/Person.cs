@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ScottPlot.Renderable;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 
 // CONTAINS THE DATA FOR THE CURRENT USER
@@ -89,9 +91,9 @@ namespace Celeste.Model
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("USE_ERROR_USER_CONTROL");
+                throw new Exception("ERROR: " + ex.Message);
             }
         }
 
@@ -106,9 +108,9 @@ namespace Celeste.Model
                 triggers = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'")
                     .Select(x => x.ToString()).ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("USE_ERROR_USER_CONTROL");
+                throw new Exception("ERROR: " + ex.Message);
             }
         }
 
@@ -123,9 +125,9 @@ namespace Celeste.Model
                 comforts = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'")
                     .Select(x => x.ToString()).ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("USE_ERROR_USER_CONTROL");
+                throw new Exception("ERROR: " + ex.Message);
             }
 
         }
@@ -150,16 +152,16 @@ namespace Celeste.Model
                 throw new FormatException("INVALID_DATA_TYPE_CONVERSION_ERROR");
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("USE_ERROR_USER_CONTROL");
+                throw new Exception("ERROR: " + ex.Message);
             }
 
         }
 
-        public void SetImage(string uri)
+        public void DebugDisplay()
         {
-
+            MessageBox.Show(user_id + " " + email + " " + dob + " " + gender);
         }
 
     }

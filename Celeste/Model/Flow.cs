@@ -14,6 +14,7 @@ namespace Celeste.Model
 
         public static string BaseAddress { get; set; }
 
+        public static int User_ID { get; set; }
 
 
         //Create when user logs in
