@@ -194,8 +194,6 @@ namespace Celeste.Model
                 cmd.Connection = pipeline;
                 cmd.CommandText = cmdstring;
                 int i = cmd.ExecuteNonQuery();
-                pipeline.Close();
-
                 return i;
             }
             catch (SqlException ex)
