@@ -84,8 +84,8 @@ namespace Celeste.Views
                 string cmd = $"Select enduser_id from EndUser where email='{txt_email.Text}'";
                 if (conn.EntryExists(cmd))
                 {
-                    MessageBox.Show("ENTRYEXISTS HIT");
                     lbl_validation_error.Content = "This email is already registered by another user!";
+                    lbl_validation_error.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -93,11 +93,10 @@ namespace Celeste.Views
                     byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
                     string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                    MessageBox.Show($"{(int)cmb_days.SelectedValue}, {(int)(cmb_months.SelectedIndex + 1)}, {(int)(cmb_years.SelectedValue)}");
 
-                    DateTime date = new DateTime((int)cmb_years.SelectedValue, (int)(cmb_months.SelectedIndex + 1), (int)cmb_days.SelectedValue);
+                    string date = $"{(int)cmb_years.SelectedValue}/{(int)(cmb_months.SelectedIndex + 1)}/{(int)(cmb_days.SelectedValue)}";
 
-                    cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{(char)cmb_gender.SelectedValue}')";
+                    cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{cmb_gender.SelectedValue.ToString()[0]}')";
 
                     int i = conn.Write(cmd);
                     MessageBox.Show(i.ToString());
