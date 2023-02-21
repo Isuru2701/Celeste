@@ -15,9 +15,7 @@ using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
 using Celeste.Model;
-using HandyControl.Controls;
-using HandyControl.Data;
-using HandyControl.Tools.Extension;
+
 
 using WPFCustomMessageBox;
 using System.Drawing;
@@ -67,23 +65,20 @@ namespace Celeste
                 {
 
                     //store a local copy AND upload to database
-                    if (File.Exists(selector.FileName) && selector.FileName != string.Empty)
-
+                    if (File.Exists(selector.FileName))
                     {
-                        pic_pfp.Source = new BitmapImage(new Uri(selector.FileName));
-
                     }
                 }
 
             }
             catch (NotSupportedException)
             {
-
+                MessageBox.Show("Please select an image");
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -103,6 +98,15 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            if (File.Exists($"{Flow.BaseAddress}../../Resources/profile_pic.png"))
+            {                
+            }
+            else
+            {
+                resetpfp_btn_Click(sender, e);
+            }
+
+
         }
     }
 }
