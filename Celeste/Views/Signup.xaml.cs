@@ -46,7 +46,6 @@ namespace Celeste.Views
 
                         if (IsValidDate(cmb_days.SelectedValue, (cmb_months.SelectedIndex + 1), cmb_years.SelectedValue))
                         {
-                            MessageBox.Show("HITE EXECSIGNUP");
                             ExecuteSignup();
                         }
                         else
@@ -99,7 +98,6 @@ namespace Celeste.Views
                     cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{cmb_gender.SelectedValue.ToString()[0]}')";
 
                     int i = conn.Write(cmd);
-                    MessageBox.Show(i.ToString());
 
                     NavigationService.Navigate(new Home());
                 }
