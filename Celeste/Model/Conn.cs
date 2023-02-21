@@ -73,12 +73,12 @@ namespace Celeste.Model
                 SqlDataReader entries = cmd.ExecuteReader();
 
                 //temporary holding bay for reader output
-                List<List<object>> temp = new List<List<object>> { };
+                List<List<object>> temp = new List<List<object>> ();
 
                 //slice off a row n-times
                 while (entries.Read())
                 {
-                    List<object> row = new List<object> { };
+                    List<object> row = new List<object> ();
                     for(int i = 0; i < entries.FieldCount; ++i)
                     {
                         row.Add(entries.GetValue(i));
@@ -91,7 +91,7 @@ namespace Celeste.Model
             }
             catch (Exception)
             {
-                throw new Exception("CONN_FALIURE");
+                throw new Exception("CONN_FAILURE");
             }
 
             finally

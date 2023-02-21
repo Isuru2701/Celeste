@@ -1,7 +1,9 @@
 ﻿using Celeste.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,8 +34,35 @@ namespace Celeste.Views
             string password = pwb_password.Password;
 
             //is user present in database:
-            Conn conn = new Conn();
-            List<List<object>> reply = conn.Fetch("");
+
+            try
+            {
+                SHA1 sha = SHA1.Create();
+
+                Conn conn = new Conn();
+                string hash = Convert.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
+
+            List<List<object>> reply = conn.Fetch($"Select endUser_id, email, password_hash from EndUser where email='{email}' AND password_hash='{hash}'");
+
+                string str = "";
+
+                for(int i = 0; i < reply.Count; i++)
+                {
+                    str = reply[i].ToString() + " | ";
+
+                }
+
+            }
+
+            catch(SqlException)
+            {
+
+            }
+
+            catch(Exception)
+            {
+                MessageBox.Show("FATAL: INTERNAL_ERROR", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
 
             NavigationService.Navigate(new Home());
