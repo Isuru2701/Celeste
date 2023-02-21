@@ -1,11 +1,11 @@
 ﻿using Celeste.Views;
-using HandyControl.Controls;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Celeste.Model
 {
@@ -25,6 +25,8 @@ namespace Celeste.Model
 
         - WRITE     :   EXECUTE NON QUERIES ONTO THE DB. RETURNS NUMBER OF ROWS AFFECTED.
 
+        -EntryExists:   VERIFY THAT A QUERY WILL PRODUCE ROWS OR NOT
+
 
     */
     public class Conn
@@ -42,20 +44,26 @@ namespace Celeste.Model
 
         public List<object> FetchRow(string cmdstring)
         {
+       
             try
             {
                 pipeline.Open();
                 cmd.Connection= pipeline;
                 cmd.CommandText = cmdstring;
+
+                
                 SqlDataReader entries = cmd.ExecuteReader();
 
                 //temporary holding bay for reader output
-                List<object> temp = new List<object> { };
-
+                List<object> temp = new List<object> ();
+                while(entries.Read())
+                { 
                     for(int i = 0; i < entries.FieldCount; ++i)
-                    { 
+                    {
                     temp.Add(entries.GetValue(i));
+
                     }
+                }
 
                 return temp;
                 
@@ -69,6 +77,32 @@ namespace Celeste.Model
                 throw new Exception("INTERNAL_ERROR: " + ex.Message);
             }
 
+            finally
+            {
+                pipeline.Close();
+            }
+
+        }
+
+        public bool EntryExists(string cmdstring)
+        {
+            try
+            {
+                pipeline.Open();
+                cmd.Connection = pipeline;
+                cmd.CommandText = cmdstring;
+                SqlDataReader entries = cmd.ExecuteReader();
+
+                return entries.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("CONN_FAILURE: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("INTERNAL_ERROR: " + ex.Message);
+            }
             finally
             {
                 pipeline.Close();

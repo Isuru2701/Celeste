@@ -7,7 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Background="#FF1E1730"
-      Title="Login">
+      Title="Login"
+      Loaded="Page_Loaded">
+
 
     <Grid>
         <Image Source="../Resources/background.png"

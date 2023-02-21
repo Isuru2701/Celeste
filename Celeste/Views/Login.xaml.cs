@@ -46,22 +46,29 @@ namespace Celeste.Views
                     SHA1 sha = SHA1.Create();
 
                     Conn conn = new Conn();
-                    string hash = Convert.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
+                    byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
+                    string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                    List<object> reply = conn.FetchRow($"Select enduser_id, email, password_hash from EndUser where email={email} AND password_hash={hash}");
+                    string command = $"Select enduser_id, email, password_hash from EndUser where email='{email}' AND password_hash='{hash}'";
 
-                    string str = "";
-                    for(int i = 0; i < reply.Count; ++i)
+                    if(conn.EntryExists(command))
                     {
-                        str += reply[i] + " | ";
+
+                        List<object> reply = conn.FetchRow(command);
+                        NavigationService.Navigate(new Home());
+
                     }
-                    MessageBox.Show("DB REPLY: " + str);
+                    else
+                    {
+                        Warning.Content = "Invalid pairing. Please try again";
+                    }
+
 
                 }
 
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("FATAL: INTERNAL_ERROR" + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(" FATAL: SQL_ERROR " + ex.Message ,  " ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
 
@@ -77,6 +84,11 @@ namespace Celeste.Views
         private void btn_signup_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Signup());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Warning.Content = "";
         }
     }
 }
