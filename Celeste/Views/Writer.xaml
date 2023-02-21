@@ -22,12 +22,18 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 Width="650" Height="700">
-            
+
             <TextBox AcceptsReturn="True"
                      TextWrapping="Wrap"
                      SpellCheck.IsEnabled="True">
             </TextBox>
 
         </Border>
+        <Button x:Name="btn_save"
+                Style="{StaticResource DiamondButtonTheme}" 
+                Margin="61,432,869,198"
+                Click="btn_save_Click">
+            <Image Source="../Resources/save_btn.png"/>
+        </Button>
     </Grid>
 </Page>

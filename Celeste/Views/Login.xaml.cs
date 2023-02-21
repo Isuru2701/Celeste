@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Celeste.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,14 @@ namespace Celeste.Views
 
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
+            string email = txt_email.Text;
+            string password = pwb_password.Password;
+
+            //is user present in database:
+            Conn conn = new Conn();
+            List<List<object>> reply = conn.Fetch("");
+
+
             NavigationService.Navigate(new Home());
         }
 

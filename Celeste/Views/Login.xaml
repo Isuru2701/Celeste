@@ -58,12 +58,14 @@
                          Margin="192,0,0,0"
                          TextWrapping="NoWrap"
                          VerticalAlignment="Center"
-                         Width="267" Height="40" />
+                         Width="267" Height="40"
+                         x:Name="txt_email"/>
 
                 <PasswordBox HorizontalAlignment="Left"
                              Margin="192,333,0,0"
                              VerticalAlignment="Top"
-                             Width="267" Height="40"/>
+                             Width="267" Height="40"
+                             x:Name="pwb_password"/>
 
                 <TextBlock HorizontalAlignment="Left"
                            Margin="192,41,0,0" 

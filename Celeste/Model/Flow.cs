@@ -14,9 +14,14 @@ namespace Celeste.Model
 
         public static string BaseAddress { get; set; }
 
-        //Create when program is run the first time
+
+
+        //Create when user logs in
         public static void Initiate()
         {
+
+            new Conn().Fetch("");
+            
             BaseAddress = AppDomain.CurrentDomain.BaseDirectory;
             StartTime = DateTime.Now;
         }

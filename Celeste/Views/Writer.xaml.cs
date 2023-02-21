@@ -27,7 +27,13 @@ namespace Celeste.Views
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
+            btn_save_Click(sender, e);
             NavigationService.GoBack();
+        }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+             
         }
     }
 }
