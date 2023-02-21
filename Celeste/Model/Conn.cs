@@ -200,11 +200,11 @@ namespace Celeste.Model
             }
             catch (SqlException ex)
             {
-                throw new Exception("CONN_FAILURE: " + ex.Message);
+                throw new Exception("CON:CONN_FAILURE: " + ex.Message);
             }
             catch (Exception ex)
             {
-                throw new Exception("INTERNAL_ERROR: " + ex.Message);
+                throw new Exception("CONN:INTERNAL_ERROR: " + ex.Message);
             }
 
 

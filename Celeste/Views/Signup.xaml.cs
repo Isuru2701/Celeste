@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Celeste.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -43,7 +46,8 @@ namespace Celeste.Views
 
                         if (IsValidDate(cmb_days.SelectedValue, (cmb_months.SelectedIndex + 1), cmb_years.SelectedValue))
                         {
-                            NavigationService.Navigate(new Home());
+                            MessageBox.Show("HITE EXECSIGNUP");
+                            ExecuteSignup();
                         }
                         else
                         {
@@ -69,8 +73,48 @@ namespace Celeste.Views
 
         }
 
+        //Executes signup
+        private void ExecuteSignup()
+        {
+            try
+            {
 
-        List<string> months = new List<string>
+
+                Conn conn = new Conn();
+                string cmd = $"Select enduser_id from EndUser where email='{txt_email.Text}'";
+                if (conn.EntryExists(cmd))
+                {
+                    lbl_validation_error.Content = "This email is already registered by another user!";
+                }
+                else
+                {
+                    SHA1Managed sha = new SHA1Managed();
+                    byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
+                    string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+
+                    MessageBox.Show($"{(int)cmb_days.SelectedValue}, {(int)(cmb_months.SelectedIndex + 1)}, {(int)(cmb_years.SelectedValue)}");
+
+                    DateTime date = new DateTime((int)cmb_days.SelectedValue, (int)(cmb_months.SelectedIndex + 1), (int)cmb_years.SelectedValue);
+
+                    cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{(char)cmb_gender.SelectedValue}')";
+
+                    conn.Write(cmd);
+
+                    NavigationService.Navigate(new Home());
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("SQL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+            List<string> months = new List<string>
         {
             "January",
             "February",

@@ -165,10 +165,10 @@
                        FontWeight="Regular"
                        FontStyle="Italic"
                        Content="validation error"
-                       HorizontalAlignment="Center"
-                       Margin="0,574,0,0"
+                       HorizontalAlignment="Left"
+                       Margin="267,574,0,0"
                        VerticalAlignment="Top"
-                       Width="159"
+                       Width="400"
                        Visibility="Hidden"/>
 
                 <ProgressBar
