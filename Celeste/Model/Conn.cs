@@ -89,9 +89,13 @@ namespace Celeste.Model
                 return temp;
 
             }
-            catch (Exception)
+            catch (SqlException)
             {
                 throw new Exception("CONN_FAILURE");
+            }
+            catch (Exception)
+            {
+                throw new Exception("INTERNAL_ERROR");
             }
 
             finally

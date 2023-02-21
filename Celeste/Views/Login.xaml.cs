@@ -34,34 +34,41 @@ namespace Celeste.Views
             string password = pwb_password.Password;
 
             //is user present in database:
-
-            try
+            if (txt_email.Text == null || pwb_password.Password == null)
             {
-                SHA1 sha = SHA1.Create();
+                Warning.Content = "Some fields are empty";
+            }
+            else
+            {
 
-                Conn conn = new Conn();
-                string hash = Convert.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
-
-            List<List<object>> reply = conn.Fetch($"Select endUser_id, email, password_hash from EndUser where email='{email}' AND password_hash='{hash}'");
-
-                string str = "";
-
-                for(int i = 0; i < reply.Count; i++)
+                try
                 {
-                    str = reply[i].ToString() + " | ";
+                    SHA1 sha = SHA1.Create();
+
+                    Conn conn = new Conn();
+                    string hash = Convert.ToString(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
+
+                    List<List<object>> reply = conn.Fetch($"Select endUser_id, email, password_hash from EndUser where email='{email}' AND password_hash='{hash}'");
+
+                    string str = "";
+
+                    for (int i = 0; i < reply.Count; i++)
+                    {
+                        str = reply[i].ToString() + " | ";
+
+                    }
 
                 }
 
-            }
+                catch (SqlException)
+                {
 
-            catch(SqlException)
-            {
+                }
 
-            }
-
-            catch(Exception)
-            {
-                MessageBox.Show("FATAL: INTERNAL_ERROR", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("FATAL: INTERNAL_ERROR" + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
 

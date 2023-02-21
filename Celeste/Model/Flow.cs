@@ -18,10 +18,7 @@ namespace Celeste.Model
 
         //Create when user logs in
         public static void Initiate()
-        {
-
-            new Conn().Fetch("");
-            
+        {            
             BaseAddress = AppDomain.CurrentDomain.BaseDirectory;
             StartTime = DateTime.Now;
         }

@@ -61,6 +61,15 @@
                          Width="267" Height="40"
                          x:Name="txt_email"/>
 
+                <Label x:Name="Warning"
+                        Content=""
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom" 
+                       Margin="72,0,0,66"
+                       FontSize="14"
+                       FontWeight="Regular"/>
+
+
                 <PasswordBox HorizontalAlignment="Left"
                              Margin="192,333,0,0"
                              VerticalAlignment="Top"
