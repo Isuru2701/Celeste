@@ -65,9 +65,10 @@
                         Content=""
                        HorizontalAlignment="Left"
                        VerticalAlignment="Bottom" 
-                       Margin="72,0,0,66"
+                       Margin="72,0,0,70"
                        FontSize="14"
-                       FontWeight="Regular"/>
+                       FontWeight="Regular"
+                       FontStyle="Italic"/>
 
 
                 <PasswordBox HorizontalAlignment="Left"

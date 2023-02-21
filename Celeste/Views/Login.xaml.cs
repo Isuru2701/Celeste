@@ -34,7 +34,7 @@ namespace Celeste.Views
             string password = pwb_password.Password;
 
             //is user present in database:
-            if (txt_email.Text == null || pwb_password.Password == null)
+            if (txt_email.Text == "" || pwb_password.Password == "")
             {
                 Warning.Content = "Some fields are empty";
             }
@@ -58,6 +58,8 @@ namespace Celeste.Views
 
                     }
 
+                    NavigationService.Navigate(new Home());
+
                 }
 
                 catch (SqlException)
@@ -72,7 +74,6 @@ namespace Celeste.Views
             }
 
 
-            NavigationService.Navigate(new Home());
         }
 
         private void btn_signup_Click(object sender, RoutedEventArgs e)

@@ -41,6 +41,7 @@ namespace Celeste.Model
             try
             {
                 pipeline.Open();
+                cmd.Connection= pipeline;
                 cmd.CommandText = cmdstring;
                 SqlDataReader entries = cmd.ExecuteReader();
 
@@ -69,6 +70,7 @@ namespace Celeste.Model
             try
             {
                 pipeline.Open();
+                cmd.Connection = pipeline;
                 cmd.CommandText = cmdstring;
                 SqlDataReader entries = cmd.ExecuteReader();
 
@@ -89,13 +91,13 @@ namespace Celeste.Model
                 return temp;
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                throw new Exception("CONN_FAILURE");
+                throw new Exception("CONN_FAILURE" + ex.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("INTERNAL_ERROR");
+                throw new Exception("INTERNAL_ERROR: " + ex.Message);
             }
 
             finally
@@ -111,6 +113,7 @@ namespace Celeste.Model
             try
             {
                 pipeline.Open();
+                cmd.Connection = pipeline;
                 cmd.CommandText = cmdstring;
                 int i = cmd.ExecuteNonQuery();
                 pipeline.Close();
