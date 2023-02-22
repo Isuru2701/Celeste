@@ -243,6 +243,9 @@
     <Compile Include="Controls\NoConnection.xaml.cs">
       <DependentUpon>NoConnection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TimeSetter.xaml.cs">
+      <DependentUpon>TimeSetter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MAINFRAME.xaml.cs">
       <DependentUpon>MAINFRAME.xaml</DependentUpon>
     </Compile>
@@ -296,6 +299,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\NoConnection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TimeSetter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
