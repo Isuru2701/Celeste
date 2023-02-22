@@ -35,9 +35,9 @@ namespace Celeste.Views
             NavigationService.Navigate(new Insights());
         }
 
-        private void btn_settings_Click(object sender, RoutedEventArgs e)
+        private void btn_notification_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Settings());
+            
         }
 
         private void btn_entries_Click(object sender, RoutedEventArgs e)

@@ -95,11 +95,11 @@
                 <Image Source="../Resources/resources_btn.png"/>
             </Button>
 
-            <Button x:Name="btn_settings" DockPanel.Dock="Bottom"  Margin="10,9,10,120"
-                    ToolTip="Settings"
-                    Click="btn_settings_Click"
+            <Button x:Name="btn_notification" DockPanel.Dock="Bottom"  Margin="10,9,10,120"
+                    ToolTip="Set Notification"
+                    Click="btn_notification_Click"
                     Style="{StaticResource DiamondButtonTheme}">
-                <Image Source="../Resources/settings_btn.png"></Image>
+                <Image Source="../Resources/timer_btn.png"></Image>
 
             </Button>
 

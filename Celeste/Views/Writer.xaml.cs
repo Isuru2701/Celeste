@@ -1,6 +1,7 @@
 ﻿using Celeste.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,9 +41,11 @@ namespace Celeste.Views
 
         private void ExecuteSave()
         {
-            string text = txt_writer.Text;
             //save a copy to local and then push to db
+            FileHandler.Write(txt_writer.Text, $"{DateTime.Now:yyyyMMdd}.txt");
 
+            Conn con = new Conn();
+            con.Write($"Insert into user_entries values('{Flow.User_ID}', '{DateTime.Now:yyyy/MM/dd}', '{txt_writer.Text}')");
 
         }
 

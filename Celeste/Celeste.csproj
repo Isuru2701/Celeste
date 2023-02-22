@@ -250,20 +250,20 @@
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\FileHandler.cs" />
-    <Compile Include="Model\Lunar\comfort.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\comfort.cs" />
     <Compile Include="Model\Conn.cs" />
-    <Compile Include="Model\Lunar\EndUser.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\EndUser.cs" />
     <Compile Include="Model\Entry.cs" />
     <Compile Include="Model\Flow.cs" />
     <Compile Include="Model\Graph.cs" />
-    <Compile Include="Model\Lunar\LunarContext.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\LunarContext.cs" />
     <Compile Include="Model\Person.cs" />
-    <Compile Include="Model\Lunar\ProfilePicture.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\ProfilePicture.cs" />
     <Compile Include="Model\Score.cs" />
-    <Compile Include="Model\Lunar\symptom.cs" />
-    <Compile Include="Model\Lunar\trigger.cs" />
-    <Compile Include="Model\Lunar\user_entries.cs" />
-    <Compile Include="Model\Lunar\user_score.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\symptom.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\trigger.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\user_entries.cs" />
+    <Compile Include="Model\Lunar%28deprecated%29\user_score.cs" />
     <Compile Include="User.xaml.cs">
       <DependentUpon>User.xaml</DependentUpon>
     </Compile>

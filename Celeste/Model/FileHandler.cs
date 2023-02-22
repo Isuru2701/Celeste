@@ -44,10 +44,8 @@ namespace Celeste.Model
             try
             {
                 VerifyDirectory();
-                using (StreamWriter writer = new StreamWriter(appFolderPath + filename))
-                {
-                    writer.Write(content);
-                }
+                File.WriteAllText(appFolderPath + filename, content);
+
             }
             catch (UnauthorizedAccessException ex)
             {
