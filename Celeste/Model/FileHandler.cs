@@ -60,6 +60,26 @@ namespace Celeste.Model
             }
         }
 
+        public static void WriteBytes(byte[] content, string filename)
+        {
+            try          
+            { 
+                VerifyDirectory();
+                File.WriteAllBytes(appFolderPath + filename, content);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show("FILE: ACCESS_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("FILE: WRITE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+        }
+
         //reads text files
         public static string ReadText(string filename)
         {

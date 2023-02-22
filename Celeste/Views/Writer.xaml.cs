@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Celeste.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,7 @@ namespace Celeste.Views
         {
             string text = txt_writer.Text;
             //save a copy to local and also upload
+            
 
 
         }
