@@ -19,13 +19,14 @@ using Celeste.Model;
 
 using WPFCustomMessageBox;
 using System.Drawing;
+using System.Windows.Navigation;
 
 namespace Celeste
 {
     /// <summary>
     /// Interaction logic for User.xaml
     /// </summary>
-    public partial class User : System.Windows.Window
+    public partial class User : Page
     {
         public User()
         {
@@ -34,7 +35,7 @@ namespace Celeste
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            NavigationService.GoBack();
         }
 
 
@@ -98,8 +99,15 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            lbl_username.Content = Person.GetInstance(Flow.User_ID).username;
+            lbl_email.Content = Person.GetInstance(Flow.User_ID).email;
+            lbl_gender.Content = Person.GetInstance(Flow.User_ID).gender;
+
+
+
             if (File.Exists($"{Flow.BaseAddress}../../Resources/profile_pic.png"))
-            {                
+            {
             }
             else
             {

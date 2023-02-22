@@ -95,7 +95,7 @@ namespace Celeste.Views
 
                     string date = $"{(int)cmb_years.SelectedValue}/{(int)(cmb_months.SelectedIndex + 1)}/{(int)(cmb_days.SelectedValue)}";
 
-                    cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{cmb_gender.SelectedValue.ToString()[0]}')";
+                    cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{cmb_gender.SelectedValue.ToString()[0]}', '{txt_username}')";
 
                     int i = conn.Write(cmd);
 

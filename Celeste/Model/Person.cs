@@ -25,6 +25,7 @@ namespace Celeste.Model
         private List<Score> scores = new List<Score> { };
 
         public int user_id { get; set; }
+        public string username { get; set; }
         public string email { get; set; }
         public DateTime dob { get; set; }
         public char gender { get; set; }
@@ -60,11 +61,12 @@ namespace Celeste.Model
             try
             {
                 //there'll only be one row
-                List<List<object>> temp = connection.Fetch("Select email, dob, gender from EndUser where enduser_id= '" + user_id + "'");
+                List<List<object>> temp = connection.Fetch("Select email, dob, gender, username from EndUser where enduser_id= '" + user_id + "'");
                 email = temp[0][0].ToString();
                 dob = Convert.ToDateTime(temp[0][1]);
                 gender = Convert.ToChar(temp[0][2]);
-                
+                username = temp[0][2].ToString();
+
 
             }
             catch (Exception)

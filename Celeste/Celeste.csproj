@@ -267,9 +267,6 @@
     <Compile Include="Model\Lunar%28deprecated%29\trigger.cs" />
     <Compile Include="Model\Lunar%28deprecated%29\user_entries.cs" />
     <Compile Include="Model\Lunar%28deprecated%29\user_score.cs" />
-    <Compile Include="User.xaml.cs">
-      <DependentUpon>User.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Entries.xaml.cs">
       <DependentUpon>Entries.xaml</DependentUpon>
     </Compile>
@@ -290,6 +287,9 @@
     </Compile>
     <Compile Include="Views\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Writer.xaml.cs">
       <DependentUpon>Writer.xaml</DependentUpon>
@@ -358,10 +358,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="User.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Entries.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -387,6 +383,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Signup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\User.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
