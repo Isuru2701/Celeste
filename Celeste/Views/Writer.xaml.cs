@@ -28,7 +28,7 @@ namespace Celeste.Views
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            btn_save_Click(sender, e);
+            ExecuteSave();
             NavigationService.GoBack();
         }
 
@@ -41,8 +41,7 @@ namespace Celeste.Views
         private void ExecuteSave()
         {
             string text = txt_writer.Text;
-            //save a copy to local and also upload
-            
+            //save a copy to local and then push to db
 
 
         }
@@ -50,9 +49,16 @@ namespace Celeste.Views
         //On load check if file with today's date is in appdata
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            if(FileHandler.ResourceExists($"{DateTime.Now.ToString("yyyyMMdd")}.txt"))
+            try
             {
-                txt_writer.Text = FileHandler.ReadText($"{DateTime.Now.ToString("yyyyMMdd")}.txt");
+                if (FileHandler.ResourceExists($"{DateTime.Now:yyyyMMdd}.txt"))
+                {
+                    txt_writer.Text = FileHandler.ReadText($"{DateTime.Now:yyyyMMdd}.txt");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("WRITER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }
