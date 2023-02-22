@@ -1,4 +1,5 @@
 ﻿using Celeste.Model;
+using Celeste.Model.Lunar;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -57,14 +58,13 @@ namespace Celeste.Views
 
                         List<object> reply = conn.FetchRow(command);
                         Flow.User_ID = (int)reply[0];
-                        Person.GetInstance(Flow.User_ID);
+                            Person.GetInstance(Flow.User_ID);
                         // Person.GetInstance(Flow.User_ID).DebugDisplay();
 
-                        NavigationService.Navigate(new Home());
-
-                    }
-                    else
-                    {
+                            NavigationService.Navigate(new Home());
+                        }
+                        else
+                        {
                         Warning.Content = "Invalid pairing. Please try again";
                     }
 

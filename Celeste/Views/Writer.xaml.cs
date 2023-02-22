@@ -39,6 +39,9 @@ namespace Celeste.Views
 
         private void ExecuteSave()
         {
+            string text = txt_writer.Text;
+            //save a copy to local and also upload
+
 
         }
     }

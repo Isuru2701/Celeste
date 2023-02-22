@@ -23,7 +23,9 @@
                 HorizontalAlignment="Center"
                 Width="650" Height="700">
 
-            <TextBox AcceptsReturn="True"
+            <TextBox
+                     x:Name="txt_writer"
+                     AcceptsReturn="True"
                      TextWrapping="Wrap"
                      SpellCheck.IsEnabled="True">
             </TextBox>
