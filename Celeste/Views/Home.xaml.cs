@@ -48,7 +48,6 @@ namespace Celeste.Views
         private void btn_user_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new User());
-
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
