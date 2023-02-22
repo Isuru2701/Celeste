@@ -5,6 +5,8 @@ using System.Linq;
 
 namespace Celeste.Model
 {
+
+    //interaction context
     public partial class Lunar : DbContext
     {
         public Lunar()

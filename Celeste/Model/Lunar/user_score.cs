@@ -1,4 +1,4 @@
-namespace Celeste.Model
+namespace Celeste.Model.Lunar
 {
     using System;
     using System.Collections.Generic;
