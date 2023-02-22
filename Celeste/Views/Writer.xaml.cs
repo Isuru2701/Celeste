@@ -46,5 +46,15 @@ namespace Celeste.Views
 
 
         }
+
+        //On load check if file with today's date is in appdata
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(FileHandler.ResourceExists($"{DateTime.Now.ToString("yyyyMMdd")}.txt"))
+            {
+                txt_writer.Text = FileHandler.ReadText($"{DateTime.Now.ToString("yyyyMMdd")}.txt");
+            }
+
+        }
     }
 }
