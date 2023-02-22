@@ -31,9 +31,15 @@ namespace Celeste.Views
             NavigationService.GoBack();
         }
 
+        //Write a copy to local for ease of access and also make entry to database
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-             
+            ExecuteSave();
+        }
+
+        private void ExecuteSave()
+        {
+
         }
     }
 }

@@ -135,3 +135,7 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Celeste.exe.config
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Celeste.exe
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Celeste.pdb
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\EntityFramework.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\EntityFramework.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\EntityFramework.SqlServer.xml
