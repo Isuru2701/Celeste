@@ -1,5 +1,4 @@
-﻿using HandyControl.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,27 +23,29 @@ namespace Celeste.Views
         public Entries()
         {
             InitializeComponent();
-
-            List<string> buttonTexts = new List<string>();
-            for(int i = 0; i < 30; ++i)
-            {
-                buttonTexts.Add($"{DateTime.Now.Date.AddDays(-i).ToLongDateString()}");
-            }
-            Container.ItemsSource = buttonTexts;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;  // cast the sender parameter to a Button
             string buttonText = (string)clickedButton.Content;  // get the text content of the button
-                                                                // Do something with the clicked button, such as displaying a message with the button text
-            System.Windows.MessageBox.Show("You clicked the button with text: " + buttonText);
+            
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> buttonTexts = new List<string>();
+            for (int i = 0; i < 30; ++i)
+            {
+                buttonTexts.Add($"{DateTime.Now.Date.AddDays(-i).ToLongDateString()}");
+            }
+            Container.ItemsSource = buttonTexts;
+
         }
     }
 }
