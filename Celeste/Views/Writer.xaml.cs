@@ -27,6 +27,26 @@ namespace Celeste.Views
             InitializeComponent();
         }
 
+        public Writer(string date)
+        {
+            try
+            {
+                if (FileHandler.ResourceExists($"{DateTime.Parse(date):yyyyMMddd}.txt"))
+                {
+
+                }
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("WRITER: DATE_PARSE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("WRITER: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+        }
+
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             ExecuteSave();
@@ -39,6 +59,9 @@ namespace Celeste.Views
             ExecuteSave();
         }
 
+        /// <summary>
+        /// Stores file as yyyyMMdd.txt in Appdata
+        /// </summary>
         private void ExecuteSave()
         {
             //save a copy to local and then push to db

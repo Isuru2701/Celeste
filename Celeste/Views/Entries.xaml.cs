@@ -29,6 +29,14 @@ namespace Celeste.Views
         {
             Button clickedButton = (Button)sender;  // cast the sender parameter to a Button
             string buttonText = (string)clickedButton.Content;  // get the text content of the button
+
+            DateTime date = new DateTime();
+            DateTime.TryParse(buttonText, out date);
+
+            
+
+
+
             
         }
 

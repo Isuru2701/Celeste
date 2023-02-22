@@ -123,7 +123,11 @@ namespace Celeste.Model
 
         }
 
-
+        /// <summary>
+        /// checks AppData for the file. returns true if present, false if not. Full path not neccessary, only the filename with extension
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static bool ResourceExists(string filename)
         {
            return File.Exists(appFolderPath + filename);
