@@ -1,15 +1,16 @@
+using Celeste.Model.Lunar;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Celeste.Model
+namespace Celeste.Model.Lunar
 {
 
     //interaction context
-    public partial class Lunar : DbContext
+    public partial class LunarContext : DbContext
     {
-        public Lunar()
+        public LunarContext()
             : base("name=Lunar")
         {
         }
