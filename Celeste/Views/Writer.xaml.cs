@@ -22,31 +22,53 @@ namespace Celeste.Views
     /// </summary>
     public partial class Writer : Page
     {
+        Entry current;
         public Writer()
         {
+            current = new Entry(Flow.User_ID, DateTime.Now);
+
             InitializeComponent();
+
+            try
+            {
+                Conn con = new Conn();
+                if (FileHandler.ResourceExists($"{DateTime.Now:yyyyMMdd}.txt"))
+                {
+                    txt_writer.Text = FileHandler.ReadText($"{DateTime.Now:yyyyMMdd}.txt");
+                }
+                else if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                {
+                    txt_writer.Text = (string)con.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("WRITER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+
         }
 
-        public Writer(string date)
+        public Writer(DateTime date)
         {
+
+            current = new Entry(Flow.User_ID, date);
+
             InitializeComponent();
 
             try
             {
                 Conn conn = new Conn();
 
-                if (FileHandler.ResourceExists($"{DateTime.Parse(date):yyyyMMddd}.txt"))
+                if (FileHandler.ResourceExists($"{date:yyyyMMdd}.txt"))
                 {
-                    txt_writer.Text = FileHandler.ReadText($"{DateTime.Parse(date):yyyyMMddd}.txt");
+                    txt_writer.Text = FileHandler.ReadText($"{date:yyyyMMdd}.txt");
                 }
-                else if (conn.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Parse(date):yyyyMMdddd}'"))
+                else if (conn.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{date:yyyy/MM/dd}'"))
                 {
-                    txt_writer.Text = (string)conn.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Parse(date):yyyyMMdddd}'")[0];
+                    txt_writer.Text = (string)conn.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{date:yyyy/MM/dd}'")[0];
 
-                }
-                else
-                {
-                    txt_writer.Text = "";
                 }
             }
             catch (FormatException ex)
@@ -78,50 +100,25 @@ namespace Celeste.Views
         private void ExecuteSave()
         {
             //save a copy to local and then push to db
-            if (txt_writer.Text != null)
+            if (txt_writer.Text != "")
             {
-                FileHandler.Write(txt_writer.Text, $"{DateTime.Now:yyyyMMdd}.txt");
+                FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
 
                 Conn con = new Conn();
 
-                if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{current.Date:yyyy/MM/dd}'"))
                 {
-                    con.Write($"Update user_entries set content='{txt_writer.Text}' where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'");
+                    con.Write($"Update user_entries set content='{txt_writer.Text}' where enduser_id='{Flow.User_ID}' AND entry_date='{current.Date:yyyy/MM/dd}'");
 
                 }
                 else
                 {
-                    con.Write($"Insert into user_entries values('{Flow.User_ID}', '{DateTime.Now:yyyy/MM/dd}', '{txt_writer.Text}')");
+                    con.Write($"Insert into user_entries values('{Flow.User_ID}', '{current.Date:yyyy/MM/dd}', '{txt_writer.Text}')");
                 }
             }
 
 
         }
 
-        //On load check if file with today's date is in appdata
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Conn con = new Conn();
-                if (FileHandler.ResourceExists($"{DateTime.Now:yyyyMMdd}.txt"))
-                {
-                    txt_writer.Text = FileHandler.ReadText($"{DateTime.Now:yyyyMMdd}.txt");
-                }
-                else if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
-                {
-                    txt_writer.Text = (string)con.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
-                }
-                else
-                {
-                    txt_writer.Text = "";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("WRITER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-        }
     }
 }

@@ -7,8 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1000"
       Title="Writer"
-      Background="#FF1E1730"
-      Loaded="Page_Loaded">
+      Background="#FF1E1730">
 
     <Grid>
         <Button x:Name="btn_back"
