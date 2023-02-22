@@ -82,7 +82,11 @@ namespace Celeste.Model
 
         }
 
-        //reads text files
+        /// <summary>
+        /// reads text files. returns the resultant string. NOT FOR SOLUTION RESOURCES.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static string ReadText(string filename)
         {
             try
@@ -104,7 +108,11 @@ namespace Celeste.Model
             }
 
         }
-
+        /// <summary>
+        /// reads and passes a byte array. Convert this to the neccessary format. NOT FOR SOLUTION RESOURCES.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static byte[] ReadBytes(string filename)
         {
             VerifyDirectory();
@@ -128,7 +136,7 @@ namespace Celeste.Model
         }
 
         /// <summary>
-        /// checks AppData for the file. returns true if present, false if not. Full path not neccessary, only the filename with extension
+        /// checks AppData for the file. returns true if present, false if not. Full path not neccessary, only the filename with extension. NOT FOR SOLUTION RESOURCES.
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>

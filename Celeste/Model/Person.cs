@@ -65,7 +65,7 @@ namespace Celeste.Model
                 email = temp[0][0].ToString();
                 dob = Convert.ToDateTime(temp[0][1]);
                 gender = Convert.ToChar(temp[0][2]);
-                username = temp[0][2].ToString();
+                username = temp[0][3].ToString();
 
 
             }

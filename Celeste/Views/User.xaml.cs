@@ -102,7 +102,7 @@ namespace Celeste
 
             lbl_username.Content = Person.GetInstance(Flow.User_ID).username;
             lbl_email.Content = Person.GetInstance(Flow.User_ID).email;
-            lbl_gender.Content = Person.GetInstance(Flow.User_ID).gender;
+            lbl_user_id.Content = Person.GetInstance(Flow.User_ID).user_id;
 
 
 

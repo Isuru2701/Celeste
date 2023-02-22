@@ -5,10 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Celeste"
         mc:Ignorable="d"
-        Background="#FF1E1730"
-        Height="600" Width="500"
+        Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}}"
+      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}"
         Loaded="Window_Loaded">
-    <Grid>
+
+    <Page.Background>
+        <SolidColorBrush Color="Black" Opacity="0.5"/>
+    </Page.Background>
+
+    <Grid  Background="#FF1E1730"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           Width="500">
 
 
         <Border BorderBrush="#d8c6a0" BorderThickness="1"
@@ -63,7 +71,7 @@
             <StackPanel>
                 <Label  Content="Username"/>
                 <Label  Content="Email" />
-                <Label  Content="Gender" />
+                <Label  Content="User Id" />
                 <Label Content="Active Since"/>
                 <!-- Add a change password button-->
                 
@@ -72,7 +80,7 @@
             <StackPanel Grid.Column="1">
                 <Label x:Name="lbl_username"/>
                 <Label x:Name="lbl_email" />
-                <Label x:Name="lbl_gender" />
+                <Label x:Name="lbl_user_id" />
 
             </StackPanel>
         </Grid>
