@@ -29,11 +29,24 @@ namespace Celeste.Views
 
         public Writer(string date)
         {
+            InitializeComponent();
+
             try
             {
+                Conn conn = new Conn();
+
                 if (FileHandler.ResourceExists($"{DateTime.Parse(date):yyyyMMddd}.txt"))
                 {
+                    txt_writer.Text = FileHandler.ReadText($"{DateTime.Parse(date):yyyyMMddd}.txt");
+                }
+                else if (conn.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                {
+                    txt_writer.Text = (string)conn.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
 
+                }
+                else
+                {
+                    txt_writer.Text = "";
                 }
             }
             catch (FormatException ex)
@@ -94,7 +107,7 @@ namespace Celeste.Views
                 }
                 else if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
                 {
-                    txt_writer.Text = (string)con.FetchCol($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
+                    txt_writer.Text = (string)con.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
                 }
                 else
                 {

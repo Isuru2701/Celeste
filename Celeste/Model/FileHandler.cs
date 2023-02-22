@@ -38,7 +38,11 @@ namespace Celeste.Model
 
             }
         }
-
+        /// <summary>
+        /// Writes content into filename. Note that u dont need the full path. Only the name and extension.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="filename"></param>
         public static void Write(string content, string filename)
         {
             try

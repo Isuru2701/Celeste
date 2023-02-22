@@ -28,12 +28,11 @@ namespace Celeste.Views
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;  // cast the sender parameter to a Button
-            string buttonText = (string)clickedButton.Content;  // get the text content of the button
 
             DateTime date = new DateTime();
-            DateTime.TryParse(buttonText, out date);
+            DateTime.TryParse((string)clickedButton.Content, out date);
 
-            
+            NavigationService.Navigate(new Writer((string)clickedButton.Content));
 
 
 

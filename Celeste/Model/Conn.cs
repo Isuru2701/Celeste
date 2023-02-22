@@ -41,7 +41,12 @@ namespace Celeste.Model
             cmd = new SqlCommand();
             
         }
-
+        /// <summary>
+        /// Useful when only one row is returned. Converts it to a list. Throws an exception if more than one is returned.
+        /// </summary>
+        /// <param name="cmdstring"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<object> FetchRow(string cmdstring)
         {
        
@@ -115,6 +120,12 @@ namespace Celeste.Model
 
         }
 
+        /// <summary>
+        /// useful when u know only one col will be fetched. Returns a list. Will throw an exception if otherwise.
+        /// </summary>
+        /// <param name="cmdstring"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<object> FetchCol(string cmdstring)
         {
             try
@@ -190,7 +201,13 @@ namespace Celeste.Model
 
 
         }
-
+        
+        /// <summary>
+        /// Does what it says lol. Writes into a table. Returns number of rows affected.
+        /// </summary>
+        /// <param name="cmdstring"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public int Write(string cmdstring)
         {
             try
