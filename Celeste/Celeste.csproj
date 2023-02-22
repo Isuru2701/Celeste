@@ -462,6 +462,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\twilight.py" />
+    <Resource Include="Resources\timer_btn.png" />
     <Resource Include="Resources\save_btn.png" />
     <Resource Include="Resources\bug.png" />
     <Resource Include="Resources\entry_image.png" />

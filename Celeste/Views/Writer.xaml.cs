@@ -45,7 +45,17 @@ namespace Celeste.Views
             FileHandler.Write(txt_writer.Text, $"{DateTime.Now:yyyyMMdd}.txt");
 
             Conn con = new Conn();
-            con.Write($"Insert into user_entries values('{Flow.User_ID}', '{DateTime.Now:yyyy/MM/dd}', '{txt_writer.Text}')");
+
+            if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+            {
+                con.Write($"Update user_entries set content='{txt_writer.Text}' where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'");
+
+            }
+            else
+            {
+                con.Write($"Insert into user_entries values('{Flow.User_ID}', '{DateTime.Now:yyyy/MM/dd}', '{txt_writer.Text}')");
+            }
+
 
         }
 
@@ -54,9 +64,18 @@ namespace Celeste.Views
         {
             try
             {
+                Conn con = new Conn();
                 if (FileHandler.ResourceExists($"{DateTime.Now:yyyyMMdd}.txt"))
                 {
                     txt_writer.Text = FileHandler.ReadText($"{DateTime.Now:yyyyMMdd}.txt");
+                }
+                else if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                {
+                    txt_writer.Text = (string)con.FetchCol($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
+                }
+                else
+                {
+                    txt_writer.Text = "";
                 }
             }
             catch (Exception ex)

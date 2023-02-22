@@ -83,7 +83,12 @@ namespace Celeste.Model
             }
 
         }
-
+        /// <summary>
+        /// If a query returned one or more rows, returns true. Otherwise false.
+        /// </summary>
+        /// <param name="cmdstring"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool EntryExists(string cmdstring)
         {
             try
