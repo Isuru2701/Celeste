@@ -8,6 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        
+        <hc:TimePicker HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

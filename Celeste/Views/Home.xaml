@@ -10,28 +10,27 @@
         Width="{x:Static SystemParameters.PrimaryScreenWidth}"
         Background="#FF1E1730">
 
-    <Grid x:Name="container">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="700"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="700"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-            <Border Margin="0,30,0,30"
+        <Border Margin="0,30,0,30"
                     BorderBrush="#d8c6a0"
                     BorderThickness="0,5,5,5"
                     CornerRadius="0,30,30,0" x:Name="writer">
-                <Button x:Name="btn_writer"
+            <Button x:Name="btn_writer"
                         Width="{Binding ElementName=writer, Path=ActualWidth}"
                         Height="{Binding ElementName=writer, Path=ActualHeight}"
                         Background="Transparent"
                         Click="btn_writer_Click"
                         Style="{StaticResource DiamondButtonTheme}">
-                </Button>
+            </Button>
 
-            </Border>
+        </Border>
 
-            <Button
+        <Button
                 x:Name="btn_user"
                 Grid.Column="1"
                 Width="70"
@@ -43,27 +42,27 @@
                 RenderTransformOrigin="0.5, 0.5"
                 Click="btn_user_Click"
                 ToolTip="View Profile">
-                <Button.LayoutTransform>
-                    <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
-                </Button.LayoutTransform>
+            <Button.LayoutTransform>
+                <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+            </Button.LayoutTransform>
 
-                <Button.RenderTransform>
-                    <RotateTransform Angle="0"/>
-                </Button.RenderTransform>
+            <Button.RenderTransform>
+                <RotateTransform Angle="0"/>
+            </Button.RenderTransform>
 
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border BorderBrush="#d8c6a0" BorderThickness="10" Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="#d8c6a0" BorderThickness="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
 
-                        <!-- event triggers examples
+                    <!-- event triggers examples
 
                         <Style.Triggers>
                             <EventTrigger RoutedEvent="Click">
@@ -78,55 +77,54 @@
                             </EventTrigger>
                         </Style.Triggers>
                 -->
-                    </Style>
-                </Button.Style>
+                </Style>
+            </Button.Style>
 
-                <Image Source="../Resources/logo(minimal).png"/>
-            </Button>
-
-
-
-            <DockPanel Grid.Column="1" >
+            <Image Source="../Resources/logo(minimal).png"/>
+        </Button>
 
 
-                <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9"
+
+        <DockPanel Grid.Column="1" >
+
+
+            <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="10,120,10,9"
                         Click="btn_resources_Click"
                         ToolTip="Resources"
                         Style="{StaticResource DiamondButtonTheme}">
-                    <Image Source="../Resources/resources_btn.png"/>
-                </Button>
+                <Image Source="../Resources/resources_btn.png"/>
+            </Button>
 
-                <Button x:Name="btn_notification" DockPanel.Dock="Bottom"  Margin="10,9,10,120"
+            <Button x:Name="btn_notification" DockPanel.Dock="Bottom"  Margin="10,9,10,120"
                         ToolTip="Set Notification"
                         Click="btn_notification_Click"
                         Style="{StaticResource DiamondButtonTheme}">
-                    <Image Source="../Resources/timer_btn.png"></Image>
+                <Image Source="../Resources/timer_btn.png"></Image>
 
-                </Button>
+            </Button>
 
-                <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="130,70,70,70"
+            <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="130,70,70,70"
                         Click="btn_entries_Click"
                         ToolTip="Past Entries"
                         Style="{StaticResource DiamondButtonTheme}">
-                    <Image Source="../Resources/entries_btn.png"/>
-                </Button>
+                <Image Source="../Resources/entries_btn.png"/>
+            </Button>
 
-                <Button x:Name="btn_exit" DockPanel.Dock="Right" Margin="70,70,130,70"
+            <Button x:Name="btn_exit" DockPanel.Dock="Right" Margin="70,70,130,70"
                         Click="btn_exit_Click"
                         ToolTip="exit"
                         Style="{StaticResource DiamondButtonTheme}">
-                    <Image Source="../Resources/exit_btn.png"></Image>
-                </Button>
+                <Image Source="../Resources/exit_btn.png"></Image>
+            </Button>
 
-                <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0"
+            <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0"
                         Click="btn_insights_Click"
                         ToolTip="Insights"
                         Style="{StaticResource DiamondButtonTheme}">
 
-                    <Image Source="../Resources/insights_btn.png"></Image>
-                </Button>
+                <Image Source="../Resources/insights_btn.png"></Image>
+            </Button>
 
-            </DockPanel>
-        </Grid>
+        </DockPanel>
     </Grid>
 </Page>

@@ -14,6 +14,12 @@
         ResizeMode="NoResize"
         Loaded="Window_Loaded">
 
+    <Grid>
     <Frame x:Name="MainFrame"
            NavigationUIVisibility="Hidden"/>
+
+    <Frame x:Name="OverlayFrame"
+           NavigationUIVisibility="Hidden"/>
+    </Grid>
+
 </Window>

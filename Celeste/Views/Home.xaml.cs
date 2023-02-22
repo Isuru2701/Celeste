@@ -47,7 +47,20 @@ namespace Celeste.Views
 
         private void btn_user_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new User());
+            try
+            {
+                var mainFrame = VisualTreeHelper.GetParent(this) as Frame;
+                var overlayFrame = mainFrame.Template.FindName("OverlayFrame", mainFrame) as Frame;
+
+                // Set the Source property of the OverlayFrame to display the User page
+                overlayFrame.Source = new Uri("Views/User.xaml", UriKind.Relative);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
