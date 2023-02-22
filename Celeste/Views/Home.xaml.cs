@@ -49,15 +49,13 @@ namespace Celeste.Views
         {
             try
             {
-                var mainFrame = VisualTreeHelper.GetParent(this) as Frame;
-                var overlayFrame = mainFrame.Template.FindName("OverlayFrame", mainFrame) as Frame;
+                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
+                overlayframe.Content = new User();
 
-                // Set the Source property of the OverlayFrame to display the User page
-                overlayFrame.Source = new Uri("Views/User.xaml", UriKind.Relative);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("HOME: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 

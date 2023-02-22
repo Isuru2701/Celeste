@@ -31,6 +31,7 @@ namespace Celeste
         {
             Flow.Initiate();
             MainFrame.Navigate(new Login());
+            OverlayFrame = new Frame();
         }
     }
 }

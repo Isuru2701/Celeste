@@ -35,7 +35,9 @@ namespace Celeste
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
+            overlayframe.Content = null;
+            
         }
 
 
@@ -74,12 +76,12 @@ namespace Celeste
             }
             catch (NotSupportedException)
             {
-                MessageBox.Show("Please select an image");
+                MessageBox.Show("Please select an image", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("USER: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -89,9 +91,9 @@ namespace Celeste
             {
                 pic_pfp.Source = new BitmapImage(new Uri("Resources/logo(large).png", UriKind.Relative));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("FATAL: SOME RESOURCES APPEAR TO BE MISSING: " + Flow.BaseAddress);
+                MessageBox.Show("USER: FATAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 
