@@ -39,9 +39,9 @@ namespace Celeste.Views
                 {
                     txt_writer.Text = FileHandler.ReadText($"{DateTime.Parse(date):yyyyMMddd}.txt");
                 }
-                else if (conn.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                else if (conn.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Parse(date):yyyyMMdddd}'"))
                 {
-                    txt_writer.Text = (string)conn.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
+                    txt_writer.Text = (string)conn.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Parse(date):yyyyMMdddd}'")[0];
 
                 }
                 else
@@ -78,18 +78,21 @@ namespace Celeste.Views
         private void ExecuteSave()
         {
             //save a copy to local and then push to db
-            FileHandler.Write(txt_writer.Text, $"{DateTime.Now:yyyyMMdd}.txt");
-
-            Conn con = new Conn();
-
-            if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+            if (txt_writer.Text != null)
             {
-                con.Write($"Update user_entries set content='{txt_writer.Text}' where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'");
+                FileHandler.Write(txt_writer.Text, $"{DateTime.Now:yyyyMMdd}.txt");
 
-            }
-            else
-            {
-                con.Write($"Insert into user_entries values('{Flow.User_ID}', '{DateTime.Now:yyyy/MM/dd}', '{txt_writer.Text}')");
+                Conn con = new Conn();
+
+                if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                {
+                    con.Write($"Update user_entries set content='{txt_writer.Text}' where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'");
+
+                }
+                else
+                {
+                    con.Write($"Insert into user_entries values('{Flow.User_ID}', '{DateTime.Now:yyyy/MM/dd}', '{txt_writer.Text}')");
+                }
             }
 
 

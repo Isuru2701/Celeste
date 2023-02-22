@@ -121,7 +121,7 @@ namespace Celeste.Model
         }
 
         /// <summary>
-        /// useful when u know only one col will be fetched. Returns a list. Will throw an exception if otherwise.
+        /// useful when u know only one col will be fetched. Returns a list. Will throw an exception if not a list.
         /// </summary>
         /// <param name="cmdstring"></param>
         /// <returns></returns>
