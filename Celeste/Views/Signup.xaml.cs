@@ -1,4 +1,5 @@
 ﻿using Celeste.Model;
+using Celeste.Model.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -80,27 +81,41 @@ namespace Celeste.Views
 
 
                 Conn conn = new Conn();
-                string cmd = $"Select enduser_id from EndUser where email='{txt_email.Text}'";
-                if (conn.EntryExists(cmd))
+                using (var context = new LunarContext())
                 {
-                    lbl_validation_error.Content = "This email is already registered by another user!";
-                    lbl_validation_error.Visibility = Visibility.Visible;
+                    var existingUser = context.EndUsers.FirstOrDefault(u => u.email == txt_email.Text);
+
+                    if (existingUser != null)
+                    {
+                        lbl_validation_error.Content = "This email is already registered by another user!";
+                        lbl_validation_error.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        lbl_validation_error.Visibility = Visibility.Hidden;
+
+                        SHA1Managed sha = new SHA1Managed();
+                        byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
+                        string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+
+
+                        DateTime date = DateTime.Parse($"{(int)cmb_years.SelectedValue}/{(int)(cmb_months.SelectedIndex + 1)}/{(int)(cmb_days.SelectedValue)}");
+
+                        context.EndUsers.Add(new EndUser
+                        {
+                            email = txt_email.Text,
+                            password_hash = hash,
+                            dob = date,
+                            gender = (cmb_gender.SelectedValue.ToString())[0].ToString(),
+                            username = txt_username.Text
+                        });
+
+                        context.SaveChanges();
+
+                        NavigationService.Navigate(new Home());
+                    }
                 }
-                else
-                {
-                    SHA1Managed sha = new SHA1Managed();
-                    byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
-                    string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-
-                    string date = $"{(int)cmb_years.SelectedValue}/{(int)(cmb_months.SelectedIndex + 1)}/{(int)(cmb_days.SelectedValue)}";
-
-                    cmd = $"Insert into EndUser Values('{txt_email.Text}', '{hash}', '{date}', '{cmb_gender.SelectedValue.ToString()[0]}', '{txt_username}')";
-
-                    int i = conn.Write(cmd);
-
-                    NavigationService.Navigate(new Home());
-                }
             }
             catch (SqlException ex)
             {

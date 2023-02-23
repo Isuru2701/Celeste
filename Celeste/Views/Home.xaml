@@ -112,7 +112,7 @@
 
             <Button x:Name="btn_exit" DockPanel.Dock="Right" Margin="70,70,130,70"
                         Click="btn_exit_Click"
-                        ToolTip="exit"
+                        ToolTip="logout"
                         Style="{StaticResource DiamondButtonTheme}">
                 <Image Source="../Resources/exit_btn.png"></Image>
             </Button>

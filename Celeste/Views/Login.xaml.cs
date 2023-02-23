@@ -1,4 +1,5 @@
 ﻿using Celeste.Model;
+using Celeste.Model.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -49,21 +50,23 @@ namespace Celeste.Views
                     byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
                     string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                    string command = $"Select enduser_id, email, password_hash from EndUser where email='{email}' AND password_hash='{hash}'";
-
-                    if(conn.EntryExists(command))
+                    using (var context = new LunarContext())
                     {
-                        List<object> reply = conn.FetchRow(command);
-                        Flow.User_ID = (int)reply[0];
+                        var endUser = context.EndUsers.SingleOrDefault(u => u.email == email && u.password_hash == hash);
+
+                        if (endUser != null)
+                        {
+                            Flow.User_ID = endUser.enduser_id;
                             Person.GetInstance(Flow.User_ID);
 
-                        // Person.GetInstance(Flow.User_ID).DebugDisplay();
+                            // Person.GetInstance(Flow.User_ID).DebugDisplay();
 
                             NavigationService.Navigate(new Home());
                         }
                         else
                         {
-                        Warning.Content = "Invalid pairing. Please try again";
+                            Warning.Content = "Invalid pairing. Please try again";
+                        }
                     }
 
 

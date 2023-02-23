@@ -15,7 +15,7 @@ namespace Celeste.Model
         public static string appFolderPath {get; set;}
         static FileHandler() 
         {
-            appFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Celeste/");
+            appFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"Celeste/{Flow.User_ID}/");
 
         }
 
