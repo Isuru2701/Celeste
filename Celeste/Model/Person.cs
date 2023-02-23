@@ -1,4 +1,5 @@
-﻿using ScottPlot.Renderable;
+﻿using Celeste.Model.Data;
+using ScottPlot.Renderable;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -18,7 +19,6 @@ namespace Celeste.Model
     public class Person
     {
         //dynamic data stored on database
-        private List<Entry> entries = new List<Entry> { };
         private List<string> triggers = new List<string> { };
         private List<string> comforts = new List<string> { };
 
@@ -28,7 +28,7 @@ namespace Celeste.Model
         public string username { get; set; }
         public string email { get; set; }
         public DateTime dob { get; set; }
-        public char gender { get; set; }
+        public string gender { get; set; }
 
         private Image profilepic;
 
@@ -60,55 +60,43 @@ namespace Celeste.Model
         {
             try
             {
-                //there'll only be one row
-                List<List<object>> temp = connection.Fetch("Select email, dob, gender, username from EndUser where enduser_id= '" + user_id + "'");
-                email = temp[0][0].ToString();
-                dob = Convert.ToDateTime(temp[0][1]);
-                gender = Convert.ToChar(temp[0][2]);
-                username = temp[0][3].ToString();
-
-
-            }
-            catch (Exception)
-            {
-                
-                throw new Exception("USE_ERROR_USER_CONTROL");
-            }
-
-        }
-
-
-
-        public void FetchEntries()
-        {
-
-            try
-            {
-                List<List<object>> temp = connection.Fetch("Select entry_date, content from user_entries where enduser_id= '" + user_id + "'order by entry_date asc");
-
-                foreach(List<object> row in temp)
+                using(var context = new LunarContext())
                 {
-                    entries.Add(new Entry(Convert.ToDateTime(row[0]), Convert.ToString(row[1])));
+                    var endUser = context.EndUsers
+                        .Where(e => e.enduser_id == user_id)
+                        .Select(e => new
+                        {
+                            e.email,
+                            e.dob,
+                            e.gender,
+                            e.username
+                        })
+                        .FirstOrDefault();
+
+                    username = endUser.username;
+                    email = endUser.email;
+                    dob = (DateTime)endUser.dob;
+                    gender = endUser.gender;
+
                 }
 
 
             }
             catch (Exception ex)
             {
-                throw new Exception("ERROR: " + ex.Message);
+                
+                throw new Exception("PERSON:INTERNAL_ERROR " + ex.Message);
             }
+
         }
 
-        //TODO: ADD TABLE AND COL NAMES
+
         public void FetchTriggers()
         {
             try
             {
                 //purges past data, if any
                 triggers.Clear();
-
-                triggers = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'")
-                    .Select(x => x.ToString()).ToList();
             }
             catch (Exception ex)
             {
@@ -124,8 +112,6 @@ namespace Celeste.Model
                 //purges past data, if any
                 comforts.Clear();
 
-                comforts = connection.FetchCol("Select <> from <> where enduser_id= '" + user_id + "'")
-                    .Select(x => x.ToString()).ToList();
             }
             catch (Exception ex)
             {
@@ -140,13 +126,6 @@ namespace Celeste.Model
             {
                 //purges past data, if any
                 scores.Clear();
-
-                List<List<object>> temp = connection.Fetch("Select entry_date, score from user_score where enduser_id= '" + user_id + "' order by entry_date asc");
-
-                foreach (List<object> row in temp)
-                {
-                    scores.Add(new Score(Convert.ToDateTime(row[0]), Convert.ToDouble(row[1])));
-                }
 
             }
             catch (FormatException)

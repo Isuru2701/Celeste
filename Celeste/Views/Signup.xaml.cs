@@ -78,9 +78,6 @@ namespace Celeste.Views
         {
             try
             {
-
-
-                Conn conn = new Conn();
                 using (var context = new LunarContext())
                 {
                     var existingUser = context.EndUsers.FirstOrDefault(u => u.email == txt_email.Text);

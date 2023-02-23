@@ -46,7 +46,7 @@ namespace Celeste.Views
                 {
                     SHA1 sha = SHA1.Create();
 
-                    Conn conn = new Conn();
+                    
                     byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
                     string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
