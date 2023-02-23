@@ -29,7 +29,7 @@
                      TextWrapping="Wrap"
                      SpellCheck.IsEnabled="True"
                      VerticalScrollBarVisibility="Visible"
-                      Padding="50, 50, 50, 50">
+                      Padding="20, 20, 20, 20">
                 
             </TextBox>
 

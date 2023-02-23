@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Celeste.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,10 @@ namespace Celeste.Views
 
         private void btn_notification_Click(object sender, RoutedEventArgs e)
         {
-            
+            var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
+            NavigationService.Navigate(new TimePicker());
+
+
         }
 
         private void btn_entries_Click(object sender, RoutedEventArgs e)

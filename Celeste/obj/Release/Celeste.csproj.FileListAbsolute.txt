@@ -172,7 +172,12 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.E
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Remotion.Linq.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Interactive.Async.xml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\TimeSetter.g.cs
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\TimeSetter.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\User.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\User.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\TimePicker.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\TimePicker.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Data.SqlClient.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.EntityFrameworkCore.SqlServer.xml

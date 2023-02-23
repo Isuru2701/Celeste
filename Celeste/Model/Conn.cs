@@ -159,6 +159,12 @@ namespace Celeste.Model
 
         }
 
+        /// <summary>
+        /// Fetches a data frame arranged as a list of lists, each an object
+        /// </summary>
+        /// <param name="cmdstring"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<List<object>> Fetch(string cmdstring)
          {
             try

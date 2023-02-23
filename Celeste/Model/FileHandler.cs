@@ -58,7 +58,7 @@ namespace Celeste.Model
 
             catch (Exception ex)
             {
-                Console.WriteLine("FILE: WRITE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("FILE: WRITE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

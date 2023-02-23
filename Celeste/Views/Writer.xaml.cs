@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -100,24 +101,28 @@ namespace Celeste.Views
         /// </summary>
         private void ExecuteSave()
         {
-            //save a copy to local and then push to db
-            if (txt_writer.Text != "")
+            try
             {
-                FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
-
-                Conn con = new Conn();
-
-                if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{current.Date:yyyy/MM/dd}'"))
+                //save a copy to local and then push to db
+                if (txt_writer.Text != "")
                 {
-                    con.Write($"Update user_entries set content='{txt_writer.Text}' where enduser_id='{Flow.User_ID}' AND entry_date='{current.Date:yyyy/MM/dd}'");
+                    FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
 
-                }
-                else
-                {
-                    con.Write($"Insert into user_entries values('{Flow.User_ID}', '{current.Date:yyyy/MM/dd}', '{txt_writer.Text}')");
+                    Conn con = new Conn();
+
+
+
                 }
             }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("WRITER: SQL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("WRITER: SAVE_INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 
@@ -137,12 +142,12 @@ namespace Celeste.Views
             } 
             catch(FileNotFoundException ex)
             {
-                MessageBox.Show("WRITER: READ_ERROR " + ex.Message);
+                MessageBox.Show("WRITER: READ_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("WRITER: UPLOAD_INTERNAL_ERRROR" + ex.Message);
+                MessageBox.Show("WRITER: UPLOAD_INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 
