@@ -181,3 +181,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.E
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Data.SqlClient.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.EntityFrameworkCore.Relational.xml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.EntityFrameworkCore.SqlServer.xml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.Migrations.InitialCreate.resources

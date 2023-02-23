@@ -1,7 +1,10 @@
 ﻿using Celeste.Model;
+using Celeste.Model.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -73,9 +76,9 @@ namespace Celeste.Views
 
                 }
             }
-            catch (FormatException ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show("WRITER: DATE_PARSE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("WRITER: SQL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
@@ -108,15 +111,18 @@ namespace Celeste.Views
                 {
                     FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
 
-                    Conn con = new Conn();
-
-
+                    using(var context = new LunarContext())
+                    {
+                        var packet = new user_entries { enduser_id = Flow.User_ID, entry_date = current.Date, content=txt_writer.Text };
+                        context.user_entries.AddOrUpdate(packet);
+                        context.SaveChanges();
+                    }    
 
                 }
             }
-            catch(SqlException ex)
+            catch(DbUpdateException ex)
             {
-                MessageBox.Show("WRITER: SQL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("WRITER: DB_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
             catch(Exception ex)

@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Celeste.Model.Data
 {
-    public partial class Model1 : DbContext
+    public partial class LunarContext : DbContext
     {
-        public Model1()
+        public LunarContext()
             : base("name=Lunar")
         {
         }
