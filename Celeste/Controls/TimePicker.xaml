@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Celeste.Controls"
+             xmlns:tp="clr-namespace:RoyT.TimePicker;assembly=RoyT.TimePicker"
              xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="Celeste.Controls.TimePicker"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
@@ -11,17 +12,55 @@
     <UserControl.Background>
         <SolidColorBrush Color="Black" Opacity="0.5"/>
     </UserControl.Background>
-    
+
     <Grid>
 
 
 
         <Button x:Name="btn_back"
                 Style="{StaticResource DiamondButtonTheme}" 
-                Margin="61,365,869,365"
+                Margin="39,365,891,365"
                 Click="btn_back_Click">
             <Image Source="../Resources/back_btn.png"/>
         </Button>
+
+        <tp:TimePicker
+            x:Name="timepicker"
+            Time="{Binding Time, Mode=OneTime}" 
+            Width="700"
+            Height="700"
+            HourBrush="#d8c6a0"
+            MinuteBrush="#d8c6a0"
+            HourTickBrush="#d8c6a0"
+            HourThickness="15"
+            MinuteThickness="10">
+
+        </tp:TimePicker>
+
+        <Button
+            x:Name="btn_meridian"
+            Style="{StaticResource MenubuttonTheme}"
+            Content="{Binding ElementName=timepicker, Path=Time.Meridiem}" Margin="890,350,10,350"
+            Width="100" Click="btn_meridian_Click"
+            ></Button>
+
+        <Label Content="{Binding ElementName=timepicker, Path=Time.Hour}"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Margin="0,461,545,0"
+               FontSize="40"/>
+
+        <Label Content="{Binding ElementName=timepicker, Path=Time.Minute}"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Margin="0,500,545,0"
+               FontSize="40"/>
+
+        <Label Content="{Binding ElementName=timepicker, Path=Time.Meridiem}"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Margin="0,460,424,0"
+               FontSize="70"/>
 
 
     </Grid>

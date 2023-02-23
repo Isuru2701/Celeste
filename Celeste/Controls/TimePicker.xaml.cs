@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoyT.TimePicker;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,14 @@ namespace Celeste.Controls
             var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
             overlayframe.Content = null;
 
+        }
+
+        private void btn_meridian_Click(object sender, RoutedEventArgs e)
+        {
+            if(timepicker.Time.Meridiem == Meridiem.PM)
+            {
+                timepicker.Time = new AnalogueTime(timepicker.Time.Hour, timepicker.Time.Minute, Meridiem.PM);
+            }
         }
     }
 }
