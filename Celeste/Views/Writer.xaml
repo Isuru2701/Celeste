@@ -28,7 +28,8 @@
                      AcceptsReturn="True"
                      TextWrapping="Wrap"
                      SpellCheck.IsEnabled="True"
-                    VerticalScrollBarVisibility="Visible">
+                     VerticalScrollBarVisibility="Visible"
+                      Padding="50, 50, 50, 50">
                 
             </TextBox>
 
