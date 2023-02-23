@@ -56,7 +56,7 @@
 
         <Label x:Name="lbl_confirmation" 
                Content="Reminder &#xa;set &#xa;for"
-               Visibility="Visible" Margin="213,592,500,102"/>
+               Visibility="Hidden" Margin="213,592,500,102"/>
 
 
         <Label Content="{Binding ElementName=timepicker, Path=Time.Hour}"
