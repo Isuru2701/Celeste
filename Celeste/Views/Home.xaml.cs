@@ -72,7 +72,7 @@ namespace Celeste.Views
 
         private void btn_writer_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Writer());
+            NavigationService.Navigate(new Writer(DateTime.Now));
         }
     }
 

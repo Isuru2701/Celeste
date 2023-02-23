@@ -36,15 +36,24 @@ namespace Celeste.Views
 
             try
             {
-                Conn con = new Conn();
+
+
                 if (FileHandler.ResourceExists($"{DateTime.Now:yyyyMMdd}.txt"))
                 {
                     txt_writer.Text = FileHandler.ReadText($"{DateTime.Now:yyyyMMdd}.txt");
                 }
-                else if (con.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'"))
+                else
                 {
-                    txt_writer.Text = (string)con.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{DateTime.Now:yyyy/MM/dd}'")[0];
+                    
+                    using (var context = new LunarContext())
+                    {
+                        txt_writer.Text = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
+                            .Select(e => e.content).FirstOrDefault().ToString();
+                        
+                    }
+
                 }
+
             }
             catch (Exception ex)
             {
@@ -111,11 +120,25 @@ namespace Celeste.Views
                 {
                     FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
 
-                    using(var context = new LunarContext())
+                    using (var context = new LunarContext())
                     {
-                        var packet = new user_entries { enduser_id = Flow.User_ID, entry_date = current.Date, content=txt_writer.Text };
-                        context.user_entries.AddOrUpdate(packet);
+                        var entry = context.user_entries.Find(Flow.User_ID, current.Date);
+                        if (entry != null)
+                        {
+                            entry.content = txt_writer.Text;
+                        }
+                        else
+                        {
+                            context.user_entries.Add(new user_entries
+                            {
+                                enduser_id = Flow.User_ID,
+                                entry_date = current.Date,
+                                content = txt_writer.Text
+                            });
+                        }
+                        
                         context.SaveChanges();
+                        
                     }    
 
                 }
@@ -127,7 +150,7 @@ namespace Celeste.Views
             }
             catch(Exception ex)
             {
-                MessageBox.Show("WRITER: SAVE_INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("WRITER: SAVE_INTERNAL_ERROR: " + ex.Message + " " + ex.InnerException.Message + " " + ex.InnerException.InnerException.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }
