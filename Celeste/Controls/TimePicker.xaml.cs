@@ -1,6 +1,7 @@
 ﻿using RoyT.TimePicker;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,9 +36,13 @@ namespace Celeste.Controls
 
         private void btn_meridian_Click(object sender, RoutedEventArgs e)
         {
-            if(timepicker.Time.Meridiem == Meridiem.PM)
+            if(timepicker.Time.Meridiem == Meridiem.AM)
             {
                 timepicker.Time = new AnalogueTime(timepicker.Time.Hour, timepicker.Time.Minute, Meridiem.PM);
+            }
+            else
+            {
+                timepicker.Time = new AnalogueTime(timepicker.Time.Hour, timepicker.Time.Minute, Meridiem.AM);
             }
         }
     }

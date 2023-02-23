@@ -40,27 +40,32 @@
         <Button
             x:Name="btn_meridian"
             Style="{StaticResource MenubuttonTheme}"
-            Content="{Binding ElementName=timepicker, Path=Time.Meridiem}" Margin="890,350,10,350"
+            Content="{Binding ElementName=timepicker, Path=Time.Meridiem}"
+            Margin="50"
             Width="100" Click="btn_meridian_Click"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            
             ></Button>
 
         <Label Content="{Binding ElementName=timepicker, Path=Time.Hour}"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Top"
-               Margin="0,461,545,0"
-               FontSize="40"/>
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="40" Margin="0,200,50,0"
+               IsHitTestVisible="False"/>
 
         <Label Content="{Binding ElementName=timepicker, Path=Time.Minute}"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Top"
-               Margin="0,500,545,0"
-               FontSize="40"/>
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               
+               FontSize="40" Margin="0,300,50,0"
+               IsHitTestVisible="False"/>
 
         <Label Content="{Binding ElementName=timepicker, Path=Time.Meridiem}"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Top"
-               Margin="0,460,424,0"
-               FontSize="70"/>
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="70" Margin="200,240,50,0"
+               IsHitTestVisible="False"/>
 
 
     </Grid>
