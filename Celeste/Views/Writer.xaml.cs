@@ -30,7 +30,7 @@ namespace Celeste.Views
         Entry current;
         public Writer()
         {
-            current = new Entry(Flow.User_ID, DateTime.Now);
+            current = new Entry(Flow.User_ID, DateTime.Now.Date);
 
             InitializeComponent();
 
@@ -67,34 +67,38 @@ namespace Celeste.Views
         public Writer(DateTime date)
         {
 
-            current = new Entry(Flow.User_ID, date);
+            current = new Entry(Flow.User_ID, date.Date);
 
             InitializeComponent();
 
             try
             {
-                Conn conn = new Conn();
+
 
                 if (FileHandler.ResourceExists($"{date:yyyyMMdd}.txt"))
                 {
                     txt_writer.Text = FileHandler.ReadText($"{date:yyyyMMdd}.txt");
                 }
-                else if (conn.EntryExists($"select enduser_id from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{date:yyyy/MM/dd}'"))
+                else
                 {
-                    txt_writer.Text = (string)conn.FetchCol($"select content from user_entries where enduser_id='{Flow.User_ID}' AND entry_date='{date:yyyy/MM/dd}'")[0];
+
+                    using (var context = new LunarContext())
+                    {
+                        txt_writer.Text = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
+                            .Select(e => e.content).FirstOrDefault().ToString();
+
+                    }
 
                 }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("WRITER: SQL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("WRITER: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                MessageBox.Show("WRITER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
@@ -125,20 +129,19 @@ namespace Celeste.Views
                         var entry = context.user_entries.Find(Flow.User_ID, current.Date);
                         if (entry != null)
                         {
+                            MessageBox.Show("HIT 1");
                             entry.content = txt_writer.Text;
                         }
                         else
                         {
                             context.user_entries.Add(new user_entries
                             {
-                                enduser_id = Flow.User_ID,
                                 entry_date = current.Date,
                                 content = txt_writer.Text
                             });
+
                         }
-                        
                         context.SaveChanges();
-                        
                     }    
 
                 }
