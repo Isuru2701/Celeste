@@ -45,5 +45,12 @@ namespace Celeste.Controls
                 timepicker.Time = new AnalogueTime(timepicker.Time.Hour, timepicker.Time.Minute, Meridiem.AM);
             }
         }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            lbl_confirmation.Content = $"Reminder set for {timepicker.Time}";
+            lbl_confirmation.Visibility = Visibility.Visible;
+
+        }
     }
 }
