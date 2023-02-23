@@ -28,41 +28,6 @@ namespace Celeste.Views
     public partial class Writer : Page
     {
         Entry current;
-        public Writer()
-        {
-            current = new Entry(Flow.User_ID, DateTime.Now.Date);
-
-            InitializeComponent();
-
-            try
-            {
-
-
-                if (FileHandler.ResourceExists($"{DateTime.Now:yyyyMMdd}.txt"))
-                {
-                    txt_writer.Text = FileHandler.ReadText($"{DateTime.Now:yyyyMMdd}.txt");
-                }
-                else
-                {
-                    
-                    using (var context = new LunarContext())
-                    {
-                        txt_writer.Text = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
-                            .Select(e => e.content).FirstOrDefault().ToString();
-                        
-                    }
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("WRITER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-
-
-        }
 
         public Writer(DateTime date)
         {
@@ -84,9 +49,12 @@ namespace Celeste.Views
 
                     using (var context = new LunarContext())
                     {
-                        txt_writer.Text = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
-                            .Select(e => e.content).FirstOrDefault().ToString();
-
+                        var query = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
+                            .Select(e => e.content).FirstOrDefault();
+                        if(query != null )
+                        {
+                            txt_writer.Text = query.ToString();
+                        }
                     }
 
                 }
@@ -129,7 +97,6 @@ namespace Celeste.Views
                         var entry = context.user_entries.Find(Flow.User_ID, current.Date);
                         if (entry != null)
                         {
-                            MessageBox.Show("HIT 1");
                             entry.content = txt_writer.Text;
                         }
                         else
