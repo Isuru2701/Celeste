@@ -39,5 +39,13 @@
                 Click="btn_save_Click">
             <Image Source="../Resources/save_btn.png"/>
         </Button>
+
+        <Button x:Name="btn_upload"
+                Style="{StaticResource DiamondButtonTheme}" 
+                Margin="862,365,68,365"
+                Click="btn_upload_Click">
+            <Image Source="../Resources/upload_btn.png"/>
+        </Button>
+
     </Grid>
 </Page>

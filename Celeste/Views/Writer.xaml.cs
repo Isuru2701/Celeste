@@ -1,4 +1,5 @@
 ﻿using Celeste.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -120,5 +121,32 @@ namespace Celeste.Views
 
         }
 
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                OpenFileDialog dialog = new OpenFileDialog();
+
+                dialog.Filter = "Text Files (*.txt) | *.txt";
+
+                if (dialog.ShowDialog() == true)
+                {
+                    txt_writer.Text = File.ReadAllText(dialog.FileName);
+                }
+            } 
+            catch(FileNotFoundException ex)
+            {
+                MessageBox.Show("WRITER: READ_ERROR " + ex.Message);
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show("WRITER: UPLOAD_INTERNAL_ERRROR" + ex.Message);
+            }
+
+
+
+        }
     }
 }
