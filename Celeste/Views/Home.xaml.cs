@@ -39,7 +39,7 @@ namespace Celeste.Views
         private void btn_notification_Click(object sender, RoutedEventArgs e)
         {
             var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
-            NavigationService.Navigate(new TimePicker());
+            overlayframe.Content = new User();
 
 
         }

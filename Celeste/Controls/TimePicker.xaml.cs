@@ -24,5 +24,12 @@ namespace Celeste.Controls
         {
             InitializeComponent();
         }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
+            overlayframe.Content = null;
+
+        }
     }
 }

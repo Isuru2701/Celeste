@@ -10,6 +10,7 @@
         Width="{x:Static SystemParameters.PrimaryScreenWidth}"
         Background="#FF1E1730">
 
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="700"/>
