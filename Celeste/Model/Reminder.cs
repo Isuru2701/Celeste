@@ -45,16 +45,16 @@ namespace Celeste.Model
                     "What did you accomplish today?"
                 };
 
-                new ToastContentBuilder()
+               new ToastContentBuilder()
                     .AddArgument("action", "Celeste")
                     .AddText("Time to Write!")
                     .AddText(list[new Random().Next(list.Count)])
-                    .Schedule(new ScheduledToastNotification(time, new TimeSpan().FromDays(1))
+                    .AddAppLogoOverride(new Uri("../Resources/quill.png", UriKind.Relative),ToastGenericAppLogoCrop.Default)
+                    .Schedule(time.Date, toast =>
                      {
-                         Tag = "18365",
-                         Group = "ASTR 170B1"
+                         toast.Tag = "10";
+                         toast.Group = "Reminder";
                      });
-
 
 
             }
@@ -63,6 +63,8 @@ namespace Celeste.Model
                 MessageBox.Show("REMINDER: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        public void DeleteReminder()
 
         /// <summary>
         /// returns the reminder time for the current user stored in reminder.txt returns null if exception occurs.
