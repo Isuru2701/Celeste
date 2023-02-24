@@ -61,25 +61,8 @@ namespace Celeste.Controls
             lbl_confirmation.Visibility = Visibility.Visible;
 
 
-            //Setting up the notification even if the app is closed:
-            string xml = @"<toast>
-                  <visual>
-                      <binding template='ToastGeneric'>
-                          <text>Notification Title</text>
-                          <text>Notification message</text>
-                      </binding>
-                  </visual>
-              </toast>";
-            XmlDocument toastXml = new XmlDocument();
-            toastXml.LoadXml(xml);
-
-            //Scheduling
-            DateTimeOffset startTime = DateTime.ParseExact(FileHandler.ReadText("Reminder.txt"), "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
-
-            ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, startTime);
-
-            // Register the toast notification with the system
-            ToastNotificationManager.CreateToastNotifier(Flow.AppId).AddToSchedule(scheduledToast);
+            //Setting up the notification even if the app is closed
+            Reminder.SetDailyReminder(timepicker.Time);
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
