@@ -19,6 +19,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Celeste.Model;
 using System.IO;
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+using Microsoft.Win32;
 
 namespace Celeste.Controls
 {
@@ -58,7 +61,25 @@ namespace Celeste.Controls
 
             FileHandler.Write($"{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day} {timepicker.Time.Hour}:{timepicker.Time.Minute}:00", "Reminder.txt");
 
+            //Setting up the notification even if the app is closed:
+            string xml = @"<toast>
+                  <visual>
+                      <binding template='ToastGeneric'>
+                          <text>Notification Title</text>
+                          <text>Notification message</text>
+                      </binding>
+                  </visual>
+              </toast>";
+            XmlDocument toastXml = new XmlDocument();
+            toastXml.LoadXml(xml);
 
+            //Scheduling
+            DateTimeOffset startTime = DateTime.Parse(FileHandler.ReadText("Reminder.txt"));
+
+            ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, startTime);
+
+            // Register the toast notification with the system
+            ToastNotificationManager.CreateToastNotifier(Flow.AppId).AddToSchedule(scheduledToast);
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

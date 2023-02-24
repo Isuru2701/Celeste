@@ -16,10 +16,16 @@ namespace Celeste.Model
 
         public static int User_ID { get; set; }
 
+        public static string AppId
+        {
+            get { return AppId; }
+            private set { AppId = "CELESTE_JOURNAL_V1_DEV_RELEASE";}
+        }
 
         //Create when user logs in
         public static void Initiate()
         {            
+
             BaseAddress = AppDomain.CurrentDomain.BaseDirectory;
             StartTime = DateTime.Now;
         }
