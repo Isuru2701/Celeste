@@ -10,6 +10,7 @@ using Windows.UI.Notifications;
 using Windows.Data;
 using Windows.Foundation;
 using System.Windows;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace Celeste.Model
 {
@@ -25,29 +26,39 @@ namespace Celeste.Model
         /// sets daily reminder to the time specified
         /// </summary>
         /// <param name="time"></param>
-        public static void SetDailyReminder(AnalogueTime time)
+        public static void SetDailyReminder(DateTime time)
         {
             try
             {
 
                 //write a save to file
-                FileHandler.Write($"{time:h:mm:ss tt}", reminderfile);
+                FileHandler.Write($"{time:h:mm:ss (tt)}", reminderfile);
 
-                //add notification worker
-                var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText02);
+                /*
+                 * Note that scheduled toast notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be "dropped" as no longer relevant to the user. --Microsoft
+                 */
 
-                // Fill in the text elements
-                var stringElements = toastXml.GetElementsByTagName("text");
-                stringElements[0].AppendChild(toastXml.CreateTextNode("Title"));
-                stringElements[1].AppendChild(toastXml.CreateTextNode("Content"));
+                List<string> list = new List<string>
+                {
+                    "How did your day go?",
+                    "Write the way into your heart!",
+                    "What did you accomplish today?"
+                };
 
-                // Create the toast and attach event listeners
-                var toast = new ToastNotification(toastXml);
+                new ToastContentBuilder()
+                    .AddArgument("action", "Celeste")
+                    .AddText("Time to Write!")
+                    .AddText(list[new Random().Next(list.Count)])
+                    .Schedule(new ScheduledToastNotification(time, new TimeSpan().FromDays(1))
+                     {
+                         Tag = "18365",
+                         Group = "ASTR 170B1"
+                     });
 
-                // Show the toast. Be sure to specify the AppUserModelId on your application's shortcut!
-                ToastNotificationManager.CreateToastNotifier(Flow.AppId).Show(toast);
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("REMINDER: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

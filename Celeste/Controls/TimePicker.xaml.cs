@@ -62,7 +62,16 @@ namespace Celeste.Controls
 
 
             //Setting up the notification even if the app is closed
-            Reminder.SetDailyReminder(timepicker.Time);
+            try
+            {
+                DateTime time = DateTime.ParseExact($"{timepicker.Time.Hour}:{timepicker.Time.Minute} ({timepicker.Time.Meridiem})", "hh:mm (tt)", CultureInfo.InvariantCulture);
+                Reminder.SetDailyReminder(time);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("TIMEPICKER: SAVE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
