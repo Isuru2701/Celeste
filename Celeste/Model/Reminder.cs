@@ -32,7 +32,7 @@ namespace Celeste.Model
             {
 
                 //write a save to file
-                FileHandler.Write($"{time:h:mm:ss (tt)}", reminderfile);
+                FileHandler.Write($"{time}", reminderfile);
 
                 /*
                  * Note that scheduled toast notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be "dropped" as no longer relevant to the user. --Microsoft

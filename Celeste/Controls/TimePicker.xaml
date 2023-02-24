@@ -51,12 +51,12 @@
 
         <Button
             x:Name="btn_remove"
-            Style="{StaticResource MenubuttonTheme}"
-            Content="{Binding ElementName=timepicker, Path=Time.Meridiem}"
-            Margin="830,200,0,0"
-            Width="100" Click="btn_remove_Click"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            Style="{StaticResource DiamondButtonTheme}"
+            Content="✕"
+            Margin="865,465,35,263"
+            FontSize="60"
+            ToolTip="Remove Notification"
+            Width="100" Click="btn_remove_Click">
 
         </Button>
 
@@ -70,7 +70,7 @@
 
         <Label x:Name="lbl_confirmation" 
                Content="Reminder &#xa;set &#xa;for"
-               Visibility="Hidden" Margin="213,592,500,102"/>
+               Visibility="Hidden" Margin="270,592,500,102"/>
 
 
         <Label Content="{Binding ElementName=timepicker, Path=Time.Hour}"

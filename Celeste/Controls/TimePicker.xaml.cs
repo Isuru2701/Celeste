@@ -57,19 +57,23 @@ namespace Celeste.Controls
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            lbl_confirmation.Content = $"Reminder set for {timepicker.Time}";
+            lbl_confirmation.Content = $"Reminder set for\n {timepicker.Time}";
             lbl_confirmation.Visibility = Visibility.Visible;
 
 
             //Setting up the notification even if the app is closed
             try
             {
+                MessageBox.Show($"{DateTime.Today.Date:yyyy/MM/dd} {timepicker.Time.Hour}:{timepicker.Time.Minute} ({timepicker.Time.Meridiem})");
+
                 DateTime time = DateTime.ParseExact($"{timepicker.Time.Hour}:{timepicker.Time.Minute} ({timepicker.Time.Meridiem})", "hh:mm (tt)", CultureInfo.InvariantCulture);
+
+                MessageBox.Show("HIT !");
                 Reminder.SetDailyReminder(time);
             }
             catch(Exception ex)
             {
-                MessageBox.Show("TIMEPICKER: SAVE_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("TIMEPICKER: SAVE_ERROR: " + ex.Message + ex.Source, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
         }

@@ -8,6 +8,9 @@
           Value="true" />
         <Setter Property="HasDropShadow"
           Value="True" />
+        <Setter Property="MaxHeight" Value="20"/>
+        <Setter Property="MaxWidth" Value="70"/>
+        <Setter Property="FontSize" Value="10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">
