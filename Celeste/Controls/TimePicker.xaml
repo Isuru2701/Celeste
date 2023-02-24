@@ -7,7 +7,8 @@
              xmlns:tp="clr-namespace:RoyT.TimePicker;assembly=RoyT.TimePicker"
              xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="Celeste.Controls.TimePicker"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000">
+             d:DesignHeight="800" d:DesignWidth="1000"
+             Loaded="UserControl_Loaded">
 
     <UserControl.Background>
         <SolidColorBrush Color="Black" Opacity="0.7"/>

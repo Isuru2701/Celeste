@@ -17,6 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Celeste.Model;
+using System.IO;
 
 namespace Celeste.Controls
 {
@@ -54,18 +56,26 @@ namespace Celeste.Controls
             lbl_confirmation.Content = $"Reminder set for {timepicker.Time}";
             lbl_confirmation.Visibility = Visibility.Visible;
 
-            new ToastContentBuilder()
+            FileHandler.Write($"{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day} {timepicker.Time.Hour}:{timepicker.Time.Minute}:00", "Reminder.txt");
 
-            .AddArgument("action", "viewConversation")
-            .AddArgument("conversationId", 9813)
-            .AddText("Andrew sent you a picture")
-            .AddText("Check this out, The Enchantments in Washington!")
 
-            // Inline image
-            .AddInlineImage(new Uri("https://picsum.photos/360/202?image=883"))
+        }
 
-            // Profile (app logo override) image
-            .AddAppLogoOverride(new Uri("../Resources/quill.png", UriKind.Relative), ToastGenericAppLogoCrop.Default).Show();
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (FileHandler.ResourceExists("Reminder.txt"))
+                {
+                    DateTime time = DateTime.Parse(FileHandler.ReadText("Reminder.txt"));
+                    timepicker.Time = new AnalogueTime(new DigitalTime(time.Hour, time.Minute));
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("TIMEPICKER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
