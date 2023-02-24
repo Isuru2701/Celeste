@@ -118,6 +118,10 @@
               "target": "Package",
               "version": "[2.10.1, )"
             },
+            "ToastNotifications": {
+              "target": "Package",
+              "version": "[2.5.1, )"
+            },
             "WPFCustomMessageBox": {
               "target": "Package",
               "version": "[1.0.7, )"

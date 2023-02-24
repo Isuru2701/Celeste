@@ -1257,6 +1257,15 @@
           }
         }
       },
+      "ToastNotifications/2.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ToastNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ToastNotifications.dll": {}
+        }
+      },
       "WPFCustomMessageBox/1.0.7": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2466,6 +2475,15 @@
           "lib/net452/zh-Hant/Microsoft.Win32.TaskScheduler.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "ToastNotifications/2.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ToastNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ToastNotifications.dll": {}
         }
       },
       "WPFCustomMessageBox/1.0.7": {
@@ -3688,6 +3706,15 @@
           }
         }
       },
+      "ToastNotifications/2.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ToastNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ToastNotifications.dll": {}
+        }
+      },
       "WPFCustomMessageBox/1.0.7": {
         "type": "package",
         "frameworkAssemblies": [
@@ -4906,6 +4933,15 @@
           "lib/net452/zh-Hant/Microsoft.Win32.TaskScheduler.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "ToastNotifications/2.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ToastNotifications.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ToastNotifications.dll": {}
         }
       },
       "WPFCustomMessageBox/1.0.7": {
@@ -7488,6 +7524,19 @@
         "tsnew48.png"
       ]
     },
+    "ToastNotifications/2.5.1": {
+      "sha512": "0ZBWG0FCPafwbIzNhjWgC0GEOyk51GF3rYWrh5QJ61ZxDEoLgdDsEUt8HMxYN7lRLVt/mWhtgdbe4OmhXfwtkA==",
+      "type": "package",
+      "path": "toastnotifications/2.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/ToastNotifications.dll",
+        "readme.txt",
+        "toastnotifications.2.5.1.nupkg.sha512",
+        "toastnotifications.nuspec"
+      ]
+    },
     "WPFCustomMessageBox/1.0.7": {
       "sha512": "H4q2aESgv74yQR47a+mbctY2YhpSVF4WhHdQNDzQ76j5q6RBbVfVDRMc/OR+amslzuVxI/p6YmkhmA/racAbhg==",
       "type": "package",
@@ -7544,6 +7593,7 @@
       "System.Reflection.Emit.Lightweight >= 4.3.0",
       "System.Threading.Channels >= 4.7.1",
       "TaskScheduler >= 2.10.1",
+      "ToastNotifications >= 2.5.1",
       "WPFCustomMessageBox >= 1.0.7",
       "WpfExtendedControls >= 1.0.4"
     ]
@@ -7665,6 +7715,10 @@
           "TaskScheduler": {
             "target": "Package",
             "version": "[2.10.1, )"
+          },
+          "ToastNotifications": {
+            "target": "Package",
+            "version": "[2.5.1, )"
           },
           "WPFCustomMessageBox": {
             "target": "Package",

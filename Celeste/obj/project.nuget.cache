@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NZstikzLtr6oKaDvEcRgAijoiaItACajR4/GX6JB4ueEe050g65VR9ZhBMOXFmBvVpOxdkK2ibmqPoJ8W6wNsw==",
+  "dgSpecHash": "YK6mpPvzFWnsRHyMkPC160nfAO1IEOswtieffa+zqPQugPBZV9skaoKP/R4FIrW5jmWsfGE9k9VY/vwvZ7ejCg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Documents\\Programs\\Celeste\\Celeste\\Celeste\\Celeste.csproj",
   "expectedPackageFiles": [
@@ -73,6 +73,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\taskscheduler\\2.10.1\\taskscheduler.2.10.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\toastnotifications\\2.5.1\\toastnotifications.2.5.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\wpfcustommessagebox\\1.0.7\\wpfcustommessagebox.1.0.7.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\wpfextendedcontrols\\1.0.4\\wpfextendedcontrols.1.0.4.nupkg.sha512"
   ],

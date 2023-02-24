@@ -22,6 +22,7 @@ using System.IO;
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 using Microsoft.Win32;
+using System.Globalization;
 
 namespace Celeste.Controls
 {
@@ -59,7 +60,7 @@ namespace Celeste.Controls
             lbl_confirmation.Content = $"Reminder set for {timepicker.Time}";
             lbl_confirmation.Visibility = Visibility.Visible;
 
-            FileHandler.Write($"{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day} {timepicker.Time.Hour}:{timepicker.Time.Minute}:00", "Reminder.txt");
+            FileHandler.Write($"{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day} {timepicker.Time.Hour}:{timepicker.Time.Minute}:00 {timepicker.Time.Meridiem}", "Reminder.txt");
 
             //Setting up the notification even if the app is closed:
             string xml = @"<toast>
@@ -74,7 +75,7 @@ namespace Celeste.Controls
             toastXml.LoadXml(xml);
 
             //Scheduling
-            DateTimeOffset startTime = DateTime.Parse(FileHandler.ReadText("Reminder.txt"));
+            DateTimeOffset startTime = DateTime.ParseExact(FileHandler.ReadText("Reminder.txt"), "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
 
             ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, startTime);
 
