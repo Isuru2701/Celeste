@@ -100,6 +100,7 @@
     <Compile Include="Model\Flow.cs" />
     <Compile Include="Model\Graph.cs" />
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Reminder.cs" />
     <Compile Include="Model\Score.cs" />
     <Compile Include="Views\Entries.xaml.cs">
       <DependentUpon>Entries.xaml</DependentUpon>
@@ -373,6 +374,9 @@
     </PackageReference>
     <PackageReference Include="TaskScheduler">
       <Version>2.10.1</Version>
+    </PackageReference>
+    <PackageReference Include="ToastNotifications">
+      <Version>2.5.1</Version>
     </PackageReference>
     <PackageReference Include="WPFCustomMessageBox">
       <Version>1.0.7</Version>

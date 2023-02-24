@@ -60,7 +60,6 @@ namespace Celeste.Controls
             lbl_confirmation.Content = $"Reminder set for {timepicker.Time}";
             lbl_confirmation.Visibility = Visibility.Visible;
 
-            FileHandler.Write($"{DateTime.Now.Year}/{DateTime.Now.Month}/{DateTime.Now.Day} {timepicker.Time.Hour}:{timepicker.Time.Minute}:00 {timepicker.Time.Meridiem}", "Reminder.txt");
 
             //Setting up the notification even if the app is closed:
             string xml = @"<toast>
@@ -89,7 +88,7 @@ namespace Celeste.Controls
             {
                 if (FileHandler.ResourceExists("Reminder.txt"))
                 {
-                    DateTime time = DateTime.Parse(FileHandler.ReadText("Reminder.txt"));
+                    DateTime time = (DateTime)Reminder.GetReminderTime();
                     timepicker.Time = new AnalogueTime(new DigitalTime(time.Hour, time.Minute));
 
                 }

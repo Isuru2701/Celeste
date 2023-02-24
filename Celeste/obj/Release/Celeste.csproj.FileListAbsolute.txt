@@ -146,3 +146,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csp
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csproj.CopyComplete
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.exe
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.pdb
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ToastNotifications.dll
