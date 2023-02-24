@@ -49,11 +49,24 @@
 
         </Button>
 
+        <Button
+            x:Name="btn_remove"
+            Style="{StaticResource MenubuttonTheme}"
+            Content="{Binding ElementName=timepicker, Path=Time.Meridiem}"
+            Margin="830,200,0,0"
+            Width="100" Click="btn_remove_Click"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+        </Button>
+
+
         <Button x:Name="btn_save"
                 Style="{StaticResource DiamondButtonTheme}" 
                 Click="btn_save_Click" Margin="39,500,891,230">
             <Image Source="../Resources/save_btn.png"/>
         </Button>
+
 
         <Label x:Name="lbl_confirmation" 
                Content="Reminder &#xa;set &#xa;for"
