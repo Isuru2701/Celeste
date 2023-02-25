@@ -8,7 +8,7 @@
           Value="true" />
         <Setter Property="HasDropShadow"
           Value="True" />
-        <Setter Property="MaxHeight" Value="20"/>
+        <Setter Property="MaxHeight" Value="30"/>
         <Setter Property="MaxWidth" Value="70"/>
         <Setter Property="FontSize" Value="10"/>
         <Setter Property="Template">

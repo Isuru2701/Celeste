@@ -64,12 +64,7 @@ namespace Celeste.Controls
             //Setting up the notification even if the app is closed
             try
             {
-                MessageBox.Show($"{DateTime.Today.Date:yyyy/MM/dd} {timepicker.Time.Hour}:{timepicker.Time.Minute} ({timepicker.Time.Meridiem})");
-
-                DateTime time = DateTime.ParseExact($"{timepicker.Time.Hour}:{timepicker.Time.Minute} ({timepicker.Time.Meridiem})", "hh:mm (tt)", CultureInfo.InvariantCulture);
-
-                MessageBox.Show("HIT !");
-                Reminder.SetDailyReminder(time);
+                Reminder.SetDailyReminder(timepicker.Time);
             }
             catch(Exception ex)
             {
@@ -84,8 +79,7 @@ namespace Celeste.Controls
             {
                 if (FileHandler.ResourceExists("Reminder.txt"))
                 {
-                    DateTime time = (DateTime)Reminder.GetReminderTime();
-                    timepicker.Time = new AnalogueTime(new DigitalTime(time.Hour, time.Minute));
+                    timepicker.Time = (AnalogueTime)Reminder.GetReminderTime();
 
                 }
             }

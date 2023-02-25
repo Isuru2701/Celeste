@@ -26,7 +26,7 @@ namespace Celeste.Model
         /// sets daily reminder to the time specified
         /// </summary>
         /// <param name="time"></param>
-        public static void SetDailyReminder(DateTime time)
+        public static void SetDailyReminder(AnalogueTime time)
         {
             try
             {
@@ -45,12 +45,14 @@ namespace Celeste.Model
                     "What did you accomplish today?"
                 };
 
-               new ToastContentBuilder()
+
+
+                new ToastContentBuilder()
                     .AddArgument("action", "Celeste")
                     .AddText("Time to Write!")
-                    .AddText(list[new Random().Next(list.Count)])
+                    .AddText(list[new Random().Next(list.Count - 1)])
                     .AddAppLogoOverride(new Uri("../Resources/quill.png", UriKind.Relative),ToastGenericAppLogoCrop.Default)
-                    .Schedule(time.Date, toast =>
+                    .Schedule(DateTime.Now.AddSeconds(10), toast =>
                      {
                          toast.Tag = "10";
                          toast.Group = "Reminder";
@@ -85,11 +87,16 @@ namespace Celeste.Model
         /// returns the reminder time for the current user stored in reminder.txt returns null if exception occurs.
         /// </summary>
         /// <returns></returns>
-        public static DateTime? GetReminderTime()
+        public static AnalogueTime? GetReminderTime()
         {
             try
             {
-                return DateTime.ParseExact(FileHandler.ReadText(reminderfile), "hh:mm (tt)", CultureInfo.InvariantCulture);
+
+                DateTime time = DateTime.ParseExact(FileHandler.ReadText(reminderfile), "hh:mm (tt)", null);
+
+                AnalogueTime analogue = new AnalogueTime(new DigitalTime(time.Hour, time.Minute));
+                MessageBox.Show("OHGGEGE");
+                return analogue;
             }
             catch (FormatException)
             {

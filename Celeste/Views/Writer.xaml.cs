@@ -103,6 +103,7 @@ namespace Celeste.Views
                         {
                             context.user_entries.Add(new user_entries
                             {
+                                enduser_id = Flow.User_ID,
                                 entry_date = current.Date,
                                 content = txt_writer.Text
                             });
