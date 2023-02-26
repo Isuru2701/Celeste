@@ -16,10 +16,10 @@ using System.Windows;
 
 namespace Celeste.Model
 {
-    internal class Record
+    public class Record
     {
         public string Name { get; set;}
-        public DateTime dates { get; set;}
+        public DateTime Date { get; set;}
 
     }
 
@@ -113,8 +113,12 @@ namespace Celeste.Model
 
                     var results = query.ToList();
 
-                }
+                    foreach (var result in results)
+                    {
+                        triggers.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
 
+                    }
+                }
 
             }
             catch (Exception ex)
