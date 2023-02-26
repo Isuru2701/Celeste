@@ -22,6 +22,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
 using System.Threading;
+using Newtonsoft.Json;
 
 namespace Celeste.Views
 {
@@ -86,7 +87,7 @@ namespace Celeste.Views
         /// <summary>
         /// Stores file as yyyyMMdd.txt in Appdata
         /// </summary>
-        private async void ExecuteSave()
+        private void ExecuteSave()
         {
             try
             {
@@ -112,13 +113,8 @@ namespace Celeste.Views
                             });
 
                         }
-                        if(await APIConnect() == true)
-                        {
-                            lbl_confirmation.Visibility = Visibility.Visible;
-                            lbl_confirmation.Content = "Kon success";
-                        }
                         context.SaveChanges();
-                    }    
+                    }
 
                 }
             }
@@ -141,25 +137,6 @@ namespace Celeste.Views
 
         }
 
-        private async Task<bool> APIConnect()
-        {
-            //make api call
-            using (var client = new HttpClient())
-            {
-                client.Timeout = TimeSpan.FromSeconds(5);
-                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
-                try
-                { 
-                    var response = await client.GetAsync($"{Flow.APIString}", cts.Token);
-                    return response.IsSuccessStatusCode;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-
-        }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {

@@ -19,7 +19,7 @@ namespace Celeste.Model
         public static string APIString
         {
             get { return APIString; }
-            private set { APIString = "127.0.0.1:777/execute"; }
+            private set { APIString = "127.0.0.1:777"; }
 
         }
 
