@@ -104,6 +104,7 @@ namespace Celeste.Model
         {
             try
             {
+
                 using (var context = new LunarContext())
                 {
                     var query = from u in context.user_triggers
@@ -133,12 +134,27 @@ namespace Celeste.Model
         {
             try
             {
-                //purges past data, if any
+                using (var context = new LunarContext())
+                {
+                    var query = from u in context.user_comforts
+                                join t in context.comforts
+                                on u.trigger_id equals t.trigger_id
+                                select new { t.trigger_name, u.entry_date };
+
+                    var results = query.ToList();
+
+                    foreach (var result in results)
+                    {
+                        triggers.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
+
+                    }
+                }
 
             }
             catch (Exception ex)
             {
-                throw new Exception("ERROR: " + ex.Message);
+
+                throw new Exception("PERSON:INTERNAL_ERROR " + ex.Message);
             }
 
         }

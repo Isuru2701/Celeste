@@ -1,4 +1,5 @@
 ﻿using Celeste.Controls;
+using Celeste.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace Celeste.Views
 
         private void DisplayTriggers()
         {
-
+            Person.GetInstance(Flow.User_ID).FetchTriggers();
         }
 
         private void DisplayComforts()

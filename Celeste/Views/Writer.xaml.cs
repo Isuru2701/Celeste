@@ -21,6 +21,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
+using System.Threading;
 
 namespace Celeste.Views
 {
@@ -111,32 +112,24 @@ namespace Celeste.Views
                             });
 
                         }
-                        context.SaveChanges();
-
-                        //make api call
-                        using (var client = new HttpClient())
+                        if(await APIConnect() == true)
                         {
-                            var response = await client.GetAsync($"{Flow.APIString}?user_id={Flow.User_ID}&date={current.Date:yyyy-MM-dd}");
-
-                            if (response.IsSuccessStatusCode)
-                            {
-                                var result = await response.Content.ReadAsStringAsync();
-                                lbl_confirmation.Visibility = Visibility.Visible;
-                                lbl_confirmation.Content = result;
-                                
-                            }
-                            else
-                            {
-                                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
-                                overlayframe.Content = new NoConnection();
-
-                            }
+                            lbl_confirmation.Visibility = Visibility.Visible;
+                            lbl_confirmation.Content = "Kon success";
                         }
+                        context.SaveChanges();
                     }    
 
                 }
             }
-            catch(DbUpdateException ex)
+            catch (OperationCanceledException)
+            {
+                // Handle cancellation cuz to timeout
+                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
+                overlayframe.Content = new NoConnection();
+            }
+
+            catch (DbUpdateException ex)
             {
                 MessageBox.Show("WRITER: DB_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
@@ -144,6 +137,26 @@ namespace Celeste.Views
             catch(Exception ex)
             {
                 MessageBox.Show("WRITER: SAVE_INTERNAL_ERROR: " + ex.Message + " " + ex.InnerException.Message + " " + ex.InnerException.InnerException.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
+
+        private async Task<bool> APIConnect()
+        {
+            //make api call
+            using (var client = new HttpClient())
+            {
+                client.Timeout = TimeSpan.FromSeconds(5);
+                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+                try
+                { 
+                    var response = await client.GetAsync($"{Flow.APIString}", cts.Token);
+                    return response.IsSuccessStatusCode;
+                }
+                catch
+                {
+                    return false;
+                }
             }
 
         }
