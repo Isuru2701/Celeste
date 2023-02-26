@@ -13,20 +13,10 @@
     <Border BorderBrush="#d8c6a0"
             CornerRadius="20"
             BorderThickness="3">
-        <Grid>
-
-            <Border BorderBrush="#d8c6a0"
-                    BorderThickness="0,0,0,1">
-
-                <!--graph goes here -->
-                <lvc:CartesianChart x:Name="SentimentGraph"
-                                    Zoom="None"
-                                    Series="{Binding Series}"/>
-
-
-
-            </Border>
-
+        <Grid x:Name="plotter">
+            
+            
+            
 
         </Grid>
 

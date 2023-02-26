@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2.14.1, )"
             },
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
             "LiveCharts.Wpf": {
               "target": "Package",
               "version": "[0.9.7, )"
