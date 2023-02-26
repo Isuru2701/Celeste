@@ -16,7 +16,7 @@
     <Grid  Background="#FF1E1730"
            HorizontalAlignment="Center"
            VerticalAlignment="Center"
-           Width="500">
+           Width="700">
 
 
         <Border BorderBrush="#d8c6a0" BorderThickness="1"

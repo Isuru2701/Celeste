@@ -105,8 +105,11 @@ namespace Celeste.Model
 
         }
 
-
-        public void FetchTriggers()
+        /// <summary>
+        /// returns number of rows in query result
+        /// </summary>
+        /// <exception cref="Exception"></exception>
+        public int FetchTriggers()
         {
             try
             {
@@ -116,15 +119,23 @@ namespace Celeste.Model
                     var query = from u in context.user_triggers
                                 join t in context.triggers
                                 on u.trigger_id equals t.trigger_id
+                                where u.enduser_id == Flow.User_ID
                                 select new { t.trigger_name, u.entry_date };
 
                     var results = query.ToList();
 
-                    foreach (var result in results)
+                    if (results.Count > 0)
                     {
-                        triggers.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
+                        triggers.Clear();
+  
+                        foreach (var result in results)
+                            {
+                                triggers.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
 
+                            }
+                        return results.Count;
                     }
+                    return 0;
                 }
 
             }
@@ -136,7 +147,7 @@ namespace Celeste.Model
         }
 
 
-        public void FetchComforts()
+        public int FetchComforts()
         {
             try
             {
@@ -145,14 +156,20 @@ namespace Celeste.Model
                     var query = from u in context.user_comforts
                                 join t in context.comforts
                                 on u.trigger_id equals t.trigger_id
+                                where u.enduser_id == Flow.User_ID
                                 select new { t.trigger_name, u.entry_date };
 
                     var results = query.ToList();
-
-                    foreach (var result in results)
+                    if (results.Count > 0)
                     {
-                        comforts.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
+                        comforts.Clear();
+                        foreach (var result in results)
+                        {
+                            comforts.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
+                        }
+                        return results.Count;
                     }
+                    return 0;
                 }
 
             }
@@ -164,22 +181,29 @@ namespace Celeste.Model
 
         }
 
-        public void FetchScores()
+        public int FetchScores()
         {
             try
             {
                 using (var context = new LunarContext())
                 {
-                    var query = from u in context.user_score
-                                select new { u.entry_date, u.score };
+                    var query = context.user_score
+                                    .Where(s => s.enduser_id == Flow.User_ID)
+                                    .Select(s => new { s.entry_date, s.score });
 
                     var results = query.ToList();
-
-                    foreach (var result in results)
+                    if (results.Count > 0)
                     {
-                        scores.Add(new Score { Value = (double)result.score, Date = result.entry_date });
+                        scores.Clear();
+                        foreach (var result in results)
+                        {
 
+                            scores.Add(new Score { Value = (double)result.score, Date = result.entry_date });
+
+                        }
+                        return results.Count;
                     }
+                    return 0;
                 }
 
             }

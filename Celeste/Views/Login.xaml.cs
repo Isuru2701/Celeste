@@ -52,7 +52,9 @@ namespace Celeste.Views
 
                     using (var context = new LunarContext())
                     {
-                        var endUser = context.EndUsers.SingleOrDefault(u => u.email == email && u.password_hash == hash);
+                        var endUser = context.EndUsers
+                            .Where(u => u.email == email && u.password_hash == hash)
+                            .FirstOrDefault();
 
                         if (endUser != null)
                         {
@@ -60,7 +62,6 @@ namespace Celeste.Views
                             Person.GetInstance(Flow.User_ID);
 
                             // Person.GetInstance(Flow.User_ID).DebugDisplay();
-
                             NavigationService.Navigate(new Home());
                         }
                         else

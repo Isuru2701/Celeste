@@ -35,14 +35,10 @@ namespace Celeste.Controls
     /// </summary>
     public partial class Chart : UserControl
     {
-
-
-
         public Chart()
         {
             InitializeComponent();
             LoadData();
-            Plot();
         }
 
         List<string> x_axis = new List<string>();
@@ -50,11 +46,25 @@ namespace Celeste.Controls
 
         public void LoadData()
         {
-            Person.GetInstance(Flow.User_ID).FetchScores();
-            foreach(Score score in Person.GetInstance(Flow.User_ID).Scores)
+            try
             {
-                x_axis.Add(score.Date.ToString("yyyy/MM/dd"));
-                y_axis.Add(Math.Round(score.Value, 1) * 5);
+                int rows = Person.GetInstance(Flow.User_ID).FetchScores();
+                if (rows > 0)
+                {
+                    foreach (Score score in Person.GetInstance(Flow.User_ID).Scores)
+                    {
+                        x_axis.Add(score.Date.ToString("yyyy/MM/dd"));
+                        y_axis.Add(Math.Round(score.Value, 1) * 5);
+                    }
+
+                    Plot();
+                }
+            }
+            catch (Exception)
+            {
+                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("InfoFrame") as Frame;
+                overlayframe.Content = new InsufficientInfo();
+
             }
         }
 
@@ -66,12 +76,38 @@ namespace Celeste.Controls
                 (
                     new LiveCharts.Wpf.Axis
                     {
-                        Title = "Months",
+                        Title = "Day",
                         Labels = x_axis,
+
+                        Separator = new LiveCharts.Wpf.Separator
+                        {
+                            StrokeThickness = 0
+                        }
+
+
                     }
                 );
-            ch.AxisX[0].Separator.StrokeThickness = 0;
-            ch.AxisY[0].Separator.StrokeThickness = 0;
+
+
+            ch.AxisY.Add
+                (
+                    new LiveCharts.Wpf.Axis
+                    {
+                        Title = "Score",
+                        MaxValue = 5,
+                        MinValue = -5,
+
+
+
+                        Separator = new LiveCharts.Wpf.Separator
+                        {
+                            StrokeThickness = 0,
+                            
+                        }
+                        
+                    }
+                );
+
 
             ch.Series = new SeriesCollection
             {
@@ -79,10 +115,11 @@ namespace Celeste.Controls
                 {
                     Title = "Sentiment",
                     Values = new ChartValues<double>(y_axis),
-                    Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 255, 255))
+                    Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 255, 255)),
+                    Fill = null
                 }
             };
-                    plotter.Children.Add(ch);
+            plotter.Children.Add(ch);
         }
 
     }
