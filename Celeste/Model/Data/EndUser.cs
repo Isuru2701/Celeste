@@ -13,8 +13,10 @@ namespace Celeste.Model.Data
         public EndUser()
         {
             ProfilePictures = new HashSet<ProfilePicture>();
+            user_comforts = new HashSet<user_comforts>();
             user_entries = new HashSet<user_entries>();
             user_score = new HashSet<user_score>();
+            user_triggers = new HashSet<user_triggers>();
         }
 
         [Key]
@@ -39,9 +41,15 @@ namespace Celeste.Model.Data
         public virtual ICollection<ProfilePicture> ProfilePictures { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_comforts> user_comforts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_entries> user_entries { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_score> user_score { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_triggers> user_triggers { get; set; }
     }
 }

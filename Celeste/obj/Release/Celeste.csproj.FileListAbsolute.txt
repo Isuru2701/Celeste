@@ -139,7 +139,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Signu
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\User.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Writer.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.g.resources
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.Migrations.InitialCreate.resources
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.Properties.Resources.resources
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csproj.GenerateResource.cache
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csproj.CoreCompileInputs.cache
@@ -147,4 +146,3 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.csp
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.exe
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\ToastNotifications.dll
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.Migrations.final.resources

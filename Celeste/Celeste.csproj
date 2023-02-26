@@ -81,23 +81,15 @@
     <Compile Include="Controls\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202302230646381_InitialCreate.cs" />
-    <Compile Include="Migrations\202302230646381_InitialCreate.designer.cs">
-      <DependentUpon>202302230646381_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202302260320043_final.cs" />
-    <Compile Include="Migrations\202302260320043_final.designer.cs">
-      <DependentUpon>202302260320043_final.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Data\comfort.cs" />
     <Compile Include="Model\Data\EndUser.cs" />
     <Compile Include="Model\Data\LunarContext.cs" />
     <Compile Include="Model\Data\ProfilePicture.cs" />
-    <Compile Include="Model\Data\symptom.cs" />
     <Compile Include="Model\Data\trigger.cs" />
+    <Compile Include="Model\Data\user_comforts.cs" />
     <Compile Include="Model\Data\user_entries.cs" />
     <Compile Include="Model\Data\user_score.cs" />
+    <Compile Include="Model\Data\user_triggers.cs" />
     <Compile Include="Model\FileHandler.cs" />
     <Compile Include="Model\Conn.cs" />
     <Compile Include="Model\Entry.cs" />
@@ -248,12 +240,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202302230646381_InitialCreate.resx">
-      <DependentUpon>202302230646381_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202302260320043_final.resx">
-      <DependentUpon>202302260320043_final.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

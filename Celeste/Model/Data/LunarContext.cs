@@ -15,16 +15,22 @@ namespace Celeste.Model.Data
         public virtual DbSet<comfort> comforts { get; set; }
         public virtual DbSet<EndUser> EndUsers { get; set; }
         public virtual DbSet<ProfilePicture> ProfilePictures { get; set; }
-        public virtual DbSet<symptom> symptoms { get; set; }
         public virtual DbSet<trigger> triggers { get; set; }
+        public virtual DbSet<user_comforts> user_comforts { get; set; }
         public virtual DbSet<user_entries> user_entries { get; set; }
         public virtual DbSet<user_score> user_score { get; set; }
+        public virtual DbSet<user_triggers> user_triggers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<comfort>()
                 .Property(e => e.trigger_name)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<comfort>()
+                .HasMany(e => e.user_comforts)
+                .WithRequired(e => e.comfort)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EndUser>()
                 .Property(e => e.email)
@@ -44,6 +50,11 @@ namespace Celeste.Model.Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<EndUser>()
+                .HasMany(e => e.user_comforts)
+                .WithRequired(e => e.EndUser)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<EndUser>()
                 .HasMany(e => e.user_entries)
                 .WithRequired(e => e.EndUser)
                 .WillCascadeOnDelete(false);
@@ -53,13 +64,19 @@ namespace Celeste.Model.Data
                 .WithRequired(e => e.EndUser)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<symptom>()
-                .Property(e => e.trigger_name)
-                .IsUnicode(false);
+            modelBuilder.Entity<EndUser>()
+                .HasMany(e => e.user_triggers)
+                .WithRequired(e => e.EndUser)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<trigger>()
                 .Property(e => e.trigger_name)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<trigger>()
+                .HasMany(e => e.user_triggers)
+                .WithRequired(e => e.trigger)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<user_entries>()
                 .Property(e => e.content)

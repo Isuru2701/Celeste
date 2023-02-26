@@ -8,10 +8,19 @@ namespace Celeste.Model.Data
 
     public partial class trigger
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public trigger()
+        {
+            user_triggers = new HashSet<user_triggers>();
+        }
+
         [Key]
         public int trigger_id { get; set; }
 
         [StringLength(30)]
         public string trigger_name { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_triggers> user_triggers { get; set; }
     }
 }
