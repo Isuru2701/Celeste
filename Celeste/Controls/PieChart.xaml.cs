@@ -2,6 +2,7 @@
 using LiveCharts;
 using LiveCharts.Charts;
 using LiveCharts.Wpf;
+using LiveChartsCore.Themes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,31 +70,20 @@ namespace Celeste.Controls
 
             var slices = new SeriesCollection();
 
-            var apples = new LiveCharts.Wpf.PieSeries
+            var frequencyCounts = x_axis.GroupBy(n => n)
+                             .Select(g => new { Element = g.Key, Frequency = g.Count() });
+
+
+            foreach (var item in frequencyCounts)
             {
-                Title = "Apples",
-                Values = new LiveCharts.ChartValues<double> { 25 },
-                DataLabels = true
-            };
+                var slice = new LiveCharts.Wpf.PieSeries
+                {
+                    Title = item.Element,
+                    Values = new LiveCharts.ChartValues<double> { item.Frequency },
+                };
 
-            var oranges = new LiveCharts.Wpf.PieSeries
-            {
-                Title = "Oranges",
-                Values = new LiveCharts.ChartValues<double> { 35 },
-                DataLabels = true
-            };
-
-            var bananas = new LiveCharts.Wpf.PieSeries
-            {
-                Title = "Bananas",
-                Values = new LiveCharts.ChartValues<double> { 40 },
-                DataLabels = true
-            };
-
-            slices.Add(apples);
-            slices.Add(oranges);
-            slices.Add(bananas);
-
+                slices.Add(slice);
+            }
 
             pie.Series = slices;
             plotter.Children.Add(pie);
