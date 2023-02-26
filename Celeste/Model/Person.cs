@@ -16,13 +16,22 @@ using System.Windows;
 
 namespace Celeste.Model
 {
+    internal class Record
+    {
+        public string Name { get; set;}
+        public DateTime dates { get; set;}
+
+    }
+
+
     public class Person
     {
         //dynamic data stored on database
-        private List<string> triggers = new List<string> { };
-        private List<string> comforts = new List<string> { };
-
         private List<Score> scores = new List<Score> { };
+
+        private List<Record> triggers = new List<Record> { };
+        private List<Record> comforts = new List<Record> { };
+
 
         public int user_id { get; set; }
         public string username { get; set; }
@@ -95,12 +104,23 @@ namespace Celeste.Model
         {
             try
             {
-                //purges past data, if any
-                triggers.Clear();
+                using (var context = new LunarContext())
+                {
+                    var query = from u in context.user_triggers
+                                join t in context.triggers
+                                on u.trigger_id equals t.trigger_id
+                                select new { t.trigger_name, u.entry_date };
+
+                    var results = query.ToList();
+
+                }
+
+
             }
             catch (Exception ex)
             {
-                throw new Exception("ERROR: " + ex.Message);
+
+                throw new Exception("PERSON:INTERNAL_ERROR " + ex.Message);
             }
         }
 
@@ -110,7 +130,6 @@ namespace Celeste.Model
             try
             {
                 //purges past data, if any
-                comforts.Clear();
 
             }
             catch (Exception ex)

@@ -44,5 +44,15 @@ namespace Celeste.Views
         {
             InfoFrame.Content = new InsufficientInfo();
         }
+
+        private void DisplayTriggers()
+        {
+
+        }
+
+        private void DisplayComforts()
+        {
+
+        }
     }
 }
