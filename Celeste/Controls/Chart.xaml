@@ -24,7 +24,8 @@
                     BorderThickness="0,0,0,1">
 
                 <!--graph goes here -->
-                <lvc:CartesianChart x:Name="SentimentGraph"/>
+                <lvc:CartesianChart x:Name="SentimentGraph"
+                                    Zoom="None"/>
                 
 
 

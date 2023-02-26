@@ -38,10 +38,11 @@ namespace Celeste.Controls
         public Chart()
         {
             InitializeComponent();
+            Plot();
         }
 
-        List<DateTime> x_axis = new List<DateTime>();
-        List<Double> y_axis = new List<Double>();
+        List<string> x_axis = new List<string>();
+        List<double> y_axis = new List<double>();
 
 
         public void LoadData()
@@ -49,7 +50,7 @@ namespace Celeste.Controls
             Person.GetInstance(Flow.User_ID).FetchScores();
             foreach(Score score in Person.GetInstance(Flow.User_ID).Scores)
             {
-                x_axis.Add(score.Date);
+                x_axis.Add(score.Date.ToString("MM/dd"));
                 y_axis.Add(Math.Round(score.Value, 1) * 5);
             }
 
@@ -58,7 +59,11 @@ namespace Celeste.Controls
         public void Plot()
         {
             LoadData();
-            SentimentGraph.AxisX.Add(x_axis);
+            SentimentGraph.AxisX.Add(new LiveCharts.Wpf.Axis()
+            {
+                Title = "Days",
+                Labels = x_axis
+            });
 
 
             var series = new SeriesCollection
@@ -66,9 +71,10 @@ namespace Celeste.Controls
                     new LineSeries
                     {
                         Title = "Sentiment Score",
-                        Values = y_axis
+                        Values = new ChartValues<double>(y_axis)
                     }
                 );
+            SentimentGraph.Series = series;
             
         }
     }
