@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace Celeste.Model
 {
-    internal class Score
+    public class Score
     {
        
         public DateTime Date { get; set; }
         public double Value { get; set; }
-        public Score(DateTime date, double value) 
+        public Score() 
         {
-            Date = date;
-            Value = value;
         }
     }
 }

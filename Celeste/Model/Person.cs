@@ -32,6 +32,12 @@ namespace Celeste.Model
         private List<Record> triggers = new List<Record> { };
         private List<Record> comforts = new List<Record> { };
 
+        //accessors
+        public List<Score> Scores => scores;
+        public List<Record> Triggers => triggers;
+        public List<Record> Comforts => comforts;
+
+
 
         public int user_id { get; set; }
         public string username { get; set; }
@@ -145,8 +151,7 @@ namespace Celeste.Model
 
                     foreach (var result in results)
                     {
-                        triggers.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
-
+                        comforts.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
                     }
                 }
 
@@ -163,18 +168,25 @@ namespace Celeste.Model
         {
             try
             {
-                //purges past data, if any
-                scores.Clear();
+                using (var context = new LunarContext())
+                {
+                    var query = from u in context.user_score
+                                select new { u.entry_date, u.score };
+
+                    var results = query.ToList();
+
+                    foreach (var result in results)
+                    {
+                        scores.Add(new Score { Value = (double)result.score, Date = result.entry_date });
+
+                    }
+                }
 
             }
-            catch (FormatException)
-            {
-                throw new FormatException("INVALID_DATA_TYPE_CONVERSION_ERROR");
-            }
-
             catch (Exception ex)
             {
-                throw new Exception("ERROR: " + ex.Message);
+
+                throw new Exception("PERSON:INTERNAL_ERROR " + ex.Message);
             }
 
         }

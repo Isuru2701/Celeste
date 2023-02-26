@@ -38,7 +38,7 @@ namespace Celeste.Controls
         {
             InitializeComponent();
 
-         //   SentimentGraph.St
+         
         }
     }
 
