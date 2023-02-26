@@ -11,6 +11,11 @@ using Windows.Data;
 using Windows.Foundation;
 using System.Windows;
 using Microsoft.Toolkit.Uwp.Notifications;
+using HandyControl.Controls;
+using System.Drawing;
+using System.Threading;
+using System.Windows.Media.Imaging;
+using Notifications.Wpf;
 
 namespace Celeste.Model
 {
@@ -38,32 +43,40 @@ namespace Celeste.Model
                  * Note that scheduled toast notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be "dropped" as no longer relevant to the user. --Microsoft
                  */
 
-                List<string> list = new List<string>
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("REMINDER: INTERNAL_ERROR: " + ex.Message);
+            }
+        }
+
+        public static void SetNotification()
+        {
+            List<string> prompts = new List<string>
                 {
                     "How did your day go?",
                     "Write the way into your heart!",
                     "What did you accomplish today?"
                 };
 
+            // Create a NotifyIcon object and set its properties
+            NotifyIcon notification = new NotifyIcon();
+            notification.Icon = new BitmapImage(new Uri("../Resources/quill.png", UriKind.Relative));
+            notification.Text = prompts[new Random().Next(2)];
 
+            // Display the notification icon in the system tray
+            notification.Visibility = Visibility.Visible;
 
-                new ToastContentBuilder()
-                    .AddArgument("action", "Celeste")
-                    .AddText("Time to Write!")
-                    .AddText(list[new Random().Next(list.Count - 1)])
-                    .AddAppLogoOverride(new Uri("../Resources/quill.png", UriKind.Relative),ToastGenericAppLogoCrop.Default)
-                    .Schedule(DateTime.Now.AddSeconds(10), toast =>
-                     {
-                         toast.Tag = "10";
-                         toast.Group = "Reminder";
-                     });
+            // Display a notification message
+            notification.ShowBalloonTip("Celeste", "Daily reminder", HandyControl.Data.NotifyIconInfoType.None);
 
+            // Wait for the notification to be displayed for the specified duration
+            Thread.Sleep(5000);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("REMINDER: INTERNAL_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            // Dispose of the NotifyIcon object to remove the notification icon from the system tray
+            notification.Dispose();
+
         }
 
         public static void DeleteReminder()
