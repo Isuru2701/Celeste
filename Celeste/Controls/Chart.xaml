@@ -24,8 +24,7 @@
                     BorderThickness="0,0,0,1">
 
                 <!--graph goes here -->
-                <lvc:CartesianChart x:Name="SentimentGraph" 
-                                    Series="{Binding Series}"/>
+                <lvc:CartesianChart x:Name="SentimentGraph"/>
                 
 
 
