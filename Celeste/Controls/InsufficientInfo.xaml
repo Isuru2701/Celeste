@@ -15,7 +15,7 @@
         <Grid>
             <Image Source="../Resources/empty.png"
                Width="100" Margin="143,0,557,0"/>
-            <Label Content="Give us some time"
+            <Label Content="Give it some time"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                    Margin="0,0,70,50"/>

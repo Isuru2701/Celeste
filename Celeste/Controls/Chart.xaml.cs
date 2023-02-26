@@ -59,11 +59,13 @@ namespace Celeste.Controls
 
                     Plot();
                 }
+                else
+                {
+
+                }
             }
             catch (Exception)
             {
-                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("InfoFrame") as Frame;
-                overlayframe.Content = new InsufficientInfo();
 
             }
         }
