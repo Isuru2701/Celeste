@@ -60,11 +60,13 @@ namespace Celeste.Controls
             lbl_confirmation.Content = $"Reminder set for\n {timepicker.Time}";
             lbl_confirmation.Visibility = Visibility.Visible;
 
+            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, timepicker.Time.Hour, timepicker.Time.Minute, DateTime.Now.Second);
 
             //Setting up the notification even if the app is closed
             try
             {
-                Reminder.SetDailyReminder(timepicker.Time);
+
+                Reminder.SetDailyReminder(time);
             }
             catch(Exception ex)
             {
@@ -79,8 +81,8 @@ namespace Celeste.Controls
             {
                 if (FileHandler.ResourceExists("Reminder.txt"))
                 {
-                    timepicker.Time = (AnalogueTime)Reminder.GetReminderTime();
-
+                    DateTime time = Reminder.GetReminderTime();
+                    timepicker.Time = new AnalogueTime(time.Hour, time.Minute, time.ToString("tt") == "AM" ? Meridiem.AM : Meridiem.PM);
                 }
             }
             catch(Exception ex)
@@ -92,6 +94,7 @@ namespace Celeste.Controls
         private void btn_remove_Click(object sender, RoutedEventArgs e)
         {
             Reminder.DeleteReminder();
+            timepicker.Time = new AnalogueTime(0, 0, Meridiem.AM);
         }
     }
 }

@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[3.4.0, )"
             },
+            "Humanizer": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
             "LiveCharts.Wpf": {
               "target": "Package",
               "version": "[0.9.7, )"

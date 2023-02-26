@@ -21,7 +21,8 @@
         <Button x:Name="btn_back"
                 Style="{StaticResource DiamondButtonTheme}" 
                 Margin="39,365,891,365"
-                Click="btn_back_Click">
+                Click="btn_back_Click"
+                >
             <Image Source="../Resources/back_btn.png"/>
         </Button>
 
@@ -53,9 +54,10 @@
             x:Name="btn_remove"
             Style="{StaticResource DiamondButtonTheme}"
             Content="✕"
-            Margin="865,465,35,263"
+            Margin="865,466,35,263"
             FontSize="60"
             ToolTip="Remove Notification"
+            Height="100"
             Width="100" Click="btn_remove_Click">
 
         </Button>

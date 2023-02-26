@@ -26,7 +26,7 @@ namespace Celeste.Model
         /// sets daily reminder to the time specified
         /// </summary>
         /// <param name="time"></param>
-        public static void SetDailyReminder(AnalogueTime time)
+        public static void SetDailyReminder(DateTime time)
         {
             try
             {
@@ -68,6 +68,11 @@ namespace Celeste.Model
 
         public static void DeleteReminder()
         {
+            if (FileHandler.ResourceExists(reminderfile))
+            {
+                FileHandler.Write("", reminderfile);
+            }
+
             // Create the toast notifier
             ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
 
@@ -87,24 +92,22 @@ namespace Celeste.Model
         /// returns the reminder time for the current user stored in reminder.txt returns null if exception occurs.
         /// </summary>
         /// <returns></returns>
-        public static AnalogueTime? GetReminderTime()
+        public static DateTime GetReminderTime()
         {
             try
             {
+                DateTime time = DateTime.MinValue;
+                DateTime.TryParse(FileHandler.ReadText(reminderfile), out time);
+                return time;
 
-                DateTime time = DateTime.ParseExact(FileHandler.ReadText(reminderfile), "hh:mm (tt)", null);
-
-                AnalogueTime analogue = new AnalogueTime(new DigitalTime(time.Hour, time.Minute));
-                MessageBox.Show("OHGGEGE");
-                return analogue;
             }
             catch (FormatException)
             {
-                return null;
+                throw new Exception("REMINDER: INVALID_FORMAT_ERROR");
             }
             catch (Exception)
             {
-                return null;
+                throw new Exception("REMINDER: INTERNAL_ERROR");
             }
         }
     }
