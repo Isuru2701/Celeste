@@ -27,7 +27,7 @@ namespace Celeste.Views
         }
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new Home());
         }
 
         private void btn_score_Click(object sender, RoutedEventArgs e)
@@ -37,12 +37,12 @@ namespace Celeste.Views
 
         private void btn_triggers_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoFrame.Content = new InsufficientInfo();
         }
 
         private void btn_comforts_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoFrame.Content = new InsufficientInfo();
         }
     }
 }

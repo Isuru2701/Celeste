@@ -6,20 +6,27 @@
              xmlns:local="clr-namespace:Celeste.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#171717">
+
+    <Border BorderBrush="#d8c6a0"
+            CornerRadius="20"
+            BorderThickness="3"
+            Background="#171717">
+
+        <Grid >
 
 
-        <Image Source="../Resources/bug.png"
+            <Image Source="../Resources/bug.png"
                Width="100" Margin="143,0,557,0"/>
-        <Label Content="Sorry, we couldn't setup a connection"
+            <Label Content="are you connected to the internet?"
                HorizontalAlignment="Left"
                VerticalAlignment="Top" Margin="266,180,0,0"/>
 
-        <Label Content="are you connected to the internet?"
+            <Label Content="Sorry, we couldn't connect to our database"
                HorizontalAlignment="Left"
                FontSize="15"
                VerticalAlignment="Center" Margin="266,0,0,0"/>
 
 
-    </Grid>
+        </Grid>
+    </Border>
 </UserControl>

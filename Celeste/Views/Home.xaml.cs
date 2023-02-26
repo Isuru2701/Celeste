@@ -67,7 +67,7 @@ namespace Celeste.Views
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new Login());
         }
 
         private void btn_writer_Click(object sender, RoutedEventArgs e)

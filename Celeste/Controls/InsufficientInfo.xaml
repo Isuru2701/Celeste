@@ -6,17 +6,28 @@
              xmlns:local="clr-namespace:Celeste.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Image Source="../Resources/empty.png"
+
+    <Border BorderBrush="#d8c6a0"
+            CornerRadius="20"
+            BorderThickness="3"
+            Background="#171717">
+
+        <Grid>
+            <Image Source="../Resources/empty.png"
                Width="100" Margin="143,0,557,0"/>
-        <Label Content="Give us some time"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top" Margin="266,180,0,0"/>
+            <Label Content="Give us some time"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+                   Margin="0,0,70,50"/>
 
-        <Label Content="We don't have enough information &#xa; to display this pafge"
-               HorizontalAlignment="Left"
+            <Label Content="We don't have enough information &#xa; to display this pafge"
                FontSize="15"
-               VerticalAlignment="Top" Margin="266,203,0,0"/>
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Margin="70,50,70,0"/>
 
-    </Grid>
+
+
+        </Grid>
+    </Border>
 </UserControl>
