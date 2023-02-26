@@ -61,12 +61,11 @@ namespace Celeste.Controls
                 }
                 else
                 {
-
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
