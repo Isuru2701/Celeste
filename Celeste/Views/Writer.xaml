@@ -41,6 +41,12 @@
             <Image Source="../Resources/save_btn.png"/>
         </Button>
 
+        <Label x:Name="lbl_confirmation"
+               Margin="61,557,869,158"
+               Visibility="Hidden">
+            Saved
+        </Label>
+
         <Button x:Name="btn_upload"
                 Style="{StaticResource DiamondButtonTheme}" 
                 Margin="862,365,68,365"

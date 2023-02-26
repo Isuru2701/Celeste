@@ -16,6 +16,13 @@ namespace Celeste.Model
 
         public static int User_ID { get; set; }
 
+        public static string APIString
+        {
+            get { return APIString; }
+            private set { APIString = "127.0.0.1:777/execute"; }
+
+        }
+
         public static string AppId
         {
             get { return AppId; }

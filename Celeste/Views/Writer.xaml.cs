@@ -1,5 +1,6 @@
 ﻿using Celeste.Model;
 using Celeste.Model.Data;
+using Celeste.Controls;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
 using System;
@@ -84,7 +85,7 @@ namespace Celeste.Views
         /// <summary>
         /// Stores file as yyyyMMdd.txt in Appdata
         /// </summary>
-        private void ExecuteSave()
+        private async void ExecuteSave()
         {
             try
             {
@@ -113,7 +114,24 @@ namespace Celeste.Views
                         context.SaveChanges();
 
                         //make api call
+                        using (var client = new HttpClient())
+                        {
+                            var response = await client.GetAsync($"{Flow.APIString}?user_id={Flow.User_ID}&date={current.Date:yyyy-MM-dd}");
 
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var result = await response.Content.ReadAsStringAsync();
+                                lbl_confirmation.Visibility = Visibility.Visible;
+                                lbl_confirmation.Content = result;
+                                
+                            }
+                            else
+                            {
+                                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
+                                overlayframe.Content = new NoConnection();
+
+                            }
+                        }
                     }    
 
                 }

@@ -18,7 +18,6 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -85,6 +84,10 @@
     <Compile Include="Migrations\202302230646381_InitialCreate.cs" />
     <Compile Include="Migrations\202302230646381_InitialCreate.designer.cs">
       <DependentUpon>202302230646381_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302260320043_final.cs" />
+    <Compile Include="Migrations\202302260320043_final.designer.cs">
+      <DependentUpon>202302260320043_final.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Data\comfort.cs" />
@@ -247,6 +250,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202302230646381_InitialCreate.resx">
       <DependentUpon>202302230646381_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302260320043_final.resx">
+      <DependentUpon>202302260320043_final.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
