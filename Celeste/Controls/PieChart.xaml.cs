@@ -20,9 +20,28 @@ namespace Celeste.Controls
     /// </summary>
     public partial class PieChart : UserControl
     {
-        public PieChart()
+        public PieChart(string type)
         {
             InitializeComponent();
+
+            if (type == "trigger")
+            {
+
+            }
+        }
+
+        public void LoadData()
+        {
+
+        }
+
+        public void PlotTrigger()
+        {
+
+        }
+        public void PlotComfort()
+        {
+
         }
     }
 }

@@ -33,27 +33,39 @@ namespace Celeste.Views
 
         private void btn_score_Click(object sender, RoutedEventArgs e)
         {
-            InfoFrame.Content = new Chart();
+            try
+            {
+                InfoFrame.Content = new Chart();
+            }
+            catch (Exception)
+            {
+                InfoFrame.Content = new InsufficientInfo();
+            }
+
         }
 
         private void btn_triggers_Click(object sender, RoutedEventArgs e)
         {
-            InfoFrame.Content = new InsufficientInfo();
+            try
+            {
+                InfoFrame.Content = new PieChart("trigger");
+            }
+            catch (Exception)
+            {
+                InfoFrame.Content = new InsufficientInfo();
+            }
         }
 
         private void btn_comforts_Click(object sender, RoutedEventArgs e)
         {
-            InfoFrame.Content = new InsufficientInfo();
-        }
-
-        private void DisplayTriggers()
-        {
-            Person.GetInstance(Flow.User_ID).FetchTriggers();
-        }
-
-        private void DisplayComforts()
-        {
-
+            try
+            {
+                InfoFrame.Content = new PieChart("comfort");
+            }
+            catch (Exception)
+            {
+                InfoFrame.Content = new InsufficientInfo();
+            }
         }
     }
 }
