@@ -69,6 +69,9 @@
     <Compile Include="Controls\Chart.xaml.cs">
       <DependentUpon>Chart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InsufficientInfo.xaml.cs">
+      <DependentUpon>InsufficientInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NoConnection.xaml.cs">
       <DependentUpon>NoConnection.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
       <DependentUpon>Writer.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InsufficientInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -299,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\twilight.py" />
+    <Resource Include="Resources\empty.png" />
     <Resource Include="Resources\upload_btn.png" />
     <Resource Include="Resources\timer_btn.png" />
     <Resource Include="Resources\save_btn.png" />

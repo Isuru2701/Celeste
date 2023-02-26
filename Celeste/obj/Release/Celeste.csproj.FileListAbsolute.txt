@@ -195,3 +195,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\vi\Humanize
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\zh-CN\Humanizer.resources.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\zh-Hans\Humanizer.resources.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\zh-Hant\Humanizer.resources.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\InsufficientInfo.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\InsufficientInfo.baml
