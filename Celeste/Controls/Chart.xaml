@@ -15,53 +15,19 @@
             BorderThickness="3">
         <Grid>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="350"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
             <Border BorderBrush="#d8c6a0"
                     BorderThickness="0,0,0,1">
 
                 <!--graph goes here -->
                 <lvc:CartesianChart x:Name="SentimentGraph"
-                                    Zoom="None"/>
-                
+                                    Zoom="None"
+                                    Series="{Binding Series}"/>
+
 
 
             </Border>
 
 
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="0" 
-                    BorderBrush="#d8c6a0"
-                    BorderThickness="0,0,1,0">
-
-                    <!--streak goes here -->
-
-
-                </Border>
-
-
-
-                <Border Grid.Column="1"
-                    BorderBrush="#d8c6a0"
-                    BorderThickness="1,0,0,0">
-
-
-                    <!--calendar goes here -->
-
-
-                </Border>
-
-
-
-            </Grid>
         </Grid>
 
     </Border>

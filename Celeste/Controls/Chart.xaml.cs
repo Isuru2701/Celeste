@@ -38,7 +38,7 @@ namespace Celeste.Controls
         public Chart()
         {
             InitializeComponent();
-            Plot();
+            LoadData();
         }
 
         List<string> x_axis = new List<string>();
@@ -53,30 +53,26 @@ namespace Celeste.Controls
                 x_axis.Add(score.Date.ToString("MM/dd"));
                 y_axis.Add(Math.Round(score.Value, 1) * 5);
             }
-
         }
 
-        public void Plot()
+        public ISeries[] Series { get; set; } =
         {
-            LoadData();
-            SentimentGraph.AxisX.Add(new LiveCharts.Wpf.Axis()
+            new LineSeries<double>
             {
-                Title = "Days",
-                Labels = x_axis
-            });
+                Values = new double[] { 2, 1, 3, 5, 3, 4, 6 },
+                Fill = null
+            }
+        };
 
+        public LabelVisual Title { get; set; } =
+            new LabelVisual
+            {
+                Text = "Sentiment Score",
+                TextSize = 25,
+                Padding = new LiveChartsCore.Drawing.Padding(15),
+                Paint = new SolidColorPaint(SKColors.DarkSlateGray)
+            };
 
-            var series = new SeriesCollection
-                (
-                    new LineSeries
-                    {
-                        Title = "Sentiment Score",
-                        Values = new ChartValues<double>(y_axis)
-                    }
-                );
-            SentimentGraph.Series = series;
-            
-        }
     }
 
 }
