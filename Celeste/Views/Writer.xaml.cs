@@ -19,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Http;
 
 namespace Celeste.Views
 {
@@ -110,6 +111,9 @@ namespace Celeste.Views
 
                         }
                         context.SaveChanges();
+
+                        //make api call
+
                     }    
 
                 }
