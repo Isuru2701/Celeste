@@ -27,6 +27,7 @@ using LiveChartsCore.SkiaSharpView.VisualElements;
 using SkiaSharp;
 using Celeste.Model;
 using System.Reflection.Emit;
+using System.Windows.Markup;
 
 namespace Celeste.Controls
 {
@@ -54,7 +55,35 @@ namespace Celeste.Controls
                     foreach (Score score in Person.GetInstance(Flow.User_ID).Scores)
                     {
                         x_axis.Add(score.Date.ToString("yyyy/MM/dd"));
-                        y_axis.Add(Math.Round(score.Value, 1) * 5);
+                        y_axis.Add(Math.Round(score.Value, 2));
+                    }
+
+                    // normalizing the data
+                    List<double> logData = new List<double>();
+                    foreach (double value in y_axis)
+                    {
+                        logData.Add(Math.Log(value));
+                    }
+
+                    double minLogData = logData[0];
+                    double maxLogData = logData[0];
+                    foreach (double value in logData)
+                    {
+                        if (value < minLogData)
+                        {
+                            minLogData = value;
+                        }
+                        if (value > maxLogData)
+                        {
+                            maxLogData = value;
+                        }
+                    }
+
+                    y_axis.Clear();
+                    foreach (double value in logData)
+                    {
+                        double rescaledValue = ((value - minLogData) * (10 / (maxLogData - minLogData))) - 5;
+                        y_axis.Add(rescaledValue);
                     }
 
                     Plot();

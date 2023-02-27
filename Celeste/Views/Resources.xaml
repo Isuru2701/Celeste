@@ -19,7 +19,9 @@
                 x:Name="border_menu"/>
 
         <Border Grid.Row="1"
-                Background="#1A1A1A"/>
+                Background="#1A1A1A">
+            <Frame x:Name="Container"></Frame>
+        </Border>
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>

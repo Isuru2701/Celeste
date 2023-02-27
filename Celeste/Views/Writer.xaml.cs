@@ -114,7 +114,6 @@ namespace Celeste.Views
 
                         }
                         context.SaveChanges();
-                        //APIHandler.SendMessageToApi(Flow.User_ID, current.Date);
                     }
 
                 }
