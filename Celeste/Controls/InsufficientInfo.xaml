@@ -26,8 +26,6 @@
                VerticalAlignment="Center"
                Margin="70,50,70,0"/>
 
-
-
         </Grid>
     </Border>
 </UserControl>

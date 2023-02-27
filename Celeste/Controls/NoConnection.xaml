@@ -12,21 +12,21 @@
             BorderThickness="3"
             Background="#171717">
 
-        <Grid >
-
-
+        <Grid>
             <Image Source="../Resources/bug.png"
                Width="100" Margin="143,0,557,0"/>
-            <Label Content="are you connected to the internet?"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top" Margin="266,180,0,0"/>
+            <Label Content="Are you connected to the internet?"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+                   Margin="80,0,70,50"/>
 
-            <Label Content="Sorry, we couldn't connect to our database"
-               HorizontalAlignment="Left"
+            <Label Content="We ouuldn't connect with youtube"
                FontSize="15"
-               VerticalAlignment="Center" Margin="266,0,0,0"/>
-
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Margin="10,50,70,0"/>
 
         </Grid>
     </Border>
+    
 </UserControl>

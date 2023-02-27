@@ -104,7 +104,7 @@
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Reminder.cs" />
     <Compile Include="Model\Score.cs" />
-    <Compile Include="Model\Video.cs" />
+    <Compile Include="Model\VideoHandler.cs" />
     <Compile Include="Views\Entries.xaml.cs">
       <DependentUpon>Entries.xaml</DependentUpon>
     </Compile>

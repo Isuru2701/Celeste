@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Celeste.Controls;
+using Celeste.Model;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,9 +36,33 @@ namespace Celeste.Views
 
         private void btn_videos_Click(object sender, RoutedEventArgs e)
         {
-            //TODO ADD THIS STUFF4
-            
+            //TODO ADD THIS STUFF
+
+            var rand = new Random();
+            int i = Person.GetInstance(Flow.User_ID).FetchTriggers();
+            try
+            {
+                if (i > 0)
+                {
+                    var query = Person.GetInstance(Flow.User_ID).Triggers.OrderBy(x => rand.Next()).Take(1).First();
+
+                    var videos = new VideoHandler().SearchVideos(query.Name);
+
+
+
+                    System.Windows.Controls.ListBox box = new System.Windows.Controls.ListBox();
+
+                    box.ItemsSource = videos;
+
+                    Container.Content = box;
+                }
+            }
+            catch (Exception)
+            {
+                Container.Content = new NoConnection();
+            }
         }
+
 
         private void btn_books_Click(object sender, RoutedEventArgs e)
         {

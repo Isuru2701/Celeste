@@ -12,18 +12,28 @@ namespace Celeste.Model
 {
     public class Video
     {
+        public string Id { get; set; }
         public string Title { get; set; }
-        public string Author { get; set; }  
+        public string Author { get; set; }
         public string Url { get; set; }
 
         public System.Drawing.Image Thumbnail { get; set; }
 
-        private List<Video> SearchVideos(string query)
+        public override string ToString()
+        {
+            return Title;
+        }
+
+
+    }
+    public class VideoHandler
+    {
+        public List<Video> SearchVideos(string query)
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "YOUR_API_KEY",
-                ApplicationName = "MyApp"
+                ApiKey = "AIzaSyCSpZJjZ6hCqd-ieIbdjZlf509V_9kQaIo",
+                ApplicationName = "Celeste"
             });
 
             var searchListRequest = youtubeService.Search.List("snippet");
@@ -44,7 +54,9 @@ namespace Celeste.Model
                         Title = searchResult.Snippet.Title
                     });
                 }
+
             }
+
 
             return videos;
         }
