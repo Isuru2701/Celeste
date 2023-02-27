@@ -33,7 +33,7 @@ namespace Celeste.Views
 
         private void btn_videos_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO ADD THIS STUFF
         }
 
         private void btn_books_Click(object sender, RoutedEventArgs e)
