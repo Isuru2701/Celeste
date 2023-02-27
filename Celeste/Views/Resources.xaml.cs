@@ -48,8 +48,6 @@ namespace Celeste.Views
 
                     var videos = new VideoHandler().SearchVideos(query.Name);
 
-
-
                     System.Windows.Controls.ListBox box = new System.Windows.Controls.ListBox();
 
                     box.ItemsSource = videos;

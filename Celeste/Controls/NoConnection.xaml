@@ -15,12 +15,12 @@
         <Grid>
             <Image Source="../Resources/bug.png"
                Width="100" Margin="143,0,557,0"/>
-            <Label Content="Are you connected to the internet?"
+            <Label Content="Are you online?"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
-                   Margin="80,0,70,50"/>
+                   Margin="0,0,140,50"/>
 
-            <Label Content="We ouuldn't connect with youtube"
+            <Label Content="We couldn't connect with youtube"
                FontSize="15"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
