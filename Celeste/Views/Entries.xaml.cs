@@ -33,9 +33,6 @@ namespace Celeste.Views
             DateTime.TryParse((string)clickedButton.Content, out date);
 
             NavigationService.Navigate(new Writer(date));
-
-
-
             
         }
 

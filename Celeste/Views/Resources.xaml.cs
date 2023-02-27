@@ -63,10 +63,10 @@ namespace Celeste.Views
                             var image = new Image();
                             image.Source = new BitmapImage(new Uri(video.Thumbnail.Url));
                             image.Stretch = Stretch.Fill;
+                            
                             Button button = new Button
                             {
                                 Style = new Style().BasedOn = FindResource("ListbuttonTheme") as Style,
-                                Command = ,
                                 Content = new StackPanel
                                 {
                                     Orientation = Orientation.Horizontal,
@@ -76,11 +76,12 @@ namespace Celeste.Views
                                         {
                                             Child = image,
                                         },
-                                        new Label { Content = video.Title}
 
                                     }
                                 }
                             };
+
+                            button.Click += new RoutedEventHandler(btn_Click);
                             box.Items.Add(button);
                         }
                         
@@ -90,12 +91,6 @@ namespace Celeste.Views
                     {
                         Container.Content = new InsufficientInfo();
                     }
-
-
-
-
-
-
                 }
             }
             catch (Exception)
@@ -106,7 +101,8 @@ namespace Celeste.Views
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Button clickedButton = (Button)sender;
+            MessageBox.Show(clickedButton.Content.ToString());
         }
 
 
