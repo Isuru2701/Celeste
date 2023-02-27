@@ -51,17 +51,46 @@ namespace Celeste.Views
                     var videos = new VideoHandler().SearchVideos(query.Name);
 
                     ListBox box = new ListBox();
+                    //var listitems = new List<Button>
+                    //{
+
+                    //}
                     if (videos.Count > 0)
                     {
+                        foreach(var video in videos)
+                        {
+                            var image = new Image();
+                            image.Source = new BitmapImage(new Uri(video.Thumbnail.Url));
+                            Button button = new Button
+                            {
+                                Style = new Style().BasedOn = FindResource("ListbuttonTheme") as Style,
+                                Content = new StackPanel
+                                {
+                                    Orientation = Orientation.Horizontal,
+                                    Children =
+                                    {
+                                        new Border
+                                        {
+                                            Child = image,
+                                        },
+                                        new Label { Content = video.Title}
 
-                        box.ItemsSource = videos;
+                                    }
+                                }
+                            };
+                            box.Items.Add(button);
+                        }
+                        
+                        Container.Content = box;
                     }
                     else
                     {
                         Container.Content = new InsufficientInfo();
                     }
 
-                    Container.Content = box;
+
+
+
                 }
             }
             catch (Exception)

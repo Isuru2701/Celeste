@@ -18,8 +18,8 @@ namespace Celeste.Model
         public string Author { get; set; }
         public string Url { get; set; }
 
-
         public Thumbnail Thumbnail { get; set; }
+        
 
         public override string ToString()
         {
@@ -30,9 +30,6 @@ namespace Celeste.Model
     }
     public class VideoHandler
     {
-        public List<string> AllowedChannels = new List<string> { "UCkJEpR7JmS36tajD34Gp4VA" };
-
-
         /// <summary>
         /// Returns a list of videos of type video. Returns empty list if query was empty
         /// </summary>
@@ -68,6 +65,7 @@ namespace Celeste.Model
                     );
                 }
             }
+
             return videos;
         }
 
