@@ -3,6 +3,7 @@ using Celeste.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,13 +45,21 @@ namespace Celeste.Views
             {
                 if (i > 0)
                 {
+
                     var query = Person.GetInstance(Flow.User_ID).Triggers.OrderBy(x => rand.Next()).Take(1).First();
 
                     var videos = new VideoHandler().SearchVideos(query.Name);
 
-                    System.Windows.Controls.ListBox box = new System.Windows.Controls.ListBox();
+                    ListBox box = new ListBox();
+                    if (videos.Count > 0)
+                    {
 
-                    box.ItemsSource = videos;
+                        box.ItemsSource = videos;
+                    }
+                    else
+                    {
+                        Container.Content = new InsufficientInfo();
+                    }
 
                     Container.Content = box;
                 }
@@ -58,6 +67,16 @@ namespace Celeste.Views
             catch (Exception)
             {
                 Container.Content = new NoConnection();
+            }
+        }
+
+        private void PlayVideo_Click(object sender, RoutedEventArgs e)
+        {
+            var video = box.SelectedItem as Video;
+
+            if (video != null)
+            {
+                Process.Start($"https://www.youtube.com/watch?v={video.Id}");
             }
         }
 

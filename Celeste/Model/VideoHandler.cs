@@ -30,7 +30,7 @@ namespace Celeste.Model
     }
     public class VideoHandler
     {
-        public List<string> AllowedChannels = new List<string> { "" };
+        public List<string> AllowedChannels = new List<string> { "UCkJEpR7JmS36tajD34Gp4VA" };
 
         /// <summary>
         /// Returns a list of videos of type video. Returns empty list if query was empty
@@ -47,12 +47,13 @@ namespace Celeste.Model
 
             var searchListRequest = youtubeService.Search.List("snippet");
             searchListRequest.Q = query; // Replace with your search query.
-            searchListRequest.MaxResults = 10;
+            searchListRequest.MaxResults = 5;
 
             var rand = new Random();
             //get 2 videos from each channel
             int perchannel = 2;
             var selectedChannelIds = AllowedChannels.OrderBy(x => rand.Next()).Take(perchannel);
+
 
 
             List<Video> videos = new List<Video> { };
