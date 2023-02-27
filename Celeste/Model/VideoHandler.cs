@@ -32,6 +32,7 @@ namespace Celeste.Model
     {
         public List<string> AllowedChannels = new List<string> { "UCkJEpR7JmS36tajD34Gp4VA" };
 
+
         /// <summary>
         /// Returns a list of videos of type video. Returns empty list if query was empty
         /// </summary>
@@ -47,46 +48,27 @@ namespace Celeste.Model
 
             var searchListRequest = youtubeService.Search.List("snippet");
             searchListRequest.Q = query; // Replace with your search query.
-            searchListRequest.MaxResults = 5;
+            searchListRequest.ChannelId = "UCkJEpR7JmS36tajD34Gp4VA";
+            searchListRequest.MaxResults = 2;
 
-            var rand = new Random();
-            //get 2 videos from each channel
-            int perchannel = 2;
-            var selectedChannelIds = AllowedChannels.OrderBy(x => rand.Next()).Take(perchannel);
-
-
-
-            List<Video> videos = new List<Video> { };
             // Call the search.list method to retrieve results matching the specified query term.
-            foreach (var channelId in selectedChannelIds)
+            var searchListResponse = searchListRequest.Execute();
+
+            var videos = new List<Video>();
+            foreach (var searchResult in searchListResponse.Items)
             {
-                searchListRequest = youtubeService.Search.List("snippet");
-                searchListRequest.ChannelId = channelId;
-                searchListRequest.MaxResults = perchannel;
-
-                var searchListResponse = searchListRequest.Execute();
-
-                if (searchListResponse.Items.Count > 0)
+                if (searchResult.Id.Kind == "youtube#video")
                 {
-                    foreach (var searchResult in searchListResponse.Items)
+                    videos.Add(new Video
                     {
-                        if (searchResult.Id.Kind == "youtube#video")
-                        {
-                            var video = new Video
-                            {
-                                Title = searchResult.Snippet.Title,
-                                Id = searchResult.Id.VideoId,
-                                Thumbnail = searchResult.Snippet.Thumbnails.Default__
-                            };
-
-                            videos.Add(video);
-                        }
+                        Id = searchResult.Id.VideoId,
+                        Title = searchResult.Snippet.Title,
+                        Thumbnail = searchResult.Snippet.Thumbnails.Default__
                     }
-
+                    );
                 }
             }
             return videos;
-
         }
 
     }

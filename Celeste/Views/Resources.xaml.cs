@@ -70,17 +70,6 @@ namespace Celeste.Views
             }
         }
 
-        private void PlayVideo_Click(object sender, RoutedEventArgs e)
-        {
-            var video = box.SelectedItem as Video;
-
-            if (video != null)
-            {
-                Process.Start($"https://www.youtube.com/watch?v={video.Id}");
-            }
-        }
-
-
         private void btn_books_Click(object sender, RoutedEventArgs e)
         {
 
