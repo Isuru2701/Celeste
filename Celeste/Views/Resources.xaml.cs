@@ -58,12 +58,12 @@ namespace Celeste.Views
                     //}
                     if (videos.Count > 0)
                     {
-                        foreach(var video in videos)
+                        foreach (var video in videos)
                         {
                             var image = new Image();
                             image.Source = new BitmapImage(new Uri(video.Thumbnail.Url));
                             image.Stretch = Stretch.Fill;
-                            
+
                             Button button = new Button
                             {
                                 Style = new Style().BasedOn = FindResource("ListbuttonTheme") as Style,
@@ -75,12 +75,20 @@ namespace Celeste.Views
                                         new Border
                                         {
                                             Child = image,
+                                            
                                         },
+                                        new StackPanel {
 
+                                            Children={
+                                            new Label { Content = video.Title, FontSize=20, Margin = new Thickness(20)},
+
+                                            new Label {Content = video.Author, FontSize = 10, Margin = new Thickness(20)}
+                                            }
+                                        }
                                     }
                                 }
                             };
-
+                            
                             button.Click += new RoutedEventHandler(btn_Click);
                             box.Items.Add(button);
                         }

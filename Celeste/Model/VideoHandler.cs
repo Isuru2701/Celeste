@@ -60,6 +60,7 @@ namespace Celeste.Model
                     {
                         Id = searchResult.Id.VideoId,
                         Title = searchResult.Snippet.Title,
+                        Author = searchResult.Snippet.ChannelTitle,
                         Thumbnail = searchResult.Snippet.Thumbnails.Default__
                     }
                     );

@@ -18,7 +18,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="../Resources/entry_image.png" Width="100" Height="100"/>
+                        <Image x:Name="thumbnail" Source="../Resources/entry_image.png" Width="100" Height="100"/>
                         
                         <Border Background="{TemplateBinding Background}"
                                         BorderBrush="#d8c6a0" Width="1280">

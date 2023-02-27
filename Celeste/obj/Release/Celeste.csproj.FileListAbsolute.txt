@@ -199,3 +199,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\In
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\InsufficientInfo.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\PieChart.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\PieChart.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Themes\ContentButton.baml
