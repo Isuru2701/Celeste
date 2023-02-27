@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -61,9 +62,11 @@ namespace Celeste.Views
                         {
                             var image = new Image();
                             image.Source = new BitmapImage(new Uri(video.Thumbnail.Url));
+                            image.Stretch = Stretch.Fill;
                             Button button = new Button
                             {
                                 Style = new Style().BasedOn = FindResource("ListbuttonTheme") as Style,
+                                Command = ,
                                 Content = new StackPanel
                                 {
                                     Orientation = Orientation.Horizontal,
@@ -91,6 +94,8 @@ namespace Celeste.Views
 
 
 
+
+
                 }
             }
             catch (Exception)
@@ -99,9 +104,15 @@ namespace Celeste.Views
             }
         }
 
-        private void btn_books_Click(object sender, RoutedEventArgs e)
+        private void btn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+
+        private void btn_books_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void btn_locations_Click(object sender, RoutedEventArgs e)
