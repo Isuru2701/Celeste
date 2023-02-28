@@ -29,7 +29,6 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Flow.Initiate();
             MainFrame.Navigate(new Login());
             OverlayFrame = new Frame();
         }

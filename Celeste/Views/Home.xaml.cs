@@ -1,4 +1,5 @@
 ﻿using Celeste.Controls;
+using Celeste.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,7 +68,7 @@ namespace Celeste.Views
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Login());
+            Application.Current.Shutdown();
         }
 
         private void btn_writer_Click(object sender, RoutedEventArgs e)

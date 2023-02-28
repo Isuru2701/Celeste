@@ -109,6 +109,7 @@ namespace Celeste.Views
 
                         context.SaveChanges();
                         lbl_validation_error.Content = "Sign up successful!";
+                        lbl_validation_error.Visibility = Visibility.Visible;
                     }
                 }
 

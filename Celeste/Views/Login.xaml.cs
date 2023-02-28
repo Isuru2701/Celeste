@@ -58,6 +58,7 @@ namespace Celeste.Views
 
                         if (endUser != null)
                         {
+                            Flow.Initiate();
                             Flow.User_ID = endUser.enduser_id;
                             Person.GetInstance(Flow.User_ID);
 
