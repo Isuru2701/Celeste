@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:Celeste.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Resources"
-      Loaded="Page_Loaded">
+      Title="Resources">
 
     <Grid>
         <Grid.RowDefinitions>

@@ -32,7 +32,7 @@ namespace Celeste.Views
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-            main.GoBack();
+            NavigationService.Navigate(new Home());
         }
 
         ListBox box = new ListBox();
