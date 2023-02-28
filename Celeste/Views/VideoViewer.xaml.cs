@@ -21,9 +21,16 @@ namespace Celeste.Controls
     /// <summary>
     /// Interaction logic for VideoViewer.xaml
     /// </summary>
-    public partial class VideoViewer : Page
+    public partial class BrowserViewer : Page
     {
-        public VideoViewer(string id)
+
+        public BrowserViewer()
+        {
+            InitializeComponent();
+            browser.Load("");
+        }
+
+        public BrowserViewer(string id)
         {
             InitializeComponent();
 

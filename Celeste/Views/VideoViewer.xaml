@@ -1,4 +1,4 @@
-﻿<Page x:Class="Celeste.Controls.VideoViewer"
+﻿<Page x:Class="Celeste.Controls.BrowserViewer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -23,7 +23,8 @@
                     Click="btn_back_Click"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Margin="119,0,0,0">
+                Margin="119,0,0,0"
+                Style="{StaticResource DiamondButtonTheme}">
             <Image Source="../Resources/back_btn.png"/>
         </Button>
 

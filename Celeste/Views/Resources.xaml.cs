@@ -122,7 +122,7 @@ namespace Celeste.Views
             try
             {
 
-                NavigationService.Navigate(new VideoViewer(clickedButton.Tag.ToString()));
+                NavigationService.Navigate(new BrowserViewer(clickedButton.Tag.ToString()));
             }
             catch (Exception)
             {

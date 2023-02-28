@@ -286,3 +286,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\CefSharp.Wp
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\CefSharp.Wpf.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\VideoViewer.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\VideoViewer.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Maps.MapControl.WPF.dll
