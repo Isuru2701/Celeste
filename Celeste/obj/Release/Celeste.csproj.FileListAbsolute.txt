@@ -281,8 +281,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\CefSharp.dl
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\CefSharp.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\CefSharp.Wpf.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\CefSharp.Wpf.pdb
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\VideoViewer.g.cs
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\VideoViewer.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Maps.MapControl.WPF.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\GoogleApi.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Extensions.Http.dll
@@ -290,3 +288,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\BouncyCastl
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Text.Encodings.Web.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Text.Json.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.exe.config
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\BrowserViewer.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\BrowserViewer.baml

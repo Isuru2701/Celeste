@@ -81,8 +81,8 @@
     <Compile Include="Controls\TimePicker.xaml.cs">
       <DependentUpon>TimePicker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\VideoViewer.xaml.cs">
-      <DependentUpon>VideoViewer.xaml</DependentUpon>
+    <Compile Include="Views\BrowserViewer.xaml.cs">
+      <DependentUpon>BrowserViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="MAINFRAME.xaml.cs">
       <DependentUpon>MAINFRAME.xaml</DependentUpon>
@@ -155,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\VideoViewer.xaml">
+    <Page Include="Views\BrowserViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
