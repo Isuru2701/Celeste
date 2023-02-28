@@ -108,9 +108,7 @@ namespace Celeste.Views
                         });
 
                         context.SaveChanges();
-                        Flow.User_ID = existingUser.enduser_id;
-                        Person.GetInstance(Flow.User_ID);
-                        NavigationService.Navigate(new Home());
+                        lbl_validation_error.Content = "Sign up successful!";
                     }
                 }
 

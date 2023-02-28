@@ -50,7 +50,10 @@ namespace Celeste.Views
 
                     var query = Person.GetInstance(Flow.User_ID).Triggers.OrderBy(x => rand.Next()).Take(1).First();
 
+
                     var videos = new VideoHandler().SearchVideos(query.Name);
+
+                    
 
                     //var listitems = new List<Button>
                     //{
@@ -67,7 +70,7 @@ namespace Celeste.Views
                             Button button = new Button
                             {
                                 Width = 700,
-                                Name = $"{video.Id}",
+                                Tag = video.Id,
                                 Style = new Style().BasedOn = FindResource("MenubuttonTheme") as Style,
                                 Content = new StackPanel
                                 {
@@ -93,26 +96,33 @@ namespace Celeste.Views
                             
                             button.Click += new RoutedEventHandler(btn_Click);
                             box.Items.Add(button);
+
                         }
+
+                        Container.Content = box;
                     }
                 }
 
                 else
                 {
-                    if (Container.Source != new Uri("../Controls/InsufficientInfo.xaml", UriKind.Relative))
+                    
                         Container.Content = new InsufficientInfo();
+                        Container.NavigationService.RemoveBackEntry();
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 Container.Content = new NoConnection();
+                Container.NavigationService.RemoveBackEntry();
             }
         }
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
+            MessageBox.Show(clickedButton.Tag.ToString());
             
         }
 
