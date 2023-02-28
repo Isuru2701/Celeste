@@ -69,7 +69,7 @@ namespace Celeste.Views
 
                             Button button = new Button
                             {
-                                Width = 1000,
+                                Width = 1100,
                                 Tag = video.Id,
                                 Style = new Style().BasedOn = FindResource("ContentbuttonTheme") as Style,
                                 Content = new StackPanel
@@ -87,7 +87,7 @@ namespace Celeste.Views
                                             Children={
                                             new Label { Content = video.Title, FontSize=20, Margin = new Thickness(20,0,0,0)},
 
-                                            new Label {Content = video.Author, FontSize = 10, Margin = new Thickness(5)}
+                                            new Label {Content = video.Author, FontSize = 10, Margin = new Thickness(20)}
                                             }
                                         }
                                     }
@@ -107,15 +107,12 @@ namespace Celeste.Views
                 {
                     
                         Container.Content = new InsufficientInfo();
-                        Container.NavigationService.RemoveBackEntry();
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 Container.Content = new NoConnection();
-                Container.NavigationService.RemoveBackEntry();
             }
         }
 

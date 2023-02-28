@@ -117,7 +117,7 @@ namespace Celeste.Controls
                     Title = "Sentiment",
                     Values = new ChartValues<double>(y_axis),
                     Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 255, 255)),
-                    Fill = null
+                    Fill = new SolidColorBrush(Colors.Transparent)
                 }
             };
             plotter.Children.Add(ch);

@@ -14,8 +14,6 @@
         <Grid x:Name="plotter">
 
 
-
-
         </Grid>
     </Border>
 </UserControl>

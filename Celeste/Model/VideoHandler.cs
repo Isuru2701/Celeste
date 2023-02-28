@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Net;
 
 namespace Celeste.Model
 {
@@ -39,7 +40,7 @@ namespace Celeste.Model
             var searchListRequest = youtubeService.Search.List("snippet");
             searchListRequest.Q = query; // Replace with your search query.
             searchListRequest.ChannelId = "UCkJEpR7JmS36tajD34Gp4VA";
-            searchListRequest.MaxResults = 2;
+            searchListRequest.MaxResults = 15;
 
             // Call the search.list method to retrieve results matching the specified query term.
             var searchListResponse = searchListRequest.Execute();
@@ -52,7 +53,7 @@ namespace Celeste.Model
                     videos.Add(new Video
                     {
                         Id = searchResult.Id.VideoId,
-                        Title = searchResult.Snippet.Title,
+                        Title = WebUtility.HtmlDecode(searchResult.Snippet.Title),
                         Author = searchResult.Snippet.ChannelTitle,
                         Thumbnail = searchResult.Snippet.Thumbnails.Default__,
                     }

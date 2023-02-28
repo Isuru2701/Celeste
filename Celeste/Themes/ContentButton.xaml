@@ -2,11 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type Button}" x:Key="ContentbuttonTheme">
-        <Setter Property="BorderBrush" Value="#000000"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#d8c6a0"/>
         <Setter Property="Padding" Value="10"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Margin" Value="10"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Template">

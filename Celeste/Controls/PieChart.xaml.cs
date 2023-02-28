@@ -1,7 +1,9 @@
 ﻿using Celeste.Model;
+using HandyControl.Themes;
 using LiveCharts;
 using LiveCharts.Charts;
 using LiveCharts.Wpf;
+using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.Themes;
 using System;
 using System.Collections.Generic;
@@ -35,7 +37,7 @@ namespace Celeste.Controls
                 LoadComfort();
         }
 
-        List<string> x_axis = new List<string>();
+        List<string> sectors = new List<string>();
 
         public void LoadTrigger()
         {
@@ -44,7 +46,7 @@ namespace Celeste.Controls
             {
                 foreach(Record record in Person.GetInstance(Flow.User_ID).Triggers)
                 {
-                    x_axis.Add(record.Name);
+                    sectors.Add(record.Name);
                 }
                 Plot();
             }
@@ -57,7 +59,7 @@ namespace Celeste.Controls
             {
                 foreach (Record record in Person.GetInstance(Flow.User_ID).Comforts)
                 {
-                    x_axis.Add(record.Name);
+                    sectors.Add(record.Name);
                 }
                 Plot();
 
@@ -70,20 +72,26 @@ namespace Celeste.Controls
 
             var slices = new SeriesCollection();
 
-            var frequencyCounts = x_axis.GroupBy(n => n)
+            var frequencyCounts = sectors.GroupBy(n => n)
                              .Select(g => new { Element = g.Key, Frequency = g.Count() });
 
 
             foreach (var item in frequencyCounts)
             {
-                var slice = new LiveCharts.Wpf.PieSeries
+                var slice = new PieSeries
                 {
                     Title = item.Element,
-                    Values = new LiveCharts.ChartValues<double> { item.Frequency },
+                    Values = new ChartValues<double> { item.Frequency },
+                    
                 };
 
                 slices.Add(slice);
             }
+            pie.LegendLocation = LegendLocation.Left;
+            pie.ChartLegend.Margin = new Thickness(50, 0, 0, 0);
+            pie.ChartLegend.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#d8c6a0"));
+            pie.ChartLegend.Visibility = Visibility.Visible;
+
 
             pie.Series = slices;
             plotter.Children.Add(pie);

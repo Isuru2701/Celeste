@@ -13,7 +13,7 @@
     <Border BorderBrush="#d8c6a0"
             CornerRadius="20"
             BorderThickness="3">
-        <Grid x:Name="plotter">
+        <Grid x:Name="plotter" Margin="25,31,25,31">
             
             
             
