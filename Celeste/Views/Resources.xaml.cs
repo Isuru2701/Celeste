@@ -36,9 +36,10 @@ namespace Celeste.Views
             NavigationService.GoBack();
         }
 
+        ListBox box = new ListBox();
+
         private void btn_videos_Click(object sender, RoutedEventArgs e)
         {
-            //TODO ADD THIS STUFF
 
             var rand = new Random();
             int i = Person.GetInstance(Flow.User_ID).FetchTriggers();
@@ -51,7 +52,6 @@ namespace Celeste.Views
 
                     var videos = new VideoHandler().SearchVideos(query.Name);
 
-                    ListBox box = new ListBox();
                     //var listitems = new List<Button>
                     //{
 
@@ -66,7 +66,8 @@ namespace Celeste.Views
 
                             Button button = new Button
                             {
-                                Style = new Style().BasedOn = FindResource("ListbuttonTheme") as Style,
+                                Name = video.Id,
+                                Style = new Style().BasedOn = FindResource("MenuButtonTheme") as Style,
                                 Content = new StackPanel
                                 {
                                     Orientation = Orientation.Horizontal,
@@ -80,9 +81,9 @@ namespace Celeste.Views
                                         new StackPanel {
 
                                             Children={
-                                            new Label { Content = video.Title, FontSize=20, Margin = new Thickness(20)},
+                                            new Label { Content = video.Title, FontSize=20, Margin = new Thickness(20,0,0,0)},
 
-                                            new Label {Content = video.Author, FontSize = 10, Margin = new Thickness(20)}
+                                            new Label {Content = video.Author, FontSize = 10, Margin = new Thickness(5)}
                                             }
                                         }
                                     }
@@ -110,7 +111,16 @@ namespace Celeste.Views
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
-            MessageBox.Show(clickedButton.Content.ToString());
+            
+        }
+
+        private void PlayVideo(Video video)
+        {
+
+            if (video != null)
+            {
+                Process.Start($"https://www.youtube.com/watch?v={video.Id}");
+            }
         }
 
 

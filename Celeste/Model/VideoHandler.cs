@@ -20,18 +20,11 @@ namespace Celeste.Model
 
         public Thumbnail Thumbnail { get; set; }
         
-
-        public override string ToString()
-        {
-            return Title;
-        }
-
-
     }
     public class VideoHandler
     {
         /// <summary>
-        /// Returns a list of videos of type video. Returns empty list if query was empty
+        /// Returns a list of videos of type video. Returns empty list if query was empty. Remember,the just append the id to the standard watch url to get the link to the video.
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
@@ -61,7 +54,7 @@ namespace Celeste.Model
                         Id = searchResult.Id.VideoId,
                         Title = searchResult.Snippet.Title,
                         Author = searchResult.Snippet.ChannelTitle,
-                        Thumbnail = searchResult.Snippet.Thumbnails.Default__
+                        Thumbnail = searchResult.Snippet.Thumbnails.Default__,
                     }
                     );
                 }
