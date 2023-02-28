@@ -69,9 +69,9 @@ namespace Celeste.Views
 
                             Button button = new Button
                             {
-                                Width = 700,
+                                Width = 1000,
                                 Tag = video.Id,
-                                Style = new Style().BasedOn = FindResource("MenubuttonTheme") as Style,
+                                Style = new Style().BasedOn = FindResource("ContentbuttonTheme") as Style,
                                 Content = new StackPanel
                                 {
                                     Orientation = Orientation.Horizontal,
