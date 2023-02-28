@@ -51,7 +51,7 @@ namespace Celeste.Views
                     var query = Person.GetInstance(Flow.User_ID).Triggers.OrderBy(x => rand.Next()).Take(1).First();
 
 
-                    var videos = new VideoHandler().SearchVideos(query.Name);
+                    var videos = new APIHandler().SearchVideos(query.Name);
 
                     
 
@@ -110,7 +110,7 @@ namespace Celeste.Views
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Container.Content = new NoConnection();
             }
@@ -119,34 +119,22 @@ namespace Celeste.Views
         private void btn_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
-            MessageBox.Show(clickedButton.Tag.ToString());
-            
-        }
-
-        private void PlayVideo(string id)
-        {
-
-            if (id != null)
+            try
             {
-                Process.Start($"https://www.youtube.com/watch?v={id}");
+
+                NavigationService.Navigate(new VideoViewer(clickedButton.Tag.ToString()));
             }
-        }
+            catch (Exception)
+            {
+                Container.Content = new NoConnection();
 
+            }
 
-        private void btn_books_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void btn_locations_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        NavigationService main;
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            main = this.NavigationService;
         }
     }
 }

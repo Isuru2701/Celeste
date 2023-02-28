@@ -1,0 +1,46 @@
+[0228/133346.352:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\ASUS\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: The system cannot find the path specified. (0x3)
+[0228/133348.675:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/133348.675:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/133348.846:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/133349.743:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/133349.743:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/133356.677:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836484 [5,4] will be ignored
+[0228/133356.677:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836484 [5,4] will be ignored
+[0228/133357.716:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836485 [5,5] will be ignored
+[0228/133357.716:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836485 [5,5] will be ignored
+[0228/133414.943:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738372 [8,4] will be ignored
+[0228/133414.943:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738372 [8,4] will be ignored
+[0228/135132.194:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/135132.196:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/135132.433:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/135132.433:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/135132.487:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/135329.829:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/135330.218:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/135330.219:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/135330.413:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/135330.413:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/135744.118:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/135744.119:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/135744.478:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/135744.478:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/135744.604:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/140120.085:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/140120.087:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/140120.489:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/140120.489:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/140120.710:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/140122.621:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=654897583&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=654897583') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/nSVR5AoWUcU (0)
+[0228/140327.890:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/140327.891:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/140328.111:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/140328.111:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/140328.220:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/140334.842:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=7971619&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=7971619') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/nSVR5AoWUcU (0)
+[0228/140500.904:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/140501.137:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/140501.137:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0228/140501.348:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/140501.349:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0228/140504.258:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=271167901&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=271167901') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/Y9A5wuTtblw (0)
+[0228/140509.267:WARNING:sync_reader.cc(175)] ASR: No room in socket buffer.: The pipe is being closed. (0xE8)

@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "q1GDdLkaaYH9HV52nUaqqH7S8Q3g/oZtjETbKNeXMDGWCBWrb0EgiVRrI62FqOjJPKQH8ZVsWYisa+a2gKsIPw==",
+  "dgSpecHash": "j9ahrsRY1FxL7CyhNzy/59mfGsRce68xQezCN4AEcWW/WBvBHkuAx9HoHn/GViNJmJwtpBfwPsQL2/rKEVYjLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Documents\\Programs\\Celeste\\Celeste\\Celeste\\Celeste.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\cef.redist.x64\\110.0.30\\cef.redist.x64.110.0.30.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\cef.redist.x86\\110.0.30\\cef.redist.x86.110.0.30.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\cefsharp.common\\110.0.300\\cefsharp.common.110.0.300.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\cefsharp.wpf\\110.0.300\\cefsharp.wpf.110.0.300.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\google.apis\\1.59.0\\google.apis.1.59.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\google.apis.auth\\1.59.0\\google.apis.auth.1.59.0.nupkg.sha512",

@@ -38,6 +38,10 @@
       "frameworks": {
         "net472": {
           "dependencies": {
+            "CefSharp.Wpf": {
+              "target": "Package",
+              "version": "[110.0.300, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"

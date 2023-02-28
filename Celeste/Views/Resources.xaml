@@ -9,77 +9,36 @@
       Title="Resources">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <Border Grid.Row="0"
+        <Frame x:Name="InfoViewer"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
                 Background="#141414"
                 x:Name="border_menu"/>
 
-        <Border Grid.Row="1"
+            <Border Grid.Row="1"
                 Background="#1A1A1A">
-            <Frame x:Name="Container"></Frame>
-        </Border>
+                <Frame x:Name="Container"></Frame>
+            </Border>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Grid.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF161122"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Grid.Resources>
-
-            <Button x:Name="btn_back"
-                    Height="50"
-                    Width="50"
-                    Grid.Column="0"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Click="btn_back_Click">
-                <Image Source="../Resources/back_btn.png"/>
-            </Button>
-
-            <StackPanel Grid.Column="1"
-                        Orientation="Horizontal">
-
-                <StackPanel.Resources>
+                <Grid.Resources>
                     <Style TargetType="{x:Type Button}">
-                        <Setter Property="Height" Value="50"/>
-                        <Setter Property="Width" Value="200"/>
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="#d8c6a0"/>
-                        <Setter Property="FontSize" Value="30"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="VerticalAlignment" Value="Bottom"/>
-                        <Setter Property="VerticalContentAlignment" Value="Center"/>
-                        <Setter Property="Margin" Value="10,0,0,0"/>
-
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}"
-                                            BorderBrush="#d8c6a0"
-                                            BorderThickness="0,0,0,10">
+                                    <Border Background="{TemplateBinding Background}">
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
                                 </ControlTemplate>
@@ -88,27 +47,71 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#d8c6a0"/>
-                                <Setter Property="Foreground" Value="{Binding ElementName=border_menu}"/>
+                                <Setter Property="Background" Value="#FF161122"/>
                             </Trigger>
                         </Style.Triggers>
-
                     </Style>
-                </StackPanel.Resources>
+                </Grid.Resources>
 
-                <Button x:Name="btn_videos" Content="Videos"
+                <Button x:Name="btn_back"
+                    Height="50"
+                    Width="50"
+                    Grid.Column="0"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Click="btn_back_Click">
+                    <Image Source="../Resources/back_btn.png"/>
+                </Button>
+
+                <StackPanel Grid.Column="1"
+                        Orientation="Horizontal">
+
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Height" Value="50"/>
+                            <Setter Property="Width" Value="200"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#d8c6a0"/>
+                            <Setter Property="FontSize" Value="30"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="VerticalAlignment" Value="Bottom"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="10,0,0,0"/>
+
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="#d8c6a0"
+                                            BorderThickness="0,0,0,10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#d8c6a0"/>
+                                    <Setter Property="Foreground" Value="{Binding ElementName=border_menu}"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <Button x:Name="btn_videos" Content="Videos"
                         Click="btn_videos_Click"/>
 
-                <Button x:Name="btn_books" Content="Books"
-                        Click="btn_books_Click"/>
-
-                <Button x:Name="btn_locations" Content="Locations"
+                    <Button x:Name="btn_locations" Content="Locations"
                         Click="btn_locations_Click"/>
 
 
-            </StackPanel>
+                </StackPanel>
 
 
+            </Grid>
         </Grid>
     </Grid>
+
 </Page>

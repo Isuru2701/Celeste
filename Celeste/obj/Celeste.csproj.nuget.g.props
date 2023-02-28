@@ -16,6 +16,9 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.ml.cpumath\1.7.1\build\netstandard2.0\Microsoft.ML.CpuMath.props" Condition="Exists('$(NuGetPackageRoot)microsoft.ml.cpumath\1.7.1\build\netstandard2.0\Microsoft.ML.CpuMath.props')" />
     <Import Project="$(NuGetPackageRoot)entityframework\6.4.4\buildTransitive\EntityFramework.props" Condition="Exists('$(NuGetPackageRoot)entityframework\6.4.4\buildTransitive\EntityFramework.props')" />
+    <Import Project="$(NuGetPackageRoot)cef.redist.x86\110.0.30\buildTransitive\cef.redist.x86.props" Condition="Exists('$(NuGetPackageRoot)cef.redist.x86\110.0.30\buildTransitive\cef.redist.x86.props')" />
+    <Import Project="$(NuGetPackageRoot)cef.redist.x64\110.0.30\buildTransitive\cef.redist.x64.props" Condition="Exists('$(NuGetPackageRoot)cef.redist.x64\110.0.30\buildTransitive\cef.redist.x64.props')" />
+    <Import Project="$(NuGetPackageRoot)cefsharp.common\110.0.300\buildTransitive\CefSharp.Common.props" Condition="Exists('$(NuGetPackageRoot)cefsharp.common\110.0.300\buildTransitive\CefSharp.Common.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgScottPlot_WPF Condition=" '$(PkgScottPlot_WPF)' == '' ">C:\Users\ASUS\.nuget\packages\scottplot.wpf\4.1.60</PkgScottPlot_WPF>
