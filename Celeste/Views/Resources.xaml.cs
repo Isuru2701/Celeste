@@ -32,8 +32,7 @@ namespace Celeste.Views
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
-
-            NavigationService.GoBack();
+            main.GoBack();
         }
 
         ListBox box = new ListBox();
@@ -41,10 +40,11 @@ namespace Celeste.Views
         private void btn_videos_Click(object sender, RoutedEventArgs e)
         {
 
-            var rand = new Random();
-            int i = Person.GetInstance(Flow.User_ID).FetchTriggers();
             try
             {
+                var rand = new Random();
+                int i = Person.GetInstance(Flow.User_ID).FetchTriggers();
+
                 if (i > 0)
                 {
 
@@ -66,8 +66,9 @@ namespace Celeste.Views
 
                             Button button = new Button
                             {
-                                Name = video.Id,
-                                Style = new Style().BasedOn = FindResource("MenuButtonTheme") as Style,
+                                Width = 700,
+                                Name = $"{video.Id}",
+                                Style = new Style().BasedOn = FindResource("MenubuttonTheme") as Style,
                                 Content = new StackPanel
                                 {
                                     Orientation = Orientation.Horizontal,
@@ -93,14 +94,15 @@ namespace Celeste.Views
                             button.Click += new RoutedEventHandler(btn_Click);
                             box.Items.Add(button);
                         }
-                        
-                        Container.Content = box;
-                    }
-                    else
-                    {
-                        Container.Content = new InsufficientInfo();
                     }
                 }
+
+                else
+                {
+                    if (Container.Source != new Uri("../Controls/InsufficientInfo.xaml", UriKind.Relative))
+                        Container.Content = new InsufficientInfo();
+                }
+
             }
             catch (Exception)
             {
@@ -114,12 +116,12 @@ namespace Celeste.Views
             
         }
 
-        private void PlayVideo(Video video)
+        private void PlayVideo(string id)
         {
 
-            if (video != null)
+            if (id != null)
             {
-                Process.Start($"https://www.youtube.com/watch?v={video.Id}");
+                Process.Start($"https://www.youtube.com/watch?v={id}");
             }
         }
 
@@ -132,6 +134,12 @@ namespace Celeste.Views
         private void btn_locations_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        NavigationService main;
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            main = this.NavigationService;
         }
     }
 }

@@ -106,7 +106,7 @@ namespace Celeste.Model
         }
 
         /// <summary>
-        /// returns number of rows in query result
+        /// returns number of rows in query result. returns 0 if nothing's there.
         /// </summary>
         /// <exception cref="Exception"></exception>
         public int FetchTriggers()
@@ -133,7 +133,8 @@ namespace Celeste.Model
                                 triggers.Add(new Record { Name = result.trigger_name, Date = result.entry_date });
 
                             }
-                        return results.Count;
+
+                            return results.Count;
                     }
                     return 0;
                 }
