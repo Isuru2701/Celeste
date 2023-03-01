@@ -39,7 +39,8 @@ namespace Celeste.Views
 
         private void btn_videos_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            
             try
             {
                 var rand = new Random();
@@ -134,7 +135,7 @@ namespace Celeste.Views
 
         private void btn_locations_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new Loading();
         }
     }
 }

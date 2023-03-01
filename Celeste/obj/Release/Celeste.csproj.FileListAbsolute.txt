@@ -290,3 +290,5 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\System.Text
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.exe.config
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\BrowserViewer.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\BrowserViewer.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Map.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Map.baml

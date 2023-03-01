@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Celeste.Templates"
-             xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="Celeste.Templates.Loading"
+             xmlns:local="clr-namespace:Celeste.Controls"
+             xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="Celeste.Controls.Loading"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="1280">
+             d:DesignHeight="450" d:DesignWidth="1280">
 
     <Grid Background="#28284a">
 
@@ -15,31 +15,30 @@
                 <Setter Property="Foreground" Value="#d8c6a0"/>
                 <Setter Property="DotDelayTime" Value="100"/>
                 <Setter Property="DotSpeed" Value="1.15"/>
-                <Setter Property="DotDiameter" Value="25"/>
+                <Setter Property="DotDiameter" Value="20"/>
                 <Setter Property="DotInterval" Value="0.5"/>
             </Style>
         </Grid.Resources>
 
-        <hc:LoadingLine HorizontalAlignment="Left"
-                        Margin="85,332,0,0"
-                        VerticalAlignment="Top"
-                        Width="300"
-                        FlowDirection="RightToLeft"/>
+        <hc:LoadingLine HorizontalAlignment="Center"
+                        Margin="0,0,770,0"
+                        VerticalAlignment="Center"
+                        Width="400"
+                        FlowDirection="RightToLeft" Height="20"/>
 
 
         <Image Source="../Resources/insights_btn.png"
-               Width="500"
-               Margin="0,0,0,40"/>
+               Margin="547,102,547,102"/>
 
-        <hc:LoadingLine HorizontalAlignment="Left"
-                        Margin="895,0,0,40"
+        <hc:LoadingLine HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Width="300"/>
+                        Margin="770,0,0,0"
+                        Width="400"/>
 
         <Label Content="Loading"
-               VerticalAlignment="Top"
+               VerticalAlignment="Bottom"
                HorizontalAlignment="Center"
-               FontSize="50" Margin="0,595,0,0"/>
+               FontSize="50" Margin="0,0,0,90"/>
 
 
 

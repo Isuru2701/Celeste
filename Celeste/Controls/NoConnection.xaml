@@ -1,4 +1,4 @@
-﻿<UserControl xmlns:Templates="clr-namespace:Celeste.Templates"  x:Class="Celeste.Controls.NoConnection"
+﻿<UserControl xmlns:Templates="clr-namespace:Celeste.Controls"  x:Class="Celeste.Controls.NoConnection"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

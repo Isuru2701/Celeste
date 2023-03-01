@@ -62,3 +62,33 @@
 [0228/151414.187:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836485 [5,5] will be ignored
 [0228/151417.596:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=1067008247&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=1067008247') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/0TEuUTT_k4E (0)
 [0228/151532.587:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0228/202115.068:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/202115.602:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/202120.080:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/202120.626:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/202130.098:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/202130.634:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/202146.518:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738372 [8,4] will be ignored
+[0228/202146.519:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738372 [8,4] will be ignored
+[0228/202146.765:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738373 [8,5] will be ignored
+[0228/202146.765:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738373 [8,5] will be ignored
+[0228/202146.865:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/202153.905:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=484585776&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=484585776') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/Y9A5wuTtblw (0)
+[0228/202220.121:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 1
+[0228/202315.752:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0228/210943.163:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/210943.629:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/210948.190:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/210948.656:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/210958.206:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0228/211008.841:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738372 [8,4] will be ignored
+[0228/211008.842:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738372 [8,4] will be ignored
+[0228/211008.996:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738373 [8,5] will be ignored
+[0228/211008.996:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738373 [8,5] will be ignored
+[0228/211009.013:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0228/211015.351:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 47244640260 [11,4] will be ignored
+[0228/211015.351:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 47244640260 [11,4] will be ignored
+[0228/211015.476:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 47244640261 [11,5] will be ignored
+[0228/211015.476:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 47244640261 [11,5] will be ignored
+[0228/211018.544:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=655806446&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=655806446') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/a5l5BD-ibWQ (0)
+[0228/211143.630:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

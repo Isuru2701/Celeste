@@ -16,21 +16,16 @@ using System.Windows.Shapes;
 namespace Celeste.Controls
 {
     /// <summary>
-    /// Interaction logic for Loading.xaml
+    /// Interaction logic for Map.xaml
     /// </summary>
-    public partial class Loading : UserControl
+    public partial class Map : UserControl
     {
-        public Loading()
+        public Map()
         {
             InitializeComponent();
         }
 
-        private void MediaElement_Unloaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        private void loadMap()
         {
 
         }

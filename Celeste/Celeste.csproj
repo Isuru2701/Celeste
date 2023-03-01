@@ -72,6 +72,9 @@
     <Compile Include="Controls\InsufficientInfo.xaml.cs">
       <DependentUpon>InsufficientInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NoConnection.xaml.cs">
       <DependentUpon>NoConnection.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\InsufficientInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
