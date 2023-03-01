@@ -41,28 +41,54 @@ namespace Celeste.Controls
 
         public void LoadTrigger()
         {
-            int rows = Person.GetInstance(Flow.User_ID).FetchTriggers();
-            if (rows > 0)
+            try
             {
-                foreach(Record record in Person.GetInstance(Flow.User_ID).Triggers)
+
+                int rows = Person.GetInstance(Flow.User_ID).FetchTriggers();
+                if (rows > 0)
                 {
-                    sectors.Add(record.Name);
+                    foreach (Record record in Person.GetInstance(Flow.User_ID).Triggers)
+                    {
+                        sectors.Add(record.Name);
+                    }
+                    Plot();
                 }
-                Plot();
+                else
+                {
+                    throw new Exception("PIECHART:NO_DATA_ERROR");
+                }
             }
+
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("PIECHART:ARG_NULL_ERROR");
+            }
+
 
         }
         public void LoadComfort()
         {
-            int rows = Person.GetInstance(Flow.User_ID).FetchComforts();
-            if (rows > 0)
+            try
             {
-                foreach (Record record in Person.GetInstance(Flow.User_ID).Comforts)
-                {
-                    sectors.Add(record.Name);
-                }
-                Plot();
 
+                int rows = Person.GetInstance(Flow.User_ID).FetchComforts();
+                if (rows > 0)
+                {
+                    foreach (Record record in Person.GetInstance(Flow.User_ID).Comforts)
+                    {
+                        sectors.Add(record.Name);
+                    }
+                    Plot();
+
+                }
+                else
+                {
+                    throw new Exception("PIECHART:NO_DATA_ERROR");
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("PIECHART:ARG_NULL_ERROR");
             }
         }
 

@@ -30,7 +30,7 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Loading());
+            MainFrame.Navigate(new Login());
             OverlayFrame = new Frame();
         }
     }
