@@ -27,7 +27,7 @@ namespace Celeste.Controls
         public BrowserViewer()
         {
             InitializeComponent();
-            browser.Load("");
+            browser.Load("https://mysupportforums.org/");
         }
 
         public BrowserViewer(string id)

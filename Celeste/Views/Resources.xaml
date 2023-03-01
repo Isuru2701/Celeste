@@ -106,6 +106,9 @@
                     <Button x:Name="btn_locations" Content="Locations"
                         Click="btn_locations_Click"/>
 
+                    <Button x:Name="btn_forum" Content="Forum"
+                        Click="btn_forum_Click"/>
+
 
                 </StackPanel>
 

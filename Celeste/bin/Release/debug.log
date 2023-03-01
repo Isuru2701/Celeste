@@ -92,3 +92,13 @@
 [0228/211015.476:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 47244640261 [11,5] will be ignored
 [0228/211018.544:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=655806446&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230226&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=655806446') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/a5l5BD-ibWQ (0)
 [0228/211143.630:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0301/102301.216:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 33
+[0301/102306.167:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 1
+[0301/102306.167:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 5
+[0301/102306.285:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 3
+[0301/102306.285:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 7
+[0301/102306.285:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 9
+[0301/102306.285:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 11
+[0301/102311.449:WARNING:spdy_session.cc(3484)] Received HEADERS for invalid stream 39
+[0301/102324.288:ERROR:ssl_client_socket_impl.cc(985)] handshake failed; returned -1, SSL error code 1, net_error -100
+[0301/102343.320:ERROR:ssl_client_socket_impl.cc(985)] handshake failed; returned -1, SSL error code 1, net_error -100

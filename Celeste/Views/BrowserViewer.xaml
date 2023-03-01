@@ -25,7 +25,7 @@
                     Click="btn_back_Click"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Margin="119,0,0,0"
+                Margin="40,0,0,0"
                 Style="{StaticResource DiamondButtonTheme}">
             <Image Source="../Resources/back_btn.png"/>
         </Button>
@@ -33,9 +33,10 @@
         <Border BorderBrush="#d8c6a0"
                 BorderThickness="10"
                 CornerRadius="10"
-                Margin="209,45,209,45">
+                Margin="106,45,106,45">
 
             <wpf:ChromiumWebBrowser
+                ResizeHackEnabled="True"
                 x:Name="browser" Address="https://www.google.com">
                 
             </wpf:ChromiumWebBrowser>

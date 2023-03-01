@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Windows.Devices.Geolocation;
+using Windows.UI.Xaml.Controls.Maps;
 
 namespace Celeste.Controls
 {
@@ -25,9 +27,14 @@ namespace Celeste.Controls
             InitializeComponent();
         }
 
-        private void loadMap()
+        private async void MapControl_Loaded(object sender, RoutedEventArgs e)
         {
+            // Specify a known location.
+            BasicGeoposition cityPosition = new BasicGeoposition() { Latitude = 47.604, Longitude = -122.329 };
+            var cityCenter = new Geopoint(cityPosition);
 
+            // Set the map location.
+            await (sender as MapControl).TrySetViewAsync(cityCenter, 12);
         }
     }
 }

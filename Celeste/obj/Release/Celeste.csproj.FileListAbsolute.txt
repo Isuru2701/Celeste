@@ -292,3 +292,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Brows
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\BrowserViewer.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Map.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Map.baml
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Quartz.dll

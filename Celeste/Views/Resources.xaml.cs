@@ -135,7 +135,12 @@ namespace Celeste.Views
 
         private void btn_locations_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new Loading();
+            Container.Content = new Map();
+        }
+
+        private void btn_forum_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Content = new BrowserViewer();
         }
     }
 }

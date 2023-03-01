@@ -9,6 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <m:Map x:Name="map"
+               Loaded="MapControl_Loaded"
             CredentialsProvider="z9H494xKsmLeRH54pqdk~9nAMKpxEhOhR1wmFStBGTw~AhiJOUmhpcVeSjvM3YHtI7jYKeXVwROaA0fZxLCrxLPnorqzNnquLGrDIxBt_KCR"/>
         
     </Grid>
