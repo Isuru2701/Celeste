@@ -294,3 +294,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Ma
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Controls\Map.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Quartz.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Report.g.cs
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Report.baml

@@ -19,6 +19,7 @@ using System.Drawing;
 using System.Windows.Navigation;
 using Celeste.Model.Data;
 using CefSharp.DevTools.WebAudio;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Celeste
 {
@@ -51,11 +52,11 @@ namespace Celeste
                 if (selector.ShowDialog() == true)
                 {
 
-                    //store a local copy AND upload to database
                     if (File.Exists(selector.FileName))
                     {
                         using (var context = new LunarContext())
                         {
+
                             byte[] imageData;
 
                             using (System.IO.FileStream fs = new System.IO.FileStream(selector.FileName, System.IO.FileMode.Open))
@@ -70,10 +71,26 @@ namespace Celeste
                                 picture = imageData
                             };
 
-                            context.ProfilePictures.Add(pic);
+                            //Check if there is any pre-existing profilpicture
+                            //if there is, update instead
+
+                            var query = context.ProfilePictures.Find(Flow.User_ID);
+
+                            if (query != null)
+                            {
+                                query.picture = pic.picture;
+
+                            }
+                            else
+                            {
+                                context.ProfilePictures.Add(pic);
+                            }
+
                             context.SaveChanges();
 
                         }
+
+                        pic_pfp.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(selector.FileName));
 
                     }
                 }
@@ -94,7 +111,7 @@ namespace Celeste
         {
             try
             {
-                pic_pfp.Source = new BitmapImage(new Uri("Resources/logo(large).png", UriKind.Relative));
+                pic_pfp.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
             }
             catch (Exception ex)
             {
@@ -121,31 +138,23 @@ namespace Celeste
                     if (image != null)
                     {
                         var imageData = image.picture;
+                        var bitmapImage = new System.Windows.Media.Imaging.BitmapImage();
 
-                        using (var ms = new System.IO.MemoryStream(imageData))
+                        using (var memoryStream = new System.IO.MemoryStream(imageData))
                         {
-                            var img = new System.Drawing.Bitmap(ms);
-                            var bitmapImage = new System.Windows.Media.Imaging.BitmapImage();
-
-                            using (var memoryStream = new System.IO.MemoryStream())
-                            {
-                                img.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Bmp);
-                                memoryStream.Position = 0;
-                                bitmapImage.BeginInit();
-                                bitmapImage.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
-                                bitmapImage.StreamSource = memoryStream;
-                                bitmapImage.EndInit();
-                            }
-
-                            var imageControl = new System.Windows.Controls.Image();
-                            imageControl.Source = bitmapImage;
+                            bitmapImage.BeginInit();
+                            bitmapImage.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                            bitmapImage.StreamSource = memoryStream;
+                            bitmapImage.EndInit();
                         }
+
+                        pic_pfp.Source = bitmapImage;                   
                     }
                 }
             }
             catch (Exception)
             {
-                
+
             }
 
 
