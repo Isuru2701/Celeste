@@ -17,7 +17,7 @@ using System.Threading;
 using System.Windows.Media.Imaging;
 using Notifications.Wpf;
 using Microsoft.Win32.TaskScheduler;
-using Quartz;
+using System.Collections.Concurrent;
 
 namespace Celeste.Model
 {
@@ -63,31 +63,11 @@ namespace Celeste.Model
                     "What did you accomplish today?"
                 };
 
-            
+
 
         }
 
-        public static void DeleteReminder()
-        {
-            if (FileHandler.ResourceExists(reminderfile))
-            {
-                FileHandler.Write("", reminderfile);
-            }
 
-            // Create the toast notifier
-            ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
-
-            // Get the list of scheduled toasts that haven't appeared yet
-            IReadOnlyList<ScheduledToastNotification> scheduledToasts = notifier.GetScheduledToastNotifications();
-
-            // Find our scheduled toast we want to cancel
-            var toRemove = scheduledToasts.FirstOrDefault(i => i.Tag == "10" && i.Group == "Reminder");
-            if (toRemove != null)
-            {
-                // And remove it from the schedule
-                notifier.RemoveFromSchedule(toRemove);
-            }
-        }
 
         /// <summary>
         /// returns the reminder time for the current user stored in reminder.txt returns null if exception occurs.
@@ -112,7 +92,6 @@ namespace Celeste.Model
             }
         }
     }
-
 
 
 }

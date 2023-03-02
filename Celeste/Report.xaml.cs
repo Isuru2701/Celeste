@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Windows.Devices.Geolocation;
-using Windows.UI.Xaml.Controls.Maps;
 
-namespace Celeste.Controls
+namespace Celeste
 {
     /// <summary>
-    /// Interaction logic for Map.xaml
+    /// Interaction logic for Report.xaml
     /// </summary>
-    public partial class Map : UserControl
+    public partial class Report : Window
     {
-        public Map()
+        public Report()
         {
             InitializeComponent();
-        }
-
-        private async void MapControl_Loaded(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

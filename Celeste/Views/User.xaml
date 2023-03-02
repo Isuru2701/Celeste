@@ -39,7 +39,7 @@
         </Border>
         <Button x:Name="changepfp_btn" Background="Transparent"
                 Height="50" Width="50"
-                Margin="150,225,0,325"
+                Margin="245,225,0,325"
                 HorizontalAlignment="Left"
                 Style="{StaticResource DiamondButtonTheme}"
                 Click="changepfp_btn_Click">
@@ -48,7 +48,7 @@
 
         <Button x:Name="resetpfp_btn" Background="Transparent"
                 Height="50" Width="50"
-                Margin="205,225,0,325"
+                Margin="300,225,0,325"
                 HorizontalAlignment="Left"
                 ToolTip="Reset Profile Picture"
                 Style="{StaticResource DiamondButtonTheme}"
@@ -72,7 +72,6 @@
                 <Label  Content="Username"/>
                 <Label  Content="Email" />
                 <Label  Content="User Id" />
-                <Label Content="Active Since"/>
                 <!-- Add a change password button-->
                 
             </StackPanel>
