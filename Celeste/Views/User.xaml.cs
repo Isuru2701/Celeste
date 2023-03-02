@@ -15,11 +15,10 @@ using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
 using Celeste.Model;
-
-
-using WPFCustomMessageBox;
 using System.Drawing;
 using System.Windows.Navigation;
+using Celeste.Model.Data;
+using CefSharp.DevTools.WebAudio;
 
 namespace Celeste
 {
@@ -41,21 +40,6 @@ namespace Celeste
         }
 
 
-        private byte[] _rawImageData;
-        public byte[] RawImageData
-        {
-            get { return _rawImageData; }
-            set
-            {
-
-                //check if the new image is different.
-                if (value != _rawImageData)
-                {
-                    _rawImageData = value;
-                }
-            }
-        }
-
         private void changepfp_btn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -70,6 +54,27 @@ namespace Celeste
                     //store a local copy AND upload to database
                     if (File.Exists(selector.FileName))
                     {
+                        using (var context = new LunarContext())
+                        {
+                            byte[] imageData;
+
+                            using (System.IO.FileStream fs = new System.IO.FileStream(selector.FileName, System.IO.FileMode.Open))
+                            {
+                                imageData = new byte[fs.Length];
+                                fs.Read(imageData, 0, (int)fs.Length);
+                            }
+
+                            var pic = new ProfilePicture
+                            {
+                                enduser_id = Flow.User_ID,
+                                picture = imageData
+                            };
+
+                            context.ProfilePictures.Add(pic);
+                            context.SaveChanges();
+
+                        }
+
                     }
                 }
 
@@ -107,13 +112,40 @@ namespace Celeste
             lbl_user_id.Content = Person.GetInstance(Flow.User_ID).user_id;
 
 
+            try
+            {
+                using (var context = new LunarContext())
+                {
+                    var image = context.ProfilePictures.FirstOrDefault(i => i.enduser_id == Flow.User_ID);
 
-            if (File.Exists($"{Flow.BaseAddress}../../Resources/profile_pic.png"))
-            {
+                    if (image != null)
+                    {
+                        var imageData = image.picture;
+
+                        using (var ms = new System.IO.MemoryStream(imageData))
+                        {
+                            var img = new System.Drawing.Bitmap(ms);
+                            var bitmapImage = new System.Windows.Media.Imaging.BitmapImage();
+
+                            using (var memoryStream = new System.IO.MemoryStream())
+                            {
+                                img.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Bmp);
+                                memoryStream.Position = 0;
+                                bitmapImage.BeginInit();
+                                bitmapImage.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                                bitmapImage.StreamSource = memoryStream;
+                                bitmapImage.EndInit();
+                            }
+
+                            var imageControl = new System.Windows.Controls.Image();
+                            imageControl.Source = bitmapImage;
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception)
             {
-                resetpfp_btn_Click(sender, e);
+                
             }
 
 

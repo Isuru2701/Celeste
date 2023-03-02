@@ -58,7 +58,7 @@
             FontSize="60"
             ToolTip="Remove Notification"
             Height="100"
-            Width="100" Click="btn_remove_Click">
+            Width="100">
 
         </Button>
 

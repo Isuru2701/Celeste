@@ -90,11 +90,5 @@ namespace Celeste.Controls
                 MessageBox.Show("TIMEPICKER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        private void btn_remove_Click(object sender, RoutedEventArgs e)
-        {
-            Reminder.DeleteReminder();
-            timepicker.Time = new AnalogueTime(0, 0, Meridiem.AM);
-        }
     }
 }
