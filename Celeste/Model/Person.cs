@@ -1,13 +1,16 @@
 ﻿using Celeste.Model.Data;
+using Microsoft.Win32;
 using ScottPlot.Renderable;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 
 // CONTAINS THE DATA FOR THE CURRENT USER
@@ -45,7 +48,20 @@ namespace Celeste.Model
         public DateTime dob { get; set; }
         public string gender { get; set; }
 
-        private Image profilepic;
+        private BitmapImage profilepic;
+
+        public BitmapImage ProfilePic
+        {
+            get
+            {
+                GetPic();
+            }
+            set
+            {
+
+            }
+
+        }
 
         private Conn connection = new Conn();
 
@@ -69,6 +85,74 @@ namespace Celeste.Model
             }
 
             return instance;
+        }
+
+
+        public static BitmapImage GetPic()
+        {
+
+            try
+            {
+                OpenFileDialog selector = new OpenFileDialog();
+                selector.CheckFileExists = true;
+                selector.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg;*.jpeg)|*.jpg;*.jpeg|All files (*.*)|*.*"; ;
+
+                if (selector.ShowDialog() == true)
+                {
+
+                    if (File.Exists(selector.FileName))
+                    {
+                        using (var context = new LunarContext())
+                        {
+
+                            byte[] imageData;
+
+                            using (System.IO.FileStream fs = new System.IO.FileStream(selector.FileName, System.IO.FileMode.Open))
+                            {
+                                imageData = new byte[fs.Length];
+                                fs.Read(imageData, 0, (int)fs.Length);
+                            }
+
+                            var pic = new ProfilePicture
+                            {
+                                enduser_id = Flow.User_ID,
+                                picture = imageData
+                            };
+
+                            //Check if there is any pre-existing profilpicture
+                            //if there is, update instead
+
+                            var query = context.ProfilePictures.Where(u => u.enduser_id == Flow.User_ID).FirstOrDefault();
+
+                            if (query.picture != null)
+                            {
+                                query = pic;
+
+                            }
+                            else
+                            {
+                                context.ProfilePictures.Add(pic);
+                            }
+
+                            context.SaveChanges();
+
+                        }
+                    }
+                }
+
+                return new BitmapImage(new Uri(selector.FileName));
+
+            }
+
+            catch (NotSupportedException)
+            {
+                MessageBox.Show("Please select an image", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+            catch (Exception)
+            {
+                throw new Exception("PERSON: IMAGE_FETCH_ERROR");
+            }
         }
 
         public void FetchInfo()

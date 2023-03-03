@@ -45,61 +45,10 @@ namespace Celeste
         {
             try
             {
-                OpenFileDialog selector = new OpenFileDialog();
-                selector.CheckFileExists = true;
-                selector.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg;*.jpeg)|*.jpg;*.jpeg|All files (*.*)|*.*"; ;
 
-                if (selector.ShowDialog() == true)
-                {
-
-                    if (File.Exists(selector.FileName))
-                    {
-                        using (var context = new LunarContext())
-                        {
-
-                            byte[] imageData;
-
-                            using (System.IO.FileStream fs = new System.IO.FileStream(selector.FileName, System.IO.FileMode.Open))
-                            {
-                                imageData = new byte[fs.Length];
-                                fs.Read(imageData, 0, (int)fs.Length);
-                            }
-
-                            var pic = new ProfilePicture
-                            {
-                                enduser_id = Flow.User_ID,
-                                picture = imageData
-                            };
-
-                            //Check if there is any pre-existing profilpicture
-                            //if there is, update instead
-
-                            var query = context.ProfilePictures.Find(Flow.User_ID);
-
-                            if (query != null)
-                            {
-                                query.picture = pic.picture;
-
-                            }
-                            else
-                            {
-                                context.ProfilePictures.Add(pic);
-                            }
-
-                            context.SaveChanges();
-
-                        }
-
-                        pic_pfp.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(selector.FileName));
-
-                    }
-                }
 
             }
-            catch (NotSupportedException)
-            {
-                MessageBox.Show("Please select an image", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
+
 
             catch (Exception ex)
             {
@@ -112,6 +61,18 @@ namespace Celeste
             try
             {
                 pic_pfp.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
+
+                using (var context = new LunarContext())
+                {
+                    var query = context.ProfilePictures.Where(u => u.enduser_id == Flow.User_ID).FirstOrDefault();
+
+                    if (query.picture != null)
+                    {
+                        query.picture = null;
+                    }
+
+                    context.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -135,7 +96,7 @@ namespace Celeste
                 {
                     var image = context.ProfilePictures.FirstOrDefault(i => i.enduser_id == Flow.User_ID);
 
-                    if (image != null)
+                    if (image.picture != null)
                     {
                         var imageData = image.picture;
                         var bitmapImage = new System.Windows.Media.Imaging.BitmapImage();
@@ -152,6 +113,7 @@ namespace Celeste
                     }
                 }
             }
+
             catch (Exception)
             {
 
