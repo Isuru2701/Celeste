@@ -9,9 +9,8 @@ namespace Celeste.Model.Data
     [Table("ProfilePicture")]
     public partial class ProfilePicture
     {
-        [Key]
-        public int picture_id { get; set; }
 
+        [Key]
         public int? enduser_id { get; set; }
 
         public byte[] picture { get; set; }

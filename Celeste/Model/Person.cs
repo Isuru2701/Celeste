@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Windows.Media.Devices.Core;
 
 
 // CONTAINS THE DATA FOR THE CURRENT USER
@@ -50,19 +51,6 @@ namespace Celeste.Model
 
         private BitmapImage profilepic;
 
-        public BitmapImage ProfilePic
-        {
-            get
-            {
-                GetPic();
-            }
-            set
-            {
-
-            }
-
-        }
-
         private Conn connection = new Conn();
 
 
@@ -88,71 +76,30 @@ namespace Celeste.Model
         }
 
 
-        public static BitmapImage GetPic()
+        public BitmapImage GetPic()
         {
+            byte[] imagedata;
 
-            try
+            using (var context = new LunarContext())
             {
-                OpenFileDialog selector = new OpenFileDialog();
-                selector.CheckFileExists = true;
-                selector.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg;*.jpeg)|*.jpg;*.jpeg|All files (*.*)|*.*"; ;
+                var query = context.ProfilePictures.Find(user_id);
 
-                if (selector.ShowDialog() == true)
+                if (query != null)
                 {
+                    imagedata = query.picture;
+                    profilepic = new BitmapImage();
 
-                    if (File.Exists(selector.FileName))
+                    using (var stream = new MemoryStream(imagedata))
                     {
-                        using (var context = new LunarContext())
-                        {
-
-                            byte[] imageData;
-
-                            using (System.IO.FileStream fs = new System.IO.FileStream(selector.FileName, System.IO.FileMode.Open))
-                            {
-                                imageData = new byte[fs.Length];
-                                fs.Read(imageData, 0, (int)fs.Length);
-                            }
-
-                            var pic = new ProfilePicture
-                            {
-                                enduser_id = Flow.User_ID,
-                                picture = imageData
-                            };
-
-                            //Check if there is any pre-existing profilpicture
-                            //if there is, update instead
-
-                            var query = context.ProfilePictures.Where(u => u.enduser_id == Flow.User_ID).FirstOrDefault();
-
-                            if (query.picture != null)
-                            {
-                                query = pic;
-
-                            }
-                            else
-                            {
-                                context.ProfilePictures.Add(pic);
-                            }
-
-                            context.SaveChanges();
-
-                        }
+                        profilepic.BeginInit();
+                        profilepic.StreamSource = stream;
+                        profilepic.EndInit();
                     }
+
+                    return profilepic;
                 }
-
-                return new BitmapImage(new Uri(selector.FileName));
-
             }
-
-            catch (NotSupportedException)
-            {
-                MessageBox.Show("Please select an image", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-
-            catch (Exception)
-            {
-                throw new Exception("PERSON: IMAGE_FETCH_ERROR");
-            }
+            return null;
         }
 
         public void FetchInfo()

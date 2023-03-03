@@ -48,7 +48,10 @@ namespace Celeste
 
 
             }
-
+            catch (NotSupportedException)
+            {
+                MessageBox.Show("Please select an image", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
             catch (Exception ex)
             {
