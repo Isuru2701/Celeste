@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using ScottPlot.Renderable;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using Windows.Media.Devices.Core;
+using Windows.System;
 
 
 // CONTAINS THE DATA FOR THE CURRENT USER
@@ -50,6 +52,13 @@ namespace Celeste.Model
         public string gender { get; set; }
 
         private BitmapImage profilepic;
+
+        public BitmapImage ProfilePic
+        {
+            get { return profilepic; }
+            set { profilepic = value; }
+        }
+
 
         private Conn connection = new Conn();
 
@@ -96,10 +105,64 @@ namespace Celeste.Model
                         profilepic.EndInit();
                     }
 
+                    ProfilePic = profilepic;
                     return profilepic;
                 }
             }
             return null;
+        }
+
+        public void SetPic()
+        {
+
+            //select file -> convert to binary -> store binary in db
+            try
+            {
+                OpenFileDialog selector = new OpenFileDialog();
+                selector.CheckFileExists = true;
+                selector.Filter = "Image Files (*.png, *.jpg, *.jpeg)|*.png;*.jpg;*.jpeg";
+
+                if (selector.ShowDialog() == true)
+                {
+                    using (var context = new LunarContext())
+                    {
+                        byte[] data;
+
+                        using(FileStream fs = new FileStream(selector.FileName, FileMode.Open))
+                        {
+                            data = new byte[fs.Length];
+                            fs.Read(data, 0, (int)fs.Length);
+                        }
+
+                        var existingImage = context.ProfilePictures.Find(user_id);
+                        if (existingImage != null)
+                        {
+                            existingImage.picture = data;
+                        }
+                        else
+                        {
+                            var image = new ProfilePicture
+                            {
+                                enduser_id = user_id,
+                                picture = data
+                            };
+                            context.ProfilePictures.Add(image);
+                        }
+
+                        context.SaveChanges();
+                    }
+
+                    ProfilePic = new BitmapImage(new Uri(selector.FileName));
+
+                }
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception("PERSON: NO_CONN_ERROR " + ex.InnerException.Message);
+            }
+
+
+           
         }
 
         public void FetchInfo()

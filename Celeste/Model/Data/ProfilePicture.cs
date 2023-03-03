@@ -11,7 +11,7 @@ namespace Celeste.Model.Data
     {
 
         [Key]
-        public int? enduser_id { get; set; }
+        public int enduser_id { get; set; }
 
         public byte[] picture { get; set; }
 

@@ -19,7 +19,6 @@ using System.Drawing;
 using System.Windows.Navigation;
 using Celeste.Model.Data;
 using CefSharp.DevTools.WebAudio;
-using Windows.UI.Xaml.Media.Imaging;
 
 namespace Celeste
 {
@@ -45,8 +44,7 @@ namespace Celeste
         {
             try
             {
-
-
+                Person.GetInstance(Flow.User_ID).SetPic();
             }
             catch (NotSupportedException)
             {
@@ -63,7 +61,7 @@ namespace Celeste
         {
             try
             {
-                pic_pfp.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
+                pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
 
                 using (var context = new LunarContext())
                 {
@@ -72,6 +70,7 @@ namespace Celeste
                     if (query.picture != null)
                     {
                         query.picture = null;
+                        Person.GetInstance(Flow.User_ID).ProfilePic = null;
                     }
 
                     context.SaveChanges();
@@ -95,30 +94,16 @@ namespace Celeste
 
             try
             {
-                using (var context = new LunarContext())
-                {
-                    var image = context.ProfilePictures.FirstOrDefault(i => i.enduser_id == Flow.User_ID);
+                if (Person.GetInstance(Flow.User_ID).ProfilePic!= null)
+                    pic_pfp.Source = Person.GetInstance(Flow.User_ID).GetPic();
+                else
+                    pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
 
-                    if (image.picture != null)
-                    {
-                        var imageData = image.picture;
-                        var bitmapImage = new System.Windows.Media.Imaging.BitmapImage();
-
-                        using (var memoryStream = new System.IO.MemoryStream(imageData))
-                        {
-                            bitmapImage.BeginInit();
-                            bitmapImage.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
-                            bitmapImage.StreamSource = memoryStream;
-                            bitmapImage.EndInit();
-                        }
-
-                        pic_pfp.Source = bitmapImage;                   
-                    }
-                }
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show("USER: PFP_LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
 
