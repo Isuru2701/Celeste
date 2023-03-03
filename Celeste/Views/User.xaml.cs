@@ -45,6 +45,7 @@ namespace Celeste
             try
             {
                 Person.GetInstance(Flow.User_ID).SetPic();
+                pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
             }
             catch (NotSupportedException)
             {
@@ -65,11 +66,11 @@ namespace Celeste
 
                 using (var context = new LunarContext())
                 {
-                    var query = context.ProfilePictures.Where(u => u.enduser_id == Flow.User_ID).FirstOrDefault();
+                    var query = context.ProfilePictures.Find(Flow.User_ID);
 
-                    if (query.picture != null)
+                    if (query != null)
                     {
-                        query.picture = null;
+                        context.ProfilePictures.Remove(query);
                         Person.GetInstance(Flow.User_ID).ProfilePic = null;
                     }
 
@@ -94,8 +95,8 @@ namespace Celeste
 
             try
             {
-                if (Person.GetInstance(Flow.User_ID).ProfilePic!= null)
-                    pic_pfp.Source = Person.GetInstance(Flow.User_ID).GetPic();
+                if (Person.GetInstance(Flow.User_ID).GetPic() != null)
+                    pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
                 else
                     pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
 

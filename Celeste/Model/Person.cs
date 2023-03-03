@@ -53,14 +53,7 @@ namespace Celeste.Model
 
         private BitmapImage profilepic;
 
-        public BitmapImage ProfilePic
-        {
-            get { return profilepic; }
-            set { profilepic = value; }
-        }
-
-
-        private Conn connection = new Conn();
+        public BitmapImage ProfilePic { get; set; }
 
 
         //Uses Singleton design to ensure only one user is acting at a time.
@@ -96,22 +89,28 @@ namespace Celeste.Model
                 if (query != null)
                 {
                     imagedata = query.picture;
-                    profilepic = new BitmapImage();
+                    BitmapImage picture = new BitmapImage();
 
                     using (var stream = new MemoryStream(imagedata))
                     {
-                        profilepic.BeginInit();
-                        profilepic.StreamSource = stream;
-                        profilepic.EndInit();
+                        picture.BeginInit();
+                        picture.CacheOption = BitmapCacheOption.OnLoad;
+                        picture.StreamSource = stream;
+                        picture.EndInit();
                     }
 
-                    ProfilePic = profilepic;
-                    return profilepic;
+                    ProfilePic = picture;
+                    return ProfilePic;
                 }
             }
             return null;
         }
 
+        /// <summary>
+        /// use getPic() OR ProfilePicture one line under to get the pic and set it;
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public void SetPic()
         {
 

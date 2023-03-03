@@ -12,7 +12,6 @@ namespace Celeste.Model.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EndUser()
         {
-            ProfilePictures = new HashSet<ProfilePicture>();
             user_comforts = new HashSet<user_comforts>();
             user_entries = new HashSet<user_entries>();
             user_score = new HashSet<user_score>();
@@ -37,8 +36,7 @@ namespace Celeste.Model.Data
         [StringLength(12)]
         public string username { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProfilePicture> ProfilePictures { get; set; }
+        public virtual ProfilePicture ProfilePicture { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_comforts> user_comforts { get; set; }

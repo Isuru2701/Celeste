@@ -12,6 +12,7 @@ namespace Celeste.Model.Data
         {
         }
 
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<comfort> comforts { get; set; }
         public virtual DbSet<EndUser> EndUsers { get; set; }
         public virtual DbSet<ProfilePicture> ProfilePictures { get; set; }
@@ -48,6 +49,10 @@ namespace Celeste.Model.Data
             modelBuilder.Entity<EndUser>()
                 .Property(e => e.username)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<EndUser>()
+                .HasOptional(e => e.ProfilePicture)
+                .WithRequired(e => e.EndUser);
 
             modelBuilder.Entity<EndUser>()
                 .HasMany(e => e.user_comforts)

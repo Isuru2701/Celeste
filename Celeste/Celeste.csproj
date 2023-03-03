@@ -85,6 +85,16 @@
     <Compile Include="Controls\TimePicker.xaml.cs">
       <DependentUpon>TimePicker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Data\comfort.cs" />
+    <Compile Include="Model\Data\C__MigrationHistory.cs" />
+    <Compile Include="Model\Data\EndUser.cs" />
+    <Compile Include="Model\Data\LunarContext.cs" />
+    <Compile Include="Model\Data\ProfilePicture.cs" />
+    <Compile Include="Model\Data\trigger.cs" />
+    <Compile Include="Model\Data\user_comforts.cs" />
+    <Compile Include="Model\Data\user_entries.cs" />
+    <Compile Include="Model\Data\user_score.cs" />
+    <Compile Include="Model\Data\user_triggers.cs" />
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
     </Compile>
@@ -103,15 +113,6 @@
     <Compile Include="Controls\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Data\comfort.cs" />
-    <Compile Include="Model\Data\EndUser.cs" />
-    <Compile Include="Model\Data\LunarContext.cs" />
-    <Compile Include="Model\Data\ProfilePicture.cs" />
-    <Compile Include="Model\Data\trigger.cs" />
-    <Compile Include="Model\Data\user_comforts.cs" />
-    <Compile Include="Model\Data\user_entries.cs" />
-    <Compile Include="Model\Data\user_score.cs" />
-    <Compile Include="Model\Data\user_triggers.cs" />
     <Compile Include="Model\FileHandler.cs" />
     <Compile Include="Model\Conn.cs" />
     <Compile Include="Model\Entry.cs" />
