@@ -16,11 +16,28 @@
     <Grid  Background="#FF1E1730"
            HorizontalAlignment="Center"
            VerticalAlignment="Center"
-           Width="700">
+           Width="700"
+           Height="700">
 
 
         <Border BorderBrush="#d8c6a0" BorderThickness="1"
-                CornerRadius="10"/>
+                CornerRadius="10">
+            <Button 
+                        x:Name="btn_confirm"
+                        Click="btn_confirm_Click"
+                        Width="NaN" Height="NaN"
+                        Style="{StaticResource MenubuttonTheme}"
+                        FontSize="20" Content="Confirm" Margin="331,587,267,43"/>
+        </Border>
+
+        <Label x:Name="lbl_password_error"
+                       Height="50"
+                       FontSize="15"
+                       FontWeight="Regular"
+                       FontStyle="Italic"
+                       Visibility="Visible" 
+                       Margin="468,595,10,55"/>
+
 
 
         <Border BorderThickness="10"
@@ -72,14 +89,29 @@
                 <Label  Content="Username"/>
                 <Label  Content="Email" />
                 <Label  Content="User Id" />
-                <!-- Add a change password button-->
-                
+
+                <Label  Content="Change Password" />
+                <Label  Content="Confirm Password" />
+
             </StackPanel>
 
             <StackPanel Grid.Column="1">
-                <Label x:Name="lbl_username"/>
+                <Label x:Name="lbl_username" />
                 <Label x:Name="lbl_email" />
-                <Label x:Name="lbl_user_id" />
+                <Label x:Name="lbl_user_id"/>
+
+                <PasswordBox x:Name="pwb_password"
+                             Margin="0,20"
+                             Width="300">
+
+                </PasswordBox>
+
+                <PasswordBox x:Name="pwb_confirm"
+                             Margin="0,10"
+                             Width="300">
+
+                </PasswordBox>
+
 
             </StackPanel>
         </Grid>
@@ -89,7 +121,7 @@
                 Style="{StaticResource DiamondButtonTheme}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Left"
-                Margin="10,10"
+                Margin="10,30"
                 Click="btn_back_Click"
                 Height="50"
                 Width="50">

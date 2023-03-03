@@ -19,6 +19,8 @@ using System.Drawing;
 using System.Windows.Navigation;
 using Celeste.Model.Data;
 using CefSharp.DevTools.WebAudio;
+using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace Celeste
 {
@@ -110,5 +112,98 @@ namespace Celeste
 
 
         }
+
+        private void btn_confirm_Click(object sender, RoutedEventArgs e)
+        {
+
+            if(ValidatePassword())
+            {
+                SHA1Managed sha = new SHA1Managed();
+                byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
+                string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+
+                using (var context = new LunarContext())
+                {
+                    var query = context.EndUsers.Find(Flow.User_ID);
+
+                    if (query != null)
+                    {
+                        query.password_hash = hash;
+
+                        lbl_password_error.Content = "update successful!";
+                        lbl_password_error.Visibility = Visibility.Visible;
+                        context.SaveChanges();
+
+                    }
+                    else
+                    {
+                        lbl_password_error.Content = "something went wrong";
+                        lbl_password_error.Visibility = Visibility.Visible;
+
+                    }
+
+                }
+            }
+
+
+        }
+        private bool ValidatePassword()
+        {
+            List<string> common = new List<string>
+            {
+                "123456",
+                "123456789",
+                "qwerty",
+                "password",
+                "12345",
+                "qwerty123",
+                "1q2w3e",
+                "12345678",
+                "111111",
+                "1234567890"
+            };
+
+
+            if (pwb_password.Password.Length == 0)
+            {
+                lbl_password_error.Visibility = Visibility.Visible;
+                lbl_password_error.Content = "empty password field";
+                return false;
+            }
+
+            else if (common.Any(x => x == pwb_password.Password))
+            {
+                //common password
+                lbl_password_error.Content = "weak password: common";
+                lbl_password_error.Visibility = Visibility.Visible;
+                return false;
+
+            }
+
+            else if (Regex.IsMatch(pwb_password.Password, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"))
+            {
+                //password atleast 8 in length, contains uppercase, lowercase, one number
+                lbl_password_error.Content = "strong password";
+                lbl_password_error.Visibility = Visibility.Visible;
+                return true;
+
+            }
+            else if (Regex.IsMatch(pwb_password.Password, @"^[^\s]{8,}$"))
+            {
+                //password atleast 8 in length, contains any character except spaces
+                lbl_password_error.Content = "medium password";
+                lbl_password_error.Visibility = Visibility.Visible;
+                return true;
+            }
+            else
+            {
+                //password fails -- disallow 
+                lbl_password_error.Content = "weak password";
+                lbl_password_error.Visibility = Visibility.Visible;
+                return false;
+            }
+
+        }
+
     }
 }
