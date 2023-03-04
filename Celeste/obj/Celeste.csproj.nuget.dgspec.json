@@ -82,6 +82,10 @@
               "target": "Package",
               "version": "[2.8.4, )"
             },
+            "Microsoft.Configuration.ConfigurationBuilders.UserSecrets": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[2.1.11, )"

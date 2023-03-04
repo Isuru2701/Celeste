@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7Y/BAHt04MHTo6dZEXXACRyXupYA+TwkrBIsgWicboiU13V5uVLQuqpLjtnaRjdmJ+iuOE/Xa+zjnnH4m1EjYA==",
+  "dgSpecHash": "onKUzk6PAw9DhQCWGhBb5vaDg6TK1TVxheEkTwhPiR0SNo5QcWj6Iv/hirk1hevI+LohGh2EBoO0INAUJbWycg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Documents\\Programs\\Celeste\\Celeste\\Celeste\\Celeste.csproj",
   "expectedPackageFiles": [
@@ -75,6 +75,8 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\livechartscore.skiasharpview.wpf\\2.0.0-beta.701\\livechartscore.skiasharpview.wpf.2.0.0-beta.701.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\mdicontainerwpf\\2.8.4\\mdicontainerwpf.2.8.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.configuration.configurationbuilders.base\\2.0.0\\microsoft.configuration.configurationbuilders.base.2.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.configuration.configurationbuilders.usersecrets\\2.0.0\\microsoft.configuration.configurationbuilders.usersecrets.2.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.entityframeworkcore\\2.1.11\\microsoft.entityframeworkcore.2.1.11.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.1.11\\microsoft.entityframeworkcore.abstractions.2.1.11.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\2.1.11\\microsoft.entityframeworkcore.analyzers.2.1.11.nupkg.sha512",

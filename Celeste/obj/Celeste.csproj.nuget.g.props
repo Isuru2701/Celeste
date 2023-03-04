@@ -22,6 +22,7 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgScottPlot_WPF Condition=" '$(PkgScottPlot_WPF)' == '' ">C:\Users\ASUS\.nuget\packages\scottplot.wpf\4.1.60</PkgScottPlot_WPF>
+    <PkgMicrosoft_Configuration_ConfigurationBuilders_UserSecrets Condition=" '$(PkgMicrosoft_Configuration_ConfigurationBuilders_UserSecrets)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.configuration.configurationbuilders.usersecrets\2.0.0</PkgMicrosoft_Configuration_ConfigurationBuilders_UserSecrets>
     <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\ASUS\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
     <PkgHandyControl Condition=" '$(PkgHandyControl)' == '' ">C:\Users\ASUS\.nuget\packages\handycontrol\3.4.0</PkgHandyControl>
     <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\ASUS\.nuget\packages\entityframework\6.4.4</PkgEntityFramework>
