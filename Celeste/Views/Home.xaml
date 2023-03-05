@@ -2,7 +2,8 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:lottieSharp="clr-namespace:LottieSharp;assembly=LottieSharp"
       xmlns:local="clr-namespace:Celeste.Views"
       mc:Ignorable="d" 
               Title="Celeste" 
@@ -21,13 +22,24 @@
                     BorderBrush="#d8c6a0"
                     BorderThickness="0,5,5,5"
                     CornerRadius="0,30,30,0" x:Name="writer">
-            <Button x:Name="btn_writer"
+
+            <Grid>
+                <Button x:Name="btn_writer"
                         Width="{Binding ElementName=writer, Path=ActualWidth}"
                         Height="{Binding ElementName=writer, Path=ActualHeight}"
                         Background="Transparent"
                         Click="btn_writer_Click"
                         Style="{StaticResource DiamondButtonTheme}">
-            </Button>
+                </Button>
+
+                <lottieSharp:LottieAnimationView 
+                x:Name="LottieAnimationView" 
+                DefaultCacheStrategy="None" 
+                FileName="{Binding Path=...Resources.writer.json}" AutoPlay="True" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center"/>
+
+            </Grid>
 
         </Border>
 

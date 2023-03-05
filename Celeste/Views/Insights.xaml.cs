@@ -2,6 +2,7 @@
 using Celeste.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,10 @@ namespace Celeste.Views
             {
                 InfoFrame.Content = new Chart();
             }
+            catch (SqlException)
+            {
+                InfoFrame.Content = new NoConnection();
+            }
             catch (Exception)
             {
                 InfoFrame.Content = new InsufficientInfo();
@@ -50,6 +55,11 @@ namespace Celeste.Views
             {
                 InfoFrame.Content = new PieChart("trigger");
             }
+            catch(SqlException)
+            {
+                InfoFrame.Content = new NoConnection();
+            }
+
             catch (Exception)
             {
                 InfoFrame.Content = new InsufficientInfo();
@@ -61,6 +71,10 @@ namespace Celeste.Views
             try
             {
                 InfoFrame.Content = new PieChart("comfort");
+            }
+            catch (SqlException)
+            {
+                InfoFrame.Content = new NoConnection();
             }
             catch (Exception)
             {

@@ -64,7 +64,7 @@ namespace Celeste.Controls
                     throw new Exception("CHART:NO_DATA");
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("CHART:ARG_ERROR");
             }

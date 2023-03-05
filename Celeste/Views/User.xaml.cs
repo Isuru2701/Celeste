@@ -47,7 +47,8 @@ namespace Celeste
             try
             {
                 Person.GetInstance(Flow.User_ID).SetPic();
-                pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
+                if(Person.GetInstance(Flow.User_ID).GetPic() != null)
+                    pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
             }
             catch (NotSupportedException)
             {

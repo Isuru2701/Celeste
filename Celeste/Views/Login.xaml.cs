@@ -74,9 +74,9 @@ namespace Celeste.Views
 
                 }
 
-                catch (SqlException ex)
+                catch (SqlException)
                 {
-                    MessageBox.Show(" FATAL: SQL_ERROR " + ex.Message ,  " ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Warning.Content = "Are you connected to the internet?";
 
                 }
 

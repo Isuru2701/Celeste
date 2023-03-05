@@ -51,8 +51,6 @@ namespace Celeste.Model
         public DateTime dob { get; set; }
         public string gender { get; set; }
 
-        private BitmapImage profilepic;
-
         public BitmapImage ProfilePic { get; set; }
 
 
@@ -123,35 +121,39 @@ namespace Celeste.Model
 
                 if (selector.ShowDialog() == true)
                 {
-                    using (var context = new LunarContext())
-                    {
-                        byte[] data;
+                        using (var context = new LunarContext())
+                        {
+                            byte[] data;
 
-                        using(FileStream fs = new FileStream(selector.FileName, FileMode.Open))
-                        {
-                            data = new byte[fs.Length];
-                            fs.Read(data, 0, (int)fs.Length);
-                        }
+                            ProfilePic = null;
 
-                        var existingImage = context.ProfilePictures.Find(user_id);
-                        if (existingImage != null)
-                        {
-                            existingImage.picture = data;
-                        }
-                        else
-                        {
-                            var image = new ProfilePicture
+                            using (FileStream fs = new FileStream(selector.FileName, FileMode.Open, FileAccess.Read))
                             {
-                                enduser_id = user_id,
-                                picture = data
-                            };
-                            context.ProfilePictures.Add(image);
+                                data = new byte[fs.Length];
+                                fs.Read(data, 0, (int)fs.Length);
+                            }
+
+                            var existingImage = context.ProfilePictures.Find(user_id);
+                            if (existingImage != null)
+                            {
+                                existingImage.picture = data;
+                            }
+                            else
+                            {
+                                var image = new ProfilePicture
+                                {
+                                    enduser_id = user_id,
+                                    picture = data
+                                };
+                                context.ProfilePictures.Add(image);
                         }
 
-                        context.SaveChanges();
+                            context.SaveChanges();
+                        
                     }
+                    
 
-                    ProfilePic = new BitmapImage(new Uri(selector.FileName));
+
 
                 }
             }

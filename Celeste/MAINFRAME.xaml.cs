@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using Celeste.Views;
 using Celeste.Model;
 using Celeste.Controls;
+using Celeste.Model.Data;
+using System.Threading;
 
 namespace Celeste
 {
@@ -30,6 +32,7 @@ namespace Celeste
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             MainFrame.Navigate(new Login());
             OverlayFrame = new Frame();
         }

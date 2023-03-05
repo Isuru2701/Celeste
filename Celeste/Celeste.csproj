@@ -297,6 +297,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\writer.json" />
     <None Include="todo.md" />
   </ItemGroup>
   <ItemGroup>
@@ -386,6 +387,9 @@
     </PackageReference>
     <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF">
       <Version>2.0.0-beta.701</Version>
+    </PackageReference>
+    <PackageReference Include="LottieSharp">
+      <Version>1.1.3</Version>
     </PackageReference>
     <PackageReference Include="MdiContainerWPF">
       <Version>2.8.4</Version>

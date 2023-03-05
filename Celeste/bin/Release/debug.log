@@ -213,3 +213,5 @@
 [0301/201753.472:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 171798691844 [40,4] will be ignored
 [0301/201753.630:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 171798691845 [40,5] will be ignored
 [0301/201753.630:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 171798691845 [40,5] will be ignored
+[0304/171428.051:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\ASUS\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: The system cannot find the path specified. (0x3)
+[0304/171628.190:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
