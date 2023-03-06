@@ -314,3 +314,10 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\SharpDX.DXG
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\SharpDX.DXGI.pdb
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\SharpDX.Mathematics.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\SharpDX.Mathematics.pdb
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LottieFiles.DotLottie.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Web.WebView2.Core.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Web.WebView2.Wpf.dll
