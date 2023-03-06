@@ -943,6 +943,18 @@
           }
         }
       },
+      "LottieFiles.DotLottie/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
+        }
+      },
       "LottieSharp/1.1.3": {
         "type": "package",
         "dependencies": {
@@ -3170,6 +3182,18 @@
           }
         }
       },
+      "LottieFiles.DotLottie/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
+        }
+      },
       "LottieSharp/1.1.3": {
         "type": "package",
         "dependencies": {
@@ -5340,6 +5364,18 @@
           "lib/net462/LiveChartsCore.SkiaSharpView.WPF.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "LottieFiles.DotLottie/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
         }
       },
       "LottieSharp/1.1.3": {
@@ -7518,6 +7554,18 @@
           "lib/net462/LiveChartsCore.SkiaSharpView.WPF.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "LottieFiles.DotLottie/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LottieFiles.DotLottie.dll": {}
         }
       },
       "LottieSharp/1.1.3": {
@@ -10787,6 +10835,19 @@
         "livechartscore.skiasharpview.wpf.nuspec"
       ]
     },
+    "LottieFiles.DotLottie/1.6.0": {
+      "sha512": "jdgd+0YGZLmwvcgbmUrTaJQ4hyFutdIlquJVh5nuQUwPhMu55FZy24O780RUe039TxyG9ESiBpr0KpwvqQZA2g==",
+      "type": "package",
+      "path": "lottiefiles.dotlottie/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/LottieFiles.DotLottie.dll",
+        "license.md",
+        "lottiefiles.dotlottie.1.6.0.nupkg.sha512",
+        "lottiefiles.dotlottie.nuspec"
+      ]
+    },
     "LottieSharp/1.1.3": {
       "sha512": "CvOvDyJ9Cno0AAJ7Csyyz3p4FsEqWqnHWwHHvMWcyfcUSOZYXVp+T99xeKnTrj0ZTW5Ua9Wxm1ZjWjIqM47Xww==",
       "type": "package",
@@ -13415,6 +13476,7 @@
       "LiveCharts >= 0.9.7",
       "LiveCharts.Wpf >= 0.9.7",
       "LiveChartsCore.SkiaSharpView.WPF >= 2.0.0-beta.701",
+      "LottieFiles.DotLottie >= 1.6.0",
       "LottieSharp >= 1.1.3",
       "MdiContainerWPF >= 2.8.4",
       "Microsoft.Configuration.ConfigurationBuilders.UserSecrets >= 2.0.0",
@@ -13516,6 +13578,10 @@
           "LiveChartsCore.SkiaSharpView.WPF": {
             "target": "Package",
             "version": "[2.0.0-beta.701, )"
+          },
+          "LottieFiles.DotLottie": {
+            "target": "Package",
+            "version": "[1.6.0, )"
           },
           "LottieSharp": {
             "target": "Package",

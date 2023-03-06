@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iX19kgewXY2RQT1M9jA7PdK6FF1b0LkzGmAkrOslQghkX5TbFr1tNBdMj0nti+KBUTi9s4S3iZrOgG9UjHprEQ==",
+  "dgSpecHash": "1iGxPY8RsE7muDjxg61F+1hJ5LnXfj2Qt8Ee8sWgkMFi+VXmfn9FdYeN9pF2Zw5/A58ODhz09SnzQJWVrRq8Ig==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Documents\\Programs\\Celeste\\Celeste\\Celeste\\Celeste.csproj",
   "expectedPackageFiles": [
@@ -74,6 +74,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\livechartscore\\2.0.0-beta.701\\livechartscore.2.0.0-beta.701.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\livechartscore.skiasharpview\\2.0.0-beta.701\\livechartscore.skiasharpview.2.0.0-beta.701.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\livechartscore.skiasharpview.wpf\\2.0.0-beta.701\\livechartscore.skiasharpview.wpf.2.0.0-beta.701.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\lottiefiles.dotlottie\\1.6.0\\lottiefiles.dotlottie.1.6.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\lottiesharp\\1.1.3\\lottiesharp.1.1.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\mdicontainerwpf\\2.8.4\\mdicontainerwpf.2.8.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
