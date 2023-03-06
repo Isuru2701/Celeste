@@ -1,4 +1,5 @@
-﻿using Celeste.Controls;
+﻿using CefSharp.Web;
+using Celeste.Controls;
 using Celeste.Model;
 using LottieFiles.IO;
 using LottieSharp;
@@ -30,6 +31,7 @@ namespace Celeste.Views
         public Home()
         {
             InitializeComponent();
+
 
         }
 
