@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Celeste"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         mc:Ignorable="d"
         Title="Report" Height="450" Width="800">
     <Grid>
-        
+        <WindowsFormsHost>
+            <rv:ReportViewer x:Name="ReportView" ShowToolBar="False"/>
+        </WindowsFormsHost>
+
     </Grid>
 </Window>

@@ -25,6 +25,7 @@
     <PkgScottPlot_WPF Condition=" '$(PkgScottPlot_WPF)' == '' ">C:\Users\ASUS\.nuget\packages\scottplot.wpf\4.1.60</PkgScottPlot_WPF>
     <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.web.webview2\1.0.1264.42</PkgMicrosoft_Web_WebView2>
     <PkgMicrosoft_UI_Xaml Condition=" '$(PkgMicrosoft_UI_Xaml)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.ui.xaml\2.8.2</PkgMicrosoft_UI_Xaml>
+    <PkgMicrosoft_SqlServer_Types Condition=" '$(PkgMicrosoft_SqlServer_Types)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.sqlserver.types\14.0.314.76</PkgMicrosoft_SqlServer_Types>
     <PkgMicrosoft_Configuration_ConfigurationBuilders_UserSecrets Condition=" '$(PkgMicrosoft_Configuration_ConfigurationBuilders_UserSecrets)' == '' ">C:\Users\ASUS\.nuget\packages\microsoft.configuration.configurationbuilders.usersecrets\2.0.0</PkgMicrosoft_Configuration_ConfigurationBuilders_UserSecrets>
     <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\ASUS\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
     <PkgHandyControl Condition=" '$(PkgHandyControl)' == '' ">C:\Users\ASUS\.nuget\packages\handycontrol\3.4.0</PkgHandyControl>
