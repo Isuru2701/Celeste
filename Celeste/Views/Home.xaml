@@ -70,7 +70,7 @@
 
     <Border
         BorderBrush="#d8c6a0"
-        BorderThickness="5">
+        BorderThickness="0">
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -92,12 +92,13 @@
                         Click="btn_writer_Click"
                         Style="{StaticResource DiamondButtonTheme}">
                     </Button>
-                    <Label Content="Write here . . ."
+                    <Label Content="Today . . ."
                            Foreground="#a1a1a1"
-                           Margin="20"
-                           FontSize="30"
+                           Margin="20,20,490,686"
+                           FontSize="35"
                            FontStyle="Italic"
-                           FontWeight="Light"></Label>
+                           FontWeight="Light"
+                           IsHitTestVisible="False"></Label>
 
                     <Canvas IsHitTestVisible="False">
                         <Line x:Name="line" X1="50" Y1="400" X2="400" Y2="400" 
@@ -291,8 +292,8 @@
 
 
                     <!--UP-->
-                    <Line X1="4" Y1="-100"
-                      X2="4" Y2="-250" 
+                    <Line X1="1" Y1="-100"
+                      X2="1" Y2="-250" 
                       Stroke="#d8c6a0"
                       StrokeThickness="4" 
                       Canvas.Left="2">
@@ -313,8 +314,8 @@
                     </Line>
 
                     <!--DOWN-->
-                    <Line X1="4" Y1="100"
-                      X2="4" Y2="250" 
+                    <Line X1="1" Y1="100"
+                      X2="1" Y2="250" 
                       Stroke="#d8c6a0"
                       StrokeThickness="4" 
                       Canvas.Left="2">
