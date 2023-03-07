@@ -30,6 +30,8 @@
                         Click="btn_writer_Click"
                         Style="{StaticResource DiamondButtonTheme}">
                 </Button>
+                
+                
 
             </Grid>
             
@@ -52,11 +54,7 @@
             <Button.LayoutTransform>
                 <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
             </Button.LayoutTransform>
-
-            <Button.RenderTransform>
-                <RotateTransform Angle="0"/>
-            </Button.RenderTransform>
-
+            
             <Button.Style>
                 <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
                     <Setter Property="Template">
