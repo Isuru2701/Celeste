@@ -368,3 +368,4 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\zh-CHT\Micr
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Celeste.ReportForm.resources

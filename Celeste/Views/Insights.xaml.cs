@@ -81,5 +81,10 @@ namespace Celeste.Views
                 InfoFrame.Content = new InsufficientInfo();
             }
         }
+
+        private void btn_report_Click(object sender, RoutedEventArgs e)
+        {
+            new ReportForm().Show();
+        }
     }
 }

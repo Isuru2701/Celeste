@@ -66,6 +66,13 @@
                 Comforts
             </Button>
 
+            <Button x:Name="btn_report"
+                    Style="{StaticResource MenubuttonTheme}"
+                    Click="btn_report_Click">
+                Report
+            </Button>
+
+
         </StackPanel>
 
         <Frame x:Name="InfoFrame" Grid.Column="1"

@@ -22,5 +22,16 @@ namespace Celeste.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=celestelunar.database.windows.net;Initial Catalog=Lunar;Persist Secur" +
+            "ity Info=True;User ID=isuru;Password=#Spagetthi")]
+        public string LunarConnectionString {
+            get {
+                return ((string)(this["LunarConnectionString"]));
+            }
+        }
     }
 }
