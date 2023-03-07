@@ -321,7 +321,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\LottieFiles
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Web.WebView2.Core.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Web.WebView2.WinForms.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.Web.WebView2.Wpf.dll
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Animation\ExtendingLine.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.ReportViewer.Common.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\bin\Release\Microsoft.ReportViewer.Design.dll

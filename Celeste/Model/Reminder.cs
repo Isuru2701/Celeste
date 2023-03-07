@@ -21,6 +21,9 @@ using System.Collections.Concurrent;
 
 namespace Celeste.Model
 {
+    /// <summary>
+    /// interaction with the notification dispatcher and reminder file
+    /// </summary>
     public static class Reminder
     {
         private static string reminderfile = "Reminder.txt";
@@ -33,13 +36,13 @@ namespace Celeste.Model
         /// sets daily reminder to the time specified
         /// </summary>
         /// <param name="time"></param>
-        public static void SetDailyReminder(DateTime time)
+        public static void SetDailyReminder(DateTime time, Meridiem meridiem)
         {
             try
             {
 
                 //write a save to file
-                FileHandler.Write($"{time}", reminderfile);
+                FileHandler.Write($"{time:h:mm:ss} {meridiem}", reminderfile);
 
                 /*
                  * Note that scheduled toast notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be "dropped" as no longer relevant to the user. --Microsoft
@@ -77,9 +80,7 @@ namespace Celeste.Model
         {
             try
             {
-                DateTime time = DateTime.MinValue;
-                DateTime.TryParse(FileHandler.ReadText(reminderfile), out time);
-                return time;
+                return DateTime.Parse(FileHandler.ReadText(reminderfile));
 
             }
             catch (FormatException)

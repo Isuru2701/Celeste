@@ -159,10 +159,6 @@
     <Compile Include="Views\Writer.xaml.cs">
       <DependentUpon>Writer.xaml</DependentUpon>
     </Compile>
-    <Page Include="Animation\ExtendingLine.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\Chart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

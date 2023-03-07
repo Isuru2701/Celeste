@@ -66,7 +66,7 @@ namespace Celeste.Controls
             try
             {
 
-                Reminder.SetDailyReminder(time);
+                Reminder.SetDailyReminder(time, timepicker.Time.Meridiem);
             }
             catch(Exception ex)
             {
