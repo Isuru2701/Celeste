@@ -7,7 +7,7 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LunarConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LunarConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Celeste.Properties.Settings.GlobalReference.Default.LunarConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FetcherAdapter" GeneratorDataComponentClassName="FetcherAdapter" Name="Fetcher" UserDataComponentName="FetcherAdapter">
             <MainSource>
               <DbSource ConnectionRef="LunarConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
@@ -42,7 +42,7 @@ WHERE EndUser.enduser_id = @a</CommandText>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="Fetcher" msprop:Generator_RowEvHandlerName="FetcherRowChangeEventHandler" msprop:Generator_RowDeletedName="FetcherRowDeleted" msprop:Generator_RowDeletingName="FetcherRowDeleting" msprop:Generator_RowEvArgName="FetcherRowChangeEvent" msprop:Generator_TablePropName="Fetcher" msprop:Generator_RowChangedName="FetcherRowChanged" msprop:Generator_RowChangingName="FetcherRowChanging" msprop:Generator_TableClassName="FetcherDataTable" msprop:Generator_RowClassName="FetcherRow" msprop:Generator_TableVarName="tableFetcher" msprop:Generator_UserTableName="Fetcher">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="triggers" msprop:Generator_ColumnPropNameInRow="triggers" msprop:Generator_ColumnPropNameInTable="triggersColumn" msprop:Generator_ColumnVarNameInTable="columntriggers" msprop:Generator_UserColumnName="triggers" minOccurs="0">
