@@ -82,7 +82,8 @@ namespace Celeste.Controls
                 if (FileHandler.ResourceExists("Reminder.txt"))
                 {
                     DateTime time = Reminder.GetReminderTime();
-                    timepicker.Time = new AnalogueTime(time.Hour, time.Minute, time.ToString("tt") == "AM" ? Meridiem.AM : Meridiem.PM);
+
+                    timepicker.Time = new AnalogueTime(Convert.ToInt16(time.ToString("hh")), time.Minute, time.ToString("tt") == "AM" ? Meridiem.AM : Meridiem.PM);
                 }
             }
             catch(Exception ex)
