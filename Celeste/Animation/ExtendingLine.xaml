@@ -1,6 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
+    <Storyboard x:Key="ExtendingLineUp">
+        <DoubleAnimation From="-100" To="-250" Duration="0:0:1" 
+            Storyboard.TargetProperty="(Line.Y2)"/>
+    </Storyboard>
+
 
 
 </ResourceDictionary>

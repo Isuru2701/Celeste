@@ -23,6 +23,7 @@
                     CornerRadius="0,30,30,0" x:Name="writer">
 
             <Grid>
+                                
                 <Button x:Name="btn_writer"
                         Width="{Binding ElementName=writer, Path=ActualWidth}"
                         Height="{Binding ElementName=writer, Path=ActualHeight}"
