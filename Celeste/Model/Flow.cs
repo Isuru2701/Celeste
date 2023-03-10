@@ -12,6 +12,8 @@ namespace Celeste.Model
     {
         public static DateTime StartTime { get; set; }
 
+        public static DateTime LastUpdate { get; set; }
+
         public static string BaseAddress { get; set; }
 
         public static int User_ID { get; set; }

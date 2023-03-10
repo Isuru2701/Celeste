@@ -115,9 +115,7 @@ namespace Celeste.Views
                         }
                         context.SaveChanges();
 
-                        MessageBox.Show("Calling now");
                         FeedAPI(Flow.User_ID, current.Date);
-                        MessageBox.Show("Called");
                     }
 
                 }
@@ -149,7 +147,7 @@ namespace Celeste.Views
 
             if(response.IsSuccessStatusCode)
             {
-                MessageBox.Show(response.Content.ToString());
+                Flow.LastUpdate = DateTime.Now;
             }    
         }
 
