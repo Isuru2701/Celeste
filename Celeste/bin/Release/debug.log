@@ -215,3 +215,10 @@
 [0301/201753.630:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 171798691845 [40,5] will be ignored
 [0304/171428.051:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\ASUS\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: The system cannot find the path specified. (0x3)
 [0304/171628.190:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0309/205418.172:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0309/205418.364:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\ASUS\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: The system cannot find the path specified. (0x3)
+[0309/205418.900:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0309/205423.182:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0309/205423.921:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0309/205433.193:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0309/205433.933:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.

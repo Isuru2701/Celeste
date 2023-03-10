@@ -114,6 +114,10 @@ namespace Celeste.Views
 
                         }
                         context.SaveChanges();
+
+                        MessageBox.Show("Calling now");
+                        FeedAPI(Flow.User_ID, current.Date);
+                        MessageBox.Show("Called");
                     }
 
                 }
@@ -135,6 +139,18 @@ namespace Celeste.Views
                 MessageBox.Show("WRITER: SAVE_INTERNAL_ERROR: " + ex.Message + " " + ex.InnerException.Message + " " + ex.InnerException.InnerException.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+        }
+
+        private static async Task FeedAPI(int userId, DateTime date)
+        {
+            string url = $"https://twilight.azurewebsites.net/execute?user={userId}&date={date:yyyy-MM-dd}";
+
+            var response = await new HttpClient().GetAsync(url);
+
+            if(response.IsSuccessStatusCode)
+            {
+                MessageBox.Show(response.Content.ToString());
+            }    
         }
 
 
