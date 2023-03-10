@@ -51,14 +51,22 @@ namespace Celeste.Views
                 else
                 {
 
-                    using (var context = new LunarContext())
+                    if (Flow.IsConnected())
                     {
-                        var query = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
-                            .Select(e => e.content).FirstOrDefault();
-                        if(query != null )
+                        using (var context = new LunarContext())
                         {
-                            txt_writer.Text = query.ToString();
+                            var query = context.user_entries.Where(e => e.enduser_id == Flow.User_ID && e.entry_date == current.Date)
+                                .Select(e => e.content).FirstOrDefault();
+                            if (query != null)
+                            {
+                                txt_writer.Text = query.ToString();
+                            }
                         }
+                    }
+                    else
+                    {
+                        Container.Children.Clear();
+                        Container.Children.Add(new NoConnection());
                     }
 
                 }
@@ -96,35 +104,43 @@ namespace Celeste.Views
                 {
                     FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
 
-                    using (var context = new LunarContext())
+                    if (Flow.IsConnected())
                     {
-                        var entry = context.user_entries.Find(Flow.User_ID, current.Date);
-                        if (entry != null)
+                        using (var context = new LunarContext())
                         {
-                            entry.content = txt_writer.Text;
-                        }
-                        else
-                        {
-                            context.user_entries.Add(new user_entries
+                            var entry = context.user_entries.Find(Flow.User_ID, current.Date);
+                            if (entry != null)
                             {
-                                enduser_id = Flow.User_ID,
-                                entry_date = current.Date,
-                                content = txt_writer.Text
-                            });
+                                entry.content = txt_writer.Text;
+                            }
+                            else
+                            {
+                                context.user_entries.Add(new user_entries
+                                {
+                                    enduser_id = Flow.User_ID,
+                                    entry_date = current.Date,
+                                    content = txt_writer.Text
+                                });
 
+                            }
+                            context.SaveChanges();
+
+                            FeedAPI(Flow.User_ID, current.Date);
+                            lbl_confirmation.Content = "saved at " + DateTime.Now.ToString("h:mm tt"); 
                         }
-                        context.SaveChanges();
-
-                        FeedAPI(Flow.User_ID, current.Date);
+                    }
+                    else
+                    {
+                        lbl_confirmation.Content = "we couldn't save this entry.\nAre you connected to the internet?";
                     }
 
                 }
             }
             catch (OperationCanceledException)
             {
-                // Handle cancellation cuz to timeout
-                var overlayframe = ((FrameworkElement)Window.GetWindow(this).Content).FindName("OverlayFrame") as Frame;
-                overlayframe.Content = new NoConnection();
+                // Handle cancellation cuz of timeout
+
+                lbl_confirmation.Content = "we couldn't save this entry.\nAre you connected to the internet?";
             }
 
             catch (DbUpdateException ex)

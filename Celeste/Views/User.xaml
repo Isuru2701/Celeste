@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:Celeste"
         mc:Ignorable="d"
         Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}}"
-      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}"
-        Loaded="Window_Loaded">
+      Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}">
 
     <Page.Background>
         <SolidColorBrush Color="Black" Opacity="0.5"/>

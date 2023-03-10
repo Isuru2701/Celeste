@@ -43,45 +43,40 @@ namespace Celeste.Views
             
             try
             {
-                var rand = new Random();
-                int i = Person.GetInstance(Flow.User_ID).FetchTriggers();
-
-                if (i > 0)
+                if (Flow.IsConnected())
                 {
+                    var rand = new Random();
+                    int i = Person.GetInstance(Flow.User_ID).FetchTriggers();
 
-                    var query = Person.GetInstance(Flow.User_ID).Triggers.OrderBy(x => rand.Next()).Take(1).First();
-
-
-                    var videos = new APIHandler().SearchVideos(query.Name);
-
-                    
-
-                    //var listitems = new List<Button>
-                    //{
-
-                    //}
-                    if (videos.Count > 0)
+                    if (i > 0)
                     {
-                        foreach (var video in videos)
-                        {
-                            var image = new Image();
-                            image.Source = new BitmapImage(new Uri(video.Thumbnail.Url));
-                            image.Stretch = Stretch.Fill;
 
-                            Button button = new Button
+                        var query = Person.GetInstance(Flow.User_ID).Triggers.OrderBy(x => rand.Next()).Take(1).First();
+
+
+                        var videos = new APIHandler().SearchVideos(query.Name);
+                        if (videos.Count > 0)
+                        {
+                            foreach (var video in videos)
                             {
-                                Width = 1100,
-                                Tag = video.Id,
-                                Style = new Style().BasedOn = FindResource("ContentbuttonTheme") as Style,
-                                Content = new StackPanel
+                                var image = new Image();
+                                image.Source = new BitmapImage(new Uri(video.Thumbnail.Url));
+                                image.Stretch = Stretch.Fill;
+
+                                Button button = new Button
                                 {
-                                    Orientation = Orientation.Horizontal,
-                                    Children =
+                                    Width = 1100,
+                                    Tag = video.Id,
+                                    Style = new Style().BasedOn = FindResource("ContentbuttonTheme") as Style,
+                                    Content = new StackPanel
+                                    {
+                                        Orientation = Orientation.Horizontal,
+                                        Children =
                                     {
                                         new Border
                                         {
                                             Child = image,
-                                            
+
                                         },
                                         new StackPanel {
 
@@ -92,22 +87,23 @@ namespace Celeste.Views
                                             }
                                         }
                                     }
-                                }
-                            };
-                            
-                            button.Click += new RoutedEventHandler(btn_Click);
-                            box.Items.Add(button);
+                                    }
+                                };
 
+                                button.Click += new RoutedEventHandler(btn_Click);
+                                box.Items.Add(button);
+
+                            }
+
+                            Container.Content = box;
                         }
-
-                        Container.Content = box;
                     }
                 }
 
                 else
                 {
-                    
-                        Container.Content = new InsufficientInfo();
+
+                    Container.Content = new InsufficientInfo();
                 }
 
             }
@@ -135,12 +131,26 @@ namespace Celeste.Views
 
         private void btn_locations_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new Map();
+            if (Flow.IsConnected())
+            {
+                Container.Content = new Map();
+            }
+            else
+            {
+                Container.Content = new NoConnection();
+            }
         }
 
         private void btn_forum_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new BrowserViewer();
+            if (Flow.IsConnected())
+            {
+                Container.Content = new BrowserViewer();
+            }
+            else
+            {
+                Container.Content = new NoConnection();
+            }
         }
     }
 }

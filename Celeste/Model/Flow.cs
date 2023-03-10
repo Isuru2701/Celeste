@@ -40,6 +40,10 @@ namespace Celeste.Model
             StartTime = DateTime.Now;
         }
 
+        /// <summary>
+        /// important method, use to check if there is internet connection
+        /// </summary>
+        /// <returns></returns>
         public static bool IsConnected()
         {
             try

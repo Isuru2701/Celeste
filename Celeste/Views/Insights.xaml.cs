@@ -2,6 +2,7 @@
 using Celeste.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,14 @@ namespace Celeste.Views
         {
             try
             {
-                InfoFrame.Content = new Chart();
+                if (Flow.IsConnected())
+                {
+                    InfoFrame.Content = new Chart();
+                }
+                else
+                {
+                    InfoFrame.Content = new NoConnection();
+                }
             }
             catch (SqlException)
             {
@@ -53,7 +61,11 @@ namespace Celeste.Views
         {
             try
             {
-                InfoFrame.Content = new PieChart("trigger");
+                if (Flow.IsConnected())
+                    InfoFrame.Content = new PieChart("trigger");
+                else
+                    InfoFrame.Content = new NoConnection();
+                
             }
             catch(SqlException)
             {
@@ -70,7 +82,10 @@ namespace Celeste.Views
         {
             try
             {
-                InfoFrame.Content = new PieChart("comfort");
+                if (Flow.IsConnected())
+                    InfoFrame.Content = new PieChart("comfort");
+                else
+                    InfoFrame.Content = new NoConnection();
             }
             catch (SqlException)
             {
@@ -84,7 +99,10 @@ namespace Celeste.Views
 
         private void btn_report_Click(object sender, RoutedEventArgs e)
         {
-            new ReportForm().Show();
+            if (Flow.IsConnected())
+                new ReportForm().Show();
+            else
+                InfoFrame.Content = new NoConnection();
         }
     }
 }

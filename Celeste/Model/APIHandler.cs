@@ -33,37 +33,45 @@ namespace Celeste.Model
         /// <returns></returns>
         public List<Video> SearchVideos(string query)
         {
-            var youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            try
             {
-                ApiKey = "AIzaSyCSpZJjZ6hCqd-ieIbdjZlf509V_9kQaIo",
-                ApplicationName = "Celeste"
-            });
-
-            var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = query; // Replace with your search query.
-            searchListRequest.ChannelId = "UCkJEpR7JmS36tajD34Gp4VA";
-            searchListRequest.MaxResults = 3;
-
-            // Call the search.list method to retrieve results matching the specified query term.
-            var searchListResponse = searchListRequest.Execute();
-
-            var videos = new List<Video>();
-            foreach (var searchResult in searchListResponse.Items)
-            {
-                if (searchResult.Id.Kind == "youtube#video")
+                var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                 {
-                    videos.Add(new Video
+                    ApiKey = "AIzaSyCSpZJjZ6hCqd-ieIbdjZlf509V_9kQaIo",
+                    ApplicationName = "Celeste"
+                });
+
+                var searchListRequest = youtubeService.Search.List("snippet");
+                searchListRequest.Q = query; // Replace with your search query.
+                searchListRequest.ChannelId = "UCkJEpR7JmS36tajD34Gp4VA";
+                searchListRequest.MaxResults = 12;
+
+                // Call the search.list method to retrieve results matching the specified query term.
+                var searchListResponse = searchListRequest.Execute();
+
+                var videos = new List<Video>();
+                foreach (var searchResult in searchListResponse.Items)
+                {
+                    if (searchResult.Id.Kind == "youtube#video")
                     {
-                        Id = searchResult.Id.VideoId,
-                        Title = WebUtility.HtmlDecode(searchResult.Snippet.Title),
-                        Author = searchResult.Snippet.ChannelTitle,
-                        Thumbnail = searchResult.Snippet.Thumbnails.Default__,
+                        videos.Add(new Video
+                        {
+                            Id = searchResult.Id.VideoId,
+                            Title = WebUtility.HtmlDecode(searchResult.Snippet.Title),
+                            Author = searchResult.Snippet.ChannelTitle,
+                            Thumbnail = searchResult.Snippet.Thumbnails.Default__,
+                        }
+                        );
                     }
-                    );
                 }
+                return videos;
+            }
+            catch (Exception)
+            {
+                throw new Exception("API_HANDLIER: ERROR");
             }
 
-            return videos;
+            
         }
     }
 

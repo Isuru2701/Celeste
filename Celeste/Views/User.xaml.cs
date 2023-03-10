@@ -34,6 +34,34 @@ namespace Celeste
             if (Flow.IsConnected())
             {
                 InitializeComponent();
+
+                lbl_username.Content = Person.GetInstance(Flow.User_ID).username;
+                lbl_email.Content = Person.GetInstance(Flow.User_ID).email;
+                lbl_user_id.Content = Person.GetInstance(Flow.User_ID).user_id;
+
+
+                try
+                {
+                    if (Flow.IsConnected())
+                    {
+                        if (Person.GetInstance(Flow.User_ID).GetPic() != null)
+                            pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
+                        else
+                            pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
+                    }
+                    else
+                    {
+                        lbl_error.Content = "No Connection";
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("USER: PFP_LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+
+
             }
 
         }
@@ -97,68 +125,45 @@ namespace Celeste
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            lbl_username.Content = Person.GetInstance(Flow.User_ID).username;
-            lbl_email.Content = Person.GetInstance(Flow.User_ID).email;
-            lbl_user_id.Content = Person.GetInstance(Flow.User_ID).user_id;
-
-
-            try
-            {
-                if (Flow.IsConnected())
-                {
-                    if (Person.GetInstance(Flow.User_ID).GetPic() != null)
-                        pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
-                    else
-                        pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
-                }
-                else
-                {
-                    lbl_error.Content = "No Connection";
-                }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("USER: PFP_LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-            }
-
-
-        }
-
         private void btn_confirm_Click(object sender, RoutedEventArgs e)
         {
 
-            if(ValidatePassword())
+            if (Flow.IsConnected())
             {
-                SHA1Managed sha = new SHA1Managed();
-                byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
-                string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                using (var context = new LunarContext())
+
+                if (ValidatePassword())
                 {
-                    var query = context.EndUsers.Find(Flow.User_ID);
+                    SHA1Managed sha = new SHA1Managed();
+                    byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
+                    string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                    if (query != null)
+                    using (var context = new LunarContext())
                     {
-                        query.password_hash = hash;
+                        var query = context.EndUsers.Find(Flow.User_ID);
 
-                        lbl_error.Content = "update successful!";
-                        lbl_error.Visibility = Visibility.Visible;
-                        context.SaveChanges();
+                        if (query != null)
+                        {
+                            query.password_hash = hash;
+
+                            lbl_error.Content = "update successful!";
+                            lbl_error.Visibility = Visibility.Visible;
+                            context.SaveChanges();
+
+                        }
+                        else
+                        {
+                            lbl_error.Content = "something went wrong";
+                            lbl_error.Visibility = Visibility.Visible;
+
+                        }
 
                     }
-                    else
-                    {
-                        lbl_error.Content = "something went wrong";
-                        lbl_error.Visibility = Visibility.Visible;
-
-                    }
-
                 }
+            }
+            else
+            {
+                lbl_error.Content = "are you connected to the internet?";
             }
 
 
