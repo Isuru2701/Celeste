@@ -79,41 +79,48 @@ namespace Celeste.Views
         {
             try
             {
-                using (var context = new LunarContext())
+                if (Flow.IsConnected())
                 {
-                    var existingUser = context.EndUsers.FirstOrDefault(u => u.email == txt_email.Text);
-
-                    if (existingUser != null)
+                    using (var context = new LunarContext())
                     {
-                        lbl_validation_error.Content = "This email is already registered by another user!";
-                        lbl_validation_error.Visibility = Visibility.Visible;
-                    }
-                    else
-                    {
-                        lbl_validation_error.Visibility = Visibility.Hidden;
+                        var existingUser = context.EndUsers.FirstOrDefault(u => u.email == txt_email.Text);
 
-                        SHA1Managed sha = new SHA1Managed();
-                        byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
-                        string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-
-
-                        DateTime date = DateTime.Parse($"{(int)cmb_years.SelectedValue}/{(int)(cmb_months.SelectedIndex + 1)}/{(int)(cmb_days.SelectedValue)}");
-
-                        context.EndUsers.Add(new EndUser
+                        if (existingUser != null)
                         {
-                            email = txt_email.Text,
-                            password_hash = hash,
-                            dob = date,
-                            gender = (cmb_gender.SelectedValue.ToString())[0].ToString(),
-                            username = txt_username.Text
-                        });
+                            lbl_validation_error.Content = "This email is already registered by another user!";
+                            lbl_validation_error.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            lbl_validation_error.Visibility = Visibility.Hidden;
 
-                        context.SaveChanges();
-                        lbl_validation_error.Content = "Sign up successful!";
-                        lbl_validation_error.Visibility = Visibility.Visible;
-                        Thread.Sleep(500);
-                        NavigationService.Navigate(new Login());
+                            SHA1Managed sha = new SHA1Managed();
+                            byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(pwb_password.Password));
+                            string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+
+
+                            DateTime date = DateTime.Parse($"{(int)cmb_years.SelectedValue}/{(int)(cmb_months.SelectedIndex + 1)}/{(int)(cmb_days.SelectedValue)}");
+
+                            context.EndUsers.Add(new EndUser
+                            {
+                                email = txt_email.Text,
+                                password_hash = hash,
+                                dob = date,
+                                gender = (cmb_gender.SelectedValue.ToString())[0].ToString(),
+                                username = txt_username.Text
+                            });
+
+                            context.SaveChanges();
+                            lbl_validation_error.Content = "Sign up successful!";
+                            lbl_validation_error.Visibility = Visibility.Visible;
+                            Thread.Sleep(500);
+                            NavigationService.Navigate(new Login());
+                        }
                     }
+                }
+                else
+                {
+                    lbl_date_error.Content = "Are u connected to the internet?";
                 }
 
             }

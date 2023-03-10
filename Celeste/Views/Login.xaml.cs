@@ -50,25 +50,33 @@ namespace Celeste.Views
                     byte[] hashBytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
                     string hash = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                    using (var context = new LunarContext())
+                    if (Flow.IsConnected())
                     {
-                        var endUser = context.EndUsers
-                            .Where(u => u.email == email && u.password_hash == hash)
-                            .FirstOrDefault();
-
-                        if (endUser != null)
+                        using (var context = new LunarContext())
                         {
-                            Flow.Initiate();
-                            Flow.User_ID = endUser.enduser_id;
-                            Person.GetInstance(Flow.User_ID);
+                            var endUser = context.EndUsers
+                                .Where(u => u.email == email && u.password_hash == hash)
+                                .FirstOrDefault();
 
-                            // Person.GetInstance(Flow.User_ID).DebugDisplay();
-                            NavigationService.Navigate(new Home());
+                            if (endUser != null)
+                            {
+                                Flow.Initiate();
+                                Flow.User_ID = endUser.enduser_id;
+                                Person.GetInstance(Flow.User_ID);
+
+                                // Person.GetInstance(Flow.User_ID).DebugDisplay();
+                                NavigationService.Navigate(new Home());
+                            }
+                            else
+                            {
+                                Warning.Content = "Invalid pairing. Please try again";
+                            }
                         }
-                        else
-                        {
-                            Warning.Content = "Invalid pairing. Please try again";
-                        }
+                    }
+                    else
+                    {
+                        Warning.Content = "Are you connected to the internet?";
+
                     }
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,23 @@ namespace Celeste.Model
             User_ID = 0;
             BaseAddress = AppDomain.CurrentDomain.BaseDirectory;
             StartTime = DateTime.Now;
+        }
+
+        public static bool IsConnected()
+        {
+            try
+            {
+
+                using (var ping = new Ping())
+                {
+                    var result = ping.Send("www.google.com", 1000);
+                    return result.Status == IPStatus.Success;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

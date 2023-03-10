@@ -143,12 +143,19 @@ namespace Celeste.Views
         {
             string url = $"https://twilight.azurewebsites.net/execute?user={userId}&date={date:yyyy-MM-dd}";
 
-            var response = await new HttpClient().GetAsync(url);
-
-            if(response.IsSuccessStatusCode)
+            try
             {
-                Flow.LastUpdate = DateTime.Now;
-            }    
+                var response = await new HttpClient().GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Flow.LastUpdate = DateTime.Now;
+                }
+            }
+            catch (Exception)
+            {
+                //TODO: update a list in Flow to call all once connection is established
+            }
         }
 
 
