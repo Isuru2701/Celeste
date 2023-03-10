@@ -53,7 +53,7 @@ namespace Celeste {
         
         #line 33 "..\..\..\Views\User.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lbl_password_error;
+        internal System.Windows.Controls.Label lbl_error;
         
         #line default
         #line hidden
@@ -178,7 +178,7 @@ namespace Celeste {
             #line hidden
             return;
             case 3:
-            this.lbl_password_error = ((System.Windows.Controls.Label)(target));
+            this.lbl_error = ((System.Windows.Controls.Label)(target));
             return;
             case 4:
             this.pic_pfp = ((System.Windows.Controls.Image)(target));

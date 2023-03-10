@@ -30,7 +30,7 @@
                         FontSize="20" Content="Confirm" Margin="331,587,267,43"/>
         </Border>
 
-        <Label x:Name="lbl_password_error"
+        <Label x:Name="lbl_error"
                        Height="50"
                        FontSize="15"
                        FontWeight="Regular"

@@ -31,7 +31,11 @@ namespace Celeste
     {
         public User()
         {
-            InitializeComponent();
+            if (Flow.IsConnected())
+            {
+                InitializeComponent();
+            }
+
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
@@ -46,9 +50,12 @@ namespace Celeste
         {
             try
             {
-                Person.GetInstance(Flow.User_ID).SetPic();
-                if(Person.GetInstance(Flow.User_ID).GetPic() != null)
-                    pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
+                if (Flow.IsConnected())
+                {
+                    Person.GetInstance(Flow.User_ID).SetPic();
+                    if (Person.GetInstance(Flow.User_ID).GetPic() != null)
+                        pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
+                }
             }
             catch (NotSupportedException)
             {
@@ -66,18 +73,20 @@ namespace Celeste
             try
             {
                 pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
-
-                using (var context = new LunarContext())
+                if (Flow.IsConnected())
                 {
-                    var query = context.ProfilePictures.Find(Flow.User_ID);
-
-                    if (query != null)
+                    using (var context = new LunarContext())
                     {
-                        context.ProfilePictures.Remove(query);
-                        Person.GetInstance(Flow.User_ID).ProfilePic = null;
-                    }
+                        var query = context.ProfilePictures.Find(Flow.User_ID);
 
-                    context.SaveChanges();
+                        if (query != null)
+                        {
+                            context.ProfilePictures.Remove(query);
+                            Person.GetInstance(Flow.User_ID).ProfilePic = null;
+                        }
+
+                        context.SaveChanges();
+                    }
                 }
             }
             catch (Exception ex)
@@ -98,11 +107,17 @@ namespace Celeste
 
             try
             {
-                if (Person.GetInstance(Flow.User_ID).GetPic() != null)
-                    pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
+                if (Flow.IsConnected())
+                {
+                    if (Person.GetInstance(Flow.User_ID).GetPic() != null)
+                        pic_pfp.Source = Person.GetInstance(Flow.User_ID).ProfilePic;
+                    else
+                        pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
+                }
                 else
-                    pic_pfp.Source = new BitmapImage(new Uri("../Resources/logo(large).png", UriKind.Relative));
-
+                {
+                    lbl_error.Content = "No Connection";
+                }
             }
 
             catch (Exception ex)
@@ -131,15 +146,15 @@ namespace Celeste
                     {
                         query.password_hash = hash;
 
-                        lbl_password_error.Content = "update successful!";
-                        lbl_password_error.Visibility = Visibility.Visible;
+                        lbl_error.Content = "update successful!";
+                        lbl_error.Visibility = Visibility.Visible;
                         context.SaveChanges();
 
                     }
                     else
                     {
-                        lbl_password_error.Content = "something went wrong";
-                        lbl_password_error.Visibility = Visibility.Visible;
+                        lbl_error.Content = "something went wrong";
+                        lbl_error.Visibility = Visibility.Visible;
 
                     }
 
@@ -167,16 +182,16 @@ namespace Celeste
 
             if (pwb_password.Password.Length == 0)
             {
-                lbl_password_error.Visibility = Visibility.Visible;
-                lbl_password_error.Content = "empty password field";
+                lbl_error.Visibility = Visibility.Visible;
+                lbl_error.Content = "empty password field";
                 return false;
             }
 
             else if (common.Any(x => x == pwb_password.Password))
             {
                 //common password
-                lbl_password_error.Content = "weak password: common";
-                lbl_password_error.Visibility = Visibility.Visible;
+                lbl_error.Content = "weak password: common";
+                lbl_error.Visibility = Visibility.Visible;
                 return false;
 
             }
@@ -184,23 +199,23 @@ namespace Celeste
             else if (Regex.IsMatch(pwb_password.Password, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"))
             {
                 //password atleast 8 in length, contains uppercase, lowercase, one number
-                lbl_password_error.Content = "strong password";
-                lbl_password_error.Visibility = Visibility.Visible;
+                lbl_error.Content = "strong password";
+                lbl_error.Visibility = Visibility.Visible;
                 return true;
 
             }
             else if (Regex.IsMatch(pwb_password.Password, @"^[^\s]{8,}$"))
             {
                 //password atleast 8 in length, contains any character except spaces
-                lbl_password_error.Content = "medium password";
-                lbl_password_error.Visibility = Visibility.Visible;
+                lbl_error.Content = "medium password";
+                lbl_error.Visibility = Visibility.Visible;
                 return true;
             }
             else
             {
                 //password fails -- disallow 
-                lbl_password_error.Content = "weak password";
-                lbl_password_error.Visibility = Visibility.Visible;
+                lbl_error.Content = "weak password";
+                lbl_error.Visibility = Visibility.Visible;
                 return false;
             }
 
