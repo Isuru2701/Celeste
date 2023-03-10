@@ -28,6 +28,7 @@ namespace Celeste.Controls
         {
             InitializeComponent();
             browser.Load("https://mysupportforums.org/");
+            browser.BrowserSettings.
         }
 
         public BrowserViewer(string id)
@@ -37,7 +38,7 @@ namespace Celeste.Controls
             try
             {
 
-                browser.Load($"https://www.youtube.com/embed/{id}");
+                browser.Load($"https://www.youtube.com/embed/{id}?rel=0");
 
             }
             catch (Exception)

@@ -37,7 +37,8 @@
 
             <wpf:ChromiumWebBrowser
                 ResizeHackEnabled="True"
-                x:Name="browser" Address="https://www.google.com">
+                x:Name="browser" Address="https://www.google.com"
+                >
                 
             </wpf:ChromiumWebBrowser>
         </Border>

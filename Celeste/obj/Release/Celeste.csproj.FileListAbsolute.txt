@@ -112,7 +112,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Home.
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Insights.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Login.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Resources.g.cs
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Settings.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Signup.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\User.g.cs
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Writer.g.cs
@@ -131,7 +130,6 @@ C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Home.
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Insights.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Login.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Resources.baml
-C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Settings.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Signup.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\User.baml
 C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\obj\Release\Views\Writer.baml

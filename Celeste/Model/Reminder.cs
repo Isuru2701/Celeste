@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using Notifications.Wpf;
 using Microsoft.Win32.TaskScheduler;
 using System.Collections.Concurrent;
+using System.ServiceProcess;
 
 namespace Celeste.Model
 {
@@ -27,6 +28,8 @@ namespace Celeste.Model
     public static class Reminder
     {
         private static string reminderfile = "Reminder.txt";
+        private static ServiceController serviceController = new ServiceController("ChronoForCeleste");
+
 
         static Reminder() 
         {
@@ -57,19 +60,22 @@ namespace Celeste.Model
             }
         }
 
-        public static void SetNotification(DateTime time)
+        public static void SetNotification(DateTime date)
         {
-            List<string> prompts = new List<string>
-                {
-                    "How did your day go?",
-                    "Write the way into your heart!",
-                    "What did you accomplish today?"
-                };
+            if (serviceController.Status == ServiceControllerStatus.Running)
+            {
+                //terminate any existing service with previous reminder time
+                serviceController.Stop();
+            }
 
-
+            serviceController.Start(new string[] { date.ToString() });
 
         }
 
+        public static void RemoveNotification()
+        {
+            serviceController.Stop();
+        }
 
 
         /// <summary>

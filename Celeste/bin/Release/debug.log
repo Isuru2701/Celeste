@@ -222,3 +222,61 @@
 [0309/205423.921:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0309/205433.193:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0309/205433.933:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0310/142419.881:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\ASUS\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: The system cannot find the path specified. (0x3)
+[0310/142422.572:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0310/142422.572:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0310/142422.838:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0310/142422.838:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0310/142422.948:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0310/142426.478:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230305&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=247733340&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230305&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=247733340') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/nSVR5AoWUcU (0)
+[0310/142448.361:WARNING:browser_info.cc(309)] Returning a speculative frame for 34359738373 [8,5]
+[0310/142449.055:WARNING:browser_info.cc(309)] Returning a speculative frame for 34359738373 [8,5]
+[0310/142449.056:WARNING:browser_info.cc(309)] Returning a speculative frame for 34359738373 [8,5]
+[0310/142449.056:WARNING:browser_info.cc(309)] Returning a speculative frame for 34359738373 [8,5]
+[0310/142449.057:WARNING:browser_info.cc(309)] Returning a speculative frame for 34359738373 [8,5]
+[0310/142449.414:INFO:CONSOLE(3922)] "LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.", source: https://www.youtube.com/s/desktop/a13c3fe5/jsbin/desktop_polymer.vflset/desktop_polymer.js (3922)
+[0310/142451.613:INFO:CONSOLE(3922)] "LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.", source: https://www.youtube.com/s/desktop/a13c3fe5/jsbin/desktop_polymer.vflset/desktop_polymer.js (3922)
+[0310/142453.720:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836492 [5,12] will be ignored
+[0310/142453.720:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836492 [5,12] will be ignored
+[0310/142453.733:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=1&cver=2_20230309&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=220123&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=1&cver=2_20230309&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=220123') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/watch?v=TWNL7EClClo (0)
+[0310/142454.429:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836493 [5,13] will be ignored
+[0310/142454.429:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836493 [5,13] will be ignored
+[0310/142506.730:INFO:CONSOLE(0)] "The resource https://rr2---sn-nau-jhcz.googlevideo.com/generate_204?conn2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source: https://www.youtube.com/watch?v=TWNL7EClClo (0)
+[0310/142506.731:INFO:CONSOLE(0)] "The resource https://rr2---sn-nau-jhcz.googlevideo.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source: https://www.youtube.com/watch?v=TWNL7EClClo (0)
+[0310/142506.732:INFO:CONSOLE(0)] "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source: https://www.youtube.com/watch?v=TWNL7EClClo (0)
+[0310/142510.120:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 21474836481 [5,1] will be ignored
+[0310/142856.058:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0310/142856.059:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869188 [4,4] will be ignored
+[0310/142856.248:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0310/142856.249:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869189 [4,5] will be ignored
+[0310/142856.373:WARNING:obfuscated_file_util.cc(1409)] Failed to get origin+type directory: { uri: filesystem:https://www.youtube.com/temporary/, storage key: { origin: https://www.youtube.com, top-level site: https://youtube.com, nonce: <null>, ancestor chain bit: Same-Site }, bucket id: 1 } error:-4
+[0310/142858.806:INFO:CONSOLE(0)] "Access to XMLHttpRequest at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230305&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=841626769&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=20230305&foc_id=kJEpR7JmS36tajD34Gp4VA&label=followon_view&ptype=no_rmkt&random=841626769') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.youtube.com/embed/Y9A5wuTtblw?rel=0 (0)
+[0310/142904.772:WARNING:browser_info.cc(309)] Returning a speculative frame for 21474836488 [5,8]
+[0310/142905.579:WARNING:browser_info.cc(309)] Returning a speculative frame for 21474836488 [5,8]
+[0310/142905.579:WARNING:browser_info.cc(309)] Returning a speculative frame for 21474836488 [5,8]
+[0310/142905.580:WARNING:browser_info.cc(309)] Returning a speculative frame for 21474836488 [5,8]
+[0310/142905.580:WARNING:browser_info.cc(309)] Returning a speculative frame for 21474836488 [5,8]
+[0310/142905.918:INFO:CONSOLE(3922)] "LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.", source: https://www.youtube.com/s/desktop/a13c3fe5/jsbin/desktop_polymer.vflset/desktop_polymer.js (3922)
+[0310/142906.595:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869191 [4,7] will be ignored
+[0310/142919.570:INFO:CONSOLE(3922)] "LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.", source: https://www.youtube.com/s/desktop/a13c3fe5/jsbin/desktop_polymer.vflset/desktop_polymer.js (3922)
+[0310/142920.276:WARNING:browser_info.cc(309)] Returning a speculative frame for 38654705669 [9,5]
+[0310/142920.277:WARNING:browser_info.cc(309)] Returning a speculative frame for 38654705669 [9,5]
+[0310/142920.277:WARNING:browser_info.cc(309)] Returning a speculative frame for 38654705669 [9,5]
+[0310/142920.277:WARNING:browser_info.cc(309)] Returning a speculative frame for 38654705669 [9,5]
+[0310/142920.404:WARNING:browser_info.cc(309)] Returning a speculative frame for 38654705669 [9,5]
+[0310/142921.358:WARNING:browser_info.cc(309)] Returning a speculative frame for 42949672965 [10,5]
+[0310/142921.358:WARNING:browser_info.cc(309)] Returning a speculative frame for 42949672965 [10,5]
+[0310/142921.358:WARNING:browser_info.cc(309)] Returning a speculative frame for 42949672965 [10,5]
+[0310/142921.358:WARNING:browser_info.cc(309)] Returning a speculative frame for 42949672965 [10,5]
+[0310/142921.534:WARNING:browser_info.cc(309)] Returning a speculative frame for 42949672965 [10,5]
+[0310/142922.233:INFO:CONSOLE(3922)] "LegacyDataMixin will be applied to all legacy elements.
+Set `_legacyUndefinedCheck: true` on element class to enable.", source: https://www.youtube.com/s/desktop/a13c3fe5/jsbin/desktop_polymer.vflset/desktop_polymer.js (3922)
+[0310/142923.574:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738381 [8,13] will be ignored
+[0310/142923.574:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738381 [8,13] will be ignored
+[0310/142925.215:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 34359738378 [8,10] will be ignored
+[0310/142926.603:WARNING:frame_impl.cc(469)] SendProcessMessage sent to detached frame 17179869185 [4,1] will be ignored
+[0310/162142.508:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
