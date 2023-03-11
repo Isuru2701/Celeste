@@ -28,7 +28,7 @@ namespace Celeste.Model
     public static class Reminder
     {
         private static string reminderfile = "Reminder.txt";
-        private static ServiceController serviceController = new ServiceController("ChronoForCeleste");
+        private static ServiceController serviceController;
 
 
         static Reminder() 
@@ -62,19 +62,35 @@ namespace Celeste.Model
 
         public static void SetNotification(DateTime date)
         {
-            if (serviceController.Status == ServiceControllerStatus.Running)
+            try
             {
-                //terminate any existing service with previous reminder time
-                serviceController.Stop();
-            }
+                serviceController = new ServiceController("ChronoForCeleste");
+                if (serviceController.Status == ServiceControllerStatus.Running)
+                {
+                    //terminate any existing service with previous reminder time
+                    serviceController.Stop();
+                }
 
-            serviceController.Start(new string[] { date.ToString() });
+                //service accepts string of HH:mm
+                serviceController.Start(new string[] { date.ToString("HH:mm") });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("REMINDER:SERVICE_NOT_FOUND_NO_START " + ex.Message);
+            }
 
         }
 
         public static void RemoveNotification()
         {
-            serviceController.Stop();
+            try
+            {
+                serviceController.Stop();
+            }
+            catch (Exception)
+            {
+                throw new Exception("REMINDER:SERIVCE_NOT_FOUND_NO_STOP");
+            }
         }
 
 
