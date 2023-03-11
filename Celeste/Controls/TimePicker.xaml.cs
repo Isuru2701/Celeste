@@ -60,13 +60,13 @@ namespace Celeste.Controls
             lbl_confirmation.Content = $"Reminder set for\n {timepicker.Time}";
             lbl_confirmation.Visibility = Visibility.Visible;
 
-            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, timepicker.Time.Hour, timepicker.Time.Minute, DateTime.Now.Second);
+            DateTime time = DateTime.Parse($"{DateTime.Now:yyyy-MM-dd} {timepicker.Time.Hour}:{timepicker.Time.Minute}:00 {timepicker.Time.Meridiem}");
 
             //Setting up the notification even if the app is closed
             try
             {
 
-                Reminder.SetDailyReminder(time, timepicker.Time.Meridiem);
+                Reminder.SetDailyReminder(time);
             }
             catch(Exception ex)
             {

@@ -1,4 +1,5 @@
-﻿using Celeste.Controls;
+﻿using CefSharp.Wpf;
+using Celeste.Controls;
 using Celeste.Model;
 using System;
 using System.Collections;
@@ -118,8 +119,14 @@ namespace Celeste.Views
             Button clickedButton = (Button)sender;
             try
             {
-
-                NavigationService.Navigate(new BrowserViewer(clickedButton.Tag.ToString()));
+                if (Flow.IsConnected())
+                {
+                    NavigationService.Navigate(new BrowserViewer(clickedButton.Tag.ToString()));
+                }
+                else
+                {
+                    Container.Content = new NoConnection();
+                }
             }
             catch (Exception)
             {
@@ -145,7 +152,10 @@ namespace Celeste.Views
         {
             if (Flow.IsConnected())
             {
-                Container.Content = new BrowserViewer();
+                ChromiumWebBrowser chromium = new ChromiumWebBrowser();
+                chromium.Load("https://mysupportforums.org/");
+
+                Container.Content = chromium;
             }
             else
             {

@@ -39,18 +39,18 @@ namespace Celeste.Model
         /// sets daily reminder to the time specified
         /// </summary>
         /// <param name="time"></param>
-        public static void SetDailyReminder(DateTime time, Meridiem meridiem)
+        public static void SetDailyReminder(DateTime time)
         {
             try
             {
 
                 //write a save to file
-                FileHandler.Write($"{DateTime.Now:yyyy/MM/dd} {time:h:mm:ss} {meridiem}", reminderfile);
+                FileHandler.Write($"{DateTime.Now:yyyy/MM/dd} {time:h:mm:ss tt}", reminderfile);
 
                 /*
                  * Note that scheduled toast notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be "dropped" as no longer relevant to the user. --Microsoft
                  */
-                SetNotification(time);
+                HandleTask(time);
 
 
             }
@@ -60,37 +60,41 @@ namespace Celeste.Model
             }
         }
 
-        public static void SetNotification(DateTime date)
+        public static void HandleTask(DateTime time)
         {
             try
             {
-                serviceController = new ServiceController("ChronoForCeleste");
-                if (serviceController.Status == ServiceControllerStatus.Running)
+                using (TaskService ts = new TaskService())
                 {
-                    //terminate any existing service with previous reminder time
-                    serviceController.Stop();
+                    // Create a new task definition.
+                    TaskDefinition td = ts.NewTask();
+
+                    // Set the task properties.
+                    td.RegistrationInfo.Description = "Chrono";
+                    td.Principal.RunLevel = TaskRunLevel.Highest;
+
+                    // Set the trigger to run every day at <time>
+                    DailyTrigger trigger = new DailyTrigger();
+                    trigger.StartBoundary = time;
+                    trigger.DaysInterval = 1;
+                    td.Triggers.Add(trigger);
+
+                    td.Actions.Add(new ExecAction("cmd.exe", " c/ C:\\Users\\ASUS\\Downloads\\Chrono\\Chrono\\bin\\Release\\Chrono.exe"));
+
+                    // Register the task with the task scheduler.
+                    ts.RootFolder.RegisterTaskDefinition("Chrono", td);
                 }
-
-                //service accepts string of HH:mm
-                serviceController.Start(new string[] { date.ToString("HH:mm") });
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                throw new Exception("REMINDER:SERVICE_NOT_FOUND_NO_START " + ex.Message);
+                throw new Exception("REMINDER: INTERNAL_ERROR: " + ex.Message);
             }
-
         }
 
         public static void RemoveNotification()
         {
-            try
-            {
-                serviceController.Stop();
-            }
-            catch (Exception)
-            {
-                throw new Exception("REMINDER:SERIVCE_NOT_FOUND_NO_STOP");
-            }
+            TaskService ts = new TaskService();
+            ts.RootFolder.DeleteTask("Chrono");
         }
 
 
