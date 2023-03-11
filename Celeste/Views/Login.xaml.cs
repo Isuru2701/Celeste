@@ -84,13 +84,13 @@ namespace Celeste.Views
 
                 catch (SqlException)
                 {
-                    Warning.Content = "Are you connected to the internet?";
+                    Warning.Content = "SQL_EXECPTION";
 
                 }
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("FATAL: INTERNAL_ERROR " + ex.Message, " ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Warning.Content = "FATAL: INTERNAL_ERROR " + ex.Message;
                 }
             }
 

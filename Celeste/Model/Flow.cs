@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,10 +50,16 @@ namespace Celeste.Model
             try
             {
 
-                using (var ping = new Ping())
+                using (var client = new HttpClient())
                 {
-                    var result = ping.Send("www.google.com", 1000);
-                    return result.Status == IPStatus.Success;
+                   var response = client.GetAsync("https://twilight.azurewebsites.net/");
+                    
+
+                    if(response.Result.IsSuccessStatusCode)
+                        return true;
+                    else
+                        return false;
+                    
                 }
             }
             catch (Exception)
