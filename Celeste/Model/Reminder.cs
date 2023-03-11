@@ -11,7 +11,6 @@ using Windows.Data;
 using Windows.Foundation;
 using System.Windows;
 using Microsoft.Toolkit.Uwp.Notifications;
-using HandyControl.Controls;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Media.Imaging;
@@ -60,41 +59,55 @@ namespace Celeste.Model
             }
         }
 
-        public static void HandleTask(DateTime time)
+        private static void HandleTask(DateTime time)
         {
             try
             {
-                using (TaskService ts = new TaskService())
-                {
-                    // Create a new task definition.
-                    TaskDefinition td = ts.NewTask();
+                // Create a new task definition.
+                TaskDefinition td = TaskService.Instance.NewTask();
 
-                    // Set the task properties.
-                    td.RegistrationInfo.Description = "Chrono";
-                    td.Principal.RunLevel = TaskRunLevel.Highest;
+                // Set the task properties.
+                td.RegistrationInfo.Author = "Celeste";
+                td.Settings.MultipleInstances = TaskInstancesPolicy.Parallel;
+                td.RegistrationInfo.Description = "Chrono" + Flow.User_ID;
+                // Set the trigger to run every day at <time>
+                DailyTrigger trigger = new DailyTrigger();
+                trigger.StartBoundary = time;
+                trigger.Repetition.Interval = TimeSpan.FromDays(1);
+                td.Triggers.Add(trigger);
 
-                    // Set the trigger to run every day at <time>
-                    DailyTrigger trigger = new DailyTrigger();
-                    trigger.StartBoundary = time;
-                    trigger.DaysInterval = 1;
-                    td.Triggers.Add(trigger);
 
-                    td.Actions.Add(new ExecAction("cmd.exe", " c/ C:\\Users\\ASUS\\Downloads\\Chrono\\Chrono\\bin\\Release\\Chrono.exe"));
+                td.Actions.Add(new ExecAction($"{Flow.BaseAddress}..\\Chrono\\Chrono.exe"));
 
-                    // Register the task with the task scheduler.
-                    ts.RootFolder.RegisterTaskDefinition("Chrono", td);
-                }
+                // Register the task with the task scheduler
+
+                TaskService.Instance.RootFolder.RegisterTaskDefinition("Chrono", td);
+
+            
             }
             catch(Exception ex)
             {
-                throw new Exception("REMINDER: INTERNAL_ERROR: " + ex.Message);
+                throw new Exception("REMINDER: SET_TASK " + ex.Message + ex.StackTrace + " " + ex.GetType().ToString());
             }
         }
 
         public static void RemoveNotification()
         {
-            TaskService ts = new TaskService();
-            ts.RootFolder.DeleteTask("Chrono");
+            try
+            {
+                foreach (var task in TaskService.Instance.RootFolder.Tasks)
+                {
+                    if(task.Name == "Chrono")
+                    {
+                        TaskService.Instance.RootFolder.DeleteTask("Chrono");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("REMINDER: REMOVE_TASK: " + ex.Message + ex.StackTrace + " " + ex.GetType().ToString());
+
+            }
         }
 
 
