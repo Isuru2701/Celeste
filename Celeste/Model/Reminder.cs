@@ -18,6 +18,7 @@ using Notifications.Wpf;
 using Microsoft.Win32.TaskScheduler;
 using System.Collections.Concurrent;
 using System.ServiceProcess;
+using System.Xml.Linq;
 
 namespace Celeste.Model
 {
@@ -77,11 +78,11 @@ namespace Celeste.Model
                 td.Triggers.Add(trigger);
 
 
-                td.Actions.Add(new ExecAction($"{Flow.BaseAddress}..\\Chrono\\Chrono.exe"));
+                td.Actions.Add(new ExecAction(@"C:\Users\ASUS\Documents\Programs\Celeste\Celeste\Celeste\Chrono\Chrono.exe"));
 
                 // Register the task with the task scheduler
 
-                TaskService.Instance.RootFolder.RegisterTaskDefinition("Chrono", td);
+                TaskService.Instance.RootFolder.RegisterTaskDefinition("Chrono" + Flow.User_ID, td);
 
             
             }
