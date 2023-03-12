@@ -22,6 +22,7 @@ using HandyControl.Themes;
 using HandyControl.Tools;
 using HandyControl.Tools.Converter;
 using HandyControl.Tools.Extension;
+using RootLibrary.WPF.Localization;
 using RoyT.TimePicker;
 using ScottPlot;
 using System;

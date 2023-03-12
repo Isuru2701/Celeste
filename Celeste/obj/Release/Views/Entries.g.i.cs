@@ -22,6 +22,7 @@ using HandyControl.Themes;
 using HandyControl.Tools;
 using HandyControl.Tools.Converter;
 using HandyControl.Tools.Extension;
+using RootLibrary.WPF.Localization;
 using ScottPlot;
 using System;
 using System.Diagnostics;

@@ -27,6 +27,7 @@ using LiveChartsCore.SkiaSharpView.VisualElements;
 using SkiaSharp;
 using Celeste.Model;
 using System.Reflection.Emit;
+using Windows.UI.Xaml;
 
 namespace Celeste.Controls
 {
@@ -74,6 +75,7 @@ namespace Celeste.Controls
         {
             CartesianChart ch = new CartesianChart();
             ch.Zoom = ZoomingOptions.None;
+            
             ch.AxisX.Add
                 (
                     new LiveCharts.Wpf.Axis
@@ -117,8 +119,8 @@ namespace Celeste.Controls
                 {
                     Title = "Sentiment",
                     Values = new ChartValues<double>(y_axis),
-                    Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 255, 255)),
-                    Fill = new SolidColorBrush(Colors.Transparent)
+                    LineSmoothness = 0.2,
+                    Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 255, 255))
                 }
             };
             plotter.Children.Add(ch);

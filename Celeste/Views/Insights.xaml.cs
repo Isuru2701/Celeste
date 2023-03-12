@@ -100,7 +100,7 @@ namespace Celeste.Views
         private void btn_report_Click(object sender, RoutedEventArgs e)
         {
             if (Flow.IsConnected())
-                new ReportForm().Show();
+                InfoFrame.Content = new Report();
             else
                 InfoFrame.Content = new NoConnection();
         }

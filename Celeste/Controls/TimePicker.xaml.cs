@@ -95,6 +95,7 @@ namespace Celeste.Controls
         private void btn_remove_Click(object sender, RoutedEventArgs e)
         {
             Reminder.RemoveNotification();
+            lbl_confirmation.Visibility = Visibility.Visible;
             lbl_confirmation.Content = "Cleared reminder";
         }
     }

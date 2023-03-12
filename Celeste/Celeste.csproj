@@ -85,6 +85,9 @@
     <Compile Include="Controls\PieChart.xaml.cs">
       <DependentUpon>PieChart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TimePicker.xaml.cs">
       <DependentUpon>TimePicker.xaml</DependentUpon>
     </Compile>
@@ -106,13 +109,10 @@
     <Compile Include="Model\Data\user_entries.cs" />
     <Compile Include="Model\Data\user_score.cs" />
     <Compile Include="Model\Data\user_triggers.cs" />
-    <Compile Include="Report.xaml.cs">
-      <DependentUpon>Report.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ReportForm.cs">
+    <Compile Include="Controls\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportForm.Designer.cs">
+    <Compile Include="Controls\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BrowserViewer.xaml.cs">
@@ -177,11 +177,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\TimePicker.xaml">
+    <Page Include="Controls\Report.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Report.xaml">
+    <Page Include="Controls\TimePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,7 +296,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportForm.resx">
+    <EmbeddedResource Include="Controls\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Summary.rdlc" />
@@ -386,6 +386,9 @@
   <ItemGroup>
     <PackageReference Include="CefSharp.Wpf">
       <Version>110.0.300</Version>
+    </PackageReference>
+    <PackageReference Include="CrystalReports.WPF.Viewer">
+      <Version>13.0.4001</Version>
     </PackageReference>
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>

@@ -28,8 +28,6 @@ namespace Celeste.Model
     public static class Reminder
     {
         private static string reminderfile = "Reminder.txt";
-        private static ServiceController serviceController;
-
 
         static Reminder() 
         {
@@ -70,6 +68,8 @@ namespace Celeste.Model
                 // Set the task properties.
                 td.RegistrationInfo.Author = "Celeste";
                 td.Settings.MultipleInstances = TaskInstancesPolicy.Parallel;
+                td.Settings.DisallowStartIfOnBatteries = false;
+                td.Settings.StopIfGoingOnBatteries = false;
                 td.RegistrationInfo.Description = "Chrono" + Flow.User_ID;
                 // Set the trigger to run every day at <time>
                 DailyTrigger trigger = new DailyTrigger();
@@ -98,9 +98,9 @@ namespace Celeste.Model
             {
                 foreach (var task in TaskService.Instance.RootFolder.Tasks)
                 {
-                    if(task.Name == "Chrono")
+                    if(task.Name == "Chrono" + Flow.User_ID)
                     {
-                        TaskService.Instance.RootFolder.DeleteTask("Chrono");
+                        TaskService.Instance.RootFolder.DeleteTask("Chrono" + Flow.User_ID);
                     }
                 }
             }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,25 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Celeste
+namespace Celeste.Controls
 {
     /// <summary>
     /// Interaction logic for Report.xaml
     /// </summary>
-    public partial class Report : Window
+    public partial class Report : UserControl
     {
         public Report()
         {
             InitializeComponent();
-        }
-
-        private DataTable GetData()
-        {
-            DataTable dt = new DataTable();
-            return dt;
-
+            ReportForm form = new ReportForm();
+            form.TopLevel = false;
+            container.Child = form;
         }
     }
 }

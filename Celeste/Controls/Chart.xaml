@@ -14,10 +14,6 @@
             CornerRadius="20"
             BorderThickness="3">
         <Grid x:Name="plotter" Margin="25,31,25,31">
-            
-            
-            
-
         </Grid>
 
     </Border>

@@ -11,6 +11,7 @@
 
 using Celeste.Controls;
 using Microsoft.Maps.MapControl.WPF;
+using RootLibrary.WPF.Localization;
 using ScottPlot;
 using System;
 using System.Diagnostics;

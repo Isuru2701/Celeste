@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using Celeste.Views;
+using RootLibrary.WPF.Localization;
 using ScottPlot;
 using System;
 using System.Diagnostics;

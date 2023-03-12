@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using LottieSharp;
+using RootLibrary.WPF.Localization;
 using ScottPlot;
 using System;
 using System.Diagnostics;

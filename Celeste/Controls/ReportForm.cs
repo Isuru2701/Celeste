@@ -26,6 +26,9 @@ namespace Celeste
             this.fetcherAdapter.Fill(this.dataSet1.Fetcher, Flow.User_ID);
 
             this.reportViewer1.RefreshReport();
+
+
+            lbl_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
