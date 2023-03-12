@@ -285,6 +285,8 @@ namespace Celeste {
             
             private global::System.Data.DataColumn columnscores;
             
+            private global::System.Data.DataColumn columndates;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FetcherDataTable() {
@@ -344,6 +346,14 @@ namespace Celeste {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn datesColumn {
+                get {
+                    return this.columndates;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +389,13 @@ namespace Celeste {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FetcherRow AddFetcherRow(string triggers, string comforts, float scores) {
+            public FetcherRow AddFetcherRow(string triggers, string comforts, float scores, System.DateTime dates) {
                 FetcherRow rowFetcherRow = ((FetcherRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         triggers,
                         comforts,
-                        scores};
+                        scores,
+                        dates};
                 rowFetcherRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFetcherRow);
                 return rowFetcherRow;
@@ -410,6 +421,7 @@ namespace Celeste {
                 this.columntriggers = base.Columns["triggers"];
                 this.columncomforts = base.Columns["comforts"];
                 this.columnscores = base.Columns["scores"];
+                this.columndates = base.Columns["dates"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -421,8 +433,11 @@ namespace Celeste {
                 base.Columns.Add(this.columncomforts);
                 this.columnscores = new global::System.Data.DataColumn("scores", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnscores);
+                this.columndates = new global::System.Data.DataColumn("dates", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndates);
                 this.columntriggers.MaxLength = 30;
                 this.columncomforts.MaxLength = 30;
+                this.columndates.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -608,6 +623,17 @@ namespace Celeste {
                 }
                 set {
                     this[this.tableFetcher.scoresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime dates {
+                get {
+                    return ((global::System.DateTime)(this[this.tableFetcher.datesColumn]));
+                }
+                set {
+                    this[this.tableFetcher.datesColumn] = value;
                 }
             }
             
@@ -810,6 +836,7 @@ namespace Celeste.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("triggers", "triggers");
             tableMapping.ColumnMappings.Add("comforts", "comforts");
             tableMapping.ColumnMappings.Add("scores", "scores");
+            tableMapping.ColumnMappings.Add("dates", "dates");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -826,14 +853,35 @@ namespace Celeste.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Triggers.trigger_name AS triggers , Comforts.trigger_name AS comforts , user_score.score AS scores
-FROM EndUser
-INNER JOIN user_triggers ON Enduser.enduser_id = user_triggers.enduser_id
-INNER JOIN Triggers ON user_triggers.trigger_id = Triggers.trigger_id
-INNER JOIN user_comforts ON Enduser.enduser_id = user_comforts.enduser_id
-INNER JOIN Comforts ON user_comforts.trigger_id = Comforts.trigger_id
-INNER JOIN user_score ON Enduser.enduser_id = user_score.enduser_id 
-WHERE EndUser.enduser_id = @a";
+            this._commandCollection[0].CommandText = @"SELECT 
+    user_score.entry_date AS dates, 
+    user_score.score AS scores, 
+    triggers.trigger_name AS triggers, 
+    comforts.trigger_name AS comforts
+FROM 
+    user_score
+LEFT JOIN 
+    user_triggers
+ON 
+    user_score.enduser_id = user_triggers.enduser_id
+    AND user_score.entry_date = user_triggers.entry_date
+LEFT JOIN 
+    triggers 
+ON 
+    user_triggers.trigger_id = triggers.trigger_id
+LEFT JOIN 
+    user_comforts 
+ON 
+    user_score.enduser_id = user_comforts.enduser_id 
+    AND user_score.entry_date = user_comforts.entry_date
+LEFT JOIN 
+    comforts 
+ON 
+    user_comforts.trigger_id = comforts.trigger_id
+WHERE 
+    user_score.enduser_id = @a
+ORDER BY 
+    user_score.entry_date";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@a", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "enduser_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

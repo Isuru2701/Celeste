@@ -13,64 +13,109 @@
     <Page.Resources>
         <Storyboard x:Key="WriterLines" RepeatBehavior="Forever">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.24"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0.52"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.076"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.136"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0.352"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.016"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="48"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="292.8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="381.6"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="27.2"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="184"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="251.2"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.132"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.824"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0.56"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.012"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="383.225"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="35.2"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="164.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="274.4"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.352"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.652"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="1.42"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.316"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.696"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0.336"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-0.008"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-100.8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-40.8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="112.8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="333.6"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="60.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="132.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="201.6"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.328"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.868"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="1.444"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.724"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.144"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0.552"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-0.008"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-134.4"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-26.4"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="88.8"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="232.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="28.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="147.2"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="259.2"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.544"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.904"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="1.432"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.412"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.128"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0.648"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="0.02"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line4" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-91.2"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-19.2"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="86.4"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="290.4"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="25.6"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="121.6"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="247.2"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CardinalRotate">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="52.591"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="129.047"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="98.973"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="90.48"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image1" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line5" Storyboard.TargetProperty="(Line.X2)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-102"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-255"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line6" Storyboard.TargetProperty="(Line.X2)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="255"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line7" Storyboard.TargetProperty="(Line.Y2)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-100"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="-250"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="line8" Storyboard.TargetProperty="(Line.Y2)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.5000000" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="InkFlow">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.729"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.959"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-208.411"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="-62.76"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-9.435"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="23.454"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="7.063"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.062"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Page.Resources>
 
+    <Grid>
 
-    <Border
-        BorderBrush="#d8c6a0"
-        BorderThickness="0">
+
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -78,124 +123,123 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Border Margin="0,30,0,30"
-                    BorderBrush="#d8c6a0"
-                    BorderThickness="0,5,5,5"
-                    CornerRadius="0,30,30,0" x:Name="writer">
 
-                <Grid>
 
-                    <Button x:Name="btn_writer"
+            <Grid>
+
+                <Image Source="../Resources/book.png"
+                           Margin="0,0,100,0"/>
+
+                <Image Source="../Resources/pen.png" Margin="395,619,0,0"/>
+
+
+                <Button x:Name="btn_writer"
                         Width="{Binding ElementName=writer, Path=ActualWidth}"
                         Height="{Binding ElementName=writer, Path=ActualHeight}"
                         Background="Transparent"
                         Click="btn_writer_Click"
                         Style="{StaticResource DiamondButtonTheme}">
-                    </Button>
-                    <Label Content="Today . . ."
+                </Button>
+                <Label Content="Today . . ."
                            Foreground="#a1a1a1"
-                           Margin="20,20,490,686"
+                           Margin="35,78,475,628"
                            FontSize="35"
                            FontStyle="Italic"
                            FontWeight="Light"
                            IsHitTestVisible="False"></Label>
 
-                    <Canvas IsHitTestVisible="False">
-                        <Line x:Name="line" X1="50" Y1="400" X2="400" Y2="400" 
+                <Canvas IsHitTestVisible="False" Margin="0,0,10,0">
+                    <Line x:Name="line" X1="50" Y1="400" X2="400" Y2="400" 
                      Stroke="#d8c6a0"
                       StrokeThickness="7"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                            <Line.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Line.RenderTransform>
-                        </Line>
+                        <Line.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Line.RenderTransform>
+                    </Line>
 
-                        <Line x:Name="line1" X1="50" Y1="450" X2="400" Y2="450" 
+                    <Line x:Name="line1" X1="50" Y1="450" X2="400" Y2="450" 
                      Stroke="#d8c6a0"
                       StrokeThickness="7"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                            <Line.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Line.RenderTransform>
-                        </Line>
+                        <Line.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Line.RenderTransform>
+                    </Line>
 
-                        <Line x:Name="line2" X1="50" Y1="500" X2="400" Y2="500" 
+                    <Line x:Name="line2" X1="50" Y1="500" X2="400" Y2="500" 
                      Stroke="#d8c6a0"
                       StrokeThickness="7"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                            <Line.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Line.RenderTransform>
-                        </Line>
+                        <Line.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Line.RenderTransform>
+                    </Line>
 
-                        <Line x:Name="line3" X1="50" Y1="550" X2="400" Y2="550" 
+                    <Line x:Name="line3" X1="50" Y1="550" X2="400" Y2="550" 
                      Stroke="#d8c6a0"
                       StrokeThickness="7"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                            <Line.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Line.RenderTransform>
-                        </Line>
+                        <Line.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Line.RenderTransform>
+                    </Line>
 
-                        <Line x:Name="line4" X1="50" Y1="600" X2="400" Y2="600" 
+                    <Line x:Name="line4" X1="50" Y1="600" X2="400" Y2="600" 
                      Stroke="#d8c6a0"
                       StrokeThickness="7"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                            <Line.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Line.RenderTransform>
-                        </Line>
+                        <Line.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Line.RenderTransform>
+                    </Line>
 
 
 
 
-                    </Canvas>
+                </Canvas>
 
 
-                </Grid>
+            </Grid>
 
-
-
-            </Border>
 
             <Button
                 x:Name="btn_user"
-                Grid.Column="1"
                 Width="70"
                 Height="70"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="20,20,0,0"
+                Margin="599,112,0,0"
                 Background="Transparent"
                 RenderTransformOrigin="0.5, 0.5"
                 Click="btn_user_Click"
@@ -215,22 +259,6 @@
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
-
-                        <!-- event triggers examples
-
-                        <Style.Triggers>
-                            <EventTrigger RoutedEvent="Click">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation To="56"
-                                                         Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="0:0:10">
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Style.Triggers>
-                -->
                     </Style>
                 </Button.Style>
 
@@ -238,110 +266,121 @@
             </Button>
 
 
+            <Button
+                x:Name="btn_help"
+                Width="70"
+                Height="70"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="602,222,0,0"
+                Background="Transparent"
+                RenderTransformOrigin="0.5, 0.5"
+                Click="btn_user_Click"
+                ToolTip="View Profile">
+                <Button.LayoutTransform>
+                    <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+                </Button.LayoutTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border BorderBrush="#d8c6a0" BorderThickness="10" Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+
+                ?
+            </Button>
+
+
+
             <Grid Grid.Column="1">
+
+                <Label Content="Resources"
+                       Width="100"
+                       Height="50" Margin="375,64,361,750"/>
+
+                <Label Content="Exit"
+                       Width="100"
+                       Height="50" Margin="712,400,24,414"/>
+
+                <Label Content="Pages"
+                       Width="100"
+                       Height="50" Margin="72,400,664,414"/>
+
+                <Label Content="Reminder"
+                       Width="100"
+                       Height="50" Margin="375,718,361,96"/>
+
+                <Image x:Name="image1" Source="../Resources/globe.png" Margin="57,0,-57,0"/>
+                <Image Source="../Resources/larger_ring.png" Margin="129,162,250,176"/>
+                <Image Source="../Resources/smaller_ring.png" Margin="326,251,151,176" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-7.944"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="image" Source="../Resources/cardinals.png" Margin="-20,-11,-6,4" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image Source="../Resources/outline.png" Margin="51,51,64,66"/>
 
                 <Canvas IsHitTestVisible="False"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
 
                     <!--LEFT-->
-                    <Line X1="-100" Y1="0"
+                    <Line x:Name="line5" X1="-100" Y1="0"
                       X2="-225" Y2="0" 
                       Stroke="#d8c6a0"
                       StrokeThickness="4" 
-                      Canvas.Left="2">
-
-                        <Line.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="-100" To="-225" Duration="0:0:0.5" 
-                                    Storyboard.TargetProperty="(Line.X2)"/>
-                                    </Storyboard>
-
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Line.Triggers>
-
-
-                    </Line>
+                      Canvas.Left="2"/>
 
 
 
                     <!--RIGHT-->
-                    <Line X1="100" Y1="0"
+                    <Line x:Name="line6" X1="100" Y1="0"
                       X2="225" Y2="0" 
                       Stroke="#d8c6a0"
                       StrokeThickness="4" 
-                      Canvas.Left="2">
-
-                        <Line.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="100" To="225" Duration="0:0:0.5" 
-                                    Storyboard.TargetProperty="(Line.X2)"/>
-                                    </Storyboard>
-
-                                </BeginStoryboard>
-                            </EventTrigger>
-
-                        </Line.Triggers>
-
-                    </Line>
+                      Canvas.Left="2"/>
 
 
                     <!--UP-->
-                    <Line X1="1" Y1="-100"
+                    <Line x:Name="line7" X1="1" Y1="-100"
                       X2="1" Y2="-250" 
                       Stroke="#d8c6a0"
                       StrokeThickness="4" 
-                      Canvas.Left="2">
-
-                        <Line.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="-100" To="-250" Duration="0:0:0.5" 
-                                    Storyboard.TargetProperty="(Line.Y2)"/>
-                                    </Storyboard>
-
-                                </BeginStoryboard>
-                            </EventTrigger>
-
-                        </Line.Triggers>
-
-                    </Line>
+                      Canvas.Left="2"/>
 
                     <!--DOWN-->
-                    <Line X1="1" Y1="100"
+                    <Line x:Name="line8" X1="1" Y1="100"
                       X2="1" Y2="250" 
                       Stroke="#d8c6a0"
                       StrokeThickness="4" 
-                      Canvas.Left="2">
-
-                        <Line.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation From="100" To="250" Duration="0:0:0.5" 
-                                    Storyboard.TargetProperty="(Line.Y2)"/>
-                                    </Storyboard>
-
-                                </BeginStoryboard>
-                            </EventTrigger>
-
-                        </Line.Triggers>
-
-
-                    </Line>
+                      Canvas.Left="2"/>
 
 
                 </Canvas>
 
                 <DockPanel Grid.Column="1" >
-
-
                     <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="14,120,10,9"
                         Click="btn_resources_Click"
                         ToolTip="Resources"
@@ -353,7 +392,7 @@
                         ToolTip="Set Notification"
                         Click="btn_notification_Click"
                         Style="{StaticResource DiamondButtonTheme}">
-                        <Image Source="../Resources/timer_btn.png"></Image>
+                        <Image Source="../Resources/timer_btn.png"/>
 
                     </Button>
 
@@ -368,7 +407,7 @@
                         Click="btn_exit_Click"
                         ToolTip="logout"
                         Style="{StaticResource DiamondButtonTheme}">
-                        <Image Source="../Resources/exit_btn.png"></Image>
+                        <Image Source="../Resources/exit_btn.png"/>
                     </Button>
 
                     <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0"
@@ -376,9 +415,9 @@
                         ToolTip="Insights">
 
                         <Button.Style>
-                            <Style TargetType="Button" BasedOn="{StaticResource DiamondButtonTheme}">
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
                                 <Style.Triggers>
-                                    <EventTrigger RoutedEvent="Loaded">
+                                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation From="1" To="1" Duration="0:0:2" 
@@ -390,11 +429,21 @@
                             </Style>
                         </Button.Style>
 
-                        <Image Source="../Resources/insights_btn.png"></Image>
+                        <Image Source="../Resources/insights_btn.png"/>
                     </Button>
 
                 </DockPanel>
             </Grid>
         </Grid>
-    </Border>
+        <Image x:Name="image2" Source="../Resources/ink.png" Margin="473,478,597,125" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-6.421"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
 </Page>

@@ -366,6 +366,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\twilight.py" />
+    <Resource Include="Resources\book.png" />
+    <Resource Include="Resources\cardinals.png" />
+    <Resource Include="Resources\globe.png" />
+    <Resource Include="Resources\ink.png" />
+    <Resource Include="Resources\larger_ring.png" />
+    <Resource Include="Resources\outline.png" />
+    <Resource Include="Resources\pen.png" />
+    <Resource Include="Resources\smaller_ring.png" />
     <Resource Include="Resources\empty.png" />
     <Resource Include="Resources\upload_btn.png" />
     <Resource Include="Resources\timer_btn.png" />

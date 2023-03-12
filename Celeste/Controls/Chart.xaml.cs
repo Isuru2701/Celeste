@@ -49,7 +49,7 @@ namespace Celeste.Controls
             try
             {
                 int rows = Person.GetInstance(Flow.User_ID).FetchScores();
-                if (rows > 0)
+                if (rows > 1)
                 {
                     foreach (Score score in Person.GetInstance(Flow.User_ID).Scores)
                     {

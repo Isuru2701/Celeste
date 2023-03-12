@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet1 = new Celeste.DataSet1();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.fetcherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Celeste.DataSet1();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.fetcherAdapter = new Celeste.DataSet1TableAdapters.FetcherAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fetcherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // fetcherBindingSource
             // 
-            reportDataSource1.Name = "SummaryReport";
-            reportDataSource1.Value = this.fetcherBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Celeste.Summary.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 84);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(797, 390);
-            this.reportViewer1.TabIndex = 0;
+            this.fetcherBindingSource.DataMember = "Fetcher";
+            this.fetcherBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fetcherBindingSource
+            // reportViewer1
             // 
-            this.fetcherBindingSource.DataMember = "Fetcher";
-            this.fetcherBindingSource.DataSource = this.dataSet1;
+            reportDataSource2.Name = "SummaryReport";
+            reportDataSource2.Value = this.fetcherBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Celeste.Summary.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 47);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(797, 427);
+            this.reportViewer1.TabIndex = 0;
             // 
             // fetcherAdapter
             // 
@@ -71,10 +71,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReportForm";
-            this.Text = "ReportForm";
+            this.ShowIcon = false;
+            this.Text = "Report";
             this.Load += new System.EventHandler(this.ReportForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fetcherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
