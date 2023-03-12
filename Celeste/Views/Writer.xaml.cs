@@ -32,11 +32,14 @@ namespace Celeste.Views
     public partial class Writer : Page
     {
         Entry current;
+        string past_entry;
 
         public Writer(DateTime date)
         {
 
             current = new Entry(Flow.User_ID, date.Date);
+
+
 
             InitializeComponent();
 
@@ -62,6 +65,8 @@ namespace Celeste.Views
                                 txt_writer.Text = query.ToString();
                             }
                         }
+
+                        past_entry = txt_writer.Text;
                     }
                     else
                     {
@@ -72,9 +77,9 @@ namespace Celeste.Views
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("WRITER: LOAD_ERROR: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                lbl_confirmation.Content = "Could not save";
             }
         }
 
@@ -100,7 +105,7 @@ namespace Celeste.Views
             try
             {
                 //save a copy to local and then push to db
-                if (txt_writer.Text != "")
+                if (txt_writer.Text != "" && txt_writer.Text != past_entry)
                 {
                     FileHandler.Write(txt_writer.Text, $"{current.Date:yyyyMMdd}.txt");
 

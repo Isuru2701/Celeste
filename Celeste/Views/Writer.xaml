@@ -46,7 +46,7 @@
 
 
         <Label x:Name="lbl_confirmation"
-               Margin="10,557,859,142"
+               Margin="61,557,808,142"
                Visibility="Visible">
         </Label>
 
