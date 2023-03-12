@@ -266,39 +266,6 @@
             </Button>
 
 
-            <Button
-                x:Name="btn_help"
-                Width="70"
-                Height="70"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="602,222,0,0"
-                Background="Transparent"
-                RenderTransformOrigin="0.5, 0.5"
-                Click="btn_user_Click"
-                ToolTip="View Profile">
-                <Button.LayoutTransform>
-                    <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
-                </Button.LayoutTransform>
-
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DiamondButtonTheme}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border BorderBrush="#d8c6a0" BorderThickness="10" Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-
-                ?
-            </Button>
-
-
 
             <Grid Grid.Column="1">
 

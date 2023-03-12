@@ -23,6 +23,7 @@ using System.Windows.Shapes;
 using System.Net.Http;
 using System.Threading;
 using Newtonsoft.Json;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace Celeste.Views
 {
@@ -136,7 +137,9 @@ namespace Celeste.Views
                     }
                     else
                     {
-                        lbl_confirmation.Content = "we couldn't save this entry.\nAre you connected to the internet?";
+                        new ToastContentBuilder()
+                            .AddText("Celeste couldn't analyse your last entry.\nAre you connected to the internet?")
+                            .Show();
                     }
 
                 }
