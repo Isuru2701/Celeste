@@ -99,12 +99,16 @@ namespace Celeste.Views
                             Container.Content = box;
                         }
                     }
+
+                    else
+                        Container.Content = new InsufficientInfo();
+
                 }
 
                 else
                 {
 
-                    Container.Content = new InsufficientInfo();
+                    Container.Content = new NoConnection();
                 }
 
             }

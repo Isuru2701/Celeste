@@ -24,11 +24,11 @@ namespace Celeste.Controls
     public partial class BrowserViewer : Page
     {
 
-        public BrowserViewer()
-        {
-            InitializeComponent();
-            browser.Load("https://mysupportforums.org/");
-        }
+        //public BrowserViewer()
+        //{
+        //    InitializeComponent();
+        //    browser.Load("https://mysupportforums.org/");
+        //}
 
         public BrowserViewer(string id)
         {

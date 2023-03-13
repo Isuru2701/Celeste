@@ -25,7 +25,7 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Effect">
                     <Setter.Value>
-                        <DropShadowEffect BlurRadius="10" Color="#d8c6a0" ShadowDepth="0"/>
+                        <DropShadowEffect BlurRadius="12" Color="#d8c6a0" ShadowDepth="0"/>
                     </Setter.Value>
                 </Setter>
 

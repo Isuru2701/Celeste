@@ -141,7 +141,7 @@
                     MouseMove="OnMouseMove"
                     Source="../Resources/space-background.jpeg"
                        Stretch="Fill" Height="926"
-                    Opacity="0.7" Grid.ColumnSpan="2" Margin="0,0,0,-62">
+                    Opacity="0.5" Grid.ColumnSpan="2" Margin="0,0,0,-62">
 
             <Image.RenderTransform>
                 <TranslateTransform X="0" Y="0" />

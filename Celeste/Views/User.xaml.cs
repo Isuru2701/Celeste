@@ -51,6 +51,7 @@ namespace Celeste
                     }
                     else
                     {
+
                         lbl_error.Content = "No Connection";
                     }
                 }
@@ -115,6 +116,10 @@ namespace Celeste
 
                         context.SaveChanges();
                     }
+                }
+                else
+                {
+                    lbl_error.Content = "No Connection";
                 }
             }
             catch (Exception ex)
