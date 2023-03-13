@@ -88,8 +88,41 @@ namespace Celeste.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            (this.FindResource("WriterLines") as Storyboard).Begin();
-           
+            try
+            {
+                (this.FindResource("WriterLines") as Storyboard).Begin();
+
+                (this.FindResource("Orbital") as Storyboard).Begin();
+
+                (this.FindResource("Tapestry") as Storyboard).Begin();
+
+                (this.FindResource("Stars") as Storyboard).Begin();
+            }
+            catch (Exception)
+            {
+                //Do nothing, just dont crash.
+            }
+
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            var image = (Image)sender;
+
+            //relative to center
+            double mouseX = e.GetPosition(image).X - (image.ActualWidth / 2);
+            double mouseY = e.GetPosition(image).Y - (image.ActualHeight / 2);
+
+            double maxOffset = 10;
+
+            // Calculate the new X and Y offsets
+            double offsetX = (maxOffset / image.ActualWidth) * mouseX;
+            double offsetY = (maxOffset / image.ActualHeight) * mouseY;
+
+            // Update image
+            var transform = (TranslateTransform)image.RenderTransform;
+            transform.X = offsetX;
+            transform.Y = offsetY;
         }
     }
 

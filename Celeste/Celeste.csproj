@@ -366,6 +366,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\twilight.py" />
+    <Resource Include="Resources\space-background-purple.jpeg" />
+    <Resource Include="Resources\space-background-red.jpeg" />
+    <Resource Include="Resources\space-background.jpeg" />
     <Resource Include="Resources\user_btn.png" />
     <Resource Include="Resources\background.jpeg" />
     <Resource Include="Resources\orbit.png" />

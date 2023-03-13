@@ -7,9 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1000"
       Title="Writer"
-      Background="#FF1E1730">
+      Background="Black">
 
     <Grid>
+
+        <Image Source="../Resources/space-background-red.jpeg"
+               Stretch="Fill"
+               Opacity="0.6"/>
+
         <Button x:Name="btn_back"
                 Style="{StaticResource DiamondButtonTheme}" 
                 Margin="61,365,869,365"
@@ -30,7 +35,8 @@
                      TextWrapping="Wrap"
                      SpellCheck.IsEnabled="True"
                      VerticalScrollBarVisibility="Visible"
-                      Padding="20, 20, 20, 20">
+                      Padding="20, 20, 20, 20"
+                    Background="#dd1E1730">
 
                 </TextBox>
             </Grid>

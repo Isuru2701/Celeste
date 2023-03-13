@@ -63,18 +63,95 @@
                 <EasingDoubleKeyFrame KeyTime="00:00:03" Value="247.2"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="Tapestry">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-0.032"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-1.032"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-451.2"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-14.4"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btn_resources" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-280.8"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="45.6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btn_resources" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-2.4"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="-4"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btn_notification" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="3.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btn_notification" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-579.6"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="36.4"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btn_entries" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-902.4"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="57.6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btn_entries" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.9000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Orbital">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="138.631"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="-8.641"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="25.6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-9.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Stars" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image1" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image3" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.25"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image4" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Page.Resources>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="169*"/>
+            <ColumnDefinition Width="215*"/>
+        </Grid.ColumnDefinitions>
 
-        <Image Source="../Resources/background.jpeg"
-                   Stretch="Fill"
-               Opacity="0.5"
-               IsHitTestVisible="False"/>
+        <Image
+                    MouseMove="OnMouseMove"
+                    Source="../Resources/space-background.jpeg"
+                       Stretch="Fill" Height="926"
+                    Opacity="0.7" Grid.ColumnSpan="2" Margin="0,0,0,-62">
+
+            <Image.RenderTransform>
+                <TranslateTransform X="0" Y="0" />
+            </Image.RenderTransform>
+        </Image>
 
 
 
-        <Grid>
+
+        <Grid Grid.ColumnSpan="2">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="700"/>
@@ -216,46 +293,92 @@
                     <RowDefinition Height="619*"/>
                 </Grid.RowDefinitions>
 
-                <Rectangle
+                <Rectangle x:Name="rectangle"
                            Width="150" Margin="-96,-10,782,0"
-                    Fill="Black" Grid.RowSpan="2"/>
+                    Fill="Black" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
 
                 <Grid Grid.RowSpan="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="83*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
 
-                    <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="-77,178,813,586"
+                    <Button x:Name="btn_resources" Margin="-77,178,813,386"
                         Click="btn_resources_Click"
                         ToolTip="Resources"
-                        Style="{StaticResource DiamondButtonTheme}">
+                        Style="{StaticResource DiamondButtonTheme}" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
                         <Image Source="../Resources/resources_btn.png"/>
                     </Button>
-                    <Button x:Name="btn_notification" DockPanel.Dock="Bottom"  Margin="-77,382,813,382"
+                    <Button x:Name="btn_notification"  Margin="-77,382,813,182"
                         ToolTip="Reminder"
                         Click="btn_notification_Click"
-                        Style="{StaticResource DiamondButtonTheme}">
+                        Style="{StaticResource DiamondButtonTheme}" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
                         <Image Source="../Resources/timer_btn.png"/>
 
                     </Button>
 
-                    <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="-77,602,813,162"
+                    <Button x:Name="btn_entries" Margin="-77,602,813,162"
                         Click="btn_entries_Click"
                         ToolTip="Pages"
-                        Style="{StaticResource DiamondButtonTheme}">
+                        Style="{StaticResource DiamondButtonTheme}" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
                         <Image Source="../Resources/entries_btn.png"/>
                     </Button>
 
-                    <Button x:Name="btn_exit" DockPanel.Dock="Right" Margin="726,754,10,10"
+                    <Button x:Name="btn_exit" Margin="726,90,10,10"
                         Click="btn_exit_Click"
                         ToolTip="logout"
-                        Style="{StaticResource DiamondButtonTheme}">
+                        Style="{StaticResource DiamondButtonTheme}" Grid.Row="1">
                         <Image Source="../Resources/exit_btn.png"
                               />
                     </Button>
 
 
-                    <Image Source="../Resources/orbit.png" Margin="197,18,-35,18"
+                    <Image x:Name="image" Source="../Resources/orbit.png" Margin="109,18,53,18"
                            Opacity="0.7"
-                           IsHitTestVisible="False"/>
-                    <Button x:Name="btn_insights" Width="300" Height="300" Margin="354,282,182,282"
+                           IsHitTestVisible="False" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Button x:Name="btn_insights" Width="300" Height="300" Margin="268,282,268,82"
                         Click="btn_insights_Click"
                         ToolTip="Insights">
 
@@ -287,6 +410,14 @@
                 Style="{StaticResource DiamondButtonTheme}">
                         <Image Source="../Resources/user_btn.png"/>
                     </Button>
+                    <Image x:Name="image1" Opacity="0"
+                        Margin="393,60,390,550" Source="/Resources/star_btn.png" Stretch="Fill"/>
+                    <Image x:Name="image3" Opacity="0"
+                        Margin="643,201,140,409" Source="/Resources/star_btn.png" Stretch="Fill"/>
+                    <Image x:Name="image2" Opacity="0"
+                        Margin="223,648,560,162" Source="/Resources/star_btn.png" Stretch="Fill" Grid.RowSpan="2"/>
+                    <Image x:Name="image4" Opacity="0"
+                        Margin="670,528,112,82" Source="/Resources/star_btn.png" Stretch="Fill"/>
 
                 </Grid>
             </Grid>
