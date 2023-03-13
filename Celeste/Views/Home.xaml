@@ -8,7 +8,7 @@
               Title="Celeste" 
         Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
         Width="{x:Static SystemParameters.PrimaryScreenWidth}"
-        Background="#FF1E1730"
+        Background="#171717"
       Loaded="Page_Loaded">
     <Page.Resources>
         <Storyboard x:Key="WriterLines" RepeatBehavior="Forever">
@@ -68,7 +68,9 @@
     <Grid>
 
         <Image Source="../Resources/background.jpeg"
-                   Stretch="Fill"/>
+                   Stretch="Fill"
+               Opacity="0.5"
+               IsHitTestVisible="False"/>
 
 
 
@@ -98,9 +100,9 @@
                         Style="{StaticResource DiamondButtonTheme}">
                 </Button>
                 <Label Content="Today . . ."
-                           Foreground="#a1a1a1"
+                           Foreground="White"
                            Margin="35,78,475,628"
-                           FontSize="35"
+                           FontSize="45"
                            FontStyle="Italic"
                            FontWeight="Light"
                            IsHitTestVisible="False"></Label>
@@ -190,55 +192,70 @@
             </Grid>
 
 
-            <Button
-                x:Name="btn_user"
-                Width="70"
-                Height="70"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Margin="599,112,0,0"
-                Background="Transparent"
-                Click="btn_user_Click"
-                ToolTip="View Profile">
-
-                <Image Source="../Resources/user_btn.png"/>
-            </Button>
-
-
 
             <Grid Grid.Column="1">
 
-                <DockPanel Grid.Column="1" >
-                    <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="14,120,10,9"
+                <!--
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}"
+                           x:Key="{x:Type Label}">
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#d8c6a0"/>
+                                <Setter Property="Foreground" Value="#171717"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        
+                    </Style>
+                </Grid.Resources>
+                -->
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="245*"/>
+                    <RowDefinition Height="619*"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle
+                           Width="150" Margin="-96,-10,782,0"
+                    Fill="Black" Grid.RowSpan="2"/>
+
+                <Grid Grid.RowSpan="2" >
+
+                    <Button x:Name="btn_resources" DockPanel.Dock="Top" Margin="-77,178,813,586"
                         Click="btn_resources_Click"
                         ToolTip="Resources"
                         Style="{StaticResource DiamondButtonTheme}">
                         <Image Source="../Resources/resources_btn.png"/>
                     </Button>
-
-                    <Button x:Name="btn_notification" DockPanel.Dock="Bottom"  Margin="14,9,10,120"
-                        ToolTip="Set Notification"
+                    <Button x:Name="btn_notification" DockPanel.Dock="Bottom"  Margin="-77,382,813,382"
+                        ToolTip="Reminder"
                         Click="btn_notification_Click"
                         Style="{StaticResource DiamondButtonTheme}">
                         <Image Source="../Resources/timer_btn.png"/>
 
                     </Button>
 
-                    <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="130,70,70,70"
+                    <Button x:Name="btn_entries" DockPanel.Dock="Left" Margin="-77,602,813,162"
                         Click="btn_entries_Click"
-                        ToolTip="Past Entries"
+                        ToolTip="Pages"
                         Style="{StaticResource DiamondButtonTheme}">
                         <Image Source="../Resources/entries_btn.png"/>
                     </Button>
 
-                    <Button x:Name="btn_exit" DockPanel.Dock="Right" Margin="70,70,130,70"
+                    <Button x:Name="btn_exit" DockPanel.Dock="Right" Margin="726,754,10,10"
                         Click="btn_exit_Click"
                         ToolTip="logout"
                         Style="{StaticResource DiamondButtonTheme}">
-                        <Image Source="../Resources/exit_btn.png"/>
+                        <Image Source="../Resources/exit_btn.png"
+                              />
                     </Button>
 
-                    <Button x:Name="btn_insights" Width="300" Height="300" Margin="0,0,0,0"
+
+                    <Image Source="../Resources/orbit.png" Margin="197,18,-35,18"
+                           Opacity="0.7"
+                           IsHitTestVisible="False"/>
+                    <Button x:Name="btn_insights" Width="300" Height="300" Margin="354,282,182,282"
                         Click="btn_insights_Click"
                         ToolTip="Insights">
 
@@ -260,18 +277,19 @@
                         <Image Source="../Resources/insights_btn.png"/>
                     </Button>
 
-                </DockPanel>
+                    <Button x:Name="btn_user"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="59,10,0,0"
+                Background="Transparent"
+                Click="btn_user_Click"
+                ToolTip="View Profile"
+                Style="{StaticResource DiamondButtonTheme}">
+                        <Image Source="../Resources/user_btn.png"/>
+                    </Button>
+
+                </Grid>
             </Grid>
         </Grid>
-        <Image x:Name="image2" Source="../Resources/ink.png" Margin="473,478,597,125" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-6.421"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
     </Grid>
 </Page>

@@ -6,8 +6,8 @@
         <Setter Property="BorderBrush" Value="Transparent"></Setter>
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Foreground" Value="#d8c6a0"></Setter>
-        <Setter Property="Height" Value="70"></Setter>
-        <Setter Property="Width" Value="70"></Setter>
+        <Setter Property="Height" Value="100"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
 
 
         <Setter Property="Template">
@@ -23,7 +23,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#FF161122"/>
+                <Setter Property="Height" Value="110"/>
 
             </Trigger>
             <EventTrigger RoutedEvent="Loaded">
