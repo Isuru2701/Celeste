@@ -89,11 +89,7 @@ namespace Celeste.Views
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             (this.FindResource("WriterLines") as Storyboard).Begin();
-            
-
-            (this.FindResource("CardinalRotate") as Storyboard).Begin();
-            (this.FindResource("InkFlow") as Storyboard).Begin();
-
+           
         }
     }
 
