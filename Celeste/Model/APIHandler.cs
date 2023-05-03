@@ -37,13 +37,13 @@ namespace Celeste.Model
             {
                 var youtubeService = new YouTubeService(new BaseClientService.Initializer()
                 {
-                    ApiKey = "AIzaSyCSpZJjZ6hCqd-ieIbdjZlf509V_9kQaIo",
+                    ApiKey = "****" //GET YO OWN KEY >:(,
                     ApplicationName = "Celeste"
                 });
 
                 var searchListRequest = youtubeService.Search.List("snippet");
                 searchListRequest.Q = query; // Replace with your search query.
-                searchListRequest.ChannelId = "UCkJEpR7JmS36tajD34Gp4VA";
+                searchListRequest.ChannelId = "UCkJEpR7JmS36tajD34Gp4VA"; //channel Id for psych2go
                 searchListRequest.MaxResults = 12;
 
                 // Call the search.list method to retrieve results matching the specified query term.
