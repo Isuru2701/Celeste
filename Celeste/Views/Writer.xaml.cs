@@ -165,7 +165,7 @@ namespace Celeste.Views
 
         private static async Task FeedAPI(int userId, DateTime date)
         {
-            string url = $"https://twilight.azurewebsites.net/execute?user={userId}&date={date:yyyy-MM-dd}";
+            string url = $"localhost:8000/execute?user={userId}&date={date:yyyy-MM-dd}";
 
             try
             {
